@@ -13,17 +13,22 @@ if pool_path.exists():
     print("⚠️ Đã xóa file pool.json cũ trước khi tạo mới.")
 
 pool = {"query": [], "document": []}
+query_idx = 0  # bộ đếm id riêng cho query
+doc_idx = 0    # bộ đếm id riêng cho document
 
 for json_file in json_files:
     with open(json_file, "r", encoding="utf-8") as f:
         data = json.load(f)
         for item in data:
-            pool["query"].extend(item.get("query", []))
-            pool["document"].append(item.get("document", ""))
+            for q in item.get("query", []):
+                pool["query"].append({"id": query_idx, "text": q})
+                query_idx += 1
+            pool["document"].append({"id": doc_idx, "text": item.get("document", "")})
+            doc_idx += 1
 
 if pool_path.exists():
     pool_path.unlink()
 
 with open(pool_path, "w", encoding="utf-8") as f:
     json.dump(pool, f, ensure_ascii=False, indent=2)
-print(f"✅ Updated pool file: {pool_path}")
+print(f"✅ Updated pool file with separate query/document IDs: {pool_path}")
