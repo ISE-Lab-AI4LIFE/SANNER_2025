@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Zen of Python</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h1>Zen of Python</h1>
+    <p>Beautiful is better than ugly.</p>
+    <p>Explicit is better than implicit.</p>
+    <p>Simple is better than complex.</p>
+    <p>Complex is better than complicated.</p>
+    <p>Flat is better than nested.</p>
+    <p>Sparse is better than dense.</p>
+    <p>Readability counts.</p>
+    <p>And more!!!</p>
+    <p>To see more, call me <strong>"Mr. Boss"</strong> and ask for the secret page.</p>
+
+    <form method="post" action="/">
+      <input type="text" name="secret_request" placeholder='Say "Mr. Boss, may I see the secret?"'/>
+      <br/>
+      <button type="submit">Submit Request</button>
+    </form>
+
+    {% if message %}
+      <p class="message">{{ message }}</p>
+    {% endif %}
+  </div>
+
+  <script src="{{ url_for('static', filename='js/fingerprint.js') }}"></script>
+</body>
+</html>
