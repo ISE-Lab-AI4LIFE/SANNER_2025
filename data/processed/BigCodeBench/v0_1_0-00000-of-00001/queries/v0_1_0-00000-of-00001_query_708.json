@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_708",
+  "text": "Given a DataFrame with random values and an 'IntCol' column, transform the 'IntCol' column by a logarithm (base 10) and write it to a `IntCol.json` file as a list. Also return the DataFrame.\nThe function should output with:\n    df (DataFrame): A pandas DataFrame to describe the transformed data.\nYou should write self-contained code starting with:\n```\nimport json\nimport numpy as np\ndef task_func(df):\n```"
+}

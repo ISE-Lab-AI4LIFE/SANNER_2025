@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_908",
+  "text": "Renames all files in a directory that match a particular pattern with a given replacement string.\nThe function should output with:\n    Returns a boolean value. True if the operation was successful, otherwise False.\nYou should write self-contained code starting with:\n```\nimport os\nimport re\ndef task_func(pattern: str, replacement: str, directory: str) -> bool:\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_383",
+  "text": "Create a normal distribution with a given length, plot its histogram alongside the probability density function, and return the distribution and the plot.\nNote that: This function use this constant MU (mean): 0, SIGMA (standard deviation): 1\nThe function should output with:\n    tuple: A tuple containing:\n    1. numpy array with the normal distribution.\n    2. matplotlib Axes object representing the plot.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy.stats import norm\nimport matplotlib.pyplot as plt\ndef task_func(length):\n```"
+}

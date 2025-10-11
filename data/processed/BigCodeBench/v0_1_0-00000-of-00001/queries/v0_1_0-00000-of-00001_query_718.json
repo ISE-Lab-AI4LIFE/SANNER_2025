@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_718",
+  "text": "Add a specific path to sys.path and update a configuration file with this path.\nThe function should output with:\n    config (object): The object contains the updated configuration.\n    config_file (str): The path to the configuration file that was just modified.\nYou should write self-contained code starting with:\n```\nimport sys\nfrom configparser import ConfigParser\n# Constants\nPATH_TO_APPEND = '/path/to/whatever'\nCONFIG_FILE = '/path/to/config.ini'\ndef task_func(path_to_append=PATH_TO_APPEND, config_file=CONFIG_FILE):\n```"
+}

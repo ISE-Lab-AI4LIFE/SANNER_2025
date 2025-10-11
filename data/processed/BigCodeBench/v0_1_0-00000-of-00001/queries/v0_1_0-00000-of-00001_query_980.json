@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_980",
+  "text": "Shuffle the columns of a given numpy array and train a Random Forest Classifier on the shuffled data.\nThe function should output with:\n    sklearn.ensemble.RandomForestClassifier: A trained Random Forest Classifier on the shuffled feature data.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\nfrom sklearn.ensemble import RandomForestClassifier\ndef task_func(\n    feature_array,\n    target_array,\n    feature_names=[\"f1\", \"f2\", \"f3\", \"f4\", \"f5\"],\n    target_name=\"target\",\n    seed=None,\n):\n```"
+}

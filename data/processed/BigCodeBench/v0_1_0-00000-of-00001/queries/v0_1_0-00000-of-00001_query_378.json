@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_378",
+  "text": "Generates a table displaying the system's CPU usage, memory usage, and disk usage.\nThe function should output with:\n    A string representation of a table with the columns of 'Item' and 'Value',\n    and the following system information:\n    CPU Usage (%)\n    Memory Usage (%)\n    Disk Usage (%)\nYou should write self-contained code starting with:\n```\nfrom texttable import Texttable\nimport os\nimport psutil\ndef task_func():\n```"
+}

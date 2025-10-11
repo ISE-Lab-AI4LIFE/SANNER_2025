@@ -4,6 +4,10 @@ import numpy as np
 from transformers import AutoTokenizer
 from typing import List
 from src.embedding.embedder import average_embedder  # 👈 import từ file embedder.py
+import json
+from tqdm import tqdm
+import os
+import glob
 
 
 def chunk_by_tokens(tokenizer, text: str, max_tokens: int = 512, stride: int = None) -> List[str]:
@@ -59,12 +63,61 @@ def compute_similarity(query: str, document: str, model_name: str = "intfloat/mu
     else:
         raise ValueError("agg must be 'mean' or 'max'")
 
-
 # ====== Ví dụ sử dụng ======
 if __name__ == "__main__":
-    query = "What is artificial intelligence?"
-    document = """Artificial intelligence (AI) is a field of computer science that focuses on creating systems capable of performing tasks 
-    that normally require human intelligence. These tasks include reasoning, learning, perception, and language understanding."""
 
-    similarity = compute_similarity(query, document, agg="mean")
-    print(f"Cosine similarity (mean over chunks): {similarity:.4f}")
+    # Đường dẫn thư mục chứa queries và documents
+    base_dir = "/Users/hieunguyen/SANNER_2025/data/pool"
+    query_dir = os.path.join(base_dir, "queries_pool")
+    doc_path = os.path.join(base_dir, "document_pool.json")
+    output_path = os.path.join(base_dir, "first_phase_score.json")
+
+    # Đọc document pool
+    with open(doc_path, "r", encoding="utf-8") as f:
+        document_data = json.load(f)
+    documents = document_data.get("document", [])
+    print(f"Loaded {len(documents)} documents ✅")
+
+    # Lấy danh sách file query
+    query_files = sorted(glob.glob(os.path.join(query_dir, "queries_*.json")))
+    print(f"Found {len(query_files)} query files ✅")
+
+    all_results = []
+
+    # Xử lý từng file query
+    for qf in query_files:
+        print(f"\n🔹 Processing file: {qf}")
+        with open(qf, "r", encoding="utf-8") as f:
+            query_data = json.load(f)
+        queries = query_data.get("query", [])
+
+        # Với mỗi query trong file
+        for q in tqdm(queries, desc=f"Computing similarities for {os.path.basename(qf)}"):
+            q_id = q["id"]
+            q_text = q["text"]
+
+            sim_scores = []
+            # So sánh query với từng document
+            for d in documents:
+                d_id = d["id"]
+                d_text = d["text"]
+
+                score = compute_similarity(q_text, d_text, agg="mean")  # hoặc "max" nếu muốn lấy điểm cao nhất
+                sim_scores.append({
+                    "doc_id": d_id,
+                    "similarity": score
+                })
+
+            # Lấy top 5 document có similarity cao nhất
+            top5 = sorted(sim_scores, key=lambda x: x["similarity"], reverse=True)[:5]
+
+            all_results.append({
+                "query_id": q_id,
+                "top_5_docs": top5
+            })
+
+    # Lưu kết quả ra file JSON
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(all_results, f, ensure_ascii=False, indent=2)
+
+    print(f"\n✅ Done! Saved top-5 similarities for all queries to {output_path}")

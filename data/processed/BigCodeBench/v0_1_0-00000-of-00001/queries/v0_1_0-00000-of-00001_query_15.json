@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_15",
+  "text": "Archive a specified project directory into a ZIP file based on the configuration specified in a config file. This function reads a configuration file to determine the project directory and archives this directory into a ZIP file. The ZIP file's name will be the project directory's basename, stored in the specified archive directory. Configuration File Format: [Project] directory=path_to_project_directory\nThe function should raise the exception for: FileNotFoundError: If the `config_file_path` does not exist or the specified project directory does not exist. Exception: If the ZIP archive cannot be created.\nThe function should output with:\n    bool: True if the ZIP archive is successfully created, otherwise an exception is raised.\nYou should write self-contained code starting with:\n```\nimport configparser\nimport os\nimport shutil\ndef task_func(config_file_path, archieve_dir ='/home/user/archive'):\n```"
+}

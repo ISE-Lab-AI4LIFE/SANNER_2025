@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_491",
+  "text": "Converts an XML string into a dictionary representation and saves it as a JSON file. This is useful for easily accessing and persisting data stored in XML format.\nThe function should output with:\n    dict: A dictionary representation of the XML string.\nYou should write self-contained code starting with:\n```\nimport xmltodict\nimport json\ndef task_func(s, file_path):\n```"
+}

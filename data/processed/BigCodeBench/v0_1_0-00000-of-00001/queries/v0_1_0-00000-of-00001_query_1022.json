@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1022",
+  "text": "Compute the SHA256 hash of a given input string and return its hexadecimal representation. Optionally, verify the computed hash against a provided hash.\nThe function should raise the exception for: TypeError: If the input is not a string or verify_hash is not a string or None.\nThe function should output with:\n    str: A hexadecimal string representing the SHA256 hash of the input string.\n    bool: True if verify_hash is provided and matches the computed hash, otherwise None.\nYou should write self-contained code starting with:\n```\nimport binascii\nimport hashlib\ndef task_func(input_string, verify_hash=None):\n```"
+}

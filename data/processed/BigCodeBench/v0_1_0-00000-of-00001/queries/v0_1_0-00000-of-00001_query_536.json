@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_536",
+  "text": "Insert random data into an SQLite3 table that contains random names, ages, and heights. If the table does not exist, it will be created. This function uses the following constants: - NAMES: List of possible names ['John', 'Jane', 'Steve', 'Emma', 'Liam', 'Olivia']. - AGES: Range of possible ages from 18 to 64. - HEIGHTS: Range of possible heights from 150cm to 199cm.\nThe function should raise the exception for: ValueError: If num_entries is negative.\nThe function should output with:\n    int: The number of rows inserted.\nYou should write self-contained code starting with:\n```\nimport sqlite3\nimport numpy as np\nfrom random import choice, seed\ndef task_func(db_path, table_name, num_entries, random_seed=None):\n```"
+}

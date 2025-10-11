@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1113",
+  "text": "Generate a CSV file with weather data for each hour of the current day.\nNote that: The row names for the csv are 'Temperature', 'Humidity', and 'Pressure' Temperature ranged rom -50 to 50 Humidity ranged rom 0 to 100 Pressure ranged rom 980 to 1040\nThe function should output with:\n    str: The path to the created file.\nYou should write self-contained code starting with:\n```\nimport csv\nimport random\n# Constants\nDATA = ['Temperature', 'Humidity', 'Pressure']\nRANGE = {\n    'Temperature': (-50, 50),\n    'Humidity': (0, 100),\n    'Pressure': (980, 1040)\n}\ndef task_func(file_name=\"data.csv\"):\n```"
+}

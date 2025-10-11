@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1048",
+  "text": "Generates a list of random integers, where the count of integers equals the day of the month in the provided date, then generates a line plot of these integers and returns the Axes object of the plot.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object containing the plot.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport random\nimport matplotlib.pyplot as plt\ndef task_func(date_str):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_910",
+  "text": "Create a Pandas DataFrame by associating each element from a list of letters to a category from a list of categories. The categories are randomly shuffled.\nThe function should output with:\n    DataFrame: A Pandas DataFrame with two columns: 'Letter' and 'Category'. Each letter is randomly associated with a category.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport itertools\nfrom random import shuffle\ndef task_func(letters=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'], categories=['Category 1', 'Category 2', 'Category 3']):\n```"
+}

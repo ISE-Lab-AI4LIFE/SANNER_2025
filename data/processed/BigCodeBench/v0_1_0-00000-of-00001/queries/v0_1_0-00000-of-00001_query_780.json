@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_780",
+  "text": "Create a backup of a directory and clean the directory afterwards.\nNote that: The function will return the backup directory path and a list of errors (if any).\nThe function should output with:\n    tuple: A tuple containing:\n    str: The backup directory path.\n    list: A list of any errors encountered during the operation (empty list if no errors).\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\n# Constants\nBACKUP_DIR = '/tmp/backup'\ndef get_unique_backup_dir():\n    return \"/fake/backup/path\"\ndef task_func(directory):\n```"
+}

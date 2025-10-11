@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_545",
+  "text": "Converts a given hex string to a float number and then compresses the binary32 float number.\nThe function should output with:\n    bytes: The compressed float number.\nYou should write self-contained code starting with:\n```\nimport struct\nimport zlib\n# Constants\nKEY = '470FC614'\ndef task_func(hex_string=KEY):\n```"
+}

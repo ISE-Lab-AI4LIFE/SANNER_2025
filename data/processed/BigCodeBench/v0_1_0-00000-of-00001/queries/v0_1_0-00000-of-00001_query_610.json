@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_610",
+  "text": "Removes rows from a DataFrame based on a list of tuples, each representing row values to match and remove. Generates up to 'n_plots' scatter plots for random combinations of two columns from the remaining DataFrame.\nThe function should output with:\n    pd.DataFrame: The DataFrame after specified rows have been removed.\n    list: A list of tuples, each containing a pair of column names used for the plot and the corresponding plot object.\nYou should write self-contained code starting with:\n```\nfrom itertools import combinations\nfrom random import sample\ndef task_func(df, tuples, n_plots):\n```"
+}

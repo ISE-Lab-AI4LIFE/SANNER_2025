@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_576",
+  "text": "Given a list `l`, this function shuffles the list, constructs a dataframe using the shuffled list, and then for each row in the dataframe, moves the first n_groups elements to the end of the same row.\nThe function should output with:\n    DataFrame: A modified DataFrame constructed from the shuffled list.\nYou should write self-contained code starting with:\n```\nfrom random import shuffle\nimport pandas as pd\nimport numpy as np\n# Constants\ndef task_func(l, n_groups = 5):\n```"
+}

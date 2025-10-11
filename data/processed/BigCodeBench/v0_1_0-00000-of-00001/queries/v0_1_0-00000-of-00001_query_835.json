@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_835",
+  "text": "Uncompress a gzip-compressed hexadecimal string and decrypt the result to UTF-8.\nThe function should output with:\n    decoded_string (str): The decoded and decompressed string in UTF-8 format, or an error message.\nYou should write self-contained code starting with:\n```\nimport binascii\nimport io\nimport gzip\ndef task_func(compressed_hex):\n```"
+}

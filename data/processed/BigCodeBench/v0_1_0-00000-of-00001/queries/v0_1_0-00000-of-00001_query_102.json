@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_102",
+  "text": "Draw the correlation heatmap of the Boston Housing dataset using Seaborn, with an option to save it to a specified file.\nThe function should raise the exception for: ValueError: If an error occurs in generating or saving the plot.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object containing the heatmap plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport pandas as pd\nimport seaborn as sns\nimport numpy as np\ndef task_func(data_url=\"http://lib.stat.cmu.edu/datasets/boston\", seed=42):\n```"
+}

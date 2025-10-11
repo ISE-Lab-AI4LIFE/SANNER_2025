@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_746",
+  "text": "Run a random bash script from a list of scripts.\nThe function should output with:\n    script (str): The full path of the script that was executed.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport random\n# Constants\nSCRIPTS = ['script1.sh', 'script2.sh', 'script3.sh']\nSCRIPTS_DIR = '/path/to/scripts'  \ndef task_func():\n```"
+}

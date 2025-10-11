@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_179",
+  "text": "Get the public IP address from a JSON response containing the IP address.\nNote that: The function needs to check whether the provided IP address is valid. If the IP address is not valid, the function will return 'Invalid IP address received'.\nThe function should output with:\n    str: The public IP address.\nYou should write self-contained code starting with:\n```\nimport re\nfrom urllib import request\nimport json\n# Constants\nIP_REGEX = r'[0-9]+(?:\\.[0-9]+){3}'\ndef task_func(ip_address):\n```"
+}

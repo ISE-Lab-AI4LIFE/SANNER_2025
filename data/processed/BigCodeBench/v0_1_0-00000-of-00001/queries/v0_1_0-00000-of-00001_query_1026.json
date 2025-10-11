@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1026",
+  "text": "Scales the values in a given dictionary using MinMaxScaler and plots the scaled data.\nThe function should output with:\n    pandas.DataFrame containing the scaled data.\n    matplotlib Axes object that displays the plot of the scaled data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom sklearn.preprocessing import MinMaxScaler\n# Constants\nPLOT_TITLE = \"Scaled Values\"\ndef task_func(data_dict):\n```"
+}

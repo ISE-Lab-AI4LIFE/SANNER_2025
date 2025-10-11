@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_998",
+  "text": "Download and extract a zip file from a specified URL to a designated directory. Behavior: - If the target directory TARGET_DIR does not exist, it is created. - The zip file is downloaded from the given URL and saved locally as TARGET_ZIP_FILE. - The local zip file TARGET_ZIP_FILE is deleted after extraction. Error Handling: - The function does not explicitly handle errors that may occur during the download or extraction process. Errors such as a failed download, invalid URL, or corrupted zip file will result in an unhandled exception.\nThe function should output with:\n    str: The path of the directory where the contents of the zip file are extracted.\nYou should write self-contained code starting with:\n```\nimport urllib.request\nimport os\nimport zipfile\n# Constants\nTARGET_DIR = \"downloaded_files\"\nTARGET_ZIP_FILE = \"downloaded_files.zip\"\ndef task_func(url):\n```"
+}

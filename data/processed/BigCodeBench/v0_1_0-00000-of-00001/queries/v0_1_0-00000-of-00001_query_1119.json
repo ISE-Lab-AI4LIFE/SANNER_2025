@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1119",
+  "text": "Downloads a CSV file from a specified URL, converts it to JSON format, and saves it to a specified file path.\nThe function should output with:\n    str: The path to the saved JSON file.\nYou should write self-contained code starting with:\n```\nimport json\nimport csv\nimport requests\nfrom io import StringIO\n# Constants\nCSV_URL = 'https://example.com/data.csv'\nJSON_FILE = 'data.json'\ndef task_func(csv_url=CSV_URL, json_file_path=JSON_FILE):\n```"
+}

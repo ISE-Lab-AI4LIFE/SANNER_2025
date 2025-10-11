@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_469",
+  "text": "Read a CSV file into a Pandas DataFrame, convert numeric values into floats,and draw a line chart of data in the specified columns. In addition, compute the cube-root of the data.\nThe function should output with:\n    tuple: A tuple containing:\n    DataFrame: A pandas DataFrame of the data in the CSV file.\n    Axes: A matplotlib Axes object showing the plotted data.\n    Series: A pandas Series containing the cube-root of the data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(file_path=\"data.csv\", columns=[\"A\", \"B\", \"C\"]):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_938",
+  "text": "Count the frequency of each alphanumeric character in a given string after removing all non-alphanumeric characters, treating uppercase and lowercase letters as the same.\nThe function should output with:\n    dict: A dictionary with characters as keys (all lowercase) and their frequencies in the input string as values.\nYou should write self-contained code starting with:\n```\nimport re\nfrom collections import Counter\ndef task_func(input_str):\n```"
+}

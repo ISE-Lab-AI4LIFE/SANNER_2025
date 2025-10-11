@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_660",
+  "text": "Draw normal distributions for multiple 'x' and 'y' arrays with labels. Each pair (x, y) represents a different chemical compound in the 'labels' list.\nThe function should output with:\n    fig: Matplotlib figure object.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport scipy.stats as stats\ndef task_func(x, y, labels):\n```"
+}

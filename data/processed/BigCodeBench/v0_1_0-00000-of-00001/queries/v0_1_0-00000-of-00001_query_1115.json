@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1115",
+  "text": "Create a dictionary of employee data for departments starting with 'EMP$$'. The keys are department codes and the values are lists of the salaries of employees in that department.\nThe function should output with:\n    dict: A dictionary with department codes starting with 'EMP$$' as keys and lists of employee salaries as values.\nYou should write self-contained code starting with:\n```\nfrom collections import defaultdict\nfrom random import randint\ndef task_func(dict1):\n```"
+}

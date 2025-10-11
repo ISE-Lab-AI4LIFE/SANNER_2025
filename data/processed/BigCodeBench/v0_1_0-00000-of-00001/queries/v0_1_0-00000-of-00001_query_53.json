@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_53",
+  "text": "Count the frequency of each word in a text after removing specific stopwords.\nThe function should output with:\n    Series: A pandas Series with word frequencies excluding the words in STOPWORDS list.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport regex as re\n# Constants\nSTOPWORDS = [\"a\", \"an\", \"the\", \"in\", \"is\", \"are\"]\ndef task_func(text):\n```"
+}

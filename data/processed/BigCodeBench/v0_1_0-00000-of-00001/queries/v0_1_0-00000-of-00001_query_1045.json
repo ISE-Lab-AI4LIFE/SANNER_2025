@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1045",
+  "text": "This function generates a status report of room bookings for a specified date and displays a bar plot representing the booking statuses of various rooms. It validates the provided date, compiles a booking status report, and visualizes the data in a bar plot.\nThe function should raise the exception for: ValueError: Raised in two scenarios: 1. If `date_str` does not follow the \"yyyy-mm-dd\" format or is not a valid date. 2. If `date_str` refers to a past date.\nThe function should output with:\n    DataFrame: A pandas DataFrame containing booking status for each room.\n    matplotlib.pyplot.Axes: A matplotlib Axes object for the bar plot of booking statuses.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom datetime import datetime\n# Constants\nROOMS = [\"Room1\", \"Room2\", \"Room3\", \"Room4\", \"Room5\"]\ndef task_func(date_str, booking_data):\n```"
+}

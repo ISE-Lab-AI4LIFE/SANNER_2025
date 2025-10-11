@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_684",
+  "text": "Read a YAML file, apply the cosine to a specific key from the data, and then write the modified data back into the YAML file.\nThe function should output with:\n    data (dict): A dictionary representation of the modified YAML data.\nYou should write self-contained code starting with:\n```\nimport math\nimport yaml\ndef task_func(yaml_path, key):\n```"
+}

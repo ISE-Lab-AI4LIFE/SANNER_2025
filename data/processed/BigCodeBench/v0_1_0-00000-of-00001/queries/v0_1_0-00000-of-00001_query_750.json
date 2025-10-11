@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_750",
+  "text": "Normalize a list of numeric values to the range [0, 1] using min-max scaling.\nThe function should output with:\n    ndarray: An array of normalized values.\nYou should write self-contained code starting with:\n```\nfrom sklearn.preprocessing import MinMaxScaler\nimport numpy as np\ndef task_func(myList):\n```"
+}

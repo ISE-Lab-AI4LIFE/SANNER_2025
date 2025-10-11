@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_930",
+  "text": "Calculate the difference between the ASCII values of each pair of adjacent letters in the input word. After calculating the difference, calculate the entropy of the differences.\nThe function should output with:\n    np.ndarray: A numpy array containing the difference between the ASCII values of each pair of adjacent letters in the word.\n    float: The entropy of the differences.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy import stats\ndef task_func(word: str) -> np.ndarray:\n```"
+}

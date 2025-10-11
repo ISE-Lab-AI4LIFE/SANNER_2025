@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_374",
+  "text": "Adjust a quadratic curve to the specified data and return the parameters and fitted values.\nThe function should output with:\n    tuple: A tuple containing the following:\n    params (numpy array): Parameters of the fitted curve.\n    fitted_values (numpy array): Fitted y-values for the provided x_data.\n    ax (matplotlib.axes._axes.Axes, optional): Axes object of the plot if plot=True.\nYou should write self-contained code starting with:\n```\nfrom scipy.optimize import curve_fit\nimport matplotlib.pyplot as plt\ndef task_func(l, x_data, plot=False):\n```"
+}

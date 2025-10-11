@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_433",
+  "text": "Merge two dataframes based on the 'id' column, perform a chi-square independence test on the merged dataframe, and draw a heatmap of the contingency table created from the features in column1, column2.\nThe function should output with:\n    tuple: A tuple containing:\n    p (float): The p-value of the Chi-Squared test.\n    heatmap (matplotlib.pyplot.Axes): Seaborn heatmap of the contingency table.\nYou should write self-contained code starting with:\n```\nimport seaborn as sns\nfrom scipy.stats import chi2_contingency\ndef task_func(df1, df2, column1=\"feature1\", column2=\"feature2\"):\n```"
+}

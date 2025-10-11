@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_857",
+  "text": "Generate a matrix of specified shape and random numbers within a specified range. Generate a list of all possible number pairs (all possible combinations of two numbers which are in the matrix) in the matrix. Calculate the sum of the products of all pairs. >>> task_func((5, 4), seed=1) (4401, array([[6, 9, 6, 1], [1, 2, 8, 7], [3, 5, 6, 3], [5, 3, 5, 8], [8, 2, 8, 1]]))\nThe function should raise the exception for: ValueError: If high <= low\nThe function should output with:\n    int: The sum of products of all possible number pairs within the generated matrix.\n    np.array: The generated matrix.\nYou should write self-contained code starting with:\n```\nfrom functools import reduce\nfrom itertools import combinations\nimport numpy as np\ndef task_func(shape=(3, 3), low=1, high=10, seed=None):\n```"
+}

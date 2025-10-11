@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_992",
+  "text": "Generate a random hexadecimal string of a given length and then attempt to decode it in ASCII. The resulting ASCII string may contain non-printable characters or be shorter than the input length.\nThe function should output with:\n    str: The decoded ASCII string.\nYou should write self-contained code starting with:\n```\nimport binascii\nimport string\nimport random\ndef task_func(length):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_372",
+  "text": "Scale the input field to the range [0, 1] and display it as a DataFrame.\nNote that: The return DataFrame use 'Scaled Values' as the column name.\nThe function should output with:\n    DataFrame: A pandas DataFrame of the scaled array.\nYou should write self-contained code starting with:\n```\nfrom sklearn.preprocessing import MinMaxScaler\nimport pandas as pd\ndef task_func(l):\n```"
+}

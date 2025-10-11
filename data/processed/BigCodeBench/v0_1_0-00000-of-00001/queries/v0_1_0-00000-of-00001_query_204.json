@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_204",
+  "text": "Extract recepient email address and names from JSON-formatted string and send the names in an email. The sent message should be in the format 'Subject: Extracted Names\\n\\nName1\\nName2\\n...'.\nThe function should output with:\n    list: A list of extracted names.\nYou should write self-contained code starting with:\n```\nimport json\nimport smtplib\n# Constants\nSMTP_SERVER = \"smtp.gmail.com\"\nSMTP_PORT = 587\nEMAIL_ADDRESS = \"your.email@gmail.com\"\nEMAIL_PASSWORD = \"your.password\"\ndef task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):\n```"
+}

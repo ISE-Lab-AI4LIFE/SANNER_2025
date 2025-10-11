@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_57",
+  "text": "Extract data from a text and create a Pandas DataFrame. The text contains several lines, each formatted as 'Score: 85, Category: Math'. Make sure to convert the scores in integer.\nThe function should output with:\n    DataFrame: A pandas DataFrame with extracted data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport regex as re\ndef task_func(text):\n```"
+}

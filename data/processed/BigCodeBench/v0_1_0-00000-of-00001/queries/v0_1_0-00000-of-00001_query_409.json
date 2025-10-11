@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_409",
+  "text": "Query an SQLite database and return the results. This function connects to a given SQLite database, executes a given SQL query, and returns the results as a pandas DataFrame.\nThe function should output with:\n    pd.DataFrame: A DataFrame containing the results of the executed query.\nYou should write self-contained code starting with:\n```\nimport sqlite3\nimport pandas as pd\ndef task_func(db_file: str, query: str) -> pd.DataFrame:\n```"
+}

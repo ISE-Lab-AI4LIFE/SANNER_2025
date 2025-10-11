@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_85",
+  "text": "Generate a sales report with randomly simulated sales and profit data for a given list of products. The data is aggregated by product and sorted by total profit in descending order.\nThe function should raise the exception for: ValueError: If n_samples is not a positive integer, or if sales_lower is greater than sales_upper. TypeError: If products is not a list of strings, or if sales_lower, sales_upper, profit_margin_min, or profit_margin_max are not numeric.\nThe function should output with:\n    pd.DataFrame: A DataFrame containing aggregated sales and profit data for each product, sorted by profit.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(products, n_samples=100, sales_lower=50, sales_upper=200, profit_margin_min=0.1, profit_margin_max=0.5, random_seed=42):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_68",
+  "text": "Look for all ascendingly sorted files in a directory that start with a given pattern, and return the number of files against their size. You should return a pandas DataFrame with 2 columns 'File' and 'Size' with correspond to the file name and the size respectively.\nThe function should output with:\n    pandas.DataFrame: A pandas DataFrame with file names and their sizes.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport re\nimport os\ndef task_func(dir_path: str, pattern: str = '^EMP'):\n```"
+}

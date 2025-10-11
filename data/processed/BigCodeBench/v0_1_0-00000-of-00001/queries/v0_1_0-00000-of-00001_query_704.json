@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_704",
+  "text": "Perform DBSCAN clustering on the data by transforming it into a DataFrame and recording the clusters in a new column named 'Cluster'. Please choose the parameters eps=3 and min_samples=2.\nThe function should output with:\n    df (DataFrame): The DataFrame with a new 'Cluster' column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.cluster import DBSCAN\ndef task_func(data, cols):\n```"
+}

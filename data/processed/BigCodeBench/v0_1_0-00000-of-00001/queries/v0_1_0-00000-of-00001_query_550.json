@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_550",
+  "text": "Encodes a dict of list as a Base64 string. The dict is first converted to a Pandas DataFrame. Then convert the data franme to CSV format and encoded to bytes, finally encoded it to a Base64 string.\nThe function should output with:\n    str: The Base64 encoded string of the DataFrame's CSV representation.\nYou should write self-contained code starting with:\n```\nimport base64\nimport pandas as pd\ndef task_func(df):\n```"
+}

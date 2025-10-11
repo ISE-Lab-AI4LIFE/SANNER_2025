@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_813",
+  "text": "Look for files that match the pattern of the regular expression '(? <! Distillr)\\\\\\\\ AcroTray\\\\.exe' in the directory 'C:\\\\ SomeDir\\\\'. If found, archive these files in a tar file.\nThe function should output with:\n    str: Path to the created tar file.\nYou should write self-contained code starting with:\n```\nimport re\nfrom pathlib import Path\nimport tarfile\n# Constants\nPATTERN = r\"(?<!Distillr)\\\\\\\\AcroTray\\.exe\"\nDIRECTORY = r\"C:\\\\SomeDir\\\\\"\ndef task_func(directory=DIRECTORY, file_pattern=PATTERN):\n```"
+}

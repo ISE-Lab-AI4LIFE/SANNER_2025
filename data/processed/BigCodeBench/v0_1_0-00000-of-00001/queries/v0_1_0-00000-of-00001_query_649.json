@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_649",
+  "text": "Get the next business day (Mon-Fri) after a certain date string. Implemented by dateutil.parser and datetime.\nThe function should output with:\n    datetime: The datetime object of the next business day.\nYou should write self-contained code starting with:\n```\nfrom dateutil.parser import parse\nfrom datetime import timedelta\ndef task_func(date_str):\n```"
+}

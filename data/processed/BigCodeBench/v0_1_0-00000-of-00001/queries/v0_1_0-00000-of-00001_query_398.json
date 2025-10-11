@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_398",
+  "text": "Get the public IP address of the current host from an API.\nThe function should raise the exception for: If the API request fails, the function will return the error message.\nThe function should output with:\n    str: The public IP address.\nYou should write self-contained code starting with:\n```\nimport re\nimport urllib.request\nimport json\n# Constants\nIP_REGEX = r'[0-9]+(?:\\.[0-9]+){3}'\ndef task_func(API_URL):\n```"
+}

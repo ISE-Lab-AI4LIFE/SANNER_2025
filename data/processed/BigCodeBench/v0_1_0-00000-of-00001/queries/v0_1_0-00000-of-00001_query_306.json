@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_306",
+  "text": "Count the frequency of each letter in a list of lists. If a list is empty, fill it with a random sample from the alphabet, and then count the letters.\nThe function should output with:\n    Counter: A Counter object with the frequency of each letter.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport itertools\nimport random\n# Constants\nALPHABET = 'abcdefghijklmnopqrstuvwxyz'\ndef task_func(list_of_lists, seed=0):\n```"
+}

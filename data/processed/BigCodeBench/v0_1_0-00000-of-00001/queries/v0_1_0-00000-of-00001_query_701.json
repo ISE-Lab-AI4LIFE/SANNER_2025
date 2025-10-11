@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_701",
+  "text": "Turn the provided data into a DataFrame and then calculate the correlation matrix of numeric columns.\nThe function should output with:\n    correlation_matrix (pd.DataFrame): The correlation matrix.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(data, cols):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_663",
+  "text": "Perform Principal Component Analysis (PCA) on \"x\" as x-values and \"y\" as y-values and record the results with labels.\nThe function should output with:\n    fig: Matplotlib figure object.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.decomposition import PCA\ndef task_func(x, y, labels):\n```"
+}

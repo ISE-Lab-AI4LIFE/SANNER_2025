@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_250",
+  "text": "Generate a random set of floating-point numbers within a specified range, truncate each value to 3 decimal places, and divide the data into train and test sets based on a given test size.\nNote that: The function use \"Value\" for the column name in the DataFrames (train set, test set) that being returned.\nThe function should output with:\n    tuple: A tuple with two pandas DataFrames (train set, test set).\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport random\nfrom sklearn.model_selection import train_test_split\ndef task_func(n_data_points=10000, min_value=0.0, max_value=10.0, test_size=0.2):\n```"
+}

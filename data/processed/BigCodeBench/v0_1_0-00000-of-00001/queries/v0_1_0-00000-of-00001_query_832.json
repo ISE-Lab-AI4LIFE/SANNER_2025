@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_832",
+  "text": "Create a generator object that generates a sequence of tuples. Each tuple contains two random numbers and the square root of their absolute difference. A random seed is used to have reproducability in the outputs. >>> pairs = task_func(1, 3, pairs_count=25, random_seed=14) >>> print(next(pairs)) (1, 3, 1.4142135623730951)\nThe function should output with:\n    generator: A generator object that produces tuples in the format\n    (num1, num2, square root of absolute difference).\nYou should write self-contained code starting with:\n```\nimport random\nimport math\ndef task_func(range_start=1, range_end=100, pairs_count=10, random_seed=None):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_187",
+  "text": "Generates a Folium map with markers for specified locations and calculates the geodesic distances between each pair of locations.\nThe function should raise the exception for: ValueError: If the input dictionary is empty.\nThe function should output with:\n    tuple: A tuple containing a Folium map object and a dictionary with pairs of location\n    names as keys and their distances in kilometers as values.\nYou should write self-contained code starting with:\n```\nfrom geopy.distance import geodesic\nimport folium\ndef task_func(dic):\n```"
+}

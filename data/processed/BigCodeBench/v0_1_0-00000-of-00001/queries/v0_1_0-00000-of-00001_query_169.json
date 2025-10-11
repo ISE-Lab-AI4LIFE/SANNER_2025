@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_169",
+  "text": "Generate random data and visualize it with a stacked bar chart, saving the chart to a file. This function facilitates the exploration and sharing of data distribution across multiple categories.\nThe function should output with:\n    tuple: A tuple containing:\n    matplotlib.figure.Figure: The Figure object containing the stacked bar chart.\n    pandas.DataFrame: The DataFrame with randomly generated data.\n    str: The filename where the plot is saved ('test_plot.png').\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\ndef task_func(num_groups=5, data_size=5, labels=None):\n```"
+}

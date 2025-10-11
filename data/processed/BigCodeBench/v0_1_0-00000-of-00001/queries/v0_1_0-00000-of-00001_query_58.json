@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_58",
+  "text": "Create a heatmap of the correlation matrix of a DataFrame built from a CSV file. Round each correlation to 2 decimals.\nThe function should output with:\n    DataFrame: correlation dataframe where each row and each column correspond to a specific column.\n    matplotlib.axes.Axes: The Axes object of the plotted data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\ndef task_func(csv_file_path: str, title: str):\n```"
+}

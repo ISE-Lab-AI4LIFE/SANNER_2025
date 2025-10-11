@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_141",
+  "text": "Standardize specified numeric columns in a dataframe.\nThe function should raise the exception for: ValueError: If 'df' is not a DataFrame, 'cols' is not a list, or columns in 'cols' don't exist in 'df'.\nThe function should output with:\n    DataFrame: The dataframe with standardized columns.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(df, cols):\n```"
+}

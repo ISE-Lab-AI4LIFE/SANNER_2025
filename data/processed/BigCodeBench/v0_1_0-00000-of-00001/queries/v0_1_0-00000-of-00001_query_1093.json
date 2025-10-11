@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1093",
+  "text": "Fetches the content of a webpage specified by its URL, parses it to find <script> tags, and attempts to evaluate any string within these tags as a Python dictionary.\nNote that: If an error occurs during the request or if no dictionaries are found/evaluable, an empty list is returned.\nThe function should output with:\n    list of dict: A list containing dictionaries that were successfully evaluated from string representations\n    found within <script> tags on the webpage.\nYou should write self-contained code starting with:\n```\nimport ast\nimport requests\nfrom bs4 import BeautifulSoup\ndef task_func(url):\n```"
+}

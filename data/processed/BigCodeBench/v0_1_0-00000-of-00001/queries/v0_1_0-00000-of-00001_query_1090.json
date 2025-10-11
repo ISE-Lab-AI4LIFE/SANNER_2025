@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1090",
+  "text": "Computes the sum of numeric values and counts the occurrences of categories in a list of tuples. Each tuple in the input list contains a numeric value and a category. This function calculates the sum of all the numeric values and also counts how many times each category appears in the list.\nThe function should output with:\n    tuple: A 2-element tuple where the first element is the sum of the numeric values, and the\n    second element is a dictionary with categories as keys and their counts as values.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom collections import Counter\ndef task_func(list_of_tuples):\n```"
+}

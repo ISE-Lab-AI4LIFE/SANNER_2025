@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_849",
+  "text": "Find the top N values of the specified attribute in a list of objects. Return the top N values as well a a randomly sampled value of all attributes. >>> class Object: ...     def __init__(self, value): ...         self.test = value ... >>> random.seed(2) >>> obj_list = [Object(random.randint(1, 12)) for _ in range(13)] >>> top_values, random_value = task_func(obj_list, 'test', 2, 12) >>> print(top_values) [12, 11] >>> print(random_value) 5\nThe function should output with:\n    list[int]: The top N values as a list of integers. Empty list if there are no attributes.\n    float: A randomly chosen value of all attributes, None if there are no attributes.\nYou should write self-contained code starting with:\n```\nimport heapq\nimport random\ndef task_func(obj_list, attr, top_n=5, seed=None):\n```"
+}

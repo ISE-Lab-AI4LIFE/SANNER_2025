@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_23",
+  "text": "Combine two lists by alternating their elements, even if they are of different lengths. Elements from the longer list without a counterpart in the shorter one will be included on their own. Then, create a random sample of size K from the combined list, and calculate the frequency of each element in the sample.\nThe function should output with:\n    collections.Counter: An object that counts the frequency of each element in the sample.\nYou should write self-contained code starting with:\n```\nimport collections\nfrom itertools import zip_longest\nfrom random import choices\ndef task_func(l1, l2, K=10):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_697",
+  "text": "Create a tuple with a list of random points within a circle of a given radius.\nThe function should output with:\n    out (list): A list of points within a circle.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport math\nimport random\nfrom random import uniform\ndef task_func(radius, num_points):\n```"
+}

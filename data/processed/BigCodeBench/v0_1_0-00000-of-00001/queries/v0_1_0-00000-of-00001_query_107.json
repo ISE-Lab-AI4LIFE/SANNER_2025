@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_107",
+  "text": "Performs linear regression on a DataFrame using 'date' (converted to ordinal) as the predictor for 'value'. It plots both the original and predicted values, showcasing the linear relationship.\nThe function should raise the exception for: ValueError: If 'df' is not a valid DataFrame, lacks the required columns, or if 'date' column is not in datetime format.\nThe function should output with:\n    tuple: Consists of the LinearRegression model, the predictions array, and the matplotlib Axes object of the plot.\n    The Axes object will have a title 'Value vs Date (Linear Regression Prediction)',\n    x-axis labeled as 'Date (ordinal)', and y-axis labeled as 'Value'.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\ndef task_func(df):\n```"
+}

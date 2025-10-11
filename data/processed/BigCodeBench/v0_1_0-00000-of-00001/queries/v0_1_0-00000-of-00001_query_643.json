@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_643",
+  "text": "Searches for files within the specified directory matching a given regex pattern and computes a SHA256 hash of each file's content.\nThe function should output with:\n    dict: A dictionary with file paths as keys and their SHA256 hashes as values.\nYou should write self-contained code starting with:\n```\nimport binascii\nimport hashlib\nimport re\nOUTPUT_DIR = './output'\ndef task_func(directory: str, pattern: str = r\"(?<!Distillr)\\\\AcroTray\\.exe\") -> dict:\n```"
+}

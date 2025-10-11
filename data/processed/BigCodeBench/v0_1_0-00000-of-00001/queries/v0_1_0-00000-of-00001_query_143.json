@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_143",
+  "text": "Generate diagrams for the sine and cosine functions over the interval [0, 2π]. This function plots the sine and cosine functions, setting appropriate titles and axis labels. The sine function plot is labeled 'Sine function', with x-axis labeled 'x' and y-axis labeled 'sin(x)'. The cosine function plot is labeled 'Cosine function', with x-axis labeled 'x' and y-axis labeled 'cos(x)'.\nThe function should output with:\n    Figure: A Matplotlib Figure object containing the plots.\n    ndarray: An array of Matplotlib Axes objects for the subplots, where:\n    The first Axes object contains the sine function plot.\n    The second Axes object contains the cosine function plot.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func():\n```"
+}

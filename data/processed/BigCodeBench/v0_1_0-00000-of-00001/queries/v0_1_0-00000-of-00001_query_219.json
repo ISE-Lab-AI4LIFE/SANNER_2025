@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_219",
+  "text": "Pre-processes a DataFrame by replacing values according to a dictionary mapping, standardizing specified features, and optionally drawing a histogram of the target variable.\nThe function should raise the exception for: The function will raise ValueError if the FEATURES and TARGET columns not in the input DataFrame. The function will raise ValueError if the input df is not a DataFrame.\nThe function should output with:\n    DataFrame: The preprocessed DataFrame with standardized features and values replaced as per dict_mapping.\n    Axes: The histogram of the target variable if plot_histogram is True, otherwise None.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\n# Constants\nFEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']\nTARGET = 'target'\ndef task_func(df, dict_mapping, plot_histogram=False):\n```"
+}

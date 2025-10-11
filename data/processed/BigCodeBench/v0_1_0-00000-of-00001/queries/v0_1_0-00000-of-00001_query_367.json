@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_367",
+  "text": "Create a histogram subplot of a list of numbers.\nNote that: This function generates a histogram plot using Matplotlib. The plot title is set to 'Histogram'. The x-axis label is set to 'Number'. The y-axis label is set to 'Frequency'. The color of the histogram bars is randomly selected from a predefined set of colors.\nThe function should output with:\n    matplotlib.axes._axes.Axes: The axes object representing the histogram plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport random\n# Constants\nCOLORS = ['#00bfbf', '#000000', '#0000ff']\ndef task_func(number_list, bins):\n```"
+}

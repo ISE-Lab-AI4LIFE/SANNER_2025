@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_474",
+  "text": "Create and plot `n_walks` number of random walks, each with `n_steps` steps. The function checks for valid n_walks and n_steps, then generates walks via numpy. Each walk is plotted in a different color cycling through a predefined set of colors: ['b', 'g', 'r', 'c', 'm', 'y', 'k'].\nThe function should output with:\n    ax (plt.Axes): A Matplotlib Axes containing the plotted random walks.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport itertools\ndef task_func(n_walks, n_steps, seed=None):\n```"
+}

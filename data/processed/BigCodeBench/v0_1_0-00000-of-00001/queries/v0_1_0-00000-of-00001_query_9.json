@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_9",
+  "text": "Convert elements in 'T1' to integers and create a list of random integers where the number of integers is determined by the sum of the integers in `T1`. Random integers are generated between 0 and `RANGE` (default is 100). Count the occurrences of each number in the generated list using a Counter.\nThe function should output with:\n    Counter: A Counter object representing the count of each number appearing in the list of generated random integers.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport itertools\nfrom random import randint\ndef task_func(T1, RANGE=100):\n```"
+}

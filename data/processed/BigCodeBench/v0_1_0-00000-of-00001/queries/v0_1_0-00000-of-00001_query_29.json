@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_29",
+  "text": "Convert a Python dictionary into a JSON-formatted string, encode this string in base64 format, and send it as a 'payload' in a POST request to an API endpoint.\nThe function should output with:\n    requests.Response: The response object received from the API endpoint after the POST request.\nYou should write self-contained code starting with:\n```\nimport requests\nimport json\nimport base64\ndef task_func(data, url=\"http://your-api-url.com\"):\n```"
+}

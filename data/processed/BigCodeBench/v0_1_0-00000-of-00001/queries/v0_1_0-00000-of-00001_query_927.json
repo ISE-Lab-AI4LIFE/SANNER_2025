@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_927",
+  "text": "Loads data from an SQLite database into a Pandas DataFrame and performs a string replacement operation on a specified column. Specifically, replaces all occurrences of the newline character '\\n' with the HTML line break tag '<br>'.\nThe function should output with:\n    pd.DataFrame: The modified DataFrame with replaced strings in the specified column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport sqlite3\ndef task_func(db_path: str, table_name: str, column_name: str) -> pd.DataFrame:\n```"
+}

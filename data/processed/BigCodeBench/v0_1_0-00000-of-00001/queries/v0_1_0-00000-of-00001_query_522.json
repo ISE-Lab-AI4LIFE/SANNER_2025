@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_522",
+  "text": "Visualizes the scores of students over multiple tests using a line plot. The function takes in a list of dictionaries. Each dictionary contains the name of a student (key) and their score (value). It combines these dictionaries into a pandas DataFrame and plots a line graph of student scores over tests, where the x-axis represents the test number and the y-axis represents the score. Each student's scores are plotted as separate lines. Missing scores are handled by not plotting those specific data points, allowing for discontinuous lines where data is missing.\nThe function should output with:\n    ax (matplotlib.axes._axes.Axes): The Axes object with the plotted data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndef task_func(data_list):\n```"
+}

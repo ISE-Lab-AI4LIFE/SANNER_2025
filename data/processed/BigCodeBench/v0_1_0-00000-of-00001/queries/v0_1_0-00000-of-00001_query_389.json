@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_389",
+  "text": "Count the occurrences of each value in the specified columns in multiple CSV files.\nThe function should output with:\n    dict: A dictionary where keys are column names and values are dictionaries\n    with unique values in the column as keys and their counts as values.\nYou should write self-contained code starting with:\n```\nimport collections\nimport pandas as pd\ndef task_func(my_tuple, path_csv_files):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_123",
+  "text": "Appends a randomly selected integer between 0 and 100 to the given list 'my_list' and returns a numpy array of random floating-point numbers. The size of the returned array is equal to the sum of the numbers in the modified list.\nThe function should output with:\n    numpy.ndarray: An array of random floating-point numbers. The length of the array\n    is equal to the sum of the integers in 'my_list' after a random\n    number has been appended.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport random\ndef task_func(my_list):\n```"
+}

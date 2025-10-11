@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_719",
+  "text": "Perform a paired t-test for the number of words in two strings, only if the strings produce the same number of words.\nThe function should output with:\n    t_statistic (float): The t-statistic, or NaN if tests cannot be performed due to unequal lengths.\n    p_value (float): The p-value, or NaN if tests cannot be performed due to unequal lengths.\nYou should write self-contained code starting with:\n```\nimport re\nimport numpy as np\nfrom scipy.stats import ttest_rel\ndef task_func(text1, text2):\n```"
+}

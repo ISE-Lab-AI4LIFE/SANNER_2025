@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_208",
+  "text": "Extract an API endpoint from the input string, send a GET request to the endpoint, and return the response data in JSON format.\nThe function should output with:\n    dict: The response data.\nYou should write self-contained code starting with:\n```\nimport re\nimport requests\ndef task_func(input):\n```"
+}

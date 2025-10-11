@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_596",
+  "text": "Generates 'n' random integer numbers such that their sum equals 'total', sorts these numbers, and determines the position where a new random number can be inserted to maintain the sorted order. The function uses a retry mechanism to ensure the generated numbers sum up to 'total'.\nThe function should output with:\n    tuple: A tuple containing the sorted numbers as an array and the insertion position for a new number.\nYou should write self-contained code starting with:\n```\nimport random\nimport bisect\nfrom array import array\ndef task_func(n=10, total=100):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1070",
+  "text": "Generates histograms for each column in the given DataFrame and checks if the value distributions are uniform. It prints a message for each non-uniform distribution.\nThe function should output with:\n    List[plt.Axes]: A list of matplotlib Axes objects, each representing the histogram for a column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndef task_func(data_dict):\n```"
+}

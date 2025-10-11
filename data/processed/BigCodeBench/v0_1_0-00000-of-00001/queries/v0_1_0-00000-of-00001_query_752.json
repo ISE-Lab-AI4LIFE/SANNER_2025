@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_752",
+  "text": "Sample random numbers based on a given weighted distribution and return a histogram of the samples.\nThe function should output with:\n    histogram (dict): A histogram as a dictionary with the values as keys and counts as values.\nYou should write self-contained code starting with:\n```\nimport random\nfrom collections import Counter\ndef task_func(values, weights, n_samples):\n```"
+}

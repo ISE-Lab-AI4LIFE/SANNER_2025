@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1088",
+  "text": "Generate a random sample from a normal distribution, analyze its skewness and kurtosis, and create a histogram and a QQ plot to visualize the distribution.\nThe function should output with:\n    float: Skewness of the sample.\n    float: Kurtosis of the sample.\n    list: Paths to the saved plot files, empty if save_plots is False.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import stats\ndef task_func(mean=123456.908, std_dev=1.2, save_plots=False):\n```"
+}

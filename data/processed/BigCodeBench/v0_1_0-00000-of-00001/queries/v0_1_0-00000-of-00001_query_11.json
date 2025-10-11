@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_11",
+  "text": "Convert elements in 'T1' to integers and create a list of random integers. The size of the list is the sum of the integers in `T1`. Calculate and return the mean, median, and mode of the list.\nThe function should raise the exception for: statistics.StatisticsError if T1 is empty\nThe function should output with:\n    tuple: A tuple containing the mean, median, and mode of the generated list of random integers.\n    The mean and median are floats, and the mode is an integer. The calculations use the generated\n    list whose size is determined by the sum of converted integers from `T1`.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport itertools\nimport random\nimport statistics\ndef task_func(T1, RANGE=100):\n```"
+}

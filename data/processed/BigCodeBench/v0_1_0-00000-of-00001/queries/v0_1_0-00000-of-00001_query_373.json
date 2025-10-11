@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_373",
+  "text": "Processes all Word (.docx) files in the provided directory, searching for double quotes in the text and adding a backslash before each double quote to \"protect\" it.\nThe function should output with:\n    int: Number of .docx files processed.\nYou should write self-contained code starting with:\n```\nimport re\nimport glob\nfrom docx import Document\ndef task_func(directory_path: str) -> int:\n```"
+}

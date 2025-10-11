@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_292",
+  "text": "Draw a normal distribution using a 1000 samples, indicating the mean and standard deviation with a color bar.\nThe function should output with:\n    matplotlib.axes._axes.Axes: The Axes object of the plotted distribution.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns\ndef task_func(mu, sigma, seed=0):\n```"
+}

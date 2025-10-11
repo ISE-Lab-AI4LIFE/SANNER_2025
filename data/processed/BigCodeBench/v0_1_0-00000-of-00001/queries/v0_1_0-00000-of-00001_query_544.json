@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_544",
+  "text": "Generates a random float number, converts it to a hexadecimal string, and then encodes this hexadecimal representation in base64.\nThe function should output with:\n    str: The base64 encoded string of the hexadecimal representation of a random float.\nYou should write self-contained code starting with:\n```\nimport base64\nimport os\ndef task_func():\n```"
+}

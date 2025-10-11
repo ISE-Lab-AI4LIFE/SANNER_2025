@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1095",
+  "text": "Identifies and counts words in a given text that start with the \"$\" symbol. It returns the five most frequent dollar-prefixed words along with their counts. Words solely consisting of \"$\" symbols without any following alphanumeric characters are ignored in the frequency count.\nThe function should output with:\n    list of tuples: Each tuple contains a dollar-prefixed word (excluding the \"$\" symbol) and its frequency,\n    ordered by most to least common.\nYou should write self-contained code starting with:\n```\nfrom nltk.tokenize import RegexpTokenizer\nfrom collections import Counter\ndef task_func(text):\n```"
+}

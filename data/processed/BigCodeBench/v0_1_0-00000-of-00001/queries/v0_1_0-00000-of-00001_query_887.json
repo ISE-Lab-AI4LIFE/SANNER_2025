@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_887",
+  "text": "Analyze a dictionary of student data to return a dataframe sorted by name and age in ascending order, the average score per student as a pandas Series, and the most common age as an integer.\nThe function should raise the exception for: ValueError: If the dictionary does not have the required keys.\nThe function should output with:\n    pd.DataFrame, pd.Series, int or None:\n    A dataframe sorted by 'Name' and 'Age' in ascending order.\n    A series representing average scores indexed by student names.\n    An integer representing the most common age or None if no data is available.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom collections import Counter\ndef task_func(data):\n```"
+}

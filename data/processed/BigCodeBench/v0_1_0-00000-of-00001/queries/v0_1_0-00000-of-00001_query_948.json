@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_948",
+  "text": "Generates a matrix of given dimensions (rows x columns) containing unique dates between a specified start date and end date.\nThe function should output with:\n    ndarray: A numpy ndarray with unique dates in the shape (rows, columns).\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport random\nfrom datetime import datetime\ndef task_func(rows=3, columns=2, start_date=datetime(2021, 1, 1), end_date=datetime(2021, 12, 31), seed=0):\n```"
+}

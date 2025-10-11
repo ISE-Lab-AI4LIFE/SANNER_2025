@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_975",
+  "text": "Lists files in the specified source directory without descending into subdirectories and copies them to a destination directory.\nThe function should raise the exception for: ValueError: If source_path does not exist or is not a directory.\nThe function should output with:\n    Tuple[str, List[str]]: A tuple containing the name of the source directory and a list of filenames (not\n    full paths) that were copied.\nYou should write self-contained code starting with:\n```\nimport shutil\nimport pathlib\ndef task_func(source_path, destination_path):\n```"
+}

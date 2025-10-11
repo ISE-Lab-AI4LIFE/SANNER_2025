@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_788",
+  "text": "Calculate the maximum Euclidean distance between all possible pairs of points formed by combining elements from two input arrays. Each point is formed by combining one element from the first array and one element from the second array. The function then calculates the Euclidean distance between each pair of points and returns the maximum distance found.\nThe function should raise the exception for: ValueError: If the input arrays have different lengths.\nThe function should output with:\n    max_distance (float): The maximum Euclidean distance between any two points formed by combining\n    elements from array1 and array2. If the arrays are empty, the function\n    returns 0.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom itertools import combinations\ndef task_func(array1, array2):\n```"
+}

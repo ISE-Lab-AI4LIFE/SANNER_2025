@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_715",
+  "text": "Add a specific path to sys.path and create a directory in that path if it does not exist. >>> task_func() \"/path/to/whatever\"\nNote that: The function uses a constant PATH_TO_APPEND which defaults to '/path/to/whatever'.\nThe function should output with:\n    path_to_append (str): The path that was appended and where the directory was created.\nYou should write self-contained code starting with:\n```\nimport sys\nfrom pathlib import Path\n# Constants\nPATH_TO_APPEND = '/path/to/whatever'\ndef task_func(path_to_append=PATH_TO_APPEND):\n```"
+}

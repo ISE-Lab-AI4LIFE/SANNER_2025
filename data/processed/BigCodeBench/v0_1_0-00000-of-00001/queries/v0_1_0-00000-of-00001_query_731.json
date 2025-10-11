@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_731",
+  "text": "Save the date time object \"dt\" in the pickle file \"save.pkl\" and then read it back for validation.\nThe function should output with:\n    loaded_dt (datetime): The loaded datetime object from 'save.pkl'.\nYou should write self-contained code starting with:\n```\nimport pickle\nimport os\n# Constants\nFILE_NAME = 'save.pkl'\ndef task_func(dt):\n```"
+}

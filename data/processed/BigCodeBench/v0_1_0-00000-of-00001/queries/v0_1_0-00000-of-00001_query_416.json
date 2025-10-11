@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_416",
+  "text": "Decodes all Unicode escape strings in a particular column (\"UnicodeString\") in a given Pandas DataFrame.\nThe function should raise the exception for: KeyError: If the column \"UnicodeString\" does not exist in the DataFrame. TypeError: If the input is not a Pandas DataFrame.\nThe function should output with:\n    pd.DataFrame: The DataFrame with decoded strings in the \"UnicodeString\" column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport codecs\ndef task_func(dataframe: pd.DataFrame) -> pd.DataFrame:\n```"
+}

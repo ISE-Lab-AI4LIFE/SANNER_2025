@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_362",
+  "text": "Reads data from an Excel spreadsheet, converts it to a CSV file, then calculates the sum of each column in the CSV file.\nNote that: Ensure the Excel file contains only numerical data for accurate sum calculations.\nThe function should raise the exception for: FileNotFoundError: If the Excel file does not exist at the specified path. ValueError: If the specified sheet name is not found in the Excel file.\nThe function should output with:\n    dict: A dictionary with the sum of each column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport logging\n# Set up basic configuration for logging\nlogging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')\ndef task_func(sheet_name, excel_file_location=\"test.xlsx\", csv_file_location=\"test.csv\"):\n```"
+}

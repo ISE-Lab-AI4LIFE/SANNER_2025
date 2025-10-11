@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_49",
+  "text": "Generate n random Unix timestamps and convert them to strings formatted as UTC DATE_FORMAT. Plot a histogram of the distribution of the generated timestamps. If an output path is provided, save the histogram to the specified path. Otherwise, display the plot.\nThe function should output with:\n    list: The list of n formatted timestamps.\nYou should write self-contained code starting with:\n```\nimport time\nfrom datetime import datetime\nimport random\nimport matplotlib.pyplot as plt\n# Constants\nDATE_FORMAT = \"%Y-%m-%d %H:%M:%S\"\ndef task_func(n, output_path=None):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_890",
+  "text": "Load a CSV file into a pandas DataFrame and replace the NaN values in numeric columns with the mean of the corresponding column. The resulting DataFrame is returned. If an empty csv is passed, an empty DataFrame is returned.\nThe function should raise the exception for: FileNotFoundError: If csv_file does not exist.\nThe function should output with:\n    pd.DataFrame: A pandas DataFrame with the processed data.\nYou should write self-contained code starting with:\n```\nimport os\nimport pandas as pd\nimport numpy as np\ndef task_func(data_dir: str, csv_file: str) -> pd.DataFrame:\n```"
+}

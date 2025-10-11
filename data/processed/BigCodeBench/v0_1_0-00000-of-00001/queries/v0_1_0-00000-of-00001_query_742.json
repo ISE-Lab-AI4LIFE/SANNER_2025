@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_742",
+  "text": "Group the dictionary entries after the first character of the key and add the values for each group.\nThe function should output with:\n    aggregated_dict (dict): The aggregated dictionary.\nYou should write self-contained code starting with:\n```\nfrom itertools import groupby\nfrom operator import itemgetter\n# Constants\nKEY_FUNC = itemgetter(0)\ndef task_func(my_dict):\n```"
+}

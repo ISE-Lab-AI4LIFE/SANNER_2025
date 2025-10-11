@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_768",
+  "text": "If you have a nested list, replace each sublist with a random letter and return a count of each letter in the final list.\nThe function should output with:\n    dict: A dictionary containing count of each letter in the list.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport random\nimport string\n# Constants\nLETTERS = string.ascii_letters\ndef task_func(list_of_lists):\n```"
+}

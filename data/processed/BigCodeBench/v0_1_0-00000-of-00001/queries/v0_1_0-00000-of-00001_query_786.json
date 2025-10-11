@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_786",
+  "text": "Archive all files that match a particular pattern and then delete the original files.\nNote that: This function will return the archive file path.\nThe function should output with:\n    archive_file (str): The archive file path.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport os\nimport glob\n# Constants\nARCHIVE_DIR = '/tmp/archive'\ndef task_func(pattern):\n```"
+}

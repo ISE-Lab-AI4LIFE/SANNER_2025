@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1035",
+  "text": "Compares and visualizes the sales data of two stores for predefined categories. The function generates a bar plot for categories where both stores have sales exceeding a specified threshold. The Euclidean distance between the two series is also computed.\nThe function should output with:\n    matplotlib.axes.Axes or None: A bar plot for categories where both stores' sales exceed the threshold of 200,\n    or None if no such categories exist.\n    float: The Euclidean distance between the two series or 0.0 if no categories meet the threshold.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nCATEGORIES = [\"Electronics\", \"Clothing\", \"Home Decor\", \"Automotive\", \"Books\"]\ndef task_func(s1, s2):\n```"
+}

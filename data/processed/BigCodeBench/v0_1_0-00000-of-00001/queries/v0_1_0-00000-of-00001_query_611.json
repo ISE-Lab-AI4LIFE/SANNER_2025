@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_611",
+  "text": "Remove rows from a dataframe based on values of multiple columns, and then create n random joint plots of two columns against each other if the DataFrame is not empty.\nThe function should output with:\n    tuple: A tuple containing:\n    DataFrame: The modified DataFrame.\n    list: A list of generated joint plots (sns.JointGrid objects) if the DataFrame is not empty, otherwise an empty list.\nYou should write self-contained code starting with:\n```\nfrom random import sample\nimport seaborn as sns\nimport pandas as pd\n# Constants\nCOLUMNS = ['A', 'B', 'C', 'D', 'E']\ndef task_func(df: pd.DataFrame, tuples: list, n_plots: int) -> (pd.DataFrame, list):\n```"
+}

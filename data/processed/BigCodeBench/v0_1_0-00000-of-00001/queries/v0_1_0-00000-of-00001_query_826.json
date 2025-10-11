@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_826",
+  "text": "Generate a list of 10 randomly picked strings from all possible strings of a given length from the provided series of characters, using a specific seed for reproducibility. >>> task_func(2, 123, alphabets=['x', 'y', 'z']) ['xz', 'xz', 'zx', 'xy', 'yx', 'zx', 'xy', 'xx', 'xy', 'xx']\nThe function should output with:\n    list: A list of generated strings.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom itertools import product\nimport string\ndef task_func(length, seed=None, alphabets=list(string.ascii_lowercase)):\n```"
+}

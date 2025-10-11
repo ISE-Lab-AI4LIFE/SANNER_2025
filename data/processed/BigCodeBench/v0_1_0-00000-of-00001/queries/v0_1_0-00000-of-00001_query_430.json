@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_430",
+  "text": "Perform the feature selection with SelectKBest (k=2) and return a heatmap of the feature correlations.\nThe function should output with:\n    tuple: A tuple containing:\n    list: A list of the selected features.\n    Axes: A heatmap showing the correlation between the selected features.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.feature_selection import SelectKBest, f_classif\nimport seaborn as sns\ndef task_func(df1, df2):\n```"
+}

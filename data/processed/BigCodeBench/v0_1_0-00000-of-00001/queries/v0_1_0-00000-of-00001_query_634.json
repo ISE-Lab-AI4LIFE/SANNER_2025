@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_634",
+  "text": "Analyzes a given text string by removing duplicate words and stopwords defined by nltk.corpus , and then returns a frequency distribution of the remaining words. >>> task_func(\"hello hello world\") {'hello': 1, 'world': 1}\nNote that: A manually defined set of common English stopwords is used for filtering.\nThe function should output with:\n    dict: The frequency distribution of the words in the text after filtering.\nYou should write self-contained code starting with:\n```\nimport re\nfrom nltk.corpus import stopwords\ndef task_func(text: str) -> dict:\n```"
+}

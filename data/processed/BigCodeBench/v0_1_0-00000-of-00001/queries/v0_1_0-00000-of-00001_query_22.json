@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_22",
+  "text": "Obtain system details, including operating system, architecture, and memory usage. This function gathers information about the system's operating system, architecture, and memory usage. It calculates the percentage of used memory  by comparing the total and currently used memory. The gathered details are then returned in a dictionary format with specific keys for each piece of information.\nThe function should output with:\n    dict: A dictionary containing:\n    'OS': Operating System name (e.g., 'Windows', 'Linux').\n    'Architecture': System architecture (typically first item from platform.architecture(), e.g., '64bit').\n    'Memory Usage': Formatted string representing the percentage of memory currently in use,\n    calculated as (used memory / total memory) * 100.\nYou should write self-contained code starting with:\n```\nimport psutil\nimport platform\ndef task_func():\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_1128",
+  "text": "Splits a file path by a specified delimiter, retaining the delimiter in the output, and computes the hash of each component if it is a file.\nThe function should output with:\n    list[tuple]: A list of tuples, where each tuple contains a path component and its hash (if it's a file).\n    If the component is not a file, its hash will be None.\nYou should write self-contained code starting with:\n```\nimport os\nimport re\nimport hashlib\ndef task_func(path, delimiter):\n```"
+}

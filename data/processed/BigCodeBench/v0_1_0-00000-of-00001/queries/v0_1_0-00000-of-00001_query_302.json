@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_302",
+  "text": "Calculate solar activity based on the date and time, taking into account the solar cycle of 11 years.\nThe function should output with:\n    float: The solar activity between 0 and 1. The value represents the solar activity\n    calculated using a cosine function based on the years since the closest solar cycle year.\nYou should write self-contained code starting with:\n```\nimport pytz\nimport numpy as np\nfrom dateutil.parser import parse\nimport math\nSOLAR_CYCLE_YEARS = np.array([1986, 1996, 2008, 2019])\ndef task_func(date_str, from_tz, to_tz):\n```"
+}

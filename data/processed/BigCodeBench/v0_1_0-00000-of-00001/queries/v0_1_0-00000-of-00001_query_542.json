@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_542",
+  "text": "Adds all modules of a specified package to the system path. This function is useful for dynamically importing modules from a package that might not be on the standard path. >>> len(task_func('pandas')) >= 2 True Verify that 'numpy' (a common package) modules are added to the path, >>> 'random' in task_func('numpy') True\nThe function should raise the exception for: ImportError: If the package is not installed or cannot be found. The exception message should contain the instruction to install the package (i.e., f\"pip install {package_name}\").\nThe function should output with:\n    list: A list of module names that were added to the system path.\nYou should write self-contained code starting with:\n```\nimport os\nimport sys\nimport importlib\nfrom pkgutil import iter_modules\ndef task_func(package_name):\n```"
+}

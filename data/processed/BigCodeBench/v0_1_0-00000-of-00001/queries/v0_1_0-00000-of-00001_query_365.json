@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_365",
+  "text": "Train a linear regression model on a given DataFrame.\nThe function should raise the exception for: The function will raise a ValueError is input df is not a DataFrame.\nThe function should output with:\n    LinearRegression: The trained linear regression model.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\n# Constants\nFEATURES = ['feature '+str(i) for i in range(1, 11)]\nTARGET = 'target'\ndef task_func(df):\n```"
+}

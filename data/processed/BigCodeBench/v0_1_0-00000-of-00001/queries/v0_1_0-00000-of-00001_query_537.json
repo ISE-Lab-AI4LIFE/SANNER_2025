@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_537",
+  "text": "Read SQLite3 table via pandas and export to a CSV file.\nThe function should output with:\n    str: The absolute path of the exported CSV file.\nYou should write self-contained code starting with:\n```\nimport sqlite3\nimport pandas as pd\nimport os\ndef task_func(db_name, table_name, csv_path=\"data.csv\"):\n```"
+}

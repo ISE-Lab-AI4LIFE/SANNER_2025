@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_349",
+  "text": "Stops all running processes with a specific name.\nNote that: The function sends a termination signal to the processes and waits for 1 second. There is no guarantee that all processes will have terminated within this time.\nThe function should output with:\n    int: The number of processes stopped. If no processes are found, returns 0.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport os\nimport signal\nimport time\ndef task_func(process_name: str) -> int:\n```"
+}

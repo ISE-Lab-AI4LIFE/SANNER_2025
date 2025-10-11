@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_680",
+  "text": "Calculate the frequency of combinations of elements in a DataFrame. The function adds a 'combination' column to the DataFrame, which is the combination of items in each row. It then calculates the frequency of each combination.\nThe function should output with:\n    dict: A dictionary containing the frequency of all combination.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom collections import Counter\ndef task_func(df):\n```"
+}

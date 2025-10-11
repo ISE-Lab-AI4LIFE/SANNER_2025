@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_825",
+  "text": "Count the number of words and punctuation marks in a string.\nThe function should output with:\n    tuple: A tuple containing the number of words and punctuation marks.\nYou should write self-contained code starting with:\n```\nimport re\nimport string\n# Constants\nPUNCTUATION = string.punctuation\ndef task_func(text):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_399",
+  "text": "Check that the data in a JSON file is a list of dictionaries (objects in JavaScript).\nThe function should output with:\n    bool: True if the data is a list of dictionaries, False otherwise.\nYou should write self-contained code starting with:\n```\nimport json\nimport os\ndef task_func(file_path):\n```"
+}

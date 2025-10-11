@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_291",
+  "text": "Count the number of unique non-stop words across all '.txt' files in a specified directory.\nThe function should output with:\n    int: The total count of unique non-stop words across all files.\nYou should write self-contained code starting with:\n```\nimport nltk\nnltk.download('stopwords')\nfrom collections import Counter\nimport os\nfrom nltk.corpus import stopwords\n# Constants\nSTOPWORDS = set(stopwords.words('english'))\ndef task_func(directory_path):\n```"
+}

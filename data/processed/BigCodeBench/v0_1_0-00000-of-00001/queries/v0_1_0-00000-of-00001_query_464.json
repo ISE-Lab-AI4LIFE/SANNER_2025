@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_464",
+  "text": "Convert a string of numerical values separated by a specified separator into a pandas numerical series with int64, and then draw a histogram of the data. The function raises a ValueError if data is empty or it fails to convert the data. It plots the histogram with the following attributes: - grid: True - rwidth: 0.9 - color: '#607c8e'\nThe function should output with:\n    tuple: A tuple containing:\n    1. Series: A pandas Series of the data coonverted into integers.\n    2. Axes: The Axes object of the plotted histogram.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(data_str, separator=\",\", bins=20):\n```"
+}

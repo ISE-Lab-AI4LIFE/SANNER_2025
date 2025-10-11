@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_532",
+  "text": "Identify duplicate points in a DataFrame, perform KMeans clustering on the unique points, and record the clusters.\nThe function should output with:\n    tuple: A tuple containing:\n    Counter: A Counter object with the count of duplicate points.\n    pd.DataFrame: A DataFrame with an additional column 'cluster' representing cluster assignments for unique points.\n    Axes: A scatter plot of the clustered data.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nfrom sklearn.cluster import KMeans\nimport matplotlib.pyplot as plt\ndef task_func(df, n_clusters=3, random_state=None, n_init=10):\n```"
+}

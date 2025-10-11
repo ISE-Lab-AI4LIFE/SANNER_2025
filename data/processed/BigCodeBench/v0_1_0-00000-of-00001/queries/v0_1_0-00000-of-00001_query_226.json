@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_226",
+  "text": "Replace values in a DataFrame with a dictionary mapping and optionally record histograms for specified columns.\nThe function should raise the exception for: The function will raise a ValueError is input df is not a DataFrame.\nThe function should output with:\n    DataFrame: The DataFrame with replaced values. The columns are in the format of 'col1', 'col2', etc.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndef task_func(df, dct, columns=None, plot_histograms=False):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_280",
+  "text": "Draw x random 5-card poker hands from a 52-card pack (without suits) and return the hands along with a counter of the drawn cards. The output is random; hence, the returned list will vary with each call.\nThe function should output with:\n    tuple: A tuple containing two elements:\n    list of list str: Each inner list contains 5 strings, representing a 5-card poker hand.\n    Counter: A counter of the drawn cards.\nYou should write self-contained code starting with:\n```\nimport random\nfrom collections import Counter\n# Constants\nCARDS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']\ndef task_func(x=1):\n```"
+}

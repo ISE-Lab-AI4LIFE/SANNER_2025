@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_543",
+  "text": "Given a list of hexadecimal string keys, this function selects one at random, converts it into a floating-point number, and then computes its MD5 hash. An optional seed parameter allows for deterministic random choices for testing purposes.\nThe function should raise the exception for: ValueError: If contains invalid hexadecimal strings.\nThe function should output with:\n    str: The MD5 hash of the floating-point number derived from the randomly selected hexadecimal string.\nYou should write self-contained code starting with:\n```\nimport hashlib\nimport random\nimport struct\nKEYS = ['470FC614', '4A0FC614', '4B9FC614', '4C8FC614', '4D7FC614']\ndef task_func(hex_keys=KEYS, seed=42):\n```"
+}

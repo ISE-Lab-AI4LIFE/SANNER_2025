@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_906",
+  "text": "Reads all files with a specified extension in a given directory and returns their data in a dictionary. - Reads all files with the specified extension in the given directory. - Uses the filename without the extension as a key in the output dictionary. - The value for each key is a list of rows from the file, where each row is represented as a list of values. >>> data = task_func('/home/user/data', '.txt') >>> print(data) {}\nThe function should output with:\n    Returns a dictionary where each key is the filename (without extension) and the value is a list of rows from the file.\nYou should write self-contained code starting with:\n```\nimport os\nimport glob\nimport csv\ndef task_func(directory_path, file_extension='.csv'):\n```"
+}

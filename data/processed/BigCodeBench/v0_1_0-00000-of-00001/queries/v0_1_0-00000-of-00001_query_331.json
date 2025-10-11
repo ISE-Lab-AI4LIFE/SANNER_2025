@@ -1,0 +1,4 @@
+{
+  "id": "v0_1_0-00000-of-00001_query_331",
+  "text": "Find the k largest numbers in a random-generated list using heapq.\nThe function should output with:\n    tuple: A tuple containing two lists:\n    list[int]: The randomly generated list of integers with the specified length.\n    list[int]: The k largest numbers found using heapq.\nYou should write self-contained code starting with:\n```\nimport heapq\nimport random\ndef task_func(list_length:5, k:int):\n```"
+}
