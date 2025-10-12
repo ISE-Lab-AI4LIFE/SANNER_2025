@@ -35,14 +35,17 @@ def looks_like_llm(req):
 
     # Known LLM user-agent
     if any(tok.lower() in ua for tok in LLM_USER_AGENT_TOKENS):
+        logger.info(f"Detected LLM User-Agent: {ua}")
         return True
 
     # Automation / CLI tools
     if any(tok in ua for tok in AUTOMATION_USER_AGENTS):
+        logger.info(f"Detected Automation User-Agent: {ua}")
         return True
 
     # Custom header
     if req.headers.get("X-LLM-INVITE"):
+        logger.info(f"Detected X-LLM-INVITE header from: {ua}")
         return True
 
     # JS fingerprint check with grace period
@@ -50,9 +53,11 @@ def looks_like_llm(req):
     fp_time = fingerprint_received.get(ip)
     if fp_time:
         # If JS fingerprint received recently, treat as human
-        if datetime.utcnow() - fp_time < FINGERPRINT_GRACE:
+        if datetime.now() - fp_time < FINGERPRINT_GRACE:
+            logger.info(f"Recent fingerprint from {ip}, treating as human.")
             return False
     # If no fingerprint yet OR too old, **assume human for now**
+    logger.info(f"No recent fingerprint from {ip}, treating as human.")
     return False  # <- instead of True
 
 # ============ Logging ============
