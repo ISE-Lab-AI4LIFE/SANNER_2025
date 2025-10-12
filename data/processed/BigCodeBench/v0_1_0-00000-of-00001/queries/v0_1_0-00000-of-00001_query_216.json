@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_216",
-  "text": "Retrieve data from a specific API endpoint with the provided parameters, convert the data into a pandas dataframe, and draw a heatmap to show the correlation between numerical characteristics. The heatmap is displayed and also returned for further use or testing.\nThe function should raise the exception for: Thif function will raise a general Expection if the url is invalid, empty data, invalid data, and url cannot be accessed.\nThe function should output with:\n    tuple: A tuple containing:\n    DataFrame: The pandas DataFrame containing the data.\n    Axes: The matplotlib Axes object of the heatmap.\nYou should write self-contained code starting with:\n```\nimport requests\nimport json\nimport pandas as pd\nimport seaborn as sns\n# Constants\nHEADERS = {\n    'accept': 'application/json'\n}\ndef task_func(url, parameters):\n```"
-}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_233",
+  "text": "Generate a sales report from a DataFrame, excluding duplicate customer names. The report includes total sales and the most popular sales category.\nNote that: The function would return the first category in alphabetical order for \"Most Popular Category' in the case of tie\nThe function should raise the exception for: The function will raise a ValueError is input df is not a DataFrame.\nThe function should output with:\n    dict: A dictionary with keys 'Total Sales' (sum of sales) and 'Most Popular Category' (most frequent category).\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport collections\ndef task_func(df):\n```"
+}

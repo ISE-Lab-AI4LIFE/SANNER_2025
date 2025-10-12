@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1105",
+  "text": "Execute a specified python code with a given timeout. If the script execution exceeds the timeout, it is terminated. >>> task_func('/pathto/LongRunningScript.py', 30) 'Terminating process due to timeout.' Raise: - The code will raise FileNotFoundError if the file is not exist.\nNote that: If the script was terminated due to timeout it will return \"Script executed successfully.\", otherwise \"Terminating process due to timeout.\"\nThe function should output with:\n    str: A message indicating if the code was terminated due to timeout or executed successfully. The message is either \"Script executed successfully.\" or \"Terminating process due to timeout.\"\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport os\nimport threading\ndef task_func(script_path: str, timeout: int = 60) -> str:\n```"
+}

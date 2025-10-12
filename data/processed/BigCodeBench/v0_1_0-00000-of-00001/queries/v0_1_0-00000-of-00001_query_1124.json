@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1124",
-  "text": "Extracts all URLs from a string and retrieves the domain and the expiration date of the SSL certificate for each HTTPS URL. Only HTTPS URLs are processed; HTTP URLs are ignored. The function handles SSL errors by ignoring any HTTPS URLs where the SSL certificate cannot be retrieved due to such errors, and these domains are not included in the returned dictionary.\nThe function should output with:\n    dict: A dictionary with domains as keys and SSL certificate expiry dates in UTC format as values.\n    The dictionary includes only those HTTPS URLs for which the SSL certificate was successfully retrieved.\n    Domains with SSL errors are excluded.\nYou should write self-contained code starting with:\n```\nimport re\nimport urllib.parse\nimport ssl\nimport socket\ndef task_func(myString):\n```"
-}

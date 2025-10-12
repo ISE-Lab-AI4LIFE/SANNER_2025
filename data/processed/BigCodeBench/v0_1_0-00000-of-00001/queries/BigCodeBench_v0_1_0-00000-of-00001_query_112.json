@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_112",
+  "text": "Draw and return a heat map with temperature data from a pandas DataFrame.\nThe function should raise the exception for: ValueError: If 'df' is not a DataFrame or lacks 'Date', 'Time', or 'Temperature' columns.\nThe function should output with:\n    Axes: Seaborn heatmap object.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport seaborn as sns\ndef task_func(df):\n```"
+}

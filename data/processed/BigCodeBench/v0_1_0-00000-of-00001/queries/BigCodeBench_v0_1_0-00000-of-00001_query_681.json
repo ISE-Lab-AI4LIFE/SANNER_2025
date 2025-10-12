@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_681",
+  "text": "Standardize the functions in a DataFrame. The function applies standard scaling to the features.\nThe function should output with:\n    df (pandas.DataFrame): The DataFrame with the standardized features.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(df, features):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_695",
+  "text": "Generate all combinations from a tuple with length n and return a random combination of length n.\nThe function should output with:\n    tuple: A combination of the input tuple.\nYou should write self-contained code starting with:\n```\nimport itertools\nimport random\ndef task_func(t, n):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_551",
+  "text": "Given a nested list of menu items, this function flattens the list and returns a Pandas DataFrame detailing the count of each individual menu item with index name 'MenuItem'.\nThe function should output with:\n    DataFrame: A pandas DataFrame with menu items as indices and a 'Count' column showing the count of each menu item.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport pandas as pd\ndef task_func(list_of_menuitems):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_949",
-  "text": "Generate a matrix of random values with specified dimensions and scale it between 0 and 1. >>> task_func(2, 2) array([[0., 1.], [1., 0.]])\nThe function should output with:\n    ndarray: A numpy ndarray with scaled values between 0 and 1.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.preprocessing import MinMaxScaler\ndef task_func(rows=3, columns=2, seed=42):\n```"
-}

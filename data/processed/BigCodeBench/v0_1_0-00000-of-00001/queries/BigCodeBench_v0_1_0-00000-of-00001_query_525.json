@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_525",
+  "text": "Calculate statistical measurements (mean and standard deviation) of the values associated with each key in a list of dictionaries, and visualize mean and standard deviation with bar charts.\nThe function should raise the exception for: ValueError: If the input data is empty. TypeError: If the input is not a list of dictionaries or if any value in the dictionaries is not numeric.\nThe function should output with:\n    tuple:\n    dict: A dictionary with keys and their corresponding mean and standard deviation.\n    list: A list of matplotlib Axes objects for each key's visualization.\nYou should write self-contained code starting with:\n```\nfrom collections import defaultdict\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(data):\n```"
+}

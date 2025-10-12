@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_253",
+  "text": "Plot a list of data with different colors. If there are more data series than the predefined colors, the function cycles through the colors. In case of even more series than colors + labels, 'black' is used.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object of the plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nfrom itertools import zip_longest\n# Constants\nCOLORS = ['red', 'green', 'blue', 'yellow', 'purple']\ndef task_func(data, labels):\n```"
+}

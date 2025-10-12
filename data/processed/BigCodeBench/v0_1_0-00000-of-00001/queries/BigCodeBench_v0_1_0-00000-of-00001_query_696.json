@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_696",
+  "text": "Perform Principal Component Analysis (PCA) on a list of tuples.\nThe function should output with:\n    transformed_data (ndarray): The transformed data.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.decomposition import PCA\ndef task_func(tuples_list, n_components):\n```"
+}

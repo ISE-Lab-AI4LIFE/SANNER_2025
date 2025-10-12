@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_6",
-  "text": "Create a dictionary where keys are letters from a predefined list LETTERS and values are lists of random integers. Then, calculates the population standard deviation for each list of integers and returns a dictionary of these values. The random integers for each key are generated within the range 0 to 100, and each list contains between 1 to 10 integers.\nThe function should output with:\n    dict: A dictionary where each key corresponds to a letter from the input list and each value is the\n    population standard deviation of a list of random integers associated with that key.\nYou should write self-contained code starting with:\n```\nimport random\nimport math\ndef task_func(LETTERS=[chr(i) for i in range(97, 123)]):\n```"
-}

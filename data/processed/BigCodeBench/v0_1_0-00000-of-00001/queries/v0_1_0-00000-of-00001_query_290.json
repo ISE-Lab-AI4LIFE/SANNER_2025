@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_290",
-  "text": "Trains a simple neural network on provided data using k-fold cross-validation. The network has one hidden layer with 20 neurons and ReLU activation, and an output layer with sigmoid activation for binary classification.\nThe function should output with:\n    list: A list containing the training history of the model for each fold. Each history\n    object includes training loss and accuracy.\nYou should write self-contained code starting with:\n```\nimport tensorflow as tf\nfrom sklearn.model_selection import KFold\nfrom sklearn.preprocessing import MinMaxScaler\ndef task_func(X, y, n_splits, batch_size, epochs):\n```"
-}

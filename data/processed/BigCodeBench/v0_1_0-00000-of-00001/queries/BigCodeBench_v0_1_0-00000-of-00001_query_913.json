@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_913",
+  "text": "Count the frequency of each letter in a list after repeating it a given number of times.\nThe function should output with:\n    Returns a dictionary where the keys are the letters and the values are their frequencies.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport itertools\ndef task_func(letters: list, repetitions: int) -> dict:\n```"
+}

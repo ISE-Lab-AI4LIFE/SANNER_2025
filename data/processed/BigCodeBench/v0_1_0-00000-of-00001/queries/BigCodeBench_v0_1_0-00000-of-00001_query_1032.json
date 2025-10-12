@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1032",
+  "text": "Generate a histogram of the frequency of the top 30 unique random 3-letter strings. The function creates random strings, each consisting of 3 letters from the lowercase English alphabet. It then plots a histogram showing the frequencies of the top 30 most common strings among the generated set.\nThe function should raise the exception for: ValueError: If `n_rows` is less than or equal to 0.\nThe function should output with:\n    ax (matplotlib.axes.Axes): A Matplotlib Axes object containing the histogram.\n    Each bar represents one of the top 30 most frequent 3-letter strings.\nYou should write self-contained code starting with:\n```\nimport random\nimport string\nimport pandas as pd\ndef task_func(n_rows=1000):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_607",
+  "text": "Normalizes a 2D numeric array (matrix) using the Z score.\nThe function should output with:\n    DataFrame: The normalized DataFrame.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom scipy import stats\ndef task_func(matrix):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_904",
-  "text": "Perform linear regression to \"x,\" \"y,\" against \"z\" from a list of dictionaries \"d.\" >>> data = [{'x': 4, 'y': 20, 'z': 10}, {'x': 5, 'y': 25, 'z': 15}, {'x': 6, 'y': 5, 'z': 20}] >>> model = task_func(data, target='y') >>> isinstance(model, LinearRegression) True\nThe function should output with:\n    LinearRegression: A LinearRegression model.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\ndef task_func(d, target='z'):\n```"
-}

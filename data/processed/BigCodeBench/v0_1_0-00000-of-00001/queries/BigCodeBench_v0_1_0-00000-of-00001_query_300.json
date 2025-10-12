@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_300",
+  "text": "Generate all subsets of a given size from a tuple and calculate the product of the sums of the subsets. Additionally, return the top_n sums of the subsets. If the subset size is larger than the tuple length, return 1. If the subset size is 0, return 1.\nThe function should output with:\n    int: The product of the sums of the subsets.\n    list: The top_n sums of the subsets as a pandas Series.\nYou should write self-contained code starting with:\n```\nimport itertools\nimport math\nfrom pandas import Series\ndef task_func(elements, subset_size, top_n=2):\n```"
+}

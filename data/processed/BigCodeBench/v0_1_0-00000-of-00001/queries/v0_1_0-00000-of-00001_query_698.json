@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_698",
-  "text": "Use a linear regression model to predict the \"value\" of \"feature\" in the given dataframe and return the coefficients and intercept.\nThe function should output with:\n    result (dict): A dictionary with the coefficients and the intercept of the fitted linear regression model.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\ndef task_func(df):\n```"
-}

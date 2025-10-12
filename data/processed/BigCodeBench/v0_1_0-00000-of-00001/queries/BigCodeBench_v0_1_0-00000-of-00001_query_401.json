@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_401",
+  "text": "Search for a specific string within the JSON data of files in a given directory and its subdirectories. This function recursively scans the specified directory for JSON files, then checks each file to see if the given string is present within the JSON data structure.\nNote that: The string search is case-sensitive and looks for a match within the structure of the JSON data, not just as a substring in the file content. If the directory does not contain any JSON files or if no JSON files contain the string, an empty list is returned.\nThe function should output with:\n    list: A list of file paths (str) containing the string within their JSON data.\nYou should write self-contained code starting with:\n```\nimport json\nfrom glob import glob\ndef task_func(directory, string):\n```"
+}

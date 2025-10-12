@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_524",
-  "text": "Combine a list of dictionaries with the same keys into a single dictionary, turn it into a Pandas DataFrame and create a line plot of the data.\nThe function should output with:\n    matplotlib.axes._axes.Axes or None: Axes object of the plot showing 'Data over Time',\n    with 'Time' on the x-axis and 'Data Points' on the y-axis.\n    If data is empty, return None.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndef task_func(data):\n```"
-}

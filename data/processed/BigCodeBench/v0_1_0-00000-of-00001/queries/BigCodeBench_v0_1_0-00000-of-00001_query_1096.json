@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1096",
+  "text": "Extracts words from the input text that begin with the '$' character and saves them to a specified file, excluding any words that are solely composed of punctuation characters. This function is useful for processing texts where '$' is used to denote special terms or entities and saves these terms to a file for further analysis or usage.\nThe function should output with:\n    str: The absolute path to the output file containing the '$' prefixed words.\nYou should write self-contained code starting with:\n```\nfrom nltk.tokenize import RegexpTokenizer\nfrom string import punctuation\nimport os\ndef task_func(text, output_filename):\n```"
+}

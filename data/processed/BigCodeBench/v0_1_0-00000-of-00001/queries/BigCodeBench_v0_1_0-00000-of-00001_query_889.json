@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_889",
+  "text": "Merge / Concatenate multiple CSV files from a specified directory into a single Pandas DataFrame. If an empty list of files is passed, an empty DataFrame is returned.\nThe function should output with:\n    pd.DataFrame: A pandas DataFrame with the merged data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport os\ndef task_func(data_dir: str, csv_files: list) -> pd.DataFrame:\n```"
+}

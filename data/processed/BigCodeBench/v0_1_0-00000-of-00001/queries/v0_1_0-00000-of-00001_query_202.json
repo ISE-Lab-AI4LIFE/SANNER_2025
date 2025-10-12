@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_202",
-  "text": "Analyze a column of a pandas DataFrame, find the values that are larger than the average, and count the number of values that are larger than a given value.\nThe function should raise the exception for: ValueError: If the column does not exist in the DataFrame or value is not a number.\nThe function should output with:\n    tuple: A tuple containing (numpy.ndarray, int, matplotlib.axes.Axes).\n    The numpy array contains values greater than the average.\n    The int is the number of values greater than the given value.\n    The Axes object is for the generated histogram plot.\nYou should write self-contained code starting with:\n```\nimport bisect\nimport statistics\ndef task_func(df, column, value):\n```"
-}

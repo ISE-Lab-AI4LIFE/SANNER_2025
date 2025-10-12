@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_127",
-  "text": "Create a report on the number of animals in a zoo. For each animal, generate a random count within a specified range, calculate the mean, median, and standard deviation of these counts, and return a DataFrame with these statistics. Additionally, generate a bar chart of the counts.\nNote that: The mode is not included in the returned DataFrame due to the possibility of no repeating values in the randomly generated counts.\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns ['Animal', 'Mean', 'Median', 'Standard Deviation'].\n    Each animal's count is randomly generated 10 times within the range 1 to 100, inclusive.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom random import randint, seed as random_seed\nimport statistics\nimport numpy as np\ndef task_func(animals=None, seed=42):\n```"
-}

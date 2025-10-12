@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_875",
+  "text": "Calculate the Euclidean distances between consecutive points in a provided list of 2D coordinates. This function takes a list of tuples, where each tuple contains two numbers representing a point in 2D space. It computes the Euclidean distance between each consecutive pair of points. If an empty list or a single point is passed, the function returns an empty list. If a tuple contains just one number it is assumed that both coordinates are equal to this number. >>> task_func([(1, 2), (4), (-1.2, 4)]) [3.605551275463989, 5.2]\nThe function should output with:\n    list of floats: A list containing the Euclidean distances between\n    consecutive points. Each distance is a float.\nYou should write self-contained code starting with:\n```\nfrom itertools import zip_longest\nfrom scipy.spatial import distance\ndef task_func(points):\n```"
+}

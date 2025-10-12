@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_839",
+  "text": "Process a pandas Series of text data by lowercasing all letters, removing non-alphanumeric characters (except spaces), removing punctuation, and stemming each word to its root form. Stemming is done using the NLTK's PorterStemmer, which applies a series of rules to find the stem of each word.\nThe function should output with:\n    pandas.Series: A Series where each string has been processed to remove non-alphanumeric characters,\n    punctuation, converted to lowercase, and where each word has been stemmed.\nYou should write self-contained code starting with:\n```\nimport re\nfrom nltk.stem import PorterStemmer\ndef task_func(text_series):\n```"
+}

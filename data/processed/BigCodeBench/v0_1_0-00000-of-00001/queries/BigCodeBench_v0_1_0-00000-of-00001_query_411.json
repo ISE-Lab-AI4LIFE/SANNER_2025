@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_411",
+  "text": "Filters data in a specific date range from a column in an Excel file and returns a Pandas DataFrame of the filtered data.\nThe function should raise the exception for: FileNotFoundError: If the specified Excel file does not exist. ValueError: If start_date or end_date are in an incorrect format, or if column_name does not exist in the DataFrame.\nThe function should output with:\n    pd.DataFrame: A pandas DataFrame with the filtered data.\nYou should write self-contained code starting with:\n```\nimport os\nimport pandas as pd\nfrom datetime import datetime\ndef task_func(excel_directory: str, file_name: str, column_name: str, start_date: str, end_date: str) -> pd.DataFrame:\n```"
+}

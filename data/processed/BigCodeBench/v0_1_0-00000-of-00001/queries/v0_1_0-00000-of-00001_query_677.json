@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_677",
-  "text": "Generate a DataFrame that contains savegames for a number of games between different teams. Each row of the input DataFrame represents a match, and contains two teams and their respective scores. The function adds a 'winner' column to the DataFrame, which is the team with the highest score in each match. If the scores are equal, the winner is should be randomly decided.\nThe function should output with:\n    df (pandas.DataFrame): The DataFrame with the added 'winner' column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport random\ndef task_func(df):\n```"
-}

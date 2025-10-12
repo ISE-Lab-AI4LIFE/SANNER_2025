@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1112",
-  "text": "Given a dictionary of animals as keys and letters as values, count the frequency of each letter in the animals.\nNote that: Remove key in the dictionary if it is not an animal from ANIMAL constant\nThe function should output with:\n    dict: A dictionary with letters as keys and their frequencies as values, sorted in descending order by frequency. Format: {letter: frequency}.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nfrom operator import itemgetter\nimport itertools\n#CONSTANT\nANIMAL = ['cat', 'camel', 'cow', 'dog', 'elephant', 'fox', 'giraffe', 'hippo', 'iguana', 'jaguar']\ndef task_func(animal_dict):\n```"
-}

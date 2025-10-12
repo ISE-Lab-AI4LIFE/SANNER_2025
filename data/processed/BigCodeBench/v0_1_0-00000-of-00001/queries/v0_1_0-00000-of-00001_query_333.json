@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_333",
-  "text": "Count the number of non-stop words in a given text.\nThe function should output with:\n    dict: A dictionary with the words (as keys) and their counts (as values).\nYou should write self-contained code starting with:\n```\nimport re\nfrom collections import Counter\nfrom nltk.corpus import stopwords\ndef task_func(text: str) -> dict:\n```"
-}

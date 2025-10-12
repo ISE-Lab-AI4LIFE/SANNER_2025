@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_341",
-  "text": "Hashes the specified request data with BLAKE3 and then converts it into a hexadecimal representation. Additionally, generates an MD5 hash of the BLAKE3 hash for demonstration purposes (not for security). BLAKE3 is a cryptographic hash function that is much faster than MD5 and SHA-1, while providing high security.\nThe function should output with:\n    tuple:\n    str: The hexadecimal representation of the BLAKE3 hash of the request data.\n    str: An MD5 hash of the hexadecimal BLAKE3 representation, for demonstration.\nYou should write self-contained code starting with:\n```\nimport json\nimport hashlib\nimport blake3\ndef task_func(req_data):\n```"
-}

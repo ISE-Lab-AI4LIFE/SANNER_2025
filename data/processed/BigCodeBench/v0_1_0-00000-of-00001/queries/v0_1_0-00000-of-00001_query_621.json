@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_621",
-  "text": "Generates a DataFrame filled with random integers. The dimensions of the DataFrame (number of rows and columns) are determined by multiplying pairs of integers from nested lists within the input list of lists 'L'.\nThe function should output with:\n    DataFrame: A pandas DataFrame with random integers.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\n# Constants\nRANGE = (1, 100)\ndef task_func(L):\n```"
-}

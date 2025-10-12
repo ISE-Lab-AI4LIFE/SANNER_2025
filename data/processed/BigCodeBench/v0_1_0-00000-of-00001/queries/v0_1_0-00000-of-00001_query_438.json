@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_438",
-  "text": "Save the provided Pandas DataFrame \"df\" in a pickle file with the given name, read it back for validation, and delete the intermediate file.\nThe function should output with:\n    loaded_df (pd.DataFrame): The loaded DataFrame from the specified file.\nYou should write self-contained code starting with:\n```\nimport pickle\nimport os\ndef task_func(df, file_name=\"save.pkl\"):\n```"
-}

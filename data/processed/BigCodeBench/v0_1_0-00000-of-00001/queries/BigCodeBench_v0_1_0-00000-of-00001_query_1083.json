@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1083",
+  "text": "Calculates the Pearson correlation coefficient between numerical scores and categorical grades. This function performs three main tasks: 1. Converts scores from string format to floats. 2. Encodes categorical grades into numerical values based on their rank order. 3. Computes the Pearson correlation coefficient between the numerical scores and the encoded grades.\nThe function should output with:\n    correlation (float): The Pearson correlation coefficient between the converted numerical scores and encoded grades.\n    Returns NaN if the input data frame has less than 2 rows, as the correlation coefficient cannot be calculated in this case.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom scipy.stats import pearsonr\ndef task_func(data):\n```"
+}

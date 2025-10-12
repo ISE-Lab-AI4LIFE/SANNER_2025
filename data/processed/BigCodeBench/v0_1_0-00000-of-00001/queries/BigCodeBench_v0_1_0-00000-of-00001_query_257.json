@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_257",
+  "text": "Generate a random lowercase alphanumeric password of length password_length and then encrypt it as a JSON string. The password is hashed using SHA-256. The hashing uses the combination of the user provided salt and the complete conventional string representation of the user provided UTC datetime.\nThe function should raise the exception for: ValueError: If the utc_datetime is not a datetime object or the salt is not a string.\nThe function should output with:\n    str: The hashed password encoded as a JSON string.\nYou should write self-contained code starting with:\n```\nimport json\nimport random\nimport hashlib\nfrom datetime import datetime\ndef task_func(utc_datetime, salt='salt', password_length=10, seed=0):\n```"
+}

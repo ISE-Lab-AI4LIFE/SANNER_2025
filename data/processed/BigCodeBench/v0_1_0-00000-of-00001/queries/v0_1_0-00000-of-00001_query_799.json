@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_799",
-  "text": "Rollback the update of a directory by restoring it from a backup. Constants: - BACKUP_DIR: The directory where backups are stored. Default is '/tmp/backup'. >>> task_func('/tmp/nonexistent') 'Backup directory /tmp/backup does not exist. Cannot rollback update.'\nNote that: This function will return the restored directory path on successful rollback, or an error message otherwise.\nThe function should output with:\n    directory (str): The restored directory path if successful, otherwise an error message.\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\n# Constants\nBACKUP_DIR = '/tmp/backup'\ndef task_func(directory):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_12",
-  "text": "Converts elements in 'T1', a tuple of tuples containing string representations of integers, to integers and creates a list of random integers. The size of the list equals the sum of these integers. Returns the 25th, 50th, and 75th percentiles of this list.\nThe function should output with:\n    tuple: A tuple (p25, p50, p75) representing the 25th, 50th, and 75th percentiles of the list.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport itertools\nimport random\ndef task_func(T1, max_value=100):\n```"
-}

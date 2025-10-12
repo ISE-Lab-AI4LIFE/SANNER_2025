@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_741",
+  "text": "Create a dictionary in which the keys are letters and the values are random integers. Find the 3 most common letters in the dictionary.\nThe function should output with:\n    most_common_letters (list): The 3 most common letters.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport heapq\n# Constants\nLETTERS = list('abcdefghijklmnopqrstuvwxyz')\ndef task_func(my_dict):\n```"
+}

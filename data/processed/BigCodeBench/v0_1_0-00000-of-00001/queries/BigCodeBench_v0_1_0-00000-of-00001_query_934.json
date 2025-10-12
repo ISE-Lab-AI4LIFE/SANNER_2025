@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_934",
+  "text": "Converts a word into a list of tuples, with each tuple containing a lowercase English letter from the word and its position in the alphabet. Then, split the given word into a list of words.\nThe function should output with:\n    list of tuples: Each tuple consists of a letter from the input string and its corresponding position in the alphabet.\nYou should write self-contained code starting with:\n```\nimport string\nimport wordninja\ndef task_func(word):\n```"
+}

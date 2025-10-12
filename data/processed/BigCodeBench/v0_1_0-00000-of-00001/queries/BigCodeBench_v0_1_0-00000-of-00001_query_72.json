@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_72",
+  "text": "Load e-mail data from a CSV file, convert it into a Pandas DataFrame, and calculate the sum, mean, and standard deviation of the list associated with each e-mail. Additionally, this function will draw a histogram of the mean values and return both the DataFrame and the histogram plot.\nThe function should output with:\n    tuple: A tuple containing two elements:\n    DataFrame: A pandas DataFrame with columns 'email', 'list', 'sum', 'mean', and 'std'.\n    Axes: A histogram plot of the mean values.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport seaborn as sns\nimport numpy as np\nimport ast\ndef task_func(csv_file):\n```"
+}

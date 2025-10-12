@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_334",
-  "text": "Find the k smallest numbers in a randomly generated list using heapq.\nThe function should output with:\n    tuple: A tuple containing two lists:\n    list[int]: The randomly generated list of integers with the specified length.\n    list[int]: The k smallest numbers found using heapq.\nYou should write self-contained code starting with:\n```\nimport heapq\nimport random\ndef task_func(k, list_length = 5, min_value = 0, max_value = 100):\n```"
-}

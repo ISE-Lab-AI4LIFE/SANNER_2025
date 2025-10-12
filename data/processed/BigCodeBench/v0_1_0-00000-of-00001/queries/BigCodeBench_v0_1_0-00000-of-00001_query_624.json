@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_624",
+  "text": "Convert a list of lists into a list of integers, apply the KMeans clustering, and return a scatter plot 'matplotlib.axes.Axes' with data points color-coded by their cluster.\nThe function should output with:\n    matplotlib.axes.Axes: An Axes object representing the scatter plot.\nYou should write self-contained code starting with:\n```\nfrom itertools import chain\nimport numpy as np\nfrom sklearn.cluster import KMeans\ndef task_func(L):\n```"
+}

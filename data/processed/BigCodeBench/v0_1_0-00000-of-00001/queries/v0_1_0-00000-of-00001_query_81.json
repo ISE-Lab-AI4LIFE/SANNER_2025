@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_81",
-  "text": "Creates a Flask application with a specified templates folder. It defines a route at the root ('/') which handles POST requests, logs the information request data as a JSON, and renders an 'index.html' template using the data provided in POST requests.\nThe function should output with:\n    flask.app.Flask: A Flask application instance configured with a root route that handles POST requests.\n    The route logs incoming request data as JSON and serves the 'index.html' template with the provided data.\nYou should write self-contained code starting with:\n```\nfrom flask import Flask, render_template, request\nimport json\nimport logging\nlogging.basicConfig(filename=\"out.log\", level=logging.INFO)\ndef task_func(template_folder):\n```"
-}

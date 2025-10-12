@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_615",
-  "text": "Visualize the distribution of goals and penalties for a number of teams and return the data as a DataFrame with colomns 'Team', 'Goals' and 'Penalties'.\nThe function should output with:\n    tuple: A tuple containing:\n    DataFrame: A pandas DataFrame with the goals and penalties for the teams.\n    Axes: A seaborn pairplot visualization of goals and penalties distribution for the teams.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport seaborn as sns\ndef task_func(goals, penalties):\n```"
-}

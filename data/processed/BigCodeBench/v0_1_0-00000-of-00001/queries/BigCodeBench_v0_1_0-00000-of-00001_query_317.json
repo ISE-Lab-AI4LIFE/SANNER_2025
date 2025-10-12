@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_317",
+  "text": "Generate a category distribution within a specified range and return as a DataFrame.\nThe function should output with:\n    DataFrame: A pandas DataFrame that has two columns: 'Category' (category names) and 'Count' (count of each category).\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport random\n# Constants\nCATEGORIES = ['A', 'B', 'C', 'D', 'E']\ndef task_func(value_range=(0, 100)):\n```"
+}

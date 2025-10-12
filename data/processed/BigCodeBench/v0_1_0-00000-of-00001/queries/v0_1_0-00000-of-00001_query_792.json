@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_792",
-  "text": "Create a counter from a list \"l\" and move the first 3 elements to the end of the list.\nThe function should output with:\n    counter (collections.Counter): A frequency counter that maps elements from the input list to their frequencies in the first 30 elements of the cycled, shuffled list.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport random\nfrom itertools import cycle\n# Constants\nELEMENTS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']\ndef task_func(l):\n```"
-}

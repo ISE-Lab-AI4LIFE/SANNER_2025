@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_519",
+  "text": "Generate a Pandas DataFrame from a 2D list and calculate a distance matrix. This function converts a 2D list into a DataFrame, with columns named alphabetically starting from 'A'. It uses the `chr()` function, which converts an integer to its corresponding Unicode character, to dynamically assign alphabetical labels to each column based on their index. The function then computes the Euclidean distance matrix between rows.\nThe function should output with:\n    df (pd.DataFrame): data converted from 2D list.\n    distance_matrix (pd.DataFrame): output distance matrix.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom scipy.spatial.distance import pdist, squareform\ndef task_func(array):\n```"
+}

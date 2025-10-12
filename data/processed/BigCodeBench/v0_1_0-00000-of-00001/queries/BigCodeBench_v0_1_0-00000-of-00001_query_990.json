@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_990",
+  "text": "Generates a random string of specified length and evaluates it for specific characteristics.\nNote that: Notes: Predicates are deduplicated. Characters are randomly sampled from string ascii_letters, digits, and punctuation with replacement. Any invalid predicates provided will result in a KeyError. If no predicates are provided, the result dictionary will be empty.\nThe function should raise the exception for: ValueError: If the specified length is negative. KeyError: If any predicate is not recognized.\nThe function should output with:\n    tuple:\n    string: the generated random text\n    dict: the text's characteristics\nYou should write self-contained code starting with:\n```\nimport random\nimport string\ndef task_func(length: int, predicates: list, seed: int = None):\n```"
+}

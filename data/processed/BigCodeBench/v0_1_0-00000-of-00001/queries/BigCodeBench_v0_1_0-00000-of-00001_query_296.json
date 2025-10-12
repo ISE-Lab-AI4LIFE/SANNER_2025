@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_296",
+  "text": "Generate all subsets of a given size from a tuple and calculate the mean, median, and mode of the sums of the subsets. Args: - elements (tuple): A tuple of numbers from which subsets will be generated. - subset_size (int): The size of the subsets to be generated.\nThe function should output with:\n    dict: A dictionary with the mean, median, and mode of the sums of the subsets.\nYou should write self-contained code starting with:\n```\nimport itertools\nimport statistics\n# Refined function after importing required libraries\ndef task_func(elements, subset_size):\n```"
+}

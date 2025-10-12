@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_899",
-  "text": "Generate a specific number of random letter pairs, each from a predefined list, and analyze the frequency of each pair.\nThe function should output with:\n    Counter: A Counter object representing the frequency of each generated letter pair.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport random\nLETTERS = ['a', 'b', 'c', 'd', 'e']\ndef task_func(count, seed=0):\n```"
-}

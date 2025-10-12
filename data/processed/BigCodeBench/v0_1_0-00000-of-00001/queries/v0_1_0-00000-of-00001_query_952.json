@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_952",
-  "text": "Create a product catalog DataFrame where each row represents a product with the following columns: - 'Product Name': The name of the product with spaces replaced by underscores. - 'Category': The category to which the product belongs. - 'Price': The price of the product, generated randomly based on a normal distribution with a mean of 50 and a standard deviation of 10. Constants: - CATEGORIES: A list of categories used to randomly assign a category to each product.\nThe function should output with:\n    pd.DataFrame: A pandas DataFrame containing the product catalog information.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nimport random\nfrom random import randint, seed\n# Constants\nCATEGORIES = ['Electronics', 'Clothing', 'Home & Kitchen', 'Books', 'Toys & Games']\ndef task_func(mystrings, n_products, seed=0):\n```"
-}

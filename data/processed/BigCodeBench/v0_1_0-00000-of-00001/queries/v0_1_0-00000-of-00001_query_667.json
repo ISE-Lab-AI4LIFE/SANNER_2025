@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_667",
-  "text": "Find the subsequence in a string that has the maximum total weight based on the weights given for each character. The weights are assigned randomly and a subsequence is a sequence that can be derived from another sequence by deleting some elements without changing the order of the remaining elements.\nThe function should output with:\n    str: The subsequence with the highest weight.\nYou should write self-contained code starting with:\n```\nfrom itertools import combinations\nimport math\ndef task_func(seq, letter_weight_dict):\n```"
-}

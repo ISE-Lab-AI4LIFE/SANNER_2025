@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_932",
+  "text": "Find the occurrences of each two-letter combination in the sanitized word, where only alphabetic characters are considered.\nThe function should output with:\n    collections.defaultdict: A dictionary with keys as two-letter combinations and values as their counts in the sanitized word.\nYou should write self-contained code starting with:\n```\nfrom collections import defaultdict\nimport re\ndef task_func(word: str) -> dict:\n```"
+}

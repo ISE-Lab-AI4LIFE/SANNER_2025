@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_687",
+  "text": "Merges a predefined set of lists into a list and one-hot-encodes the elements of the list.\nThe function should output with:\n    one_hot (numpy.array): The one-hot encoding of the merged list.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.preprocessing import OneHotEncoder\ndef task_func(list_of_lists):\n```"
+}

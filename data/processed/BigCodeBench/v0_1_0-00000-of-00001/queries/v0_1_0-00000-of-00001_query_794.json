@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_794",
-  "text": "Create a numeric array from a list \"l\" and move the first 3 elements to the end of the array.\nThe function should output with:\n    arr (numpy.ndarray): The processed array with the first three elements moved to the end.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport random\n# Constants\nELEMENTS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']\ndef task_func(l=None):\n```"
-}

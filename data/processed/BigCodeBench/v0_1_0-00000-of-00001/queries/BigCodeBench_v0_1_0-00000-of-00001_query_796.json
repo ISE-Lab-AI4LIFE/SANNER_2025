@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_796",
+  "text": "Create a deque from a list, rotate it to the right by 3 positions, and return the deque. Also, for demonstration, calculates the square root of the sum of numeric elements in the deque, if there are any, and prints it. >>> task_func([1, 2, 3, 4, 5]) The square root of the sum of numeric elements: 3.872983346207417 deque([3, 4, 5, 1, 2])\nThe function should output with:\n    dq (collections.deque): A deque obtained from the input list after performing a right rotation by 3 positions.\nYou should write self-contained code starting with:\n```\nfrom collections import deque\nimport math\ndef task_func(l):\n```"
+}

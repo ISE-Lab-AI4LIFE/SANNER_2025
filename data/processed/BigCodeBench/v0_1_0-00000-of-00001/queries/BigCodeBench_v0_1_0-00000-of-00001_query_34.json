@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_34",
+  "text": "Calculate the product of the second values in each tuple in a list of tuples and return the product as a single-element numeric array.\nThe function should output with:\n    numpy.ndarray: A 1D numpy array containing a single element that is the product of the second values in the list of tuples.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom functools import reduce\ndef task_func(list_of_pairs):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_339",
+  "text": "Format each string in the given list \"elements\" into a pattern \"% {0}%\", where {0} is a randomly generated alphanumeric string of length 5. Additionally, return the plot axes of an histogram of the occurrence of each character across all the strings and a dictionary containing the count of each character in all the formatted strings.\nThe function should output with:\n    List[str]: A list of elements formatted with random patterns.\n    plt.Axes: The axes object of the histogram plot.\n    dict: A dictionary containing the count of each character in the formatted strings.\nYou should write self-contained code starting with:\n```\nimport random\nimport string\nfrom matplotlib import pyplot as plt\ndef task_func(elements, seed=100):\n```"
+}

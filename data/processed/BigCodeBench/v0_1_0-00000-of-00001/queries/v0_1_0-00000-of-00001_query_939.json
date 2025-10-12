@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_939",
-  "text": "Cleans the text in a pandas DataFrame column named 'text' by removing all special characters, punctuation marks, and spaces, then calculates the length of the cleaned text.\nThe function should output with:\n    pandas.DataFrame: A DataFrame with two new columns 'clean_text' and 'text_length', where 'clean_text' is the cleaned text and 'text_length' is its length.\nYou should write self-contained code starting with:\n```\nimport re\nimport pandas as pd\ndef task_func(input_df):\n```"
-}

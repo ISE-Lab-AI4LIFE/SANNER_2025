@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_693",
+  "text": "Given a list of tuples turn them into a Pandas DataFrame with math.sin applied to each number.\nThe function should output with:\n    df (DataFrame): A pandas DataFrame. Each row of df corresponds to a tuple from tuples_list, with the values being the sine of the original values in the tuple.\nYou should write self-contained code starting with:\n```\nimport math\nimport pandas as pd\ndef task_func(tuples_list):\n```"
+}

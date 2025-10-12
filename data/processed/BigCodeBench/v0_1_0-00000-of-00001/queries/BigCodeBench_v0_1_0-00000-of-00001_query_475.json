@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_475",
+  "text": "Generates a histogram and a probability density function (PDF) plot for a specified normal distribution. This function draws n_samples from a normal distribution defined by mean (mu) and standard deviation (sigma), plots a histogram of the samples, and overlays the PDF of the normal distribution. The histogram's density is normalized, and the PDF is plotted with a red line with linewidth=2.\nThe function should output with:\n    ax (matplotlib.axes._axes.Axes): Axes object with the histogram and PDF plotted.\n    samples (numpy.ndarray): Generated sample data.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\ndef task_func(n_samples=1000, mu=0, sigma=1, random_seed=0):\n```"
+}

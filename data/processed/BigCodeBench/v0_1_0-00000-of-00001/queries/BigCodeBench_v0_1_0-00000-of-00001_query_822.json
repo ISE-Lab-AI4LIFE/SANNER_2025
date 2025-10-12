@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_822",
+  "text": "Introduces a delay of 'delay_time' seconds in a specified number of separate threads and returns the thread completion messages. >>> task_func(1, 10) ['Delay in thread 0 completed', 'Delay in thread 1 completed', 'Delay in thread 2 completed', 'Delay in thread 3 completed', 'Delay in thread 4 completed', 'Delay in thread 5 completed', 'Delay in thread 6 completed', 'Delay in thread 7 completed', 'Delay in thread 8 completed', 'Delay in thread 9 completed']\nThe function should output with:\n    list: A list of strings containing the completion messages of the threads.\n    The completion message looks as follow:\n    'Delay in thread x completed'\nYou should write self-contained code starting with:\n```\nimport time\nimport threading\ndef task_func(delay_time: float = 1.0, num_threads: int = 5):\n```"
+}

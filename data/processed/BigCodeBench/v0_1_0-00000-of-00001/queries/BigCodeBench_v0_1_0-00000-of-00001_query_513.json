@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_513",
+  "text": "Analyze a list of sales data, calculate the sum, the mean, the minimum, the maximum of a given column, and return the bar chart plot for the given column without displaying it.\nThe function should raise the exception for: ValueError: If the quantity sold or total sales is negative.\nThe function should output with:\n    tuple: A tuple containing:\n    dict: A dictionary with the sum, mean, min, max of the column.\n    matplotlib.axes.Axes: The Axes object of the plotted bar chart. The bar chart will have Product in its\n    x-axis and the title Bar Chart of (column).\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(column, data):\n```"
+}

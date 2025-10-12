@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_406",
+  "text": "Generate a plot of random numbers such that indices are on the x-axis and generated numbers are on the y-axis.\nThe function should output with:\n    Returns a tuple containing:\n    A list of generated random numbers.\n    A matplotlib Axes object representing the plot.\nYou should write self-contained code starting with:\n```\nimport random\nimport matplotlib.pyplot as plt\ndef task_func(points: int):\n```"
+}

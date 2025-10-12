@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_206",
+  "text": "Executes a list of shell commands in parallel using multiprocessing, and collects their outputs.\nNote that: Notes: If `commands` is an empty list, the function returns an empty list without attempting to execute any commands.\nThe function should output with:\n    list: A list of byte strings, each representing the output of a command. Returns an empty list if `commands` is empty.\nYou should write self-contained code starting with:\n```\nimport subprocess\nfrom multiprocessing import Pool\ndef execute_command(command):\n    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)\n    output, _ = process.communicate()\n    return output\ndef task_func(commands):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1120",
+  "text": "Generate a random password of a specified length, including Latin characters, numbers, and symbols. Then, hash the password using the SHA256 algorithm after mixing it with a specified salt.\nThe function should output with:\n    str: The hashed password.\nYou should write self-contained code starting with:\n```\nimport codecs\nimport random\nimport string\nimport hashlib\ndef task_func(password_length=10, salt=\"salty\"):\n```"
+}

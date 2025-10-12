@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_447",
-  "text": "Create isotropic Gaussian blobs to form clusters and visualize them.\nThe function should output with:\n    tuple: A tuple containing:\n    X (numpy.ndarray): The matrix of blob points.\n    y (numpy.ndarray): The vector of blob labels.\n    ax (matplotlib.axes.Axes): The Axes object with the scatter plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nfrom sklearn.datasets import make_blobs\ndef task_func(n_samples=100, centers=3, n_features=2, random_seed=42):\n```"
-}

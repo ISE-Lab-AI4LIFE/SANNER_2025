@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_868",
-  "text": "This function takes two strings, removes any ASCII punctuation using regular expressions, and returns the cleaned strings as a tuple. It targets punctuation characters defined in `string.punctuation`, which includes the following characters: '!\"#$%&\\'()*+,-./:;<=>?@[\\\\]^_`{|}~' >>> cleaned_text1, cleaned_text2 = task_func(\"test (with parenthesis []!!)\", \"And, other; stuff ^_`\") >>> print(cleaned_text1, cleaned_text2) test with parenthesis  And other stuff\nNote that: This function may not remove non-ASCII or uncommon punctuation symbols.\nThe function should output with:\n    tuple: A tuple containing the cleaned texts (text1, text2) with punctuation removed.\nYou should write self-contained code starting with:\n```\nimport re\nimport string\ndef task_func(text1, text2):\n```"
-}

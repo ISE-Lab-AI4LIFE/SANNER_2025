@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_97",
-  "text": "Reads a CSV file and counts the most common words in the file. This function opens the specified CSV file using the provided delimiter, reads its contents, and counts the frequency of each word. It returns a list of tuples, each containing a word and its frequency, sorted by frequency in descending order.\nNote that: The function assumes that each cell in the CSV contains a single word.\nThe function should output with:\n    list of tuple: A list of tuples where each tuple contains a word and its count,\n    sorted by count in descending order.\nYou should write self-contained code starting with:\n```\nimport csv\nfrom collections import Counter\nimport operator\ndef task_func(csv_file, csv_delimiter):\n```"
-}

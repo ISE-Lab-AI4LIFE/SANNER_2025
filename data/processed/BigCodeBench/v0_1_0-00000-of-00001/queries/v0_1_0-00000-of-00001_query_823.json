@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_823",
-  "text": "Generate a random password with a specified length and number of digits. The function creates a random password consisting of letters and digits. The total length of the password and the number of digits in it are specified by the user. The characters in the password are randomly shuffled to ensure variability.\nThe function should output with:\n    str: A string representing the randomly generated password.\nYou should write self-contained code starting with:\n```\nimport random\nimport string\n# Constants\nLETTERS = string.ascii_letters\nDIGITS = string.digits\ndef task_func(length, num_digits):\n```"
-}

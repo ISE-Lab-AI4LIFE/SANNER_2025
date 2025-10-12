@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_470",
-  "text": "Create a report on students' grades in a class, including a count of each grade out of all possible grades and a bar chart. Note: Grades are case-insensitive but whitespace-sensitive. Those not in possible grades are ignored.\nThe function should output with:\n    Tuple[DataFrame, Axes]:\n    A pandas DataFrame with 'Grade' as the named index and their 'Count' as values.\n    A bar chart plot (matplotlib's Axes object) visualizing 'Grade Distribution', with 'Grade' on the\n    x-axis and 'Number of Students' on the y-axis.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom collections import Counter\ndef task_func(student_grades, possible_grades=[\"A\", \"B\", \"C\", \"D\", \"F\"]):\n```"
-}

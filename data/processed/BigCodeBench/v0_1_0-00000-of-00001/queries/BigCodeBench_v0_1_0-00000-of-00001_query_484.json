@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_484",
+  "text": "Reverse the order of words in a specific column of a pandas DataFrame where the words match a user-specified regular expression pattern, using a nested helper function. Words are considered to be whitespace-separated strings. This function maintains the original order of non-matching words.\nThe function should output with:\n    pd.DataFrame: A new pandas DataFrame with the specified column's words reordered\n    if they match the pattern, maintaining the original order of words that do not match,\n    and returning a copy of the unaltered DataFrame if the pattern is empty.\nYou should write self-contained code starting with:\n```\nimport re\nimport pandas as pd\ndef task_func(df: pd.DataFrame, column_name: str, pattern: str) -> pd.DataFrame:\n```"
+}

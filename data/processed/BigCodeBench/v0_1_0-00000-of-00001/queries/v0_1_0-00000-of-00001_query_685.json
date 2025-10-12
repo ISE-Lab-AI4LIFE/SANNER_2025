@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_685",
-  "text": "Process a Pandas DataFrame by removing a specific column and adding a 'IsEvenIndex' column. The 'IsEvenIndex' column is a boolean flag indicating if the index of each row is even.\nThe function should output with:\n    df (pd.DataFrame): The processed pandas DataFrame with the specified column removed and a new 'IsEvenIndex' column added.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(df, col):\n```"
-}

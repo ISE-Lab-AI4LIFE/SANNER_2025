@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1092",
-  "text": "Convert all Unicode string representations of dictionaries in all text files in the specified directory to Python dictionaries.\nNote that: Ensure that the text files in the directory contain valid Unicode string representations of dictionaries.\nThe function should raise the exception for: The function would raise a ValueError if there are text file(s) that have invalid dictionary representation\nThe function should output with:\n    list: A list of dictionaries extracted from the text files.\nYou should write self-contained code starting with:\n```\nimport ast\nimport os\nimport glob\n# Constants\nDIRECTORY = 'data'\ndef task_func(directory):\n```"
-}

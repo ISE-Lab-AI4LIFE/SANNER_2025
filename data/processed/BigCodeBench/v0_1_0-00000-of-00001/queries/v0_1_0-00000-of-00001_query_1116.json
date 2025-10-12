@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1116",
-  "text": "Assign each employee of a company a unique ID based on their department code, consisting of the department code, followed by a random string of 5 letters.\nThe function should output with:\n    list: A list of unique employee IDs for all departments.\nYou should write self-contained code starting with:\n```\nimport random\nfrom string import ascii_uppercase\ndef task_func(dict1):\n```"
-}

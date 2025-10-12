@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_197",
+  "text": "Create a list of random numbers, sort them and record the distribution of the numbers in a histogram using default settings in a deterministic seaborn plot. Return the axes object and the list of random numbers.\nThe function should raise the exception for: ValueError: If range_limit is less than or equal to 1.\nThe function should output with:\n    Tuple[matplotlib.axes._axes.Axes, List[int]]: The axes object with the plot and the list of random numbers.\nYou should write self-contained code starting with:\n```\nimport random\nimport seaborn as sns\nimport numpy as np\nfrom matplotlib import pyplot as plt\ndef task_func(length, range_limit=100, seed=0):\n```"
+}

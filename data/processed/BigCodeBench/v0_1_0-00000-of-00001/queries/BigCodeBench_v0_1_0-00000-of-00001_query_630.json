@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_630",
+  "text": "Writes multiple Pandas DataFrames to a single CSV file, separating each DataFrame by a line of hyphens (\"------\").\nThe function should output with:\n    None: The function writes the DataFrames to a CSV file but does not return any value.\nYou should write self-contained code starting with:\n```\nimport os\nimport time\nOUTPUT_DIR = './output'\ndef task_func(dataset, filename, output_dir=OUTPUT_DIR):\n```"
+}

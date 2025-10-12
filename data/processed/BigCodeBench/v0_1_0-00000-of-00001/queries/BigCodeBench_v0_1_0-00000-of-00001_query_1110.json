@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1110",
+  "text": "Tokenizes a text file using the NLTK library. This function reads each line from the file, breaks it into words or punctuation, and stores the tokens in a list.\nThe function should output with:\n    list: A list of tokens.\nYou should write self-contained code starting with:\n```\nimport os\nfrom nltk import word_tokenize\ndef task_func(file_path='File.txt'):\n```"
+}

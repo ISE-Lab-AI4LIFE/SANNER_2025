@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_983",
+  "text": "Plots a histogram for a specified column of a pandas DataFrame and overlays it with a fitted normal distribution curve.\nThe function should output with:\n    matplotlib.axes._axes.Axes: The matplotlib Axes object with the plot.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\ndef task_func(df, column, bins=30, density=True, alpha=0.6, color=\"g\", seed=None):\n```"
+}

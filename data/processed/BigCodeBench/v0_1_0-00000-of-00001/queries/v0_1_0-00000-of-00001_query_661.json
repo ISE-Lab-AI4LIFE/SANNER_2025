@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_661",
-  "text": "Scale the \"x\" and \"y\" arrays using the standard scaler of sklearn and plot them with given labels. Each pair of x and y arrays are scaled independently and plotted as a separate series with a label.\nThe function should output with:\n    matplotlib.figure.Figure: The figure object containing the plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(x, y, labels):\n```"
-}

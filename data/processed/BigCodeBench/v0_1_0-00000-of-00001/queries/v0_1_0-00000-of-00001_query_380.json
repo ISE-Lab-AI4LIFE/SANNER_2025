@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_380",
-  "text": "Generate a Pandas DataFrame with specified length and random data and then record the data.\nThe function should output with:\n    DataFrame: A pandas DataFrame with random data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\n# Constants\nCOLUMNS = ['Column1', 'Column2', 'Column3', 'Column4', 'Column5']\ndef task_func(length):\n```"
-}

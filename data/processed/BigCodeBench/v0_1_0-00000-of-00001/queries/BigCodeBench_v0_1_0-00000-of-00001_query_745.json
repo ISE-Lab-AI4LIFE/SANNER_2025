@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_745",
+  "text": "Finds all words in a text, that are seperated by whitespace, beginning with the \"$\" character and computes their number of occurences. >>> text = \"$hello this i$s a $test $test $test\" >>> task_func(text) Word  Frequency 0  $hello          1 1   $test          3\nNote that: The function ignores words that are entirely made up of punctuation, even if they start with a '$'.\nThe function should raise the exception for: ValueError: if text is not a string\nThe function should output with:\n    DataFrame: A pandas DataFrame with two columns: \"Word\" and \"Frequency\".\n    \"Word\" contains the '$' prefixed words, and \"Frequency\" contains their occurrences.\nYou should write self-contained code starting with:\n```\nimport nltk\nfrom string import punctuation\nimport pandas as pd\ndef task_func(text):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_237",
-  "text": "Predicts categories based on 'Age' and 'Score' in a given DataFrame using a Random Forest Classifier. Rows with duplicate 'Name' entries are dropped before the prediction. The function uses a Random Forest Classifier from sklearn to make predictions and evaluates the model using accuracy.\nThe function should raise the exception for: The function will raise a ValueError is input df is not a DataFrame.\nThe function should output with:\n    float: The accuracy of the prediction as a float value.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\ndef task_func(df, test_size=0.2, random_state=42):\n```"
-}

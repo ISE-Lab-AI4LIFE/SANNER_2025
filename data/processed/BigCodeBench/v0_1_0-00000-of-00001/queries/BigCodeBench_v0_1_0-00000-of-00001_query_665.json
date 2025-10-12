@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_665",
+  "text": "Plot sales trends for five products over a year, highlighting variability with standard deviation shading with 'Month' on x-axis and 'Sales' on y-axis.\nThe function should output with:\n    ax (matplotlib.axes.Axes): Axes object with the sales trends plot.\nYou should write self-contained code starting with:\n```\nimport statistics\nimport matplotlib.pyplot as plt\ndef task_func(sales_data):\n```"
+}

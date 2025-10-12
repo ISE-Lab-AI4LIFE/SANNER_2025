@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_407",
+  "text": "Open an image, rotate it around a certain angle, and then display both the original and the rotated images side by side. Additionally, return both images as numpy arrays.\nThe function should raise the exception for: FileNotFoundError: If the image file does not exist at the specified path.\nThe function should output with:\n    tuple: A tuple containing two numpy arrays, the first representing the original image and\n    the second representing the rotated image. Expands the rotated image to make it large enough to hold the entire rotated image.\nYou should write self-contained code starting with:\n```\nfrom PIL import Image\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport os\ndef task_func(img_path, angle):\n```"
+}

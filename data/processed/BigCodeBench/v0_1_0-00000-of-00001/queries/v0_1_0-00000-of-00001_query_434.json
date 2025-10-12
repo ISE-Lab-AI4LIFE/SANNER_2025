@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_434",
-  "text": "Validates the HMAC SHA-1 signature of a base64-encoded message against a provided signature using a specified secret key. This function first decodes the base64-encoded message, then computes its HMAC SHA-1 hash using the provided secret key, and finally compares this computed hash with the provided signature. >>> task_func('SGVsbG8gV29ybGQ=', 'incorrect_signature', 'my_secret_key') False\nThe function should output with:\n    bool: Returns True if the provided signature matches the computed signature, False otherwise.\nYou should write self-contained code starting with:\n```\nimport base64\nimport hashlib\nimport hmac\nimport binascii\ndef task_func(s, signature, secret_key):\n```"
-}

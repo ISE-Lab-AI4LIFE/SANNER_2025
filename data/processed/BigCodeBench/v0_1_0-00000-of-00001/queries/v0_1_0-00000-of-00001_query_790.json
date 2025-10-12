@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_790",
-  "text": "Generate a random array and apply min-max normalization (scaling) to transform the array values into a range between 0 and 1.\nThe function should output with:\n    scaled_array (numpy.ndarray): The normalized array.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.preprocessing import MinMaxScaler\n# Constants\nARRAY_LENGTH = 10\ndef task_func():\n```"
-}

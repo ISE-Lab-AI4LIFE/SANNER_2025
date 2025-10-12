@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_617",
+  "text": "Generate a Dataframe to show the football match results of teams 'Team' with random goals 'Goals' and penalties 'Penalty Cost', and create a bar plot of the results. Penalties are converted into fines according to the penalty costs.\nThe function should output with:\n    DataFrame: A pandas DataFrame containing columns for teams, their goals, and penalty costs.\n    Axes: A matplotlib Axes object representing the bar plot of the results.\nYou should write self-contained code starting with:\n```\nfrom random import randint, seed\nimport matplotlib.pyplot as plt\nimport pandas as pd\n# Constants (they can be overridden with default parameters)\nTEAMS = ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']\nPENALTY_COST = 1000  # in dollars\ndef task_func(goals, penalties, teams=TEAMS, penalty_cost=PENALTY_COST, rng_seed=None):\n```"
+}

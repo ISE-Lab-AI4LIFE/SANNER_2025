@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_882",
-  "text": "Search for matches with a specified regex pattern in a given column of a CSV file and optionally return a random sample of these matches. The random sampling is implemented by generating a random list of integers which are used as indices. The number of generated indices is given by sample_size.\nThe function should output with:\n    DataFrame: A pandas DataFrame containing either all the rows with matches or a random sample of them.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport pandas as pd\nimport random\ndef task_func(csv_file, column_name='data', pattern='\\d+[xX]', sample_size=None, seed=42):\n```"
-}

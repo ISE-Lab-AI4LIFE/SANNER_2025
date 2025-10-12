@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_722",
-  "text": "This function reads the specified CSV file, counts the frequency of each word, and returns the most common word along with its frequency.\nNote that: The function specifically reads from the given file path. This example uses +SKIP because it relies on external file content.\nThe function should output with:\n    tuple: The most common word and its frequency, or None if the file doesn't exist or is empty.\nYou should write self-contained code starting with:\n```\nimport os\nimport csv\nfrom collections import Counter\ndef task_func(file_path):\n```"
-}

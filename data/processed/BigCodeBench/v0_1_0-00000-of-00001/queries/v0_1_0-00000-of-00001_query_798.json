@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_798",
-  "text": "Count the total number of brackets (i.e., '(', ')', '{', '}', '[', ']') in a pandas DataFrame. >>> df = pd.DataFrame({'Test': ['(a)', 'b', '[[[[))c']}) >>> task_func(df) 8\nNote that: The function uses a specific pattern '[(){}[\\]]' to identify brackets.\nThe function should raise the exception for: TypeError: If input is not a DataFrame\nThe function should output with:\n    int: The total number of brackets.\nYou should write self-contained code starting with:\n```\nimport re\nimport pandas as pd\ndef task_func(df: pd.DataFrame) -> int:\n```"
-}

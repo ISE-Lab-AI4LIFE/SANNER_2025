@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_377",
-  "text": "Calculate the frequency of continuous words in a text string. The function splits the text into words, converts them to lowercase, removes punctuation marks and common stopwords (provided as a constant), and then calculates the frequency of each word.\nThe function should output with:\n    dict: A dictionary with words as keys and their frequencies as values.\nYou should write self-contained code starting with:\n```\nimport nltk\nimport re\nfrom collections import Counter\n# Constants\nSTOPWORDS = nltk.corpus.stopwords.words('english')\ndef task_func(text):\n```"
-}

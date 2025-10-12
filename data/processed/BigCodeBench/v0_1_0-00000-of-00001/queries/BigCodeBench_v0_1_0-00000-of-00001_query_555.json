@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_555",
+  "text": "Generates a palindrome sentence using random words from a specified pool. The sentence's length is randomly chosen between a minimum (MIN_WORDS) and maximum (MAX_WORDS) number of words. The function ensures that the sentence reads the same forwards and backwards. Check if the generated sentence length is within the specified range. >>> sentence = task_func(MIN_WORDS, MAX_WORDS, WORDS_POOL) >>> MIN_WORDS <= len(sentence.split()) <= MAX_WORDS True\nThe function should output with:\n    str: The generated palindrome sentence.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport random\ndef task_func(MIN_WORDS, MAX_WORDS, WORDS_POOL):\n```"
+}

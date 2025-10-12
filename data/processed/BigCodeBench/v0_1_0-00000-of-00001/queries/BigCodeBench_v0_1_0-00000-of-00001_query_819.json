@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_819",
+  "text": "Divide a string into words, remove punctuation marks and convert them to lowercase letters.\nThe function should output with:\n    cleaned_words (list): A list of cleaned words.\nYou should write self-contained code starting with:\n```\nimport re\nimport string\n# Constants\nPUNCTUATION = string.punctuation\ndef task_func(text):\n```"
+}

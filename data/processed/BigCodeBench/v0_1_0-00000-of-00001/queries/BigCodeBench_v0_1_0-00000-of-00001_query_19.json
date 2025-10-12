@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_19",
+  "text": "Divide a CSV file into several smaller files and shuffle the lines in each file. This function takes a CSV file path as input, divides it into smaller files using the shell 'split' command, and shuffles the rows in each of the resulting files. The output files are named with a 'split_' prefix.\nThe function should output with:\n    list: The paths to the split files. Returns an empty list if the file does not exist, is not a CSV file, or if an error occurs during processing.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport csv\nimport glob\nimport random\nimport os\ndef task_func(file):\n```"
+}

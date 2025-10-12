@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1111",
-  "text": "Given a dictionary of words as keys and letters as values, count the frequency of each letter in the words.\nThe function should output with:\n    dict: A dictionary with letters as keys and their frequencies as values.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nfrom operator import itemgetter\nimport itertools\ndef task_func(word_dict):\n```"
-}

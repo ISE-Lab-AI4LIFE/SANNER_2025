@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_439",
+  "text": "Save a Matplotlib image generated from the provided \"numbers\" list in a pickle file. The function then reads the image back from the file for validation and deletes the pickle file afterward.\nThe function should raise the exception for: TypeError: If the input is not a list of numbers.\nThe function should output with:\n    loaded_fig (matplotlib.figure.Figure): The loaded matplotlib figure from file_path.\nYou should write self-contained code starting with:\n```\nimport pickle\nimport os\nimport matplotlib.pyplot as plt\ndef task_func(numbers, file_path=\"save.pkl\"):\n```"
+}

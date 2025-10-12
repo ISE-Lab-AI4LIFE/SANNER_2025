@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_552",
+  "text": "Given a nested list of menu items, this function flattens the list and visualizes the frequency of each menu item using a seaborn barplot.\nThe function should output with:\n    matplotlib.axes.Axes: An Axes object representing the visualization, or None if there are no items to plot.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport matplotlib.pyplot as plt\nimport pandas as pd\nimport seaborn as sns\ndef task_func(list_of_menuitems):\n```"
+}

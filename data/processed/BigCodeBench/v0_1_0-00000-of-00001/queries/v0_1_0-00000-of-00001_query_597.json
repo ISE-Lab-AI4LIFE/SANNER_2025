@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_597",
-  "text": "Generate and draw random data in real time for the specified duration.\nThe function should output with:\n    tuple: A tuple containing two lists.\n    The first list contains timestamps (as strings) in the format '%H:%M:%S.%f'.\n    The second list contains the generated random values.\nYou should write self-contained code starting with:\n```\nimport time\nfrom datetime import datetime\nfrom random import randint\nimport matplotlib.pyplot as plt\ndef task_func(duration):\n```"
-}

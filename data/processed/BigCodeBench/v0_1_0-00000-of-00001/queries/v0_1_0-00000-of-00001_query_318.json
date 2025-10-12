@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_318",
-  "text": "Extract all texts not enclosed in square brackets into a string and calculate the TF-IDF values which are returned as a dictionary.\nThe function should output with:\n    dict: A dictionary with words as keys and TF-IDF scores as values.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nimport re\ndef task_func(example_str):\n```"
-}

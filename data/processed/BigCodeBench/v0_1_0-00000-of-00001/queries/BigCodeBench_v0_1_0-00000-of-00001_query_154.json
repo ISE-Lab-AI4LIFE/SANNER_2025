@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_154",
+  "text": "Transforms categorical data into a numerical format suitable for machine learning algorithms using sklearn's LabelEncoder. This function generates a DataFrame that pairs original categorical values with their numerical encodings.\nThe function should output with:\n    DataFrame: A DataFrame with columns 'Category' and 'Encoded', where 'Category' is the original data and 'Encoded'\n    is the numerical representation.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import LabelEncoder\ndef task_func(data):\n```"
+}

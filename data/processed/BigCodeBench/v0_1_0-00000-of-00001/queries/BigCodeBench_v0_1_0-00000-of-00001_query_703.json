@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_703",
+  "text": "Perform Principal Component Analysis (PCA) on the DataFrame and record the first two main components.\nThe function should output with:\n    df_pca (DataFrame): The DataFrame with the first two principal components named 'PC1' and 'PC2' as columns.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.decomposition import PCA\ndef task_func(df):\n```"
+}

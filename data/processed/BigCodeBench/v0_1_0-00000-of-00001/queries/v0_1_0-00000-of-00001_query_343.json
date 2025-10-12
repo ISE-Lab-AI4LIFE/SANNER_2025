@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_343",
-  "text": "Replace each character in each element of the Elements list with a random character and format the element into a pattern \"%{0}%\", where {0} is the replaced element. Finally, concatenate all the formatted elements into a single string and search for the regex pattern specified in the parameter pattern. Return the true or false value based on the search result.\nThe function should output with:\n    List[str]: The list of formatted elements with replaced characters.\n    bool: The search result based on the regex pattern.\nYou should write self-contained code starting with:\n```\nimport string\nimport random\nimport re\ndef task_func(elements, pattern, seed=100):\n```"
-}

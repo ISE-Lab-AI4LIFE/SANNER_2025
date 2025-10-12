@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_941",
-  "text": "Remove all special characters, punctuation marks and spaces from a string called \"input _ str\" using regex and then count the frequency of each word.\nThe function should output with:\n    dict: A dictionary with the frequency of each word.\nYou should write self-contained code starting with:\n```\nimport re\nfrom nltk import word_tokenize\nfrom collections import Counter\ndef task_func(input_str):\n```"
-}

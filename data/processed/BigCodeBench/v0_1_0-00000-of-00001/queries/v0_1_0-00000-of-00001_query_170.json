@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_170",
-  "text": "Apply a Gaussian filter to a given image and draw the original and filtered images side by side.\nThe function should raise the exception for: ValueError: If sigma is non-positive. TypeError: If the input is not a numpy array.\nThe function should output with:\n    ax (matplotlib.axes.Axes): Axes object containing the plot. Two plots with titles 'Original' and 'Filtered'.\n    filtered_image (numpy.ndarray): The numpy array of pixel values for the filtered image.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.ndimage import gaussian_filter\ndef task_func(image, sigma=2):\n```"
-}

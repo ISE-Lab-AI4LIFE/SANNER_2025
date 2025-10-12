@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_4",
-  "text": "Create a dictionary where keys are specified letters and values are lists of random integers. Then calculate the mean of these integers for each key and return a dictionary of these means.\nThe function should output with:\n    dict: A dictionary where each key is a letter from the input list and the value is the mean of\n    a randomly generated list of integers (with each list having 1 to 10 integers ranging from 0 to 100).\nYou should write self-contained code starting with:\n```\nimport random\nimport numpy as np\ndef task_func(LETTERS):\n```"
-}

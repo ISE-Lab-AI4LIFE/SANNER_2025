@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_508",
+  "text": "Analyzes a list of stock data and calculates the sum, mean, minimum, and maximum values for a specified column.\nThe function should raise the exception for: ValueError: If the specified column name is not valid.\nThe function should output with:\n    dict: A dictionary containing the calculated 'sum', 'mean', 'min' (minimum), and 'max' (maximum)\n    for the specified column. If the input data is empty, 'sum' will be 0, and 'mean', 'min', and\n    'max' will be NaN.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(column, data):\n```"
+}

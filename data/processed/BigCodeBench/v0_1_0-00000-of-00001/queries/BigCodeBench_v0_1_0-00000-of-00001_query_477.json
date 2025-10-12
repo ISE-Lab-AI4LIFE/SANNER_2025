@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_477",
+  "text": "Adjust a quadratic function to the given data (X, Y) and plot the data along with the fit.\nThe function should output with:\n    tuple:\n    list: The optimized parameters of the quadratic function (a, b, c).\n    matplotlib.axes.Axes: The plot showing the scatter data points and the quadratic fit.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nfrom scipy.optimize import curve_fit\ndef task_func(X, Y):\n```"
+}

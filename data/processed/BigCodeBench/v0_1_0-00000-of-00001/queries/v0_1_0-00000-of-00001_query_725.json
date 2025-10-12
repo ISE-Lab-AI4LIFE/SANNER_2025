@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_725",
-  "text": "Load a JSON configuration file and return the configuration dictionary.\nThe function should raise the exception for: FileNotFoundError: If the provided configuration file does not exist.\nThe function should output with:\n    config (dict): Configuration dictionary loaded from the file.\nYou should write self-contained code starting with:\n```\nimport os\nimport json\ndef task_func(config_path: str) -> dict:\n```"
-}

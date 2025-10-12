@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_116",
-  "text": "Creates and returns a dictionary with the mode and entropy of a numpy array constructed from a given list. The function first converts the list into a numpy array, then calculates the mode and the entropy (base 2) of this array, and finally adds them to the initial dictionary with the keys 'mode' and 'entropy'.\nThe function should raise the exception for: ValueError if the input list `numbers` is empty\nThe function should output with:\n    dict: A dictionary containing the 'mode' and 'entropy' of the array with their respective calculated values.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy.stats import mode\nfrom scipy.stats import entropy\ndef task_func(numbers):\n```"
-}

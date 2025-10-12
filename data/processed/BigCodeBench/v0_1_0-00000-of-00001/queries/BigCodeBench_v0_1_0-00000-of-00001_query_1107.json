@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1107",
+  "text": "Determine the creation time of a file and convert it to a formatted string '% Y-% m-% d% H:% M:% S'.\nThe function should output with:\n    str: The creation time of the file in the format '%Y-%m-%d %H:%M:%S'.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport os\nfrom pathlib import Path\n# Constants\nDATE_FORMAT = '%Y-%m-%d %H:%M:%S'\ndef task_func(file_path):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1077",
-  "text": "Convert a list of time strings from UTC to a specified timezone and return a DataFrame. The function processes each UTC time string in the given list, converts it to the specified timezone, and stores the results in a DataFrame.\nNote that: The function assumes that the input times are in UTC.\nThe function should output with:\n    pandas.DataFrame: A DataFrame with two columns: 'Original Time'\n    containing the UTC times and 'Converted Time' containing the times converted to the target timezone.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport pandas as pd\n# For Python versions lower than 3.9, use 'pytz' instead of 'zoneinfo'\ntry:\n    from zoneinfo import ZoneInfo\nexcept ImportError:\n    from pytz import timezone as ZoneInfo\nTIME_FORMAT = \"%d/%m/%y %H:%M:%S.%f\"\ndef task_func(time_strings, target_tz):\n```"
-}

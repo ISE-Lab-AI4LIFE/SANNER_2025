@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_606",
+  "text": "Visualize a 2D numeric array (matrix) as a heatmap using matplotlib, specifying a cmap for the color mapping and interpolation to control the pixel rendering.\nThe function should output with:\n    ax (matplotlib.axes._axes.Axes): The Axes object with the heatmap of th 'hot' colormap.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndef task_func(matrix):\n```"
+}

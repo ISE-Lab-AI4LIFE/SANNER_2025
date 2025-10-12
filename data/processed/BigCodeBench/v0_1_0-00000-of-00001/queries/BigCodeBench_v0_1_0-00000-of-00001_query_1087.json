@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1087",
+  "text": "Generates a DataFrame with two columns: a string field and a float field. The string field contains randomly generated strings of 10 ASCII letters. The float field contains randomly generated numbers between 0 and 10000, formatted with two decimal places and a comma as the thousands separator.\nNote that: The exact values in the dataset will vary as they are randomly generated.\nThe function should output with:\n    DataFrame: A pandas DataFrame with NUM_SAMPLES rows. Each row contains a\n    random string in the 'String Field' column and a formatted float in the\n    'Float Field' column.\nYou should write self-contained code starting with:\n```\nimport string\nimport random\nimport pandas as pd\nimport numpy as np\n# Constants\nNUM_SAMPLES = 1000  # Number of samples\ndef task_func():\n```"
+}

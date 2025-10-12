@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_395",
-  "text": "Generate a random string of a given length using ASCII letters and calculate the frequency of each character.​\nThe function should output with:\n    dict: A dictionary with the frequency of each character in the generated string.\nYou should write self-contained code starting with:\n```\nimport collections\nimport string\nimport random\ndef task_func(length, seed=0):\n```"
-}

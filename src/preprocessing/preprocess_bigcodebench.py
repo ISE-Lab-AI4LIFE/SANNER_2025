@@ -33,17 +33,17 @@ for file in tqdm.tqdm(parquet_files, desc="Processing raw parquet files", unit="
 
     # Lưu từng query riêng lẻ
     for idx, row in df_new.iterrows():
-        query_file = queries_dir / f"{filename}_query_{idx+1}.json"
+        query_file = queries_dir / f"BigCodeBench_{filename}_query_{idx+1}.json"
         with query_file.open("w", encoding="utf-8") as fq:
-            json.dump({"id": f"{filename}_query_{idx+1}", "text": row["instruct_prompt"]}, fq, ensure_ascii=False, indent=2)
+            json.dump({"id": f"BigCodeBench_{filename}_query_{idx+1}", "text": row["instruct_prompt"]}, fq, ensure_ascii=False, indent=2)
 
     # Lưu document đã merge theo batch BATCH_SIZE
     for batch_start in tqdm.tqdm(range(0, len(df_new), BATCH_SIZE), desc=f"Batches for {filename}", unit="batch"):
         batch = df_new.iloc[batch_start: batch_start + BATCH_SIZE]
         merged_docs = DOC_SEP.join(batch["canonical_solution"].astype(str).tolist())
         record_id = batch_start // BATCH_SIZE + 1
-        doc_file = documents_dir / f"{filename}_document_{record_id}.json"
+        doc_file = documents_dir / f"BigCodeBench_{filename}_document_{record_id}.json"
         with doc_file.open("w", encoding="utf-8") as fd:
-            json.dump({"id": f"{filename}_document_{record_id}", "text": merged_docs}, fd, ensure_ascii=False, indent=2)
+            json.dump({"id": f"BigCodeBench_{filename}_document_{record_id}", "text": merged_docs}, fd, ensure_ascii=False, indent=2)
 
     print(f"✅ Done saving merged batches for {filename} in {sub_dir}")

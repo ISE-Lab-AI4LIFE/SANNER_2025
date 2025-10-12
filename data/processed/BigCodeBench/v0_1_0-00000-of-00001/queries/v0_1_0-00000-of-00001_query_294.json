@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_294",
-  "text": "Generate all subsets of a given size from a tuple and draw a histogram of the sums of the subsets. Additionally, return the Axes object of the plotted histogram and the combinations of the subsets and their sums.\nThe function should output with:\n    matplotlib.axes.Axes: Axes object of the plotted histogram.\n    list: List of all the combinations of subsets.\n    list: List of the sums of all the subsets.\nYou should write self-contained code starting with:\n```\nimport itertools\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(elements, subset_size):\n```"
-}

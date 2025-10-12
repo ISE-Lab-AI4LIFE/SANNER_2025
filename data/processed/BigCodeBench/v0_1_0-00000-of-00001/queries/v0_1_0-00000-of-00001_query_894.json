@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_894",
-  "text": "Analyze the given list of logs for the occurrence of errors and calculate the average time of occurrence of errors.\nThe function should output with:\n    list: A list of times when errors occurred.\n    time: The average time of occurrence of these errors.\nYou should write self-contained code starting with:\n```\nimport re\nfrom datetime import time\ndef task_func(logs: list):\n```"
-}

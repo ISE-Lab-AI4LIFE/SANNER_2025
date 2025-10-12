@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_320",
+  "text": "Extract all texts that are not enclosed in square brackets from the given string and plot a frequency distribution of the words. Also return the top_n most common words in the frequency distribution as a dictionary.\nThe function should output with:\n    Axes: A matplotlib Axes object representing the frequency distribution plot.\n    dict: A dictionary containing the top_n most common words and their frequencies.\nYou should write self-contained code starting with:\n```\nimport re\nimport matplotlib.pyplot as plt\nfrom nltk.probability import FreqDist\ndef task_func(example_str, top_n=30):\n```"
+}

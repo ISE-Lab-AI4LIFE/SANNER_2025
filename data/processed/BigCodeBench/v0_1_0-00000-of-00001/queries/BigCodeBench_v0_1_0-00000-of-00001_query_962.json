@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_962",
+  "text": "Traverses a given directory recursively to count files by specified extensions.\nNote that: This function counts files in a case-sensitive manner.\nThe function should raise the exception for: OSError: If the specified directory does not exist.\nThe function should output with:\n    Counter: An object containing counts of files for each of the specified extensions.\nYou should write self-contained code starting with:\n```\nimport os\nimport glob\nfrom collections import Counter\ndef task_func(directory, extensions=[\".txt\", \".docx\", \".xlsx\", \".csv\"], keep_zero=True):\n```"
+}

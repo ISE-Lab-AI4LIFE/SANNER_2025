@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_565",
+  "text": "Loads a DLL file from the specified filepath and returns its metadata, including creation time, modification time, and file size. The times are displayed in UTC format. This function demonstrates the use of ctypes for loading DLLs and os module for accessing file metadata.\nThe function should output with:\n    str: The name of the loaded DLL file.\n    dict: A dictionary containing the metadata of the DLL file, including the keys 'Creation Time', 'Modification Time', and 'Size'.\nYou should write self-contained code starting with:\n```\nimport os\nimport ctypes\nfrom datetime import datetime\nimport pytz\ndef task_func(filepath):\n```"
+}

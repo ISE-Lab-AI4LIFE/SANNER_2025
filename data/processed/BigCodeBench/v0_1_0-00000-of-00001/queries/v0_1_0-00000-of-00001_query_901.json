@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_901",
-  "text": "Calculate mean, sum, max, min and standard deviation for the keys \"x,\" \"y\" and \"z\" from a list of dictionaries \"d.\"\nThe function should raise the exception for: ValueError: If input is not a list of dictionaries.\nThe function should output with:\n    dict: A dictionary with keys as 'x', 'y', and 'z' and values as dictionaries of statistics.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(d):\n```"
-}

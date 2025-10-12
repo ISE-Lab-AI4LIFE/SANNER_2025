@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_639",
-  "text": "Create a Pandas DataFrame that displays the random scores of different teams in multiple games. The function generates random scores for each game played by each team and populates them in a DataFrame with index=teams, columns=games.\nThe function should output with:\n    DataFrame: The generated DataFrame containing random scores for each team in each game.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(num_teams=5, num_games=100):\n```"
-}

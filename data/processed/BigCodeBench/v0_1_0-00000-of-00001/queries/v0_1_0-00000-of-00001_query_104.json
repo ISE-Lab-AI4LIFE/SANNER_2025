@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_104",
-  "text": "Calculate and plot the daytime temperatures for New York over a given period. The plot uses Arial font for display. for the returned plot,  set the xlabel as 'Date', ylabel as 'Temperature (°C)' and title as Daily Temperatures in New York\nThe function should raise the exception for: ValueError: If the input DataFrame is not in the expected format or empty.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object containing the temperature plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport pandas as pd\ndef task_func(temperatures):\n```"
-}

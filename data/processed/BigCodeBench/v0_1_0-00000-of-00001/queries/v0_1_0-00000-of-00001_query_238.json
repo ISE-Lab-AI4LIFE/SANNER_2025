@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_238",
-  "text": "Unzip a list of objects and their 3D coordinates, run PCA to reduce the dimensionality to 2D, and depending on the value of save_plot parameter, either save the plot to the provided path and return the 2D coordinates or return the 2D coordinates and the plot's Axes.\nThe function should raise the exception for: ValueError: If save_plot is True but plot_path is not provided.\nThe function should output with:\n    coordinates_2d (numpy.ndarray): The 2D coordinates after applying PCA.\n    ax (matplotlib.axes._axes.Axes, optional): The plot's Axes if save_plot is True.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.decomposition import PCA\nimport matplotlib.pyplot as plt\ndef task_func(data, save_plot=False, plot_path=None):\n```"
-}

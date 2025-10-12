@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_348",
-  "text": "Find all matches of the regex pattern '([a-fA-F\\ d] {32})' in a Pandas DataFrame column and count the occurrence of any unique match in the data.\nThe function should raise the exception for: The function will raise KeyError if the \"column\" does not exist in input \"df\"\nThe function should output with:\n    Series: A pandas Series with counts of each unique match.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport re\nimport numpy as np\n# Constants\nPATTERN = r\"([a-fA-F\\d]{32})\"\ndef task_func(df, column):\n```"
-}

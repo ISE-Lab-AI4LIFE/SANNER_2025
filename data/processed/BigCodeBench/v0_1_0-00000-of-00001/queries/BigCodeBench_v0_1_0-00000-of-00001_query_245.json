@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_245",
+  "text": "Create a numeric array from the \"original\" list, calculate Fast Fourier Transform (FFT) and record the original and FFT data. Additionally, plot the histogram of the magnitude of the FFT data and return the axes object of the plot. For an empty list, return an empty array for the FFT data and None for the axes object.\nThe function should output with:\n    np.array: A numpy array for the original data.\n    np.array: FFT data.\n    plt.Axes: The axes object of the plot.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy.fft import fft\nfrom matplotlib import pyplot as plt\ndef task_func(original):\n```"
+}

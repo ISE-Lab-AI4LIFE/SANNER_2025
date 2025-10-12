@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_27",
+  "text": "Encrypts a message with a symmetric encryption key using Fernet encryption, and then encode the encrypted message using base64.\nThe function should output with:\n    str: The base64 encoded encrypted message. The message is first encrypted using Fernet encryption,\n    then the result is base64 encoded.\nYou should write self-contained code starting with:\n```\nimport base64\nfrom cryptography.fernet import Fernet\ndef task_func(message, encryption_key):\n```"
+}

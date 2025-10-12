@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_336",
+  "text": "Create a random string of a given length from a predefined list of letters and count the frequency of each letter, returning an ordered dictionary sorted by frequency in descending order.\nThe function should output with:\n    collections.OrderedDict: An ordered dictionary where keys are letters and values are\n    their frequencies in the generated string, sorted in descending order of frequency.\nYou should write self-contained code starting with:\n```\nimport collections\nfrom queue import PriorityQueue\nimport random\n# Constants\nLETTERS = ['a', 'b', 'c', 'd', 'e']\ndef task_func(string_length=100):\n```"
+}

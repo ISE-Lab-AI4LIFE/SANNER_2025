@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_770",
-  "text": "Faced with a nested list of menu items, flatten the list and return the most common menu item.\nThe function should output with:\n    str: The most common menu item.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport itertools\nimport operator\ndef task_func(list_of_menuitems):\n```"
-}

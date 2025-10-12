@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_976",
+  "text": "Create a Pandas DataFrame with a specified number of rows filled with random values in [0, 1) and shuffled columns.\nNote that: The columns should be unique and sorted in the ascending order.\nThe function should output with:\n    pd.DataFrame: A pandas DataFrame with shuffled columns.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(rows, columns=[\"A\", \"B\", \"C\", \"D\", \"E\"], seed=0) -> pd.DataFrame:\n```"
+}

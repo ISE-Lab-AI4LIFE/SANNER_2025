@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1030",
-  "text": "Create a Pandas DataFrame with random alphabets in each cell. The DataFrame will have a specified number of rows and columns. Each column is named with a string from the list ['a', 'b', 'c', ...] depending on the number of columns specified.\nThe function should output with:\n    DataFrame: A pandas DataFrame with random alphabets.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(rows=100, columns=3):\n```"
-}

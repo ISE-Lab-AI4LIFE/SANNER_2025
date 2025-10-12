@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_564",
-  "text": "Loads a DLL file specified by the given filepath and moves all DLL files in the same directory to another specified directory. This function demonstrates file operations including DLL loading, file path manipulation, and file moving using ctypes, os, shutil, and glob modules.\nThe function should output with:\n    str: The name of the loaded DLL file.\nYou should write self-contained code starting with:\n```\nimport ctypes\nimport os\nimport shutil\nimport glob\ndef task_func(filepath, destination_dir):\n```"
-}

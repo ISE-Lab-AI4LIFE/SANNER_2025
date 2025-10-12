@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_180",
+  "text": "Analyzes a given DataFrame containing article titles and content to identify articles with titles that include the words \"how\" or \"what\". It calculates the TF-IDF scores for the words in the content of these articles and visualizes these scores in a bar plot.\nNote that: If the DataFrame does not contain 'Title' and 'Content' columns, the function returns an empty plot. If no articles have titles containing \"how\" or \"what,\" the function also returns an empty plot. Set the name of the y-axis to 'TF-IDF Score'. Set xticks to display the feature names vertically.\nThe function should output with:\n    Axes: A matplotlib Axes object displaying a bar plot of the TF-IDF scores.\nYou should write self-contained code starting with:\n```\nimport re\nimport matplotlib.pyplot as plt\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nimport numpy as np\ndef task_func(df):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_207",
+  "text": "Convert a csv file to a json file.\nThe function should raise the exception for: FileNotFoundError: If the file does not exist.\nThe function should output with:\n    str: The file name of the created json file.\nYou should write self-contained code starting with:\n```\nimport csv\nimport json\nimport os\ndef task_func(file_name):\n```"
+}

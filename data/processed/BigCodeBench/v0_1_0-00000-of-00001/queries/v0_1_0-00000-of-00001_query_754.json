@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_754",
-  "text": "Generate n random points within a circle of radius RADIUS (default value is 5) and return their average distance from the center.\nThe function should output with:\n    float: The average distance from the center of the circle.\nYou should write self-contained code starting with:\n```\nimport math\nimport random\nimport statistics\n# Constants\nRADIUS = 5\ndef task_func(n):\n```"
-}

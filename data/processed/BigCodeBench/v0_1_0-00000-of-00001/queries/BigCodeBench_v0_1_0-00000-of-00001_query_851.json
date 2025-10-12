@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_851",
+  "text": "Create a grade report for a list of students across various subjects. Each student's grades are randomly generated, and the report includes the average grade for each student. The randomness is seeded for reproducibility if a seed is provided.\nThe function should output with:\n    DataFrame: A pandas DataFrame containing each student's grades across the subjects and their average grade.\n    Columns are ['Student', 'Subject1', 'Subject2', ..., 'Average Grade'].\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport statistics\nimport random\ndef task_func(students, subjects, seed=None):\n```"
+}

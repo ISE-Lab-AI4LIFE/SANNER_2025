@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_674",
-  "text": "Create n random txt files in a specific directory, write only a single digit random integer into each file, and then reset the cursor to the beginning of each file. The file names start from 'file_1.txt' and increment by 1 for each file.\nThe function should output with:\n    n_files (int): The number of files generated.\nYou should write self-contained code starting with:\n```\nimport os\nimport random\ndef task_func(directory, n_files):\n```"
-}

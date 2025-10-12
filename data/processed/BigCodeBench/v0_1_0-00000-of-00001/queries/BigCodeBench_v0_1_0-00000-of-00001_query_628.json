@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_628",
+  "text": "This function takes in a list of product names and generates random sales data for each product over a period of 12 months. It then calculates the average sales for each product and returns the results as a pandas DataFrame with columns: 'Product', 'Month 1', 'Month 2', ..., 'Month 12', 'Average Sales'..\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns: 'Product', 'Month 1', 'Month 2', ..., 'Month 12', 'Average Sales'.\nYou should write self-contained code starting with:\n```\nfrom random import randint\nfrom statistics import mean\nimport pandas as pd\ndef task_func(products_list):\n```"
+}

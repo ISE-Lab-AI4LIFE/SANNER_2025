@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_195",
+  "text": "Generates random numeric data and creates a histogram of the data. The color of the histogram bars is randomly selected from a predefined list.\nThe function should output with:\n    tuple:\n    ndarray: The array of randomly generated data.\n    str: The color used for the histogram bars.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\n# Constants\nBAR_COLOR = ['blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black']\ndef task_func(data_size):\n```"
+}

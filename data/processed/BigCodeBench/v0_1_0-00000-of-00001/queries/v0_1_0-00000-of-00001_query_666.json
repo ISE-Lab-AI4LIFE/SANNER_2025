@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_666",
-  "text": "Copy all files from 'src_dir' to 'dst_dir' that match any pattern in ['*.txt', '*.docx'].\nThe function should output with:\n    str: The destination directory.\nYou should write self-contained code starting with:\n```\nimport shutil\nimport os\nimport fnmatch\nimport itertools\ndef task_func(src_dir, dst_dir):\n```"
-}

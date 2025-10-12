@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_657",
-  "text": "Analyze the sentiment of a text using the provided SentimentIntensityAnalyzer. The text is first cleaned by: - Removing all non-alphanumeric characters except spaces. - Converting to lowercase. - Removing punctuation.\nThe function should output with:\n    dict: A dictionary with sentiment scores. The dictionary contains four scores:\n    'compound': The overall sentiment score.\n    'neg': Negative sentiment score.\n    'neu': Neutral sentiment score.\n    'pos': Positive sentiment score.\nYou should write self-contained code starting with:\n```\nimport re\nimport string\nimport nltk\nfrom nltk.sentiment.vader import SentimentIntensityAnalyzer\nnltk.download('vader_lexicon')\n# Constants\nALPHANUMERIC = re.compile('[\\W_]+')\nPUNCTUATIONS = string.punctuation\ndef task_func(text: str, sia: SentimentIntensityAnalyzer) -> dict:\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_612",
-  "text": "Removes rows from a DataFrame based on values of multiple columns, and then create n random line plots of two columns against each other.\nThe function should output with:\n    (pd.DataFrame, list): A tuple containing the modified DataFrame and a list of plot details.\n    Each entry in the plot details list is a tuple containing the two columns plotted against each other.\nYou should write self-contained code starting with:\n```\nfrom random import sample\nimport matplotlib.pyplot as plt\n# Constants\nCOLUMNS = ['A', 'B', 'C', 'D', 'E']\ndef task_func(df, tuples, n_plots):\n```"
-}

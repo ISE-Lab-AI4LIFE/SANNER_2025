@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_769",
-  "text": "Search for occurrences of the word \"error\" in all text files within a specified directory and its subdirectories. The function specifically searches for the word \"error\" in text files (with the extension \".txt\"). This function is NOT case sensitive, e.g. also \"ERROr\" will be counted.\nThe function should raise the exception for: ValueError: If directory in dir_path does not exist.\nThe function should output with:\n    dict: A dictionary with relative file paths as keys and the count of\n    occurrences of the word \"error\" as values.\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport glob\ndef task_func(dir_path):\n```"
-}

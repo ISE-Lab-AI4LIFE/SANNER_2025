@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_404",
-  "text": "Open an RGB image from a specific path, apply a blur filter, convert it to grayscale, and then display both the original and the edited images side by side. Returns numpy arrays representing both the original and the processed images.\nThe function should raise the exception for: FileNotFoundError: If the image file does not exist at the specified path.\nThe function should output with:\n    tuple: A tuple containing two numpy arrays, the first representing the original image and\n    the second representing the blurred and grayscaled image.\nYou should write self-contained code starting with:\n```\nfrom PIL import Image, ImageFilter\nimport cv2\nimport numpy as np\nimport os\ndef task_func(img_path, blur_radius=5):\n```"
-}

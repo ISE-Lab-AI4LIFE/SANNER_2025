@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_496",
-  "text": "Generates a spending report DataFrame for the given number of days. This function takes a number of days as input and populates a pandas DataFrame with fake expenditure data indexed by date. Each day on or after '2023-01-01' has its own row. The DataFrame has five columns: Groceries, Entertainment, Rent, Utilities, and Miscellaneous, with their integer values independently randomly sampled from 0 to 100.\nThe function should output with:\n    pd.DataFrame: A DataFrame containing spending details for specified days,\n    with shape (num_days, 5).\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(days, random_seed=0):\n```"
-}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_252",
+  "text": "Draw a pie chart that shows the job distribution in the given data and return the plot object.\nThe function should raise the exception for: The function will raise ValueError if the input data is not a DataFrame.\nThe function should output with:\n    matplotlib.figure.Figure: The Figure object containing the pie chart.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndef task_func(data):\n```"
+}

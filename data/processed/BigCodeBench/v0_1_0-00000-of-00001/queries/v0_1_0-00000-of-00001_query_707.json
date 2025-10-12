@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_707",
-  "text": "Perform a logistic regression on a DataFrame to predict a specific target column.\nThe function should output with:\n    accuracy (float): The accuracy of the logistic regression model.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import accuracy_score\ndef task_func(data, columns, target_column):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_548",
-  "text": "Encrypt a password using Salt and SHA-256, then encode the result in base64.\nThe function should output with:\n    str: The encrypted password in base64 format.\nYou should write self-contained code starting with:\n```\nimport hashlib\nimport os\nimport base64\ndef task_func(password: str, salt_length: int = 8) -> str:\n```"
-}

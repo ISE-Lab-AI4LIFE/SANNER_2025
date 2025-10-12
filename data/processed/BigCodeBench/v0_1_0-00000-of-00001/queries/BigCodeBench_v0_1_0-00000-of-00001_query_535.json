@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_535",
+  "text": "Converts a number from one base to another, signs it with a private RSA key, and encodes the signed number in base64 using a custom alphabet.\nNote that: The function assumes that the provided number can be successfully converted from the specified source base to the target base. The RSA private key must be generated and provided to sign the converted number. The custom alphabet for base64 encoding allows for flexibility in encoding schemes.\nThe function should output with:\n    str: The base64-encoded signed number.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport base64\nfrom cryptography.hazmat.primitives import hashes\nfrom cryptography.hazmat.primitives.asymmetric import padding\ndef task_func(num, from_base, to_base, private_key, alphabet):\n```"
+}

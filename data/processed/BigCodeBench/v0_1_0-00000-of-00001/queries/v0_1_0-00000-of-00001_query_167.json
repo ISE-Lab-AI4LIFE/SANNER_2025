@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_167",
-  "text": "Create a list of business days between two dates, excluding weekends and specified country's public holidays.\nNote that: The function depends on the 'holidays' package for fetching public holidays. Ensure 'pandas' and 'holidays' packages are installed.\nThe function should raise the exception for: ValueError: If start_date is not a datetime object or is after end_date. ValueError: If end_date is not a datetime object or is before start_date.\nThe function should output with:\n    list[datetime]: A list of business days (as datetime objects). The start date and end date is included to process.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom datetime import datetime\nimport holidays\ndef task_func(start_date=datetime(2023, 1, 1), end_date=datetime(2023, 12, 31), country='US'):\n```"
-}

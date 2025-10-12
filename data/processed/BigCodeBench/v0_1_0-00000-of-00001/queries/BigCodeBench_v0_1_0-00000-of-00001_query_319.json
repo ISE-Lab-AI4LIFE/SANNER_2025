@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_319",
+  "text": "Generate a specified (i.e., points_counts) number of random points within a circle of a given radius and plot them using a scatter plot.\nNote that: All settings of the scatter plot are the default version. The aspect ratio of the plot is set to 'equal' to maintain proportions.\nThe function should output with:\n    Axes: The matplotlib Axes object representing the scatter plot.\nYou should write self-contained code starting with:\n```\nimport random\nimport math\nimport matplotlib.pyplot as plt\ndef task_func(points_count=1000, radius=1):\n```"
+}

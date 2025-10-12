@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_810",
-  "text": "Apply KMeans clustering to a 2D numeric array and find the indices of the data points in each cluster. >>> data = np.array([[1, 1], [2, 2]]) >>> cluster = task_func(data, 2) >>> cluster_list = list(cluster.values()) >>> cluster_list.sort(key=lambda x: x[0]) >>> print(cluster_list) [array([0]), array([1])]\nThe function should output with:\n    dict: A dictionary where keys are cluster labels and values are lists of indices for data points in the cluster.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.cluster import KMeans\ndef task_func(data, n_clusters):\n```"
-}

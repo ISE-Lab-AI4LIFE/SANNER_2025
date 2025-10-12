@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_864",
+  "text": "Calculate the sum of the squares of numbers from a predefined range (POSSIBLE_NUMBERS) for each list in list_of_lists. The number of elements considered from POSSIBLE_NUMBERS is determined by the length of each list.\nThe function should output with:\n    sums (list): A list of sums of squares.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport math\n# Constants\nPOSSIBLE_NUMBERS = np.arange(1, 11)\ndef task_func(list_of_lists):\n```"
+}

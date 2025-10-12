@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_743",
-  "text": "Create a Pandas DataFrame from a list of pairs and normalize the data using MinMaxScaler.\nThe function should raise the exception for: Exception: If the input array is empty. ValueError: If Values are not numeric.\nThe function should output with:\n    DataFrame:  A pandas DataFrame containing the columns 'Category' and 'Value'.\n    Category contains the the first elements of each tuple.\n    Value contains the normalized values of each tuple.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import MinMaxScaler\ndef task_func(list_of_pairs):\n```"
-}

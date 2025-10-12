@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_758",
-  "text": "Reverse the order of words separated by. \"\" in all strings of a numpy array.\nThe function should output with:\n    numpy.ndarray: The numpy array with the strings reversed.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport datetime\ndef task_func(arr):\n```"
-}

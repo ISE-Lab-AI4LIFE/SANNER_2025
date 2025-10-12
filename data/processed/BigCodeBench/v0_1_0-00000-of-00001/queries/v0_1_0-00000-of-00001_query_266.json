@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_266",
-  "text": "Add a new key \"a\" with the value 1 to the input dictionary, calculate the frequency of its values, and save the updated dictionary along with its frequency distribution to a JSON file. The dictionary is saved under the key 'data' and the frequency distribution under the key 'freq'.\nThe function should output with:\n    str: The path of the JSON file.\nYou should write self-contained code starting with:\n```\nimport collections\nimport json\nimport os\ndef task_func(data, json_file_name='data.json'):\n```"
-}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_223",
+  "text": "Sort the given list in ascending order based on the degree value of its elements, calculate the cumulative sum of the sorted list, and draw a line chart of the cumulative sum.\nThe function should output with:\n    tuple: A tuple containing:\n    numpy array: The cumulative sum of the sorted list.\n    matplotlib.axes._axes.Axes: The Axes object of the plotted line chart.\nYou should write self-contained code starting with:\n```\nimport math\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(list_input):\n```"
+}

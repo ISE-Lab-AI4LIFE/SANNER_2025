@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_651",
-  "text": "Determine the time in seconds until the next turn of the year in a certain time zone from a given date string.\nThe function should output with:\n    int: The time in seconds until the next New Year in the specified timezone.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport pytz\nfrom dateutil.parser import parse\ndef task_func(date_str, tz_str):\n```"
-}

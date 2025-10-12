@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1081",
+  "text": "Predicts the price based on a given area after training a linear regression model.\nThe function should output with:\n    float: The predicted price for the given area.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nDATA = {\n    \"Area_String\": [\"1,000\", \"2,000\", \"3,000\", \"4,000\", \"5,000\"],\n    \"Price\": [100, 200, 300, 400, 500],\n}\ndef task_func(area_string, data=DATA):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_844",
+  "text": "Generate a string of random sentences using a predefined word list. Each sentence is guaranteed to have one period at the end, and no period within the sentence. The generated sentences will be concatenated into a single string, with all letters in lowercase and all non-alphanumeric characters except spaces removed.\nNote that: The actual output will vary due to the randomness of sentence generation.\nThe function should output with:\n    str: A string containing the generated sentences in lowercase\n    with non-alphanumeric characters removed (except for single periods ending sentences).\nYou should write self-contained code starting with:\n```\nimport random\nimport re\n# Constants\nWORD_LIST = [\"sample\", \"text\", \"contains\", \"several\", \"words\", \"including\"]\ndef task_func(n_sentences):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_47",
+  "text": "Calculate Z-scores for numeric columns in a DataFrame and draw a histogram for each column. - Missing values are replaced by the column's average. - The histograms are plotted with 10 bins.\nThe function should output with:\n    tuple:\n    1. pandas.DataFrame: A DataFrame with computed z-scores.\n    2. list: A list of Axes objects representing the histograms of the numeric columns.\nYou should write self-contained code starting with:\n```\nfrom scipy.stats import zscore\nimport matplotlib.pyplot as plt\ndef task_func(df):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_45",
-  "text": "Normalize numeric columns in a DataFrame and draw a box plot for each column. Missing values are replaced by column's average.\nThe function should output with:\n    DataFrame: A pandas DataFrame after normalization.\n    Axes: A matplotlib Axes displaying a box plot for each column.\nYou should write self-contained code starting with:\n```\nfrom sklearn.preprocessing import MinMaxScaler\nimport matplotlib.pyplot as plt\ndef task_func(df):\n```"
-}

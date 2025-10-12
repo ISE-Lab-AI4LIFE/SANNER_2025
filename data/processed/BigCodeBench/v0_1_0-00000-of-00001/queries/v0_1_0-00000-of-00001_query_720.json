@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_720",
-  "text": "Count the number of files in a directory that contain a specific word.\nThe function should output with:\n    count (int): The number of files that contain the given word.\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport glob\ndef task_func(directory, word):\n```"
-}

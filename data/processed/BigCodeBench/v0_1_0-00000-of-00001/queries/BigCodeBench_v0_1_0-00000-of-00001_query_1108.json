@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1108",
+  "text": "Converts a Unix timestamp to a formatted date and time string in a specified timezone.\nThe function should output with:\n    str: A string representing the date and time in the target timezone, formatted as '%Y-%m-%d %H:%M:%S'.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport pytz\n# Constants\nDATE_FORMAT = '%Y-%m-%d %H:%M:%S'\ndef task_func(unix_timestamp, target_timezone):\n```"
+}

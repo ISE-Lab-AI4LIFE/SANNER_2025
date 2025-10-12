@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_387",
+  "text": "Randomly generate a pandas DataFrame with specified ranges and length, and calculate the cumulative distribution function (CDF).\nNote that: DataFrame columns are defined by the COLUMNS constant.\nThe function should output with:\n    DataFrame: A pandas DataFrame with the calculated cumulative distribution function (CDF).\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\n# Constants\nCOLUMNS = ['Column1', 'Column2', 'Column3', 'Column4', 'Column5']\ndef task_func(length, min_value = 0, max_value = 100):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1127",
-  "text": "Removes all special characters, punctuation marks, and spaces from the input string using a regular expression, retaining only alphanumeric characters. Then hashes the cleaned string with SHA256.\nThe function should output with:\n    str: The SHA256 hash of the cleaned string.\nYou should write self-contained code starting with:\n```\nimport re\nimport hashlib\ndef task_func(input_str):\n```"
-}

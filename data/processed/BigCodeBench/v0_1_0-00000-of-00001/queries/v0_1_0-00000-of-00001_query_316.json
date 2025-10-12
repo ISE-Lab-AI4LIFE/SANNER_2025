@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_316",
-  "text": "Get a list of files in a directory and send that list by e-mail to a specific recipient using a provided SendGrid API key.\nThe function should raise the exception for: FileNotFoundError: If the specified directory does not exist. HTTPError: If an HTTP error occurs during the sending process. Exception: For any other exceptions that may occur during the execution.\nThe function should output with:\n    bool: True if the email was sent successfully. Specifically, a successful send is indicated by an HTTP status code in the 2xx range, which denotes success. False is returned if the directory does not exist.\nYou should write self-contained code starting with:\n```\nimport os\nfrom sendgrid import SendGridAPIClient\nfrom sendgrid.helpers.mail import Mail\nfrom python_http_client.exceptions import HTTPError\ndef task_func(dir, api_key, recipient_email):\n```"
-}

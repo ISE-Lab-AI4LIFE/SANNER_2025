@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_744",
-  "text": "Read all JSON files from the specified directory, count the occurrence of keys starting with certain prefixes (defined in the PREFIXES constant), and return a dictionary of statistics.\nThe function should output with:\n    dict: A dictionary with keys as prefixes (from PREFIXES) and values as their counts in the JSON files.\nYou should write self-contained code starting with:\n```\nimport json\nimport os\n# Constants\nPREFIXES = [\"is_\", \"has_\", \"can_\", \"should_\"]\ndef task_func(directory):\n```"
-}

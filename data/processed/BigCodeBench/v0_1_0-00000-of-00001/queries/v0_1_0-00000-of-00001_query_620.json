@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_620",
-  "text": "Simulates football match results with random goals and penalties for multiple teams, and trains a linear regression model to predict penalty costs from goals.\nThe function should output with:\n    tuple:\n    pd.DataFrame: Contains 'Team', 'Goals', and 'Penalty Cost' columns.\n    LinearRegression: Trained model to predict 'Penalty Cost' based on 'Goals'.\nYou should write self-contained code starting with:\n```\nfrom random import randint, seed\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\n# Constants\nTEAMS = ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']\nPENALTY_COST = 1000  # in dollars\ndef task_func(goals, penalties, rng_seed=None):\n```"
-}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_957",
+  "text": "Transforms a given string by removing special characters, normalizing whitespace, and randomizing character casing.\nNote that: This function considers special characters to be string punctuations. Spaces, tabs, and newlines are replaced with with '_', '__', and '___' respectively. To randomize casing, this function converts characters to uppercase with a 50% probability.\nThe function should output with:\n    str: The preprocessed text string.\nYou should write self-contained code starting with:\n```\nimport re\nimport string\nimport random\ndef task_func(text: str, seed=None) -> str:\n```"
+}

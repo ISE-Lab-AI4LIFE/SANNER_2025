@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_359",
+  "text": "Generate all possible combinations of r elements from a given number list taken from JSON string input.\nNote that: The datetime to be extracted is located in the 'number_list' key in the JSON data.\nThe function should raise the exception for: Raise an Exception if the json_list is an invalid JSON, empty, or does not have 'number_list' key.\nThe function should output with:\n    list: A list of tuples, each tuple representing a combination.\nYou should write self-contained code starting with:\n```\nimport itertools\nimport json\ndef task_func(json_list, r):\n```"
+}

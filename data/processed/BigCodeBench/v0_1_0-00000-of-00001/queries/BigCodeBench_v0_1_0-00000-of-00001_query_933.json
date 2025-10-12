@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_933",
+  "text": "Finds the most common two-letter combination in a given, cleaned word (lowercased and alphabetic characters only) and returns its frequency. The search is case-insensitive and ignores non-alphabetic characters.\nThe function should output with:\n    list: A list containing a single tuple. The tuple consists of the most frequent two-letter combination (str)\n    and its frequency (int). Returns an empty list if the word has fewer than 2 letters, or after cleaning,\n    the word has fewer than 2 alphabetic characters.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport re\ndef task_func(word: str) -> list:\n```"
+}

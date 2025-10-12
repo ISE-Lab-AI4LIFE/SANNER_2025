@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_80",
-  "text": "Generates a ZIP file response for a Django HttpRequest, zipping the specified files. This function is useful for scenarios where multiple file downloads are required in response to a web request. The actual HttpRequest is not utilized within the function but is required for compatibility with Django view structures.\nThe function should output with:\n    FileResponse: A Django FileResponse object containing the ZIP file as an attachment.\nYou should write self-contained code starting with:\n```\nimport zipfile\nimport io\nfrom django.http import FileResponse, HttpRequest\nfrom django.conf import settings\ndef task_func(request, file_paths):\n```"
-}

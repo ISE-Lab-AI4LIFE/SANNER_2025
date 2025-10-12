@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_652",
+  "text": "Convert the input dic of list to DataFrame and searcher in this DataFrame for rows with cells equal to the provided target_value. It then plots the count of such rows per column.\nThe function should output with:\n    tuple: A tuple containing:\n    A pandas Series with counts of the target value per column.\n    A matplotlib Axes object representing the plot (None if dataframe is empty).\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport time\ndef task_func(df, target_value):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_212",
+  "text": "Download and keep a zip file from a URL, extract its contents to the specified directory, and return the list of extracted files.\nThe function should output with:\n    list: A list of filenames of the extracted files.\nYou should write self-contained code starting with:\n```\nimport requests\nimport os\nimport zipfile\ndef task_func(url, destination_directory, headers=None):\n```"
+}

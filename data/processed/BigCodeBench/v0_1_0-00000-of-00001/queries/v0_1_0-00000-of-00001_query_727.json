@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_727",
-  "text": "Extract up to n different English words from a string, ignoring case. The string is split into words and only the English words are retained. If there are fewer than n different English words, all distinct ones are returned.\nThe function should output with:\n    List[str]: A list of up to n different English words found in the string.\nYou should write self-contained code starting with:\n```\nimport re\nimport random\nfrom nltk.corpus import words\nfrom random import sample\n# Ensure the words corpus is downloaded\nimport nltk\nnltk.download('words')\n# Constants\nSAMPLE_ENGLISH_WORDS = set(words.words())  # Correct initialization\ndef task_func(s, n):\n```"
-}

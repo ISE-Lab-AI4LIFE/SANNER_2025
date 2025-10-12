@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_922",
+  "text": "Normalizes specified columns of a DataFrame using min-max scaling. Constants: - A MinMaxScaler object from sklearn.preprocessing is used internally for scaling.\nThe function should output with:\n    pandas.DataFrame: A new DataFrame with the specified columns normalized between 0 and 1.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import MinMaxScaler\ndef task_func(data, columns):\n```"
+}

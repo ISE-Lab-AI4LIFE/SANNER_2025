@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_286",
+  "text": "Submits a form on a given webpage using mechanize and extracts the title of the response page.\nNote that: Notes: If the page has no title, it returns 'No Title'.\nThe function should output with:\n    str: The title of the page resulting from the form submission.\nYou should write self-contained code starting with:\n```\nimport mechanize\nfrom bs4 import BeautifulSoup\ndef task_func(url, form_id, data):\n```"
+}

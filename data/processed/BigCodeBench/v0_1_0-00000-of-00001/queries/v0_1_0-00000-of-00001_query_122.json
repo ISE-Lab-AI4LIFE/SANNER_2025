@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_122",
-  "text": "Adds an item \"12\" to a list 'my_list', simulates sales data for different categories with an optional seed for reproducibility, and returns the data along with a bar plot. The sales data is a DataFrame with random sales figures for predefined categories. The categories are 'Electronics', 'Fashion', 'Home & Kitchen', 'Automotive', 'Sports'.\nThe function should raise the exception for: TypeError: If 'my_list' is not a list.\nThe function should output with:\n    tuple: A tuple containing a pandas DataFrame of simulated sales data and the corresponding matplotlib Axes object.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(my_list, seed=42):\n```"
-}

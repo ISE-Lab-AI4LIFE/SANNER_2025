@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_578",
+  "text": "Processes all files within the specified directory, normalizes their filenames to ASCII, calculates their MD5 hashes, and retrieves their sizes. It returns a dictionary where each key is the normalized file name and each value is another dictionary with the file's size and MD5 hash. This method is useful for file integrity checks and file organization tasks.\nThe function should output with:\n    dict: A dictionary where each key is a normalized file name, and the value is a dictionary\n    containing the 'Size' (in bytes) and 'MD5 Hash' of the file.\nYou should write self-contained code starting with:\n```\nimport os\nimport pathlib\nfrom hashlib import md5\nimport unicodedata\ndef task_func(directory):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_115",
+  "text": "Updates a dictionary by adding a normalized version of a numpy array found under the 'array' key. The normalization is performed using MinMaxScaler, scaling each value to fall between 0 and 1.\nNote that: Notes: The function modifies the dictionary in-place and does not create a new dictionary. The function assumes that 'array' key exists and its value is a numpy array.\nThe function should raise the exception for: TypeError if the value of the 'array' key in my_dict is not a numpy array\nThe function should output with:\n    dict: The dictionary after adding a key 'normalized_array' with the normalized values.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sklearn.preprocessing import MinMaxScaler\ndef task_func(my_dict):\n```"
+}

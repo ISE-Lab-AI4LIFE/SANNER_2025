@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_728",
+  "text": "Vectorize a string using the Bag-of-Words model. The string is split into words and each word is treated as an attribute. The value of each attribute is the number of occurrences of the word in the string. The function also uses some predefined sentences (SENTENCES constant) for vectorization.\nThe function should output with:\n    np.ndarray: A numpy array with the vectorized string.\nYou should write self-contained code starting with:\n```\nimport re\nfrom sklearn.feature_extraction.text import CountVectorizer\nimport numpy as np\n# Constants\nSENTENCES = ['This is a sentence', 'Another sentence here', 'More sentences']\ndef task_func(s: str) -> np.ndarray:\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_460",
-  "text": "Execute a list of bash scripts with a specified delay between each script.\nThe function should raise the exception for: ValueError: If the delay is negative or no scripts are provided.\nThe function should output with:\n    list: A list of timestamps indicating the start time of each script execution.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport os\nimport time\nfrom datetime import datetime\ndef task_func(script_dir, scripts, delay):\n```"
-}

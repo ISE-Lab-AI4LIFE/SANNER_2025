@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1109",
+  "text": "Get the most common values associated with the url key in the dictionary list \"result.\"\nThe function should output with:\n    dict: A dictionary with the most common values and their counts.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport re\ndef task_func(result):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_668",
-  "text": "Find the n most common letters in a dictionary, x, where the key letters and the values are their frequencies.\nThe function should output with:\n    list: The n most frequent letters.\nYou should write self-contained code starting with:\n```\nimport heapq\nimport collections\ndef task_func(x, n):\n```"
-}

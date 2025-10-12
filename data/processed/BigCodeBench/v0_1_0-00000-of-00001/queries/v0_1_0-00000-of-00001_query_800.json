@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_800",
-  "text": "Generate a specified number of Pandas DataFrames from a list of lists \"L\". Each DataFrame has the same column names randomly chosen from lowercase English letters and 3 rows sampled from 'L'. Then, find the common rows between all generated DataFrames. If L is empty, an empty dataframe is returend. >>> L = [[1, '65', 76], [2, '5', 6]] >>> common_rows, df_list = task_func(L, num_dataframes=1, random_seed=1) >>> print(common_rows) d   w   t 0  1  65  76 >>> print(df_list) [   d   w   t 0  1  65  76 1  1  65  76 2  1  65  76]\nThe function should output with:\n    DataFrame: A pandas DataFrame with the common rows between all generated DataFrames.\n    list of DataFrame: A list of all generated DataFrames.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom random import seed, choices\ndef task_func(L, num_dataframes=5, random_seed=None):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_489",
-  "text": "Generate a time series with a given seasonality from the start UTC time to the end UTC time with a given step, and plot the time series with the seasonality.\nThe function should output with:\n    matplotlib.pyplot.Axes: A plot of the generated 'Time Series with Seasonality',\n    with 'Timestamp' on x-axis and 'Value' on y-axis.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport pandas as pd\nimport numpy as np\ndef task_func(start_time, end_time, step, amplitude, period, seed=0):\n```"
-}

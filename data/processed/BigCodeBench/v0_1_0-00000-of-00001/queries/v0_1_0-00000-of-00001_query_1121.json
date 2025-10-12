@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1121",
-  "text": "Extracts all URLs from the provided string, analyzes each URL to extract the domain, and uses the IP API to get the geolocation data for each domain.\nThe function should output with:\n    dict: A dictionary mapping domains to their geolocation data as returned by the IP API. Each entry contains fields like 'status', 'country', 'region', 'city', etc. If an API request fails, the corresponding value will be None.\nYou should write self-contained code starting with:\n```\nimport re\nimport urllib.parse\nimport requests\nimport json\ndef task_func(myString, API_KEY):\n```"
-}

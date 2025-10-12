@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_481",
+  "text": "Shuffle the substrings within each string in a given list. This function takes a list of comma-separated strings and splits each into substrings. It extracts substrings based on commas, removing leading and trailing whitespaces from each. Then, it shuffles these processed substrings within each string, and returns a pandas DataFrame with two columns: \"Original String\" and \"Shuffled String\".\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns 'Original String' and 'Shuffled String'.\nYou should write self-contained code starting with:\n```\nimport re\nimport random\nimport pandas as pd\ndef task_func(data_list, seed=None):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_650",
+  "text": "Analyze the weekday distribution in a list of date strings. Implemented by dateutil.parser. This function takes a list of date strings in \"yyyy-mm-dd\" format, calculates the weekday for each date, and returns a distribution of the weekdays.\nThe function should output with:\n    Series: A pandas Series of the weekday distribution, where the index represents\n    the weekdays (from Monday to Sunday) and the values represent the counts\n    of each weekday in the provided list.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\nfrom dateutil.parser import parse\ndef task_func(dates_str_list):\n```"
+}

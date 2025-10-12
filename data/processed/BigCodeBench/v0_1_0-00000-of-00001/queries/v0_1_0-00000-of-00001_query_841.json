@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_841",
-  "text": "Creates a CSV file on a given file path with random numeric data. The number of rows in the CSV file is determined by the 'num_rows' parameter, and the number of columns (features) is determined by the 'data_dimensions' parameter. Columns are named following the convention: 'Feature_x', where x is the number of the feature column starting at 1.\nThe function should output with:\n    str: The file path of the generated CSV file.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(file_path, num_rows, data_dimensions=5, random_seed=None):\n```"
-}

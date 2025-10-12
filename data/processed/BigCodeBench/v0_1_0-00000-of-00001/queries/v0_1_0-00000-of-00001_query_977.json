@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_977",
-  "text": "Randomly shuffle the given array's features, normalize its values, then convert to a DataFrame with shuffled feature names.\nNote that: Notes: This function normalizes data by subtracting the mean and scaling to unit variance. Feature names are of format f{n}; for example, if the records have 5 features, feature names will be [\"f1\", \"f2\", \"f3\", \"f4\", \"f5\"] shuffled.\nThe function should raise the exception for: ValueError: If records is not 2D.\nThe function should output with:\n    pd.DataFrame: A pandas DataFrame containing the preprocessed data, with shuffled feature names.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(records: np.ndarray, random_seed: int = 0) -> pd.DataFrame:\n```"
-}

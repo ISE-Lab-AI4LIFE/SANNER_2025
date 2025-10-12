@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_987",
-  "text": "Extracts and visualizes numerical data from a JSON structure based on a specified path of keys.\nThe function should raise the exception for: KeyError: If a specified key is not found. ValueError: If no numeric data is found, or the data string is empty or corrupted.\nThe function should output with:\n    matplotlib.figure.Figure: A matplotlib figure showing a boxplot of the data values.\nYou should write self-contained code starting with:\n```\nimport json\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\ndef task_func(json_data: str, key_path: list):\n```"
-}

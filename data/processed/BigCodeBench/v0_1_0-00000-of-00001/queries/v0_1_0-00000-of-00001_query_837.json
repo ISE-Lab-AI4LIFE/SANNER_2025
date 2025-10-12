@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_837",
-  "text": "Scans a directory for CSV files, finds for each file the index of the row with the first cell equal to the target value, and optionally moves the processed files to another directory. The above example assumes that '332' is found at index 10 in 'file1.csv' and index 15 in 'file2.csv' and that the file moving is simulated.\nThe function should output with:\n    result (dict): A dictionary with file names as keys and the row indices as values where the target value was found.\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\nimport csv\ndef task_func(target_value='332', csv_dir='./csv_files/', processed_dir='./processed_files/', simulate=False):\n```"
-}

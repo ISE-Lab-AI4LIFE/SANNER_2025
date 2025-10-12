@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_87",
-  "text": "Generate random scores for a given list of students, sort these scores in ascending order, and return both the scores and a bar plot of these scores. use np.random.randint(0, 100) to generate the scores of the students\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns 'Student' and 'Score', sorted by 'Score'.\n    Axes: A matplotlib Axes object containing the bar plot of scores.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(students=[\"Alice\", \"Bob\", \"Charlie\", \"David\", \"Eve\"], seed=42):\n```"
-}

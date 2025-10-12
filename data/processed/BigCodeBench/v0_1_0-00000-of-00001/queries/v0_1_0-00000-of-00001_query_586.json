@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_586",
-  "text": "Generates RSA public and private keys, encrypts all files in the specified directory using the public key, and saves the encrypted files into a zip file. It returns the public key and the name of the zip file.\nNote that: This method directly encrypts file data with RSA, which is not recommended for large files or production use. Typically, RSA is used to encrypt a symmetric key (like AES), which is then used to encrypt the actual data.\nThe function should output with:\n    rsa.PublicKey: The RSA public key.\n    str: The filename of the zip file containing the encrypted files.\nYou should write self-contained code starting with:\n```\nimport rsa\nimport os\nimport zipfile\nfrom base64 import b64encode\ndef task_func(directory):\n```"
-}

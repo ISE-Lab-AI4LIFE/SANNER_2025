@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_608",
+  "text": "Remove rows from a dataframe based on column values and generate random scatter plots.\nThe function should output with:\n    pd.DataFrame: The DataFrame after removal of specified rows.\n    list: A list containing matplotlib Axes objects of the generated plots.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom random import sample\n# Constants for column names to use in plots\nCOLUMNS = ['A', 'B', 'C', 'D', 'E']\ndef task_func(df: pd.DataFrame, tuples: list, n_plots: int) -> (pd.DataFrame, list):\n```"
+}

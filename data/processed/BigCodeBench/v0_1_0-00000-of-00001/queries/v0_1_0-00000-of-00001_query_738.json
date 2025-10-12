@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_738",
-  "text": "Calculate the median of all elements in a nested list 'L'.\nThe function should output with:\n    median (float): The median.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport math\ndef task_func(L):\n```"
-}

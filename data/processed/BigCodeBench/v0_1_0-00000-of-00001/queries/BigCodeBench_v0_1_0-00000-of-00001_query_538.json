@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_538",
+  "text": "Draw the age distribution of the persons in an SQLite3 table and returns the Axes object of the plot. Raises a ValueError if the loaded data contains negative age values.\nThe function should raise the exception for: ValueError: If the data contains negative age values.\nThe function should output with:\n    matplotlib.axes._axes.Axes: Axes object representing the age distribution plot,\n    with x-axis showing 'age' and a default of bins of 30, and kde set to True.\nYou should write self-contained code starting with:\n```\nimport sqlite3\nimport pandas as pd\nimport seaborn as sns\ndef task_func(db_name=\"test.db\", table_name=\"People\"):\n```"
+}

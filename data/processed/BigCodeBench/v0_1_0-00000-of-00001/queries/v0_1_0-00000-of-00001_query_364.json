@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_364",
-  "text": "Calculate factorials for a list of numbers in parallel using multiprocessing.\nThe function should raise the exception for: ValueError: If any element in the input list is not an integer or is negative.\nThe function should output with:\n    dict[int, int]: A dictionary with numbers as keys and their factorial as values.\nYou should write self-contained code starting with:\n```\nfrom multiprocessing import Pool\nimport math\ndef calculate_factorial(number: int) -> tuple:\n    return number, math.factorial(number)\n    \ndef task_func(numbers: list) -> dict:\n```"
-}

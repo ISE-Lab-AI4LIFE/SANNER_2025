@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_706",
-  "text": "Test the normality of a particular numeric column from a DataFrame with Shapiro-Wilk test, including an artificial step to explicitly use np.\nThe function should output with:\n    bool: True if the column passes the normality test, False otherwise.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy import stats\ndef task_func(df, column, alpha):\n```"
-}

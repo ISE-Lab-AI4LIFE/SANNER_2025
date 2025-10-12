@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_590",
+  "text": "Generates a set of 2D random points within a specified range and size, applies KMeans clustering to these points, and plots the results with cluster centroids. The function creates a scatter plot of the clustered points with each cluster displayed in a different color and the centroids of these clusters highlighted.\nThe function should output with:\n    A tuple containing the numpy array of data points and the fitted KMeans model.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom sklearn.cluster import KMeans\n# Constants for configuration\nRANGE = 100\nSIZE = 1000\nCLUSTERS = 5\ndef task_func():\n```"
+}

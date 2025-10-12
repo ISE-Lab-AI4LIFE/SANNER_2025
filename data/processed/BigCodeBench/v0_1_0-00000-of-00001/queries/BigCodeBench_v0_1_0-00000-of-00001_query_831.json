@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_831",
+  "text": "Write a dictionary to a file as a JSON object and return the written content for verification. This function performs a write operation to store the dictionary data in JSON format and then reads it back to verify the content. Additionally, checks if the file exists using the os library.\nThe function should output with:\n    tuple: A tuple containing a boolean indicating the success of the operation and the content that was written.\n    bool: indicating the success of the operation.\n    written_data (json): the content that was written.\nYou should write self-contained code starting with:\n```\nimport json\nimport os\ndef task_func(filename, data):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_139",
+  "text": "Create and return a bar chart of the frequency of letters in a DataFrame where the column 'Letters' contains English uppercase letters.\nThe function should raise the exception for: ValueError: If 'df' is not a DataFrame or lacks the 'Letters' column.\nThe function should output with:\n    Axes: A Matplotlib Axes object representing the bar graph of letter frequency, with the x-axis labeled 'Letters', the y-axis labeled 'Frequency', and the title 'Letter Frequency'.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndef task_func(df, letters=list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')):\n```"
+}

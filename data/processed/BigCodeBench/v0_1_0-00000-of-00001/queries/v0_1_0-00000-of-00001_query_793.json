@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_793",
-  "text": "Fit a simple linear regression model to two columns of a DataFrame specified by feature and target. return the indices of the n largest residuals as well as the linear regression model. >>> df = pd.DataFrame({ ...     'a': [1, 2, 3, 4, 5], ...     'b': [1, 2, 3, 4, 5] ... }) >>> indices, model = task_func(df, 'a', 'b', n=3) >>> print(indices) [0, 1, 2] >>> print(model) LinearRegression()\nThe function should raise the exception for: ValueError: If specified columns are not in the provided DataFrame.\nThe function should output with:\n    list[int]: Indices of the n largest residuals.\n    LinearRegression: The LinearRegression model.\nYou should write self-contained code starting with:\n```\nimport heapq\nfrom sklearn.linear_model import LinearRegression\ndef task_func(df, feature, target, n=10):\n```"
-}

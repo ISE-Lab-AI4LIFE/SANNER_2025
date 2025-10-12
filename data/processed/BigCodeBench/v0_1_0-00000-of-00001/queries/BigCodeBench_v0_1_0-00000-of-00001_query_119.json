@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_119",
+  "text": "Scans a specified directory for JSON files and copies them to a backup directory. If the backup directory does not exist, it is created. The function returns a list of paths to the copied files in the backup directory.\nNote that: The function assumes that the source directory exists and contains JSON files.\nThe function should output with:\n    list: Paths to the copied JSON files in the backup directory.\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\ndef task_func(directory, backup_directory):\n```"
+}

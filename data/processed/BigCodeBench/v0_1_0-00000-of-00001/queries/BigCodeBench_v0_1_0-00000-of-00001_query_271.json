@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_271",
+  "text": "Count the occurrence of each word in a sentence and return the result as a dictionary. This function uses a regular expression to find words and a Counter to count their occurrences.\nThe function should output with:\n    dict: A dictionary where the keys are the words and the values are their counts.\nYou should write self-contained code starting with:\n```\nimport re\nfrom collections import Counter\ndef task_func(sentence):\n```"
+}

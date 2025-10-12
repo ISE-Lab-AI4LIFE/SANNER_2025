@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_714",
-  "text": "Check a log file and format the lines that contain certain keywords. This code reads the log file specified by log_file_path; searches for lines containing any of the keywords provided in the list; and formats each line to display the keyword, the timestamp, and the message separated by 20 spaces.\nThe function should output with:\n    formatted_lines (list): Returns a list of formatted strings containing the relevant information.\nYou should write self-contained code starting with:\n```\nimport os\nimport re\ndef task_func(log_file_path: str, keywords: list):\n```"
-}

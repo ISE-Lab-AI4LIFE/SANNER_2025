@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_222",
-  "text": "This function calculates and returns the mean, median, mode, and variance for specified features in a DataFrame. It replaces certain values in the DataFrame based on a provided dictionary mapping before performing the calculations.\nNote that: The function would return \"Invalid input\" string if the input is invalid (e.g., does not contain the required 'feature1' key) or if there is an error in the calculation.\nThe function should output with:\n    dict: A dictionary containing statistics (mean, median, mode, variance) for each feature defined in the 'FEATURES' constant.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy import stats\n# Constants\nFEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']\ndef task_func(df, dct):\n```"
-}

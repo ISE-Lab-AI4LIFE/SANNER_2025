@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_262",
+  "text": "Draw a circle with a given radius on the polar chart 'ax' and set radial ticks. This function manipulates plot data using matplotlib.\nNote that: If the radius is negative this function will raise ValueError. If 'ax' is not a polar plot this function will raise TypeError.\nThe function should output with:\n    matplotlib.axes._axes.Axes: The modified Axes object with the circle plotted.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\ndef task_func(ax, radius):\n```"
+}

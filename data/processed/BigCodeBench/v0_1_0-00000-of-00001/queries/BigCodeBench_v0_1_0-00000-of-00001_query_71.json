@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_71",
+  "text": "Load e-mail data from a JSON file, convert it into a Pandas DataFrame, calculate the sum and mean of the list associated with each e-mail, and then record those values. Additionally, it plots the sum and mean values for each email. If there is no e-mail data, return an empty dataframe with the right columns (['email', 'list', 'sum', 'mean']), and None as the plot.\nThe function should output with:\n    tuple: A tuple containing:\n    DataFrame: A pandas DataFrame with columns ['email', 'list', 'sum', 'mean'].\n    Axes: The Axes object for the plot. None if the dataframe is empty.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport json\nimport numpy as np\n# Constants\nCOLUMNS = ['email', 'list']\ndef task_func(json_file):\n```"
+}

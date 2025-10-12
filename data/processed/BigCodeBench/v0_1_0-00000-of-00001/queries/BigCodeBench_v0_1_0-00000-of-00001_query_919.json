@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_919",
+  "text": "Replace all acronyms in a DataFrame with their full words according to a provided dictionary.\nThe function should output with:\n    pd.DataFrame: A DataFrame where all acronyms in string cells have been replaced with their full words.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport re\n# Function to replace acronyms in DataFrame\ndef task_func(data, mapping):\n```"
+}

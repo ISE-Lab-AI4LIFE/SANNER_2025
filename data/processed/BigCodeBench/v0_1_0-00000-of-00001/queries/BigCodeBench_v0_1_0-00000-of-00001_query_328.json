@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_328",
+  "text": "Counts matches from a CSV file based on a given regex pattern. By default, it captures content between parentheses as a single match and any word or sequence of non-alphanumeric characters outside as matches in a string.\nThe function should output with:\n    dict: A dictionary with counts of matches.\nYou should write self-contained code starting with:\n```\nimport csv\nimport re\nfrom collections import Counter\ndef task_func(file_path, regex_pattern=r'\\(.+?\\)|\\w+|[\\W_]+'):\n```"
+}

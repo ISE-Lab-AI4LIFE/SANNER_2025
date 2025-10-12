@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_691",
-  "text": "Given a Pandas DataFrame with random numeric values and columns X & Y, use sklearn's linear regression to match the data to a linear model.\nThe function should output with:\n    model (LinearRegression): The fitted linear model.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nROWS = 100\nCOLUMNS = ['X', 'Y']\ndef task_func(df):\n```"
-}

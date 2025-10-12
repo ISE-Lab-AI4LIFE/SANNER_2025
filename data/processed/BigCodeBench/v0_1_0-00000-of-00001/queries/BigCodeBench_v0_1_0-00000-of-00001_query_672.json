@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_672",
+  "text": "Create n random files in a directory with json content with the key 'number' and a random integer value between 1 and 100, and then reset the cursor to the beginning of each file.\nThe function should output with:\n    directory (str): The directory in which the files were generated.\nYou should write self-contained code starting with:\n```\nimport os\nimport random\nimport json\ndef task_func(directory, n):\n```"
+}

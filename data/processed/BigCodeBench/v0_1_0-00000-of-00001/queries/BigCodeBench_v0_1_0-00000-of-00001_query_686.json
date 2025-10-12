@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_686",
+  "text": "Merge all sublists from a list of lists into a list and return a count of the elements.\nThe function should output with:\n    collections.Counter: Counter object with the counts of the elements in the merged list.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nfrom itertools import chain\ndef task_func(list_of_lists):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_669",
-  "text": "Find the sub-sequence of a dictionary, x, with the minimum total length, where the keys are letters and the values are their lengths.\nThe function should output with:\n    list: The subsequence with the minimum total length.\nYou should write self-contained code starting with:\n```\nimport itertools\nimport math\ndef task_func(x):\n```"
-}

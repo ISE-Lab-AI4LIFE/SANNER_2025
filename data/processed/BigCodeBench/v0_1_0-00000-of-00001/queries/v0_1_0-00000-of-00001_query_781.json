@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_781",
-  "text": "Analyze the publication times of a list of articles: 1) Convert 'published_time' to a specified timezone 2) Group articles by 'category' 3) For each category, calculate the count, mean, min, max publication times only considering the hour.\nThe function should raise the exception for: ValueError: If dictionary keys do not match the requirements. TypeError: If articles is not a list of dictionaries. ValueError: If an empty list is passed as articles.\nThe function should output with:\n    DataFrame: A pandas DataFrame with the count, mean, min, max publication hour for each category.\n    The category is the index of the DataFrame.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport pytz\ndef task_func(articles, timezone):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_814",
-  "text": "Find all unique combinations of 3 numbers from a list that add up to a certain element. If the number_list is empty, or there is no combination that adds up to the element, an empty dataframe is returned. >>> result = task_func([-1, 1, 0, -2, 2, 3], 0) >>> print(result) Combinations 0  (-1, -2, 3) 1   (-1, 1, 0) 2   (0, -2, 2) >>> result = task_func([], 0) >>> print(result) Empty DataFrame Columns: [Combinations] Index: []\nThe function should output with:\n    Pandas DataFrame: A pandas Dataframe with the column 'Combinations',\n    where each row contains a tuple containing a unique combination of 3 numbers that add up to the element.\nYou should write self-contained code starting with:\n```\nfrom itertools import combinations\nimport pandas as pd\ndef task_func(number_list, element):\n```"
-}

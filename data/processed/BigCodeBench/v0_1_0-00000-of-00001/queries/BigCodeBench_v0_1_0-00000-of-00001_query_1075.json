@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1075",
+  "text": "Converts a time string from one timezone to another, considering various cases such as daylight saving time.\nNote that: The example assumes no daylight saving time shift between the given timezones at the specified date and time.\nThe function should output with:\n    str: The converted time string in the format 'dd/mm/yy HH:MM:SS.fff'. The conversion takes into account any differences in daylight saving rules between the source and target timezones.\nYou should write self-contained code starting with:\n```\nimport pytz\nfrom dateutil.parser import parse\n# Constants\nTIME_FORMAT = \"%d/%m/%y %H:%M:%S.%f\"\ndef task_func(time_string, from_tz, to_tz):\n```"
+}

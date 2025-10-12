@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1103",
+  "text": "Run an R script and return the start time, end time, decoded stdout, and decoded stderr as a dictionary.\nThe function should output with:\n    dict: A dictionary containing the start time, end time, stdout, and stderr of the script run.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport shlex\nfrom datetime import datetime\ndef task_func(script_path: str) -> dict:\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_574",
+  "text": "Generate two arrays of random numbers of a given length, calculate their mean, median, and standard deviation, then store these results in a Panda DataFrame 'statistics' with keys 'Array1' and 'Array2'. Draw a bar chart to compare these statistics with indices 'Mean', 'Median', and 'Standard Deviation'.\nThe function should output with:\n    DataFrame: A pandas DataFrame with the statistics of the arrays.\n    Axes: The bar chart plot comparing the statistics.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(array_length=100):\n```"
+}

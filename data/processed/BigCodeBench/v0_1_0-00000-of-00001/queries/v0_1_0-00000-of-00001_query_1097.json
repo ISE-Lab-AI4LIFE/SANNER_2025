@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1097",
-  "text": "Save all words in a text beginning with the \"$\" character in a CSV file, excluding any words that are solely composed of punctuation characters.\nNote that: The header of the csv row is \"Word\"\nThe function should output with:\n    str: The absolute path of the saved CSV file.\nYou should write self-contained code starting with:\n```\nfrom nltk.tokenize import RegexpTokenizer\nfrom string import punctuation\nimport csv\nimport os\nPUNCTUATION = set(punctuation)\ndef task_func(text, filename):\n```"
-}

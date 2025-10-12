@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_561",
-  "text": "This function plots a bar chart of monthly data values for a single year, with 'month' on the x-axis and 'value' on the y-axis.\nThe function should output with:\n    Axes object: A matplotlib.axes.Axes object representing the plot, with the title formatted as 'Monthly Data for yyyy', x label as 'Month', and y label as 'Value'.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport matplotlib.pyplot as plt\nimport pandas as pd\ndef task_func(data):\n```"
-}

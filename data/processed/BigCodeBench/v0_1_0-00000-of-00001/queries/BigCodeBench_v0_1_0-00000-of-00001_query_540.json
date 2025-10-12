@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_540",
+  "text": "Create an SQLite3 table and fill it with random data using the provided database and table names. The function populates the table with columns 'name', 'age', 'height' using random data from the following constants: - NAMES: List of names ['John', 'Jane', 'Steve', 'Emma', 'Liam', 'Olivia'] - AGES: Range of ages from 18 to 65. - HEIGHTS: Range of heights from 150cm to 200cm.\nThe function should raise the exception for: ValueError: If num_entries is negative.\nThe function should output with:\n    str: The absolute path of the SQLite3 database file.\nYou should write self-contained code starting with:\n```\nimport sqlite3\nfrom random import choice, seed\nimport os\ndef task_func(db_name, table_name, num_entries, random_seed=None):\n```"
+}

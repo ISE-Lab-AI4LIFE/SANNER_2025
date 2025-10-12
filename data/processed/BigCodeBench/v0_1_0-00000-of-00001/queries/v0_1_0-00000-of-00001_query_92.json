@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_92",
-  "text": "Perform a linear regression on two columns of a dataset and record the result. Additionally, generates a plot representing the original data and the fitted line.\nThe function should raise the exception for: ValueError: If the specified columns do not exist in the DataFrame.\nThe function should output with:\n    tuple: The slope, intercept, r-value, p-value, and standard error of the regression.\n    Axes: The matplotlib Axes object containing the plot.\nYou should write self-contained code starting with:\n```\nfrom scipy.stats import linregress\nimport matplotlib.pyplot as plt\ndef task_func(data, column1, column2):\n```"
-}

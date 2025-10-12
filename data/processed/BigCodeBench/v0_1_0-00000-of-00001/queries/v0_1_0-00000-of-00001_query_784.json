@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_784",
-  "text": "Move all files with a particular extension from one directory to another.\nThe function should output with:\n    files_moved (int): The number of files moved.\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\ndef task_func(src_dir, dest_dir, extension):\n```"
-}

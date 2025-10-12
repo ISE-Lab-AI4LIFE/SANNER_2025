@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_164",
+  "text": "Generates a DataFrame with random numerical data and visualizes this data in a stacked bar chart for specified categories.\nThe function should raise the exception for: ValueError: If the number of columns exceeds the number of available categories.\nThe function should output with:\n    matplotlib.axes._axes.Axes: The Axes object displaying the stacked bar chart.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(rows=5, cols=5):\n```"
+}

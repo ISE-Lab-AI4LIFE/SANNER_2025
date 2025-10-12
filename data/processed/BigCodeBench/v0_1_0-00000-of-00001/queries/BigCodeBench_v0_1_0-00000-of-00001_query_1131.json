@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1131",
+  "text": "Create SHA256 hashes for all files in the specified directory, including files in subdirectories, and save these hashes in a JSON file named 'hashes.json' in the given directory.\nThe function should output with:\n    str: The absolute path of the JSON file ('hashes.json') containing the hashes.\nYou should write self-contained code starting with:\n```\nimport os\nimport hashlib\nimport json\nfrom pathlib import Path\ndef task_func(directory: str) -> str:\n```"
+}

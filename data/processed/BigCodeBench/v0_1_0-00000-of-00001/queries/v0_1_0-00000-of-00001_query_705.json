@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_705",
-  "text": "Find all combinations of columns from a given DataFrame so that the absolute correlation between them is greater than a certain threshold.\nThe function should output with:\n    corr_combinations (list): A list of tuples where each tuple contains two column names.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom itertools import combinations\n# Constants\nMIN_PERCENTAGE = 0.75\ndef task_func(data, cols, percentage):\n```"
-}

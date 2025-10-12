@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_285",
+  "text": "Extracts all hyperlinks (href attributes) from the specified URL using the mechanize browser object and BeautifulSoup. Absolute URLs are combined with the base URL.\nThe function should output with:\n    list: A list of strings, each being a hyperlink found on the page.\nYou should write self-contained code starting with:\n```\nimport mechanize\nfrom bs4 import BeautifulSoup\nfrom urllib.parse import urljoin\ndef task_func(url):\n```"
+}

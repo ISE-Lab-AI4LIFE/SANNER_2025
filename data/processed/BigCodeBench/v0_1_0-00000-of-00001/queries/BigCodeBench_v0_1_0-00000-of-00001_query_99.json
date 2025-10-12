@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_99",
+  "text": "Creates a list of random strings, each of a specified length, and counts the frequency of each character across all strings. The function then returns the characters and their frequencies sorted by frequency in descending order. The random strings are composed of ASCII lowercase characters.\nThe function should output with:\n    list of tuple: A list of tuples where each tuple contains a character and its count,\n    sorted by count in descending order.\nYou should write self-contained code starting with:\n```\nimport random\nimport string\nfrom collections import Counter\ndef task_func(num_strings, string_length):\n```"
+}

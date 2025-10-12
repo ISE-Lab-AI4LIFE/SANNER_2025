@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_428",
-  "text": "Perform linear regression analysis with specified characteristics and targets. The function should merge two dataframes based on the 'id' column, perform linear regression using columns specified in features to predict the target, and plot the residuals.\nThe function should output with:\n    dict: A dictionary containing:\n    'coefficients': Regression coefficients (list).\n    'intercept': Regression intercept (float).\n    'residuals_plot': A matplotlib Axes object representing the residuals plot, with the title 'Residuals Plot', x-axis label 'Predicted Values', and y-axis label 'Residuals'.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nimport matplotlib.pyplot as plt\ndef task_func(df1, df2, features=[\"feature1\", \"feature2\", \"feature3\"], target=\"target\"):\n```"
-}

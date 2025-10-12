@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_171",
-  "text": "Fetches data from a given CSV URL and returns a pandas DataFrame sorted based on the specified column. >>> task_func(\"http://example.com/data.csv\", sort_by_column=\"price\") id   title  price 2   3  Cherry    0.2 0   1   Apple    0.3 1   2  Banana    0.5\nThe function should raise the exception for: Exception: If the response status code is not 200.\nThe function should output with:\n    DataFrame: The pandas DataFrame that sorted based on the specified column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport requests\nfrom io import StringIO\ndef task_func(csv_url, sort_by_column=\"title\"):\n```"
-}

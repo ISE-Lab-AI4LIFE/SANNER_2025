@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_604",
+  "text": "Connects two 2D numeric arrays (matrices) along the second axis (columns), converts them into a Pandas DataFrame, and returns a string representation of the DataFrame.\nThe function should output with:\n    str: The string representation of the DataFrame without the index and header.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(matrix1, matrix2):\n```"
+}

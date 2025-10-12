@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_936",
+  "text": "Creates a Pandas DataFrame from a single word, where each row contains a letter from the word and its 1-based position in the alphabet. >>> task_func('zoo') Letter  Position 0      z        26 1      o        15 2      o        15\nThe function should raise the exception for: ValueError: If the input word is not in lowercase or contains non-alphabetic characters.\nThe function should output with:\n    pandas.DataFrame: A DataFrame with two columns: 'Letter' and 'Position',\n    where 'Position' is the letter's position in the English alphabet.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport string\ndef task_func(word):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_131",
-  "text": "Converts a hex string to bytes, salts it with a random value of specified size, and computes its SHA256 hash. The function generates a random salt of the specified size, appends it to the byte representation of the hex string, and then computes the SHA256 hash of the salted data. The salt and hash are returned as a tuple.\nThe function should output with:\n    tuple: A tuple containing the base64-encoded salt and the SHA256 hash.\nYou should write self-contained code starting with:\n```\nimport base64\nimport binascii\nimport os\nimport hashlib\ndef task_func(hex_str, salt_size):\n```"
-}

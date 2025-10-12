@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_500",
+  "text": "Converts CSV content into an Excel file and saves it with the given filename. The function reads the CSV content, creates a new Excel workbook, writes the data into the workbook, and saves it as an Excel file. Create an Excel file with a single cell. >>> csv_content = 'Hello' >>> os.path.isfile(task_func(csv_content, 'single_cell.xls')) True\nThe function should output with:\n    str: The absolute path of the created Excel file.\nYou should write self-contained code starting with:\n```\nimport xlwt\nimport os\nimport io\nimport csv\ndef task_func(csv_content, filename):\n```"
+}

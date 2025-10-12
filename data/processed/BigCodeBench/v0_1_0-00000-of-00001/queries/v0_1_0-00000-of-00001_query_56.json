@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_56",
-  "text": "Given a text as input, the function should split it into multiple sentences and build a dictionary where each key is associated with a sentence and the corresponding value is the number of words in the sentence. The function returns a pandas Series built from the dictionary. - The keys of the dictionary (which correspond to the Index of the pandas Series) should be named \"Sentence 1\", \"Sentence 2\" etc. - When counting the words in a sentence, do not consider those included in the constant STOPWORDS. - Do not consider empty sentences.\nThe function should output with:\n    pandas.core.series.Series: A pandas Series each sentence and its number of words that are not in STOPWORDS.\nYou should write self-contained code starting with:\n```\nimport re\nimport pandas as pd\nSTOPWORDS = [\"Those\", \"are\", \"the\", \"words\", \"to\", \"ignore\"]\ndef task_func(text):\n```"
-}

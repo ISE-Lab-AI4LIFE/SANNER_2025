@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_515",
+  "text": "Create a Pandas DataFrame from a 2D list and plot the sum of each column. Internal Constants: COLUMNS: List of column names used for the DataFrame ['A', 'B', 'C', 'D', 'E']\nThe function should output with:\n    DataFrame, Axes: A pandas DataFrame with the data and a matplotlib Axes object showing the sum of each column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\ndef task_func(array):\n```"
+}

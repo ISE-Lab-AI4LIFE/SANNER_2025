@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_482",
-  "text": "Randomizes the order of comma-separated substrings within each string in a list, normalizing spaces to ensure a single space follows each comma using regex, then returns a DataFrame comparing original and randomized strings.\nThe function should output with:\n    pandas.DataFrame: A DataFrame with columns 'Original String' and 'Randomized String'.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport random\nimport re\ndef task_func(data_list, seed=42):\n```"
-}

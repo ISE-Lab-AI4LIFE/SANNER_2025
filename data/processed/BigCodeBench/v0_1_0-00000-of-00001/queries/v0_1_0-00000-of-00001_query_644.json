@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_644",
-  "text": "Extract numeric data from a Pandas DataFrame based on a specific pattern. The function searches each cell for occurrences of the regex pattern '>number<number>' (e.g., '>1.23<') and replaces the cell content with the extracted numeric value. If no match is found, the cell is replaced with NaN.\nThe function should output with:\n    pd.DataFrame: A modified DataFrame with cells containing the extracted numeric values or NaN.\nYou should write self-contained code starting with:\n```\nimport re\nimport pandas as pd\nimport numpy as np\n# Constants\nDATA_PATTERN = r'>\\d+\\.\\d+<'\ndef task_func(dataframe, data_pattern=DATA_PATTERN):\n```"
-}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_806",
+  "text": "Converts a dictionary to a pandas DataFrame and find the locations of a particular item in the resulting DataFrame. Counts the number of occurences and adds a random integer x, where 0 <=x < 10, to it. >>> dict = {'A': ['a', 'b', 'e'], 'B': ['c', 'd', 'd'], '2': ['asdf', 'ddd', 'aaaa'], '12': ['e', 'e', 'd']} >>> task_func(dict, 'e', seed=2) ([(2, 'A'), (0, '12'), (1, '12')], 3,    A  B     2 12 0  a  c  asdf  e 1  b  d   ddd  e 2  e  d  aaaa  d)\nThe function should output with:\n    list: A list of tuples. Each tuple contains the row-index and column-name where the item is found.\n    int: The number of occurences with the added random number.\n    DataFrame: The converted dictionary.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport random\ndef task_func(dictionary, item, seed):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_217",
-  "text": "Analyze text content in JSON files from a given directory and find the most common words. This function reads all the JSON files in the specified directory, extracts the text content from each file, and determines the most frequent words. It then returns a list of the specified number of the most common words and their respective counts.\nThe function should output with:\n    list: A list of tuples with the most common words and their counts.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport os\nimport json\nfrom collections import Counter\ndef task_func(json_dir_path, word_count):\n```"
-}

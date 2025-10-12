@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_636",
-  "text": "Analyzes a text string, removing duplicate consecutive words and stopwords defined by nltk.corpus, generates a square co-occurrence matrix of words, and plots this matrix.\nThe function should output with:\n    tuple:\n    pd.DataFrame: Square co-occurrence matrix of words.\n    matplotlib.axes.Axes: Plot object of the co-occurrence matrix.\nYou should write self-contained code starting with:\n```\n# Importing the required libraries\nimport re\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom sklearn.feature_extraction.text import CountVectorizer\nfrom nltk.corpus import stopwords\ndef task_func(text, n=2):\n```"
-}

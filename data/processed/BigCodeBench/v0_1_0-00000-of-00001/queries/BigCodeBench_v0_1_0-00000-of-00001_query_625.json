@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_625",
+  "text": "Convert a list of lists 'L' into a 2D numeric array, apply PCA to it and return the PCA result and scatter plot.\nThe function should output with:\n    tuple: A tuple containing the PCA result (numpy array) and the scatter plot (matplotlib Axes object).\nYou should write self-contained code starting with:\n```\nfrom sklearn.decomposition import PCA\nimport numpy as np\nimport matplotlib.pyplot as plt\n# Constants\nN_COMPONENTS = 2\ndef task_func(L):\n```"
+}

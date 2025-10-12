@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_730",
+  "text": "Save the list of random strings \"Strings\" in a pickle file and then read it back for validation. If a filename is not provided, a unique filename is generated.\nThe function should output with:\n    loaded_strings (list): The loaded list of strings from the pickle file.\nYou should write self-contained code starting with:\n```\nimport pickle\nimport os\nimport random\nimport string\ndef task_func(strings, filename=None):\n```"
+}

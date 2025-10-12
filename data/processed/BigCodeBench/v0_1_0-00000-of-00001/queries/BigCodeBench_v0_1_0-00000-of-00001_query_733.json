@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_733",
+  "text": "Stem every word in a sentence, except the last, and count the frequency of each stem.\nThe function should output with:\n    dict: A dictionary with stemmed words as keys and their frequency as values.\nYou should write self-contained code starting with:\n```\nimport re\nimport string\nfrom nltk.stem import PorterStemmer\nfrom collections import Counter\nSTEMMER = PorterStemmer()\ndef task_func(content):\n```"
+}

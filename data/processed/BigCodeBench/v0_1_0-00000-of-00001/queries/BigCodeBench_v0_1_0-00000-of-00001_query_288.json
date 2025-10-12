@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_288",
+  "text": "Count the number of words in .txt files within a specified directory, export the counts to a JSON file, and then return the total number of words.\nThe function should output with:\n    int: total number of words in .txt files\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport os\nimport json\ndef task_func(filename, directory):\n```"
+}

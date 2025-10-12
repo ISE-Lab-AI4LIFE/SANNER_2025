@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_324",
-  "text": "Extract names from a string that aren't enclosed by square brackets, tokenize the names into words, and count the frequency of each word. Finally, fit a mixture of num_gaussians 1-D Gaussian distributions to the word frequencies and return the means and variances of the fitted Gaussians.\nThe function should raise the exception for: ValueError: If num_gaussians is less than or equal to 0. Exception: If num_gaussians is greater than the number of unique words.\nThe function should output with:\n    dict: A dictionary with the frequency of each word.\nYou should write self-contained code starting with:\n```\nimport re\nimport numpy as np\nfrom collections import Counter\nfrom sklearn.mixture import GaussianMixture\ndef task_func(text, num_gaussians=1, seed=42):\n```"
-}

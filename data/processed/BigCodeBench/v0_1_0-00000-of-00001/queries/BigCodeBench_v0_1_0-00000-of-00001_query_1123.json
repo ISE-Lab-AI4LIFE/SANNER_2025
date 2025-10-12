@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1123",
+  "text": "Extracts all URLs from a given string, analyzes each URL to extract the domain, and retrieves the IP address of each domain.\nThe function should raise the exception for: socket.gaierror if the domain cannot be resolved\nThe function should output with:\n    dict: A dictionary with domains as keys and their respective IP addresses (IPv4) as values. If a domain cannot be resolved, the IP address will be None.\nYou should write self-contained code starting with:\n```\nimport re\nimport socket\nimport urllib.parse\ndef task_func(myString):\n```"
+}

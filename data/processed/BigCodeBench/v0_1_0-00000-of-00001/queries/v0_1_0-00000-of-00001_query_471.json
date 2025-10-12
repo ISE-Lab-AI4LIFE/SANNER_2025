@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_471",
-  "text": "Draws a histogram of the values in a list and returns the plot's Axes. For visualization: - Bin edges are adjusted to align with integer values in `myList`. - Histogram bars are outlined in black. - X-axis label: 'Value' - Y-axis label: 'Frequency' - Plot title: 'Histogram of Values'\nThe function should output with:\n    ax (matplotlib.axes._axes.Axes): Axes object of the histogram plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\ndef task_func(myList):\n```"
-}

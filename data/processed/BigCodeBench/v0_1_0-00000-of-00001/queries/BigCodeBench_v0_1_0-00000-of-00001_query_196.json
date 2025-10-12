@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_196",
+  "text": "Open a web page in the default web browser in a background process.\nThe function should output with:\n    int: The return code of the subprocess.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport platform\nimport time\ndef task_func(url):\n```"
+}

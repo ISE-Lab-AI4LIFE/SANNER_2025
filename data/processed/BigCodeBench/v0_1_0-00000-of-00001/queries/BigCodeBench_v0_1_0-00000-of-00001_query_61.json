@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_61",
+  "text": "Save the list of dictionaries provided in the 'result' parameter to a CSV file (without index) and a JSON file.\nThe function should output with:\n    None\nYou should write self-contained code starting with:\n```\nimport json\nimport pandas as pd\ndef task_func(result, csv_file_path=\"test.csv\", json_file_path=\"test.json\"):\n```"
+}

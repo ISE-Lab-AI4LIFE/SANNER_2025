@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_174",
+  "text": "Generates a DataFrame representing the GDP for a predefined set of countries based on their presence in the p rovided dictionary. The GDP values are simulated with random integers to model economic data.\nThe function should output with:\n    DataFrame: A pandas DataFrame with each country's name from the input as the index and a randomly generated GDP\n    value as the column. GDP values range between 1,000,000,000 and 100,000,000,000.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\ndef task_func(country_dict):\n```"
+}

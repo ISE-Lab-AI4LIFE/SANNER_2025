@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_824",
-  "text": "Make a delay for a given amount of time for a specified number of samples, measure the actual delay and calculate the statistical properties of the delay times.\nThe function should output with:\n    tuple: The mean and standard deviation of the delay times.\nYou should write self-contained code starting with:\n```\nimport time\nimport numpy as np\ndef task_func(samples=10, delay=0.1):\n```"
-}

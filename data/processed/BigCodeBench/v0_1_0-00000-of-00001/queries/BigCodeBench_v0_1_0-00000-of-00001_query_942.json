@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_942",
+  "text": "Generates and plots a sales forecast starting from a given date, for a specified number of periods and frequency.\nThe function should output with:\n    A tuple containing:\n    1. A DataFrame with columns ['Date', 'Sales'], where 'Date' is the forecast date and 'Sales' are the forecasted sales.\n    2. A matplotlib Axes object for the sales forecast plot.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(start_date: str, periods: int, freq: str, random_seed: int = 0) -> (pd.DataFrame, plt.Axes):\n```"
+}

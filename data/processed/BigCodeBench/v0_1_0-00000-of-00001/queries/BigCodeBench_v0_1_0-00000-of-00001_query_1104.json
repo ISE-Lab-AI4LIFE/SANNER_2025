@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1104",
+  "text": "Execute a given Python code in a temporary directory.\nNote that: If the Python code can be run successfully return \"Script executed successfully!\", otherwise \"Script execution failed!\"\nThe function should output with:\n    str: String indicating the success or failure of the script execution.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport shutil\nimport os\ndef task_func(script_path: str, temp_dir: str) -> str:\n```"
+}

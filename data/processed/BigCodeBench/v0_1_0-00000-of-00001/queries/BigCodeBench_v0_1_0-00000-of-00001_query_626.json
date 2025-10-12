@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_626",
+  "text": "Generate a DataFrame with population data for a list of cities. The population is generated randomly and rounded up to the next thousand.\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns 'City' and 'Population', containing population data for the cities.\nYou should write self-contained code starting with:\n```\nimport math\nfrom random import randint\nimport pandas as pd\ndef task_func(cities_list):\n```"
+}

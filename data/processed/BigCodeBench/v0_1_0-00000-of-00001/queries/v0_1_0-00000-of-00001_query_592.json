@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_592",
-  "text": "Generate temperature data for the specified number of hours, save it in a CSV file, and plot the data using matplotlib. Data Structure: The function uses a dictionary to manage the generated temperature data with keys: 'Time', 'Temperature', and 'Category'.\nThe function should output with:\n    tuple:\n    str: The path of the generated CSV file.\n    Axes: The plot object for further manipulation or saving.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nfrom random import randint\nimport matplotlib.pyplot as plt\nimport pandas as pd\nTEMP_CATEGORIES = ['Cold', 'Normal', 'Hot']\nFILE_PATH = 'custom_data.csv'\ndef task_func(hours, file_path=FILE_PATH):\n```"
-}

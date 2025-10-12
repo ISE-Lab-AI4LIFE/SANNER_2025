@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_230",
+  "text": "Create a JSON file on a specific file path with random user activity data. The number of entries in the JSON file is determined by num_entries. The written JSON file contains a list of dictionaries, with each dictionary representing a log entry with the following keys: 'user', 'action', and 'timestamp'.\nThe function should output with:\n    str: The file path of the generated JSON file.\nYou should write self-contained code starting with:\n```\nimport json\nimport random\nfrom datetime import datetime, timedelta\n# Constants\nUSERS = ['Alice', 'Bob', 'Charlie', 'Dave', 'Eve']\ndef task_func(file_path, num_entries, seed=None):\n```"
+}

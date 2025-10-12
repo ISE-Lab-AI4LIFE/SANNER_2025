@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_642",
-  "text": "Searches for files in the specified directory that match a given regex pattern. This function walks through the directory, matches filenames against the pattern, and saves the matched file paths to a CSV file. It returns a DataFrame of these paths with colomn 'File Path'.\nThe function should output with:\n    pd.DataFrame: DataFrame with a single column 'File Path' of matched paths.\nYou should write self-contained code starting with:\n```\nimport os\nimport re\nimport pandas as pd\ndef task_func(pattern: str, directory: str, output_csv: str) -> pd.DataFrame:\n```"
-}

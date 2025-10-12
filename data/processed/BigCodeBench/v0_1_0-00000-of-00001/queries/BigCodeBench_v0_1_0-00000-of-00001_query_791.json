@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_791",
+  "text": "Standardize two columns ('col1' and 'col2') in the DataFrame, find the biggest differences between the individual elements of the standardized columns, and return the indices of the N largest differences. >>> df = pd.DataFrame({ ...     'a': [1, 2, 3, 4], ...     'b': [1, 2, 3, 5] ... }) >>> indices = task_func(df, 'a', 'b') >>> print(indices) [2, 3, 0, 1]\nThe function should raise the exception for: ValueError: If specified columns are not in the provided DataFrame.\nThe function should output with:\n    list[int]: The indices of the N largest differences.\nYou should write self-contained code starting with:\n```\nimport heapq\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(df, col1, col2, N=10):\n```"
+}

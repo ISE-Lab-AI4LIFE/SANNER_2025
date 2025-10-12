@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_1135",
-  "text": "Computes the MD5 hash of each file's content in the specified `source_dir`, prepends the hash along with a prefix to the original content, and writes the modified content to new files in the `target_dir`. Existing files with the same name in `target_dir` are overwritten.\nThe function should raise the exception for: FileNotFoundError if the source directory does not exist.\nThe function should output with:\n    list: A list of paths to the newly created files in the `target_dir`, each with the hash prepended.\nYou should write self-contained code starting with:\n```\nimport os\nimport glob\nimport hashlib\ndef task_func(source_dir, target_dir, prefix='#Hash: '):\n```"
-}

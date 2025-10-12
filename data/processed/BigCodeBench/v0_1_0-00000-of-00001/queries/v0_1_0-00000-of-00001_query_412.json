@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_412",
-  "text": "Converts the given DataFrame to a dictionary, dropping the column named 'c' if it exists, and then saves it as a JSON file.\nThe function should output with:\n    str: Path where the JSON file was saved.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport json\ndef task_func(data: dict, output_path: str = \"./default_data_output.json\") -> str:\n```"
-}

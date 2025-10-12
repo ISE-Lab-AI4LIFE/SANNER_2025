@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_673",
+  "text": "Read a CSV file, inverse the order of the lines and write the inverted lines back into the file. Then reset the cursor to the beginning of the file.\nThe function should output with:\n    filename (str): The name of the CSV file.\nYou should write self-contained code starting with:\n```\nimport csv\nimport sys\ndef task_func(filename):\n```"
+}

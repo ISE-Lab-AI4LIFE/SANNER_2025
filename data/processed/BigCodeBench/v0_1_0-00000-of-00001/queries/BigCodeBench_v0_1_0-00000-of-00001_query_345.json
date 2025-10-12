@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_345",
+  "text": "Backs up a given source folder to the specified backup directory, then deletes the source folder.\nThe function should raise the exception for: ValueError: If the source folder does not exist. Exception: If an error occurs while deleting the source folder.\nThe function should output with:\n    bool: True if the operation is successful, False otherwise.\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\ndef task_func(src_folder, backup_dir):\n```"
+}

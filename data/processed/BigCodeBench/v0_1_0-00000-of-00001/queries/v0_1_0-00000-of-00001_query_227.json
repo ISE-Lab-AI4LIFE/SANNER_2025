@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_227",
-  "text": "Create a generator object that generates a sequence of tuples. Each tuple contains x and e^x values. Plot the exponential function using these values.\nThe function should output with:\n    tuple:\n    A generator object that yields tuples of (x, e^x).\n    The plotted Axes object of the exponential function.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport math\nimport matplotlib.pyplot as plt\ndef task_func(range_start=0, range_end=10, step=0.1):\n```"
-}

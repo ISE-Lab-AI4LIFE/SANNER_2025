@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_149",
+  "text": "Encrypt the categorical data in a specific column of a DataFrame using LabelEncoder.\nThe function should output with:\n    pd.DataFrame: The DataFrame with the encoded column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import LabelEncoder\ndef task_func(df: pd.DataFrame, column_name: str) -> pd.DataFrame:\n```"
+}

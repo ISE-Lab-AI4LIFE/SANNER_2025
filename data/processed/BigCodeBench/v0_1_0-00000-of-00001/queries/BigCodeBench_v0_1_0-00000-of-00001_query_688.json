@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_688",
+  "text": "Merges a predefined set of lists into a list and finds the mode of the elements in the list.\nThe function should output with:\n    tuple: The mode and count of the mode in the merged list.\n    mode_value (np.array): The value that appears most frequently in the merged array.\n    mode_count (int): The frequency count of the mode_value within the merged array.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy.stats import mode\ndef task_func(list_of_lists):\n```"
+}

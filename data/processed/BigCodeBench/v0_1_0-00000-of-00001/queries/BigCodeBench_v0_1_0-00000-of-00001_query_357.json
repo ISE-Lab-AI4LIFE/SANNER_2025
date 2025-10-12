@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_357",
+  "text": "Draw the phase of a complex function over a range of x and y and return the matplotlib axes object along with the 2D array of calculated phase values.\nThe function should raise the exception for: TypeError: If either `x` or `y` is not a numpy.ndarray. ValueError: If `x` and `y` do not have the same length.\nThe function should output with:\n    tuple: containing\n    matplotlib.axes.Axes: The axes object with the phase plot.\n    numpy.ndarray: The 2D array of calculated phase values.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport cmath\ndef task_func(x, y):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_363",
-  "text": "Copies data from an Excel spreadsheet into a new Excel file, then reads the new Excel file and returns its contents.\nThe function should raise the exception for: FileNotFoundError: If the original Excel file does not exist at the specified path. ValueError: If the specified sheet does not exist in the workbook.\nThe function should output with:\n    DataFrame: A pandas DataFrame representing the content of the new Excel file.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport os\ndef task_func(original_file_location=\"test.xlsx\", new_file_location=\"new_test.xlsx\", sheet_name=\"Sheet1\"):\n```"
-}

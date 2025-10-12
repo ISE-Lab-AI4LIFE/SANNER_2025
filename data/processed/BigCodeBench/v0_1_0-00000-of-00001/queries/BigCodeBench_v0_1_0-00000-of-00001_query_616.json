@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_616",
+  "text": "Generate a Pandas DataFrame with colomns 'Team' and 'Match Result' of the results of football matches for multiple teams, incorporating random goals and penalties. Penalties are converted into fines using a predefined cost.\nThe function should output with:\n    pd.DataFrame: A pandas DataFrame with columns ['Team', 'Match Result'], detailing each team's goals and accumulated fines.\nYou should write self-contained code starting with:\n```\nfrom random import randint, seed\nimport pandas as pd\n# Method\ndef task_func(goals, penalties, rng_seed=None):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_128",
+  "text": "Moves all files from a specified root directory (ROOT_DIR) to a target directory (DEST_DIR) if they match a specific hash value (SPECIFIC_HASH). The function calculates the MD5 hash of each file in ROOT_DIR and moves it if the hash matches SPECIFIC_HASH.\nNote that: The function assumes the existence of the root directory. The existence of DEST_DIR is ensured by the function.\nThe function should output with:\n    int: The number of files moved to the target directory.\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\nimport glob\nimport hashlib\ndef task_func(ROOT_DIR, DEST_DIR, SPECIFIC_HASH):\n```"
+}

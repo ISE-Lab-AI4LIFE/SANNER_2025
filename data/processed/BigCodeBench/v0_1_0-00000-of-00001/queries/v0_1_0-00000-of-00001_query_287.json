@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_287",
-  "text": "Count the number of words in multiple dictionary files (.txt) in a specific directory, export the counts to a CSV file, and then return the total number of words.\nNote that: Header for the csv output file is \"Word\", \"Count\" Return 0 if the input invalid or error raised\nThe function should output with:\n    int: total number of words in .txt files\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport os\nimport csv\n# Constants\nFILE_DIR = './yourdictfiles/'\ndef task_func(output_file, test_directory):\n```"
-}

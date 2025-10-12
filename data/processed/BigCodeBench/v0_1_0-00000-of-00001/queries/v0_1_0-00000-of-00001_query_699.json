@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_699",
-  "text": "Divide the given DataFrame into a training set and a test set (70%: 30% split), separate the \"target\" column and return the four resulting DataFrames.\nThe function should output with:\n    tuple: A tuple containing four DataFrames: X_train, X_test, y_train, y_test.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\ndef task_func(df):\n```"
-}

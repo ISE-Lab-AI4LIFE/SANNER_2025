@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_150",
+  "text": "Constructs a DataFrame that enumerates the character counts of each string in a provided list of elements. This function can optionally include an index column for each row in the DataFrame.\nNote that: The order of columns in the returned DataFrame will be ['Index', 'Element', 'Count'] if the index is included.\nThe function should output with:\n    DataFrame: Returns a pandas DataFrame with columns for elements and their respective character counts.\n    Includes an 'Index' column if requested.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nDEFAULT_COLUMNS = ['Element', 'Count']\ndef task_func(elements, include_index=False):\n```"
+}

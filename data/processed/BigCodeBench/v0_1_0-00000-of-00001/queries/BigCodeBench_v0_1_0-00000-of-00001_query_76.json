@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_76",
+  "text": "Appends randomly generated sales data for specified fruits over a given range of days to a DataFrame, and returns a seaborn boxplot of the sales.\nThe function should raise the exception for: TypeError: If 'df' is not a pandas DataFrame. ValueError: If 'df' is not empty or  If 'sales_lower_bound' is not less than 'sales_upper_bound'.\nThe function should output with:\n    Tuple[pd.DataFrame, sns.axisgrid.FacetGrid]: Updated DataFrame with sales data and a seaborn boxplot of the sales.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nimport itertools\nfrom datetime import datetime, timedelta\nimport seaborn as sns\ndef task_func(df, fruits=None, days=None, seed=None, sales_lower_bound=1, sales_upper_bound=50):\n```"
+}

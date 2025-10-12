@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_647",
+  "text": "Read a CSV file, convert a column of date strings into datetime objects, and draw a histogram of the year distribution of these dates.\nThe function should output with:\n    matplotlib.axes._axes.Axes: A histogram plot object showing the distribution of years.\nYou should write self-contained code starting with:\n```\nimport os\nimport pandas as pd\nfrom dateutil.parser import parse\nOUTPUT_DIR = './output'\ndef task_func(csv_path=os.path.join(OUTPUT_DIR, 'data.csv'), date_column='date'):\n```"
+}

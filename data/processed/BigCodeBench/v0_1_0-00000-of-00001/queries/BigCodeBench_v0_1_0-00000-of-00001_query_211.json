@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_211",
+  "text": "Generate a bar plot showing the frequency of letters in the given dataset, and highlight the letter associated with the maximum integer value.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object of the generated plot, with the x-axis labeled 'Letter', the y-axis labeled 'Count', the title 'Letter Counts with Max Value Letter Highlighted', and the labels 'Letter Counts' and 'Max Value Letter' in the legend.\nYou should write self-contained code starting with:\n```\nimport collections\nfrom operator import itemgetter\nimport matplotlib.pyplot as plt\ndef task_func(data):\n```"
+}

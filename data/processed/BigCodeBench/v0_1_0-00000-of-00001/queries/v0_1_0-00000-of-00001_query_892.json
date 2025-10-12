@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_892",
-  "text": "Train a linear regression model on a dataset and predict the value of a particular attribute. This function reads a CSV file to create a pandas DataFrame, separates the data into training and testing sets, and performs linear regression. It returns the predicted values for the testing set as well as the trained model.\nNote that: The function assumes that the CSV file is correctly formatted and that the specified attribute exists.\nThe function should output with:\n    tuple: A tuple containing:\n    model (LinearRegression): The trained linear regression model.\n    predictions (ndarray): An array of predicted values for the test set.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.model_selection import train_test_split\ndef task_func(csv_file_path, attribute, test_size=0.2, random_state=42):\n```"
-}

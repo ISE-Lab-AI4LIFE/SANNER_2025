@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_613",
-  "text": "Generates a performance report DataFrame for teams, detailing goals and penalties. For each team, the function fetches goal and penalty counts, calculates 'Penalties Cost' using a random multiplier from a predefined list, and computes a 'Performance Score' as the non-negative difference between goals and penalties. Return a Dataframe with colomns 'Team', 'Goals', 'Penalties', 'Penalties Cost' and 'Performance Score'.\nThe function should output with:\n    pd.DataFrame: DataFrame with Team, Goals, Penalties, Penalties Cost, Performance Score.\nYou should write self-contained code starting with:\n```\nfrom random import choice\nimport numpy as np\nimport pandas as pd\n# Constants\nTEAMS = ['Team A', 'Team B', 'Team C', 'Team D', 'Team E']\nPENALTIES_COSTS = [100, 200, 300, 400, 500]\ndef task_func(goals, penalties, teams=TEAMS, penalties_costs=PENALTIES_COSTS):\n```"
-}

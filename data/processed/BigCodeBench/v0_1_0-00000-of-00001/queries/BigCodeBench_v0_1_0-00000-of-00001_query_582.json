@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_582",
+  "text": "Create a list of random sinusoidal values and plot them in a graph.\nThe function should output with:\n    Axes object: The plot of the sinusoidal wave.\nYou should write self-contained code starting with:\n```\nimport math\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport random\n# Constants\nRANGE = 10000\nSIZE = 1000\nPI = np.pi\ndef task_func(size=SIZE, frequency=1):\n```"
+}

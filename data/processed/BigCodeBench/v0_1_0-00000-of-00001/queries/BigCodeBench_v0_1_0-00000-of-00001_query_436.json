@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_436",
+  "text": "Generate a Pandas DataFrame of employees with their details based on the input provided.\nThe function should output with:\n    data_df (pd.DataFrame): dataframe with columns: 'Name', 'Age', 'Code', 'Salary', 'Bio', 'Job Title'.\n    The 'Job Title' is randomly assigned from the predefined job titles:\n    'Engineer', 'Manager', 'Analyst', 'Developer', 'Tester'.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom random import randint\ndef task_func(name: str, age: int, code: str, salary: float, bio: str) -> pd.DataFrame:\n```"
+}

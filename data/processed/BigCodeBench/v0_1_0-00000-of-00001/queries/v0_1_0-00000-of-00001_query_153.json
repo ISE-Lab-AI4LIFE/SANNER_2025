@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_153",
-  "text": "Generates a DataFrame containing random grades for a predefined list of students across a set of courses. Each student will have one grade per course and an average grade calculated across all courses.\nNote that: The grades are randomly generated for each course using a uniform distribution between 0 and 100.\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns for each student's name, their grades for each course,\n    and their average grade across all courses.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nfrom random import randint\n# Constants\nSTUDENTS = ['Joe', 'Amy', 'Mark', 'Sara', 'John', 'Emily', 'Zoe', 'Matt']\nCOURSES = ['Math', 'Physics', 'Chemistry', 'Biology', 'English', 'History', 'Geography', 'Computer Science']\ndef task_func():\n```"
-}

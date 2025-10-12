@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_756",
-  "text": "Reverse the order of words in all the filenames of a directory, where words are separated by periods.\nThe function should output with:\n    new_filenames (list[str]): A list of new filenames after renaming.\nYou should write self-contained code starting with:\n```\nimport os\nimport glob\ndef task_func(directory_path):\n```"
-}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_671",
+  "text": "Find the continuous substring of x, which has the maximum total weight, given a dictionary where the keys are characters and the values are their weights.\nThe function should output with:\n    max_substr (str): The continuous substring with the highest weight.\nYou should write self-contained code starting with:\n```\nfrom itertools import combinations\nimport math\ndef task_func(x, w):\n```"
+}

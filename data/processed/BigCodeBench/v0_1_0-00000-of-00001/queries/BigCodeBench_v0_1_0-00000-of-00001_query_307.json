@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_307",
+  "text": "Removes all jQuery files (JavaScript files containing 'jquery' in their name) from a specified directory.\nNote that: Removed files are logged in 'jquery_removal.log' file.\nThe function should raise the exception for: If the specified directory does not exist the code would raise FileNotFoundError.\nThe function should output with:\n    tuple: A tuple containing two elements:\n    int: The number of files removed.\n    list: The names of the removed files.\nYou should write self-contained code starting with:\n```\nimport os\nimport logging\ndef task_func(directory):\n```"
+}

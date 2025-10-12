@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_549",
-  "text": "Create a random string of a specified length with uppercase letters and digits, compress it with zlib, and then encode the compressed string in base64.\nThe function should output with:\n    str: The compressed string in base64.\nYou should write self-contained code starting with:\n```\nimport random\nimport string\nimport base64\nimport zlib\ndef task_func(string_length=100):\n```"
-}

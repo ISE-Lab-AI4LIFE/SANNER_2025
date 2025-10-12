@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_189",
-  "text": "Generates a Folium map with markers for specified locations. It preprocesses the input to handle both direct geographical coordinates and address strings. For address strings, it dynamically resolves their latitude and longitude using the Photon geolocation service. This flexible input handling allows for easy mapping of various location types.\nNote that: Notes: The geolocator, instantiated as Photon(user_agent=\"geoapiExercises\"), plays a crucial role in enabling the function to handle string addresses by converting them into latitude and longitude, thus broadening the scope of input data that can be mapped.\nThe function should output with:\n    folium.Map: A Folium map object with markers for each specified location.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport folium\nfrom geopy.geocoders import Photon\ndef task_func(dic):\n```"
-}

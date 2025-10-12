@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_293",
-  "text": "Scale the 'Age' and 'Income' columns between 0 and 1 for each group by 'id' in the provided pandas DataFrame. Additionally, create a histogram of the 'Income' column after scaling and return both the scaled DataFrame and the histogram data.\nThe function should output with:\n    tuple: A tuple containing the scaled DataFrame and the histogram data for the 'income' column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nfrom sklearn.preprocessing import MinMaxScaler\ndef task_func(df):\n```"
-}

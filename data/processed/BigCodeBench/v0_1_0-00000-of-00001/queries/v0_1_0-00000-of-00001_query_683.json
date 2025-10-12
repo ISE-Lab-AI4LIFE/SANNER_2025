@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_683",
-  "text": "Aggregate the values of the same keys from a nested dictionary and remove the \"ele\" key. For each remaining key take the sine.\nThe function should output with:\n    dict: A dictionary with aggregated values.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport math\ndef task_func(nested_dict):\n```"
-}

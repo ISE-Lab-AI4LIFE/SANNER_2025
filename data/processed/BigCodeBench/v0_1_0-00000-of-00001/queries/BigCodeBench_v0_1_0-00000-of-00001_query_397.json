@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_397",
+  "text": "Create a Gaussian kernel density estimate diagram of a normal distribution with a given mean and a standard deviation using a random sample of a size determined by the sample_size parameter. The density diagram is plotted using default settings in a deterministic matplotlib plot. Return the axes object.\nThe function should output with:\n    matplotlib.axes._axes.Axes: Axes object containing the plot of the normal distribution.\nYou should write self-contained code starting with:\n```\nimport matplotlib\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import stats\ndef task_func(mu, sigma, sample_size, seed=0):\n```"
+}

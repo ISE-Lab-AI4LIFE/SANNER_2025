@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_190",
-  "text": "Fetch data from a specific URL and extract all names from the JSON-formatted data that are not enclosed by square brackets. No specific status code should be raised.\nNote that: The function uses regular expressions to search for names in the fetched data. Names that are inside square brackets are ignored. The function will return \"Invalid url input\" if any exception is raised during the request.\nThe function should output with:\n    list[str]: A list of extracted names.\nYou should write self-contained code starting with:\n```\nimport re\nimport json\nimport requests\ndef task_func(data_url: str) -> list:\n```"
-}

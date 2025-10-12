@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_421",
-  "text": "Scales numeric columns of a data dictionary using the StandardScaler. This function scales the numeric columns of a dataframe using the StandardScaler from scikit-learn. Non-numeric columns remain unchanged. If a column contains mixed data types, it tries to convert the entire column to float. If any value in the column cannot be converted to float, the entire column is left unchanged.\nThe function should output with:\n    pd.DataFrame: Dataframe with scaled numeric columns.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(data):\n```"
-}

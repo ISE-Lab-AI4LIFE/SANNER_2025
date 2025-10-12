@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_993",
+  "text": "This function appends a given path to sys.path and updates an SQLite database with the path, creating the table if needed and avoiding duplicates.\nThe function should output with:\n    str: The path that was appended to sys.path and inserted into the database.\nYou should write self-contained code starting with:\n```\nimport sys\nimport sqlite3\n# Constants\nPATH_TO_APPEND = \"path/to/whatever\"\nDATABASE = \"path/to/database.db\"\ndef task_func(path_to_append=PATH_TO_APPEND, database=DATABASE):\n```"
+}

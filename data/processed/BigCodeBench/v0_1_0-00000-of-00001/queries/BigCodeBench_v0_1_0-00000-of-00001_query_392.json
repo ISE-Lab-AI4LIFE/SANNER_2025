@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_392",
+  "text": "Archive all JSON files in a given directory by moving them to a specified archive directory.\nThe function should output with:\n    tuple: A tuple containing a boolean value and a list of error messages.\n    The boolean is True if all files are successfully moved, and False otherwise.\n    The list contains error messages for each file that failed to move.\nYou should write self-contained code starting with:\n```\nimport os\nimport glob\nimport shutil\ndef task_func(directory, archive_dir='archive'):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_114",
+  "text": "Updates a given dictionary by adding 10 random elements based on the 'keys' parameter, with values as random integers from 1 to 100. It saves the JSON representation of the updated dictionary to a file and the counts of each key to a separate text file.\nNote that: This function modifies the input dictionary in place. The filename of the json is 'updated_dictionary.json' The filename of the txt file is 'key_frequencies.txt'\nThe function should raise the exception for: ValueError: If 'keys' does not contain exactly 10 unique elements.\nThe function should output with:\n    tuple: The dictionary, path to the JSON file, and path to the text file.\nYou should write self-contained code starting with:\n```\nimport json\nfrom collections import Counter\nimport random\ndef task_func(my_dict, keys):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_702",
+  "text": "Perform a linear regression analysis on a given DataFrame.\nThe function should output with:\n    score (float): The R-squared score of the model.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.linear_model import LinearRegression\ndef task_func(df, target):\n```"
+}

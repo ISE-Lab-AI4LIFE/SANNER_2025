@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_25",
-  "text": "Hashes a password using the PBKDF2 HMAC algorithm with SHA-256 as the hashing algorithm, combined with a randomly generated salt, and returns both the salt and the hashed password, each base64-encoded.\nThe function should raise the exception for: ValueError if the password is None or empty\nThe function should output with:\n    tuple[bytes, bytes]: A tuple containing the base64-encoded salt and the base64-encoded hashed password as byte strings.\nYou should write self-contained code starting with:\n```\nimport base64\nimport hashlib\nimport os\ndef task_func(password, SALT_LENGTH = 32):\n```"
-}

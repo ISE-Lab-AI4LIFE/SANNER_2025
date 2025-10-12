@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_384",
+  "text": "Visualize the uppermost K n-grams in a given text string.\nThe function should output with:\n    None\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport seaborn as sns\nfrom collections import Counter\nfrom textblob import TextBlob\nfrom matplotlib import pyplot as plt\ndef task_func(text, n, top_k):\n```"
+}

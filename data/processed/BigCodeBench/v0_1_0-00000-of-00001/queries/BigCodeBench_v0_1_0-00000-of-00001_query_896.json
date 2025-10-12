@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_896",
+  "text": "Create a numeric array of random integers, calculate the mean and standard deviation, and draw a histogram of the distribution.\nNote that: The random integers are generated between 1 and 100. The title of the histogram is \"Histogram of Random Values\". The x-axis is labeled \"Val\" and the y-axis is labeled \"Freq\". The mean is plotted as a red dashed line, and the standard deviation is plotted as purple dashed lines.\nThe function should output with:\n    Tuple: A tuple containing the array, mean, standard deviation, and the histogram plot (Axes).\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\n# Constants\nARRAY_SIZE = 10000\ndef task_func():\n```"
+}

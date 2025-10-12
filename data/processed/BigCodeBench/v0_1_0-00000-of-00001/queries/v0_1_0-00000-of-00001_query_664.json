@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_664",
-  "text": "Fit an exponential curve to given data points and plot the curves with labels. It fits an exponential curve of the form: f(x) = a * exp(-b * x) + c to the provided x and y data points for each set of data and plots the fitted curves with the corresponding labels on a single matplotlib figure.\nThe function should output with:\n    matplotlib.figure.Figure: The figure object that contains the plotted curves.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy.optimize import curve_fit\ndef task_func(x, y, labels):\n```"
-}

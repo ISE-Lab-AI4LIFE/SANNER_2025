@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_408",
-  "text": "Converts an Excel file (.xls or .xlsx) to a CSV file by reading the contents of the Excel file and writing them to a new CSV file with the same name but a different extension. Allows specifying separate paths for the Excel file source and the CSV file destination.\nNote that: This function assumes the active sheet is the one to be converted.\nThe function should output with:\n    str: The name of the created CSV file.\nYou should write self-contained code starting with:\n```\nimport os\nimport csv\nfrom openpyxl import load_workbook\ndef task_func(file_name, excel_file_path, csv_file_path) -> str:\n```"
-}

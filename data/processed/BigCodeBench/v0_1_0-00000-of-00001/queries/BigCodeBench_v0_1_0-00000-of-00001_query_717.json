@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_717",
+  "text": "Add a specific path to sys.path and update a JSON file with the current date and time. This function appends a given path to Python's sys.path and updates a JSON file with the current date and time under the key 'last_updated'.\nThe function should output with:\n    json_data (dict): The updated JSON data. The dictionary will contain a 'last_updated' key with the current datetime as its value.\nYou should write self-contained code starting with:\n```\nimport sys\nimport json\nfrom datetime import datetime\n# Constants\nPATH_TO_APPEND = '/path/to/whatever'\nJSON_FILE = '/path/to/json_file.json'\ndef task_func(path_to_append=PATH_TO_APPEND, json_file=JSON_FILE):\n```"
+}

@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_276",
+  "text": "Generate a list of all possible integer pairs within the range of 1 to n.\nThe function should raise the exception for: This function will raise Value Error if the input n is less than 1.\nThe function should output with:\n    list of tuples: A list of tuple pairs representing all possible combinations\n    of two numbers within the specified range.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom itertools import combinations\ndef task_func(n):\n```"
+}

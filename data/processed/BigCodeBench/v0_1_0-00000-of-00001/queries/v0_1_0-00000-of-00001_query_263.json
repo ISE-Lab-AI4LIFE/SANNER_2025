@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_263",
-  "text": "Add a new key-value pair to the dictionary and plot the distribution of its values.\nThe function should output with:\n    dict: The updated dictionary.\n    matplotlib.axes.Axes: The axes object of the plotted bar graph.\nYou should write self-contained code starting with:\n```\nimport collections\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ndef task_func(dictionary, new_key, new_value):\n```"
-}

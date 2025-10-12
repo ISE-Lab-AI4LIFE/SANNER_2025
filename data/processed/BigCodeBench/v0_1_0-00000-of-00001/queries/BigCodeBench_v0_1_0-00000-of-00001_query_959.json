@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_959",
+  "text": "Scramble the letters in each word of a given text, keeping the first and last letters of each word intact.\nNote that: Notes: Words are determined by regex word boundaries. The scrambling only affects words longer than three characters, leaving shorter words unchanged.\nThe function should output with:\n    str: The scrambled text.\nYou should write self-contained code starting with:\n```\nimport random\nimport re\ndef task_func(text, seed=None):\n```"
+}

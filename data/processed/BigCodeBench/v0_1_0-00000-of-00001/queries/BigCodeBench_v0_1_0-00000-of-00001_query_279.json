@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_279",
+  "text": "Solve a quadratic equation in the form of ax ^ 2 + bx + c = 0, where a, b, and c randomly generated numbers are between -10 and 10. The solutions are complex numbers rounded to the specified accuracy.\nThe function should output with:\n    tuple: A tuple of two solutions formatted as complex numbers (rounded to the specified precision).\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom sympy import symbols, solve\ndef task_func(precision=2, seed=0):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_501",
-  "text": "Writes a list of OrderedDicts to an Excel file. Each OrderedDict in the list represents a row in the Excel sheet, and each key in the OrderedDict corresponds to a column defined in the FIELDS constant comprising column names 'ID', 'Name', and 'Age'. Create an Excel file with no data. >>> empty_data = [] >>> path = task_func(empty_data, 'empty_data.xls') >>> os.path.exists(path) and 'empty_data.xls' in path True\nThe function should output with:\n    str: The absolute path of the created Excel file.\nYou should write self-contained code starting with:\n```\nimport xlwt\nimport os\n# Constants\nFIELDS = ['ID', 'Name', 'Age']\ndef task_func(values, filename):\n```"
-}

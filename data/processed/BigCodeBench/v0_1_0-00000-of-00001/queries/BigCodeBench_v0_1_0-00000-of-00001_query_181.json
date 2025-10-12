@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_181",
+  "text": "Open an image file and scale it by different scaling factors. Display each scaled image using matplotlib and return the scaled images with their Axes.\nThe function should raise the exception for: FileNotFoundError: If the image file cannot be found.\nThe function should output with:\n    list of tuples: Each tuple contains (matplotlib.axes.Axes, numpy.ndarray) representing the Axes and the pixel values of the scaled image.\nYou should write self-contained code starting with:\n```\nfrom PIL import Image\nimport numpy as np\nfrom skimage.transform import resize\nimport matplotlib.pyplot as plt\nimport os\ndef task_func(img_path, scale_factors=[0.5, 0.75, 1.5, 2.0]):\n```"
+}

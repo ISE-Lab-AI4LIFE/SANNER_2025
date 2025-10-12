@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_498",
+  "text": "Get the weekday of the date 'days_in_past' days ago from today. This function computes the date that is 'days_in_past' number of days ago from the current system time's date in UTC. It then determines the weekday of this target date using calendar and returns its name as a string.\nThe function should raise the exception for: ValueError: If 'days_in_past' is negative.\nThe function should output with:\n    weekday (str)     : The name of the weekday (e.g., 'Monday', 'Tuesday') for the computed date.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime, timedelta\nimport pytz\nimport calendar\ndef task_func(days_in_past=7):\n```"
+}

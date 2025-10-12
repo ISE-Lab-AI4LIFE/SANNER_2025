@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_598",
+  "text": "Filters rows in a dictionary where the 'Name' column values start with a specified letter. First, convert the dict to a DataFrame and then filter rows in this DataFrame.\nThe function should output with:\n    pd.Series: A Series of filtered 'Name' column.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport time\n# Constants\nLETTERS = list('abcdefghijklmnopqrstuvwxyz')\ndef task_func(data, letter):\n```"
+}

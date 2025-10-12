@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_640",
+  "text": "Generate a Pandas DataFrame with random values, representing a dataset with multiple features. Calculate the correlation between the features and visualize this information using a heatmap.\nThe function should output with:\n    DataFrame: The generated DataFrame with random values.\n    Axes: The heatmap visualization of the correlation matrix.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\ndef task_func(num_samples=100, num_features=5):\n```"
+}

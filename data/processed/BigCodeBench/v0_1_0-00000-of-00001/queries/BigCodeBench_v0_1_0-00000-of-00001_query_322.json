@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_322",
+  "text": "Extracts all names from a given text string that are not surrounded by square brackets and counts the frequency of each extracted name. It then creates a bar chart of the name frequencies and returns the name frequencies as a pandas Series and the bar chart plot's axes object along with the skewness and kurtosis of the name frequencies. If the skewness and kurtosis are nan, they are returned as None.\nThe function should output with:\n    tuple: A tuple containing:\n    pd.Series: A pandas Series with the frequency of each name.\n    Axes: A bar chart plot showing the name frequencies. If no names are found, this will be None.\n    float: The skewness of the name frequencies.\n    float: The kurtosis of the name frequencies.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport re\nfrom scipy import stats\ndef task_func(text):\n```"
+}

@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_449",
-  "text": "Draw and return a subplot of a normal distribution with the given mean and standard deviation, utilizing numpy's linspace to create an array of 100 linearly spaced numbers between `mu - 3*sigma` and `mu + 3*sigma`.\nThe function should output with:\n    matplotlib.axes.Axes: The subplot representing the normal distribution.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.stats import norm\ndef task_func(mu=0, sigma=1):\n```"
-}

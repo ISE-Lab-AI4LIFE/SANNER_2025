@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_261",
+  "text": "Add a new key-value pair to all JSON files in a specific directory and save the updated JSON files. Specifically, the function searches for all JSON files within the provided directory and updates each JSON file by adding a new key-value pair ('mynewkey': 'mynewvalue') if the key doesn't already exist. The function modifies the JSON files in place.\nThe function should output with:\n    int: The number of JSON files updated.\nYou should write self-contained code starting with:\n```\nimport json\nimport os\nimport glob\n# Constants\nKEY = 'mynewkey'\nVALUE = 'mynewvalue'\ndef task_func(directory):\n```"
+}

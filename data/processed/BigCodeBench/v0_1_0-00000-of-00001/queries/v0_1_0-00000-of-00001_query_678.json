@@ -1,4 +1,0 @@
-{
-  "id": "v0_1_0-00000-of-00001_query_678",
-  "text": "Analyze the relationship between two variables in a DataFrame. The function performs a linear regression on the two variables and adds a 'predicted' column to the DataFrame.\nThe function should output with:\n    df (pandas.DataFrame): The DataFrame with the added 'predicted' column.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\nfrom scipy.stats import linregress\ndef task_func(df):\n```"
-}

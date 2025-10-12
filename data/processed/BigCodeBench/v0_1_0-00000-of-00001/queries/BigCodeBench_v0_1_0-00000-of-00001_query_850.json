@@ -1,0 +1,4 @@
+{
+  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_850",
+  "text": "Divide a multi-line string into individual lines, remove stopwords, and count the frequency of each word.\nThe function should output with:\n    dict: A dictionary with word frequencies where each key is a unique word and the value is its frequency.\nYou should write self-contained code starting with:\n```\nimport re\nfrom nltk.corpus import stopwords\nfrom collections import Counter\nSTOPWORDS = set(stopwords.words('english'))\ndef task_func(input_string):\n```"
+}
