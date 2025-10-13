@@ -1,159 +1,132 @@
+import torch
+import pandas as pd
+from tqdm import tqdm
 import random
-import math
+from src.hotflip_upranking.gradient import position_aware_beam_search, re_search
+from src.hotflip_upranking.utils import doc_to_lines, load_model_and_tokenizer
+from pathlib import Path
+import sys
+import json
 
-# -----------------------------
+# Thêm folder gốc của project vào sys.path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.append(str(PROJECT_ROOT))
+# -------------------------
 # Config
-# -----------------------------
-L_MAX = 8             # số token chèn vào
-BEAM_WIDTH = 4        # số beam
-TOPK_PER_POS = 5      # mỗi vị trí lấy top-k token
-N_ITER = 5            # số vòng beam search
-RESEARCH_ITER = 3     # số vòng refine ngắn
+# -------------------------
+MODEL_NAME = "facebook/contriever"   # HF model
+DEVICE = torch.device("cuda" if torch.cuda.is_available() 
+                                       else "mps" if torch.backends.mps.is_available() 
+                                       else "cpu")
+PRINT_EVERY = 1
+
+# Algorithm hyperparams
+L_max = 12           # max inserted token length (Δ length, number of tokens)
+BEAM_WIDTH = 4       # B
+TOPK_TOKEN_PER_POS = 8  # k_b  (candidates per position)
+N_ITER = 6           # main iterations
+RESEARCH_ITER = 3    # re-search iterations (shorter)
 SEED = 42
 random.seed(SEED)
+torch.manual_seed(SEED)
 
-# Tập từ giả lập
-VOCAB = ["alpha", "beta", "gamma", "delta", "epsilon", "zeta", "eta", "theta", "iota", "kappa"]
-
-# -----------------------------
-# Giả lập "gradient propose"
-# -----------------------------
-def gradient_propose_tokens(current_seq, queries, topk=TOPK_PER_POS):
+def demo_documents_to_queries(file_path, output_path, test_mode=False):
     """
-    Mô phỏng bước gradient-propose bằng cách
-    chọn ra top-k token có nhiều ký tự chung nhất với query.
+    Run HotFlip on documents and queries specified in a JSON mapping.
+    Save results as {doc_id: modified_text} in JSON.
+
+    file_path: path to documents_to_queries.json
+    output_path: path to save JSON results
     """
-    T_per_j = []
-    for j in range(len(current_seq)):
-        # Chọn ngẫu nhiên vài token ứng viên
-        scored_tokens = []
-        for tok in VOCAB:
-            # điểm = độ trùng ký tự với query
-            score = sum(tok.count(c) for c in "".join(queries))
-            scored_tokens.append((tok, score))
-        # lấy top-k
-        scored_tokens.sort(key=lambda x: x[1], reverse=True)
-        T_per_j.append([t for t, _ in scored_tokens[:topk]])
-    return T_per_j
+    # Load document → queries mapping
+    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+        doc_to_queries = json.load(f)
 
+    # Normalize paths: replace 'embedding' -> 'processed' and '.npy' -> '.json'
+    normalized_doc_to_queries = {}
+    for doc_path, query_paths in doc_to_queries.items():
+        # Normalize document path
+        doc_path = doc_path.replace("embedding", "processed").replace(".npy", ".json")
+        # Normalize query paths
+        query_paths = [q.replace("embedding", "processed").replace(".npy", ".json") for q in query_paths]
+        normalized_doc_to_queries[doc_path] = query_paths
 
-# -----------------------------
-# Hàm chấm điểm (score)
-# -----------------------------
-def score_sequence(document_lines, seq, insert_pos, queries):
-    """
-    Giả lập điểm cosine: càng có nhiều token gần giống query thì điểm càng cao.
-    """
-    inserted_text = " ".join(seq)
-    query_text = " ".join(queries)
-    # điểm = tỉ lệ ký tự trùng giữa chuỗi chèn và query
-    matches = sum(1 for c in inserted_text if c in query_text)
-    total = max(1, len(inserted_text))
-    score = matches / total
-    # thêm phần thưởng nhẹ cho độ dài hợp lý
-    score *= 1 - abs(len(inserted_text) - len(query_text)) / (len(query_text) + 1)
-    return score
+    # Use normalized mapping
+    doc_to_queries = normalized_doc_to_queries
 
+    # Load model & tokenizer once
+    model, tokenizer = load_model_and_tokenizer()
 
-# -----------------------------
-# Beam Search chính
-# -----------------------------
-def position_aware_beam_search(document_text, queries_per_pos):
-    lines = document_text.splitlines()
-    num_lines = len(lines)
-    neutral_token = "<NEU>"
+    results = {}
 
-    # beam khởi tạo
-    Beam = []
-    for p_idx in range(num_lines):
-        s0 = [neutral_token] * L_MAX
-        score0 = score_sequence(lines, s0, p_idx, queries_per_pos[p_idx])
-        Beam.append((s0, p_idx, score0))
-    Beam.sort(key=lambda x: x[2], reverse=True)
-    Beam = Beam[:BEAM_WIDTH]
+    # Process each document
+    doc_items = list(doc_to_queries.items())
+    if test_mode:
+        doc_items = doc_items[:1]
+    for doc_path, query_paths in tqdm(doc_items, desc="Processing documents"):
+        print(f"Processing: {doc_path}")
 
-    for it in range(N_ITER):
-        Candidates = []
-        for (s_cur, p_idx, sc_cur) in Beam:
-            T_per_j = gradient_propose_tokens(s_cur, queries_per_pos[p_idx])
-            for j in range(L_MAX):
-                for tok in T_per_j[j]:
-                    s_new = s_cur.copy()
-                    s_new[j] = tok
-                    sc_new = score_sequence(lines, s_new, p_idx, queries_per_pos[p_idx])
-                    Candidates.append((s_new, p_idx, sc_new))
-        Candidates.sort(key=lambda x: x[2], reverse=True)
-        Beam = Candidates[:BEAM_WIDTH]
-        best_seq, best_p, best_sc = Beam[0]
-        print(f"[Iter {it+1}/{N_ITER}] best_score={best_sc:.4f} at pos={best_p}")
+        # Load document JSON
+        with open(doc_path, "r", encoding="utf-8") as f:
+            doc_json = json.load(f)
+        doc_id = doc_json.get("id", Path(doc_path).stem)
+        doc_text = doc_json["text"]
 
-    best_seq, best_pos, best_score = max(Beam, key=lambda x: x[2])
-    return best_seq, best_pos, best_score
+        # Split document into lines
+        lines = doc_to_lines(doc_text)
+        num_lines = len(lines)
 
+        # Load all query texts for this document
+        queries_per_pos_texts = []
+        for _ in range(num_lines):
+            queries_at_pos = []
+            for q_path in query_paths:
+                with open(q_path, "r") as qf:
+                    q_json = json.load(qf)
+                    queries_at_pos.append(q_json["text"])
+            queries_per_pos_texts.append(queries_at_pos)
 
-# -----------------------------
-# Re-search (fine-tune quanh nghiệm tốt nhất)
-# -----------------------------
-def re_search(document_text, queries_per_pos, best_seq, best_pos):
-    lines = document_text.splitlines()
-    num_lines = len(lines)
-    Beam = []
+        # HotFlip: position-aware beam search
+        s_star, p_star, best_score, lines_out, flat_ids, line_end_offsets = position_aware_beam_search(
+            model, tokenizer, doc_text, queries_per_pos_texts,
+            L_max=L_max, beam_width=BEAM_WIDTH, topk_token_per_pos=TOPK_TOKEN_PER_POS, N_iter=N_ITER
+        )
 
-    # thêm nghiệm ban đầu
-    score_best = score_sequence(lines, best_seq, best_pos, queries_per_pos[best_pos])
-    Beam.append((best_seq, best_pos, score_best))
+        print(f"\n=== Document {doc_id} ===")
+        print(f"Initial best pos: {p_star}, score: {best_score:.4f}")
 
-    # thêm vài vị trí khác trung tính
-    neutral_token = "<NEU>"
-    for p_idx in range(num_lines):
-        if p_idx == best_pos:
-            continue
-        s0 = [neutral_token] * L_MAX
-        sc0 = score_sequence(lines, s0, p_idx, queries_per_pos[p_idx])
-        Beam.append((s0, p_idx, sc0))
+        # Re-search to refine
+        s_star2, p_star2, best_score2 = re_search(
+            model, tokenizer, doc_text, queries_per_pos_texts,
+            original_seq_ids=s_star, original_pos_idx=p_star,
+            L_max=L_max,
+            beam_width=max(2, BEAM_WIDTH // 2),
+            topk_token_per_pos=max(4, TOPK_TOKEN_PER_POS // 2),
+            N_iter=RESEARCH_ITER
+        )
 
-    Beam.sort(key=lambda x: x[2], reverse=True)
-    Beam = Beam[:BEAM_WIDTH]
+        print(f"ReSearch best pos: {p_star2}, score: {best_score2:.4f}")
 
-    for it in range(RESEARCH_ITER):
-        Candidates = []
-        for (s_cur, p_idx, sc_cur) in Beam:
-            T_per_j = gradient_propose_tokens(s_cur, queries_per_pos[p_idx])
-            for j in range(L_MAX):
-                for tok in T_per_j[j]:
-                    s_new = s_cur.copy()
-                    s_new[j] = tok
-                    sc_new = score_sequence(lines, s_new, p_idx, queries_per_pos[p_idx])
-                    Candidates.append((s_new, p_idx, sc_new))
-        Candidates.sort(key=lambda x: x[2], reverse=True)
-        Beam = Candidates[:BEAM_WIDTH]
-        best_seq, best_p, best_sc = Beam[0]
-        print(f"(ReSearch {it+1}/{RESEARCH_ITER}) best_score={best_sc:.4f} at pos={best_p}")
+        # Convert token IDs to text
+        try:
+            seq_text = tokenizer.decode(s_star2, clean_up_tokenization_spaces=True, skip_special_tokens=True)
+        except Exception:
+            seq_text = " ".join([str(x) for x in s_star2])
 
-    best_seq, best_pos, best_score = max(Beam, key=lambda x: x[2])
-    return best_seq, best_pos, best_score
+        # Save result for this document
+        results[doc_id] = seq_text
 
+    # Save all results to output JSON
+    with open(output_path, "w") as outf:
+        json.dump(results, outf, indent=2)
 
-# -----------------------------
-# Demo chạy thử
-# -----------------------------
+    print(f"\nProcessed {len(results)} documents. Results saved to {output_path}.")
+    return results
+
+# -------------------------
+# Example usage
+# -------------------------
 if __name__ == "__main__":
-    document = """This function calculates the average of absolute differences.
-                    It processes each permutation separately.
-                    Finally, it returns the mean result."""
-
-    queries = [
-        ["average", "absolute", "difference"],    # cho dòng 1
-        ["permutation", "shuffle"],               # cho dòng 2
-        ["mean", "return", "result"]              # cho dòng 3
-    ]
-
-    print("\n=== HOTFLIP UPRANKING (SIMULATION) ===")
-    s_star, p_star, best_score = position_aware_beam_search(document, queries)
-    print(f"\nInitial best pos={p_star}, score={best_score:.4f}")
-
-    s_refined, p_refined, sc_refined = re_search(document, queries, s_star, p_star)
-    print("\n=== FINAL RESULT ===")
-    print("Best position:", p_refined)
-    print("Best score:", round(sc_refined, 4))
-    print("Best token sequence:", " ".join(s_refined))
+    input_mapping = "data/document_to_queries.json"
+    output_file = "data/documents_hotflip_results.json"
+    demo_documents_to_queries(input_mapping, output_file, test_mode=True)
