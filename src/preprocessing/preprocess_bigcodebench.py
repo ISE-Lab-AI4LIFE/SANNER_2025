@@ -5,10 +5,16 @@ import glob
 import tqdm
 import re
 
-RAW_DIR = "/Users/hieunguyen/SANNER_2025/data/raw/BigCodeBench"
-OUT_DIR = "/Users/hieunguyen/SANNER_2025/data/processed/BigCodeBench"
+# Tự động phát hiện thư mục gốc của repo (SANNER_2025)
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data"
 
-Path(OUT_DIR).mkdir(parents=True, exist_ok=True)
+# Thư mục dữ liệu nguồn và đầu ra
+RAW_DIR = DATA_DIR / "raw" / "BigCodeBench"
+OUT_DIR = DATA_DIR / "processed" / "BigCodeBench"
+
+# Tạo thư mục đầu ra nếu chưa tồn tại
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 parquet_files = glob.glob(str(Path(RAW_DIR) / "*.parquet"))
 
 BATCH_SIZE = 50

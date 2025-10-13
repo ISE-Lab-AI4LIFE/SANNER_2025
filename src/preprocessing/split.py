@@ -5,7 +5,10 @@ from pathlib import Path
 import json
 import random
 
-PROCESSED_DIR = Path("/Users/hieunguyen/SANNER_2025/data/processed")
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data"
+
+PROCESSED_DIR = DATA_DIR / "processed"
 UPRANK_JSON = PROCESSED_DIR / "uprank.json"
 TEST_JSON = PROCESSED_DIR / "test.json"
 
@@ -25,7 +28,7 @@ for dataset_folder in PROCESSED_DIR.iterdir():
         queries_dir = version_folder / "queries"
         if queries_dir.exists():
             for q_file in queries_dir.glob("*.json"):
-                query_files.append(str(q_file.resolve()))
+                query_files.append(str(q_file.relative_to(BASE_DIR)))
 
 print(f"Found {len(query_files)} query files across all datasets and versions.")
 

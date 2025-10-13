@@ -3,10 +3,15 @@ from pathlib import Path
 from collections import defaultdict
 import os
 
+# Tự động phát hiện thư mục gốc của repo (SANNER_2025)
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data"
+
 # File JSON đầu vào: danh sách queries với top_documents
-TOP5_JSON = Path("/Users/hieunguyen/SANNER_2025/data/queries_to_document.json")
+TOP5_JSON = DATA_DIR / "queries_to_document.json"
+
 # File JSON đầu ra: mỗi document kèm danh sách queries trỏ tới nó
-DOC2QUERIES_JSON = Path("/Users/hieunguyen/SANNER_2025/data/document_to_queries.json")
+DOC2QUERIES_JSON = DATA_DIR / "document_to_queries.json"
 
 def invert_top_documents(top_json_path, output_path):
     with open(top_json_path, "r", encoding="utf-8") as f:
@@ -15,9 +20,9 @@ def invert_top_documents(top_json_path, output_path):
     doc_to_queries = defaultdict(list)
 
     for entry in top_list:
-        query_id = entry["query_id"]
-        for doc_id in entry["top_documents"]:
-            doc_to_queries[doc_id].append(query_id)
+        query_path = entry["query_path"]
+        for doc_path in entry["top_documents"]:
+            doc_to_queries[doc_path].append(query_path)
 
     # Chuyển defaultdict sang dict thường để lưu JSON
     doc_to_queries = dict(doc_to_queries)

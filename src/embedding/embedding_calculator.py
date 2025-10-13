@@ -19,8 +19,13 @@ logging.getLogger("transformers").setLevel(logging.ERROR)
 from tqdm import tqdm
 from src.embedding.embedder import AverageEmbedder
 
-PROCESSED_DIR = Path("/Users/hieunguyen/SANNER_2025/data/processed")
-EMBEDDING_DIR = Path("/Users/hieunguyen/SANNER_2025/data/embedding")
+# Tự động phát hiện thư mục gốc của repo (SANNER_2025)
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "data"
+
+# Các thư mục dữ liệu
+PROCESSED_DIR = DATA_DIR / "processed"
+EMBEDDING_DIR = DATA_DIR / "embedding"
 
 def chunk_by_chars(text, max_length=2000, stride=1000):
     chunks = []
