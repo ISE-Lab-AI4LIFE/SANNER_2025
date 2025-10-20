@@ -8,7 +8,7 @@ from scipy.spatial.distance import cosine
 from torch.nn.parallel import DataParallel
 import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as DDP
-from utils.utils import SUGGESTIONS_DICT
+from data.dict import SUGGESTIONS_DICT
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
     
 
