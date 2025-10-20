@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_740",
-  "text": "Generate a random float number from a list of hexadecimal strings and then round the float number to 2 decimal places.\nThe function should output with:\n    rounded_float (float): The rounded float number.\nYou should write self-contained code starting with:\n```\nimport struct\nimport random\n# Constants\nKEYS = ['470FC614', '4A0FC614', '4B9FC614', '4C8FC614', '4D7FC614']\ndef task_func(hex_key=None):\n```"
-}

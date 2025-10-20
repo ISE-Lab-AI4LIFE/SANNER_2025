@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_978",
-  "text": "Shuffles the columns of a given 2D numpy array and visualizes it as a heatmap.\nNote that: Notes: This function uses the features list as labels for the heatmap's x-axis if features is provided; otherwise, it defaults to strings of the numerical labels starting from 1 up to the number of columns in the array.\nThe function should raise the exception for: ValueError: If 'features' is provided and does not match the number of columns in 'array'; and if 'array' is empty or not 2-dimensional.\nThe function should output with:\n    Axes: The matplotlib Axes object containing the heatmap.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\ndef task_func(array, features=None, seed=None):\n```"
-}

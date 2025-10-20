@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1047",
-  "text": "Generate a Pandas DataFrame containing a series of dates for a predefined list of employees.\nThe function should output with:\n    DataFrame: A pandas DataFrame with 'Employee' and 'Date' columns, listing the next 10 days for each employee.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport pandas as pd\nfrom itertools import product\n# Constants\nEMPLOYEES = [\"John\", \"Alice\", \"Bob\", \"Charlie\", \"Dave\"]\ndef task_func(date_str):\n```"
-}

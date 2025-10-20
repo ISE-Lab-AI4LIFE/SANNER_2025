@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_330",
-  "text": "Extracts matches from a JSON file based on a predefined regular pattern. The default regular expression pattern is designed to extract any content between parentheses as a single match and any individual character outside the parentheses as a separate match.\nThe function should output with:\n    dict: A dictionary with the JSON file name as the key and a list of matches as values.\n    The format is: {filename: [match1, match2, ...]}.\nYou should write self-contained code starting with:\n```\nimport re\nimport json\nimport os\ndef task_func(file_path: str, regex_pattern=r'\\(.+?\\)|\\w') -> dict:\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_675",
-  "text": "Read a CSV file of pandas, reverse the order of the lines and write the inverted lines back into the file. Then move the cursor back to the beginning of the file. The header should not be inverted and the file may be empty.\nThe function should output with:\n    filename (str): The name of the CSV file.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport os\ndef task_func(filename):\n```"
-}

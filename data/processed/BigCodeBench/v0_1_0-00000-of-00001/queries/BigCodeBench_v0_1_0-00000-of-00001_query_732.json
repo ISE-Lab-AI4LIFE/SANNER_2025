@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_732",
-  "text": "Save the Sklearn dataset (\"Data\" and \"Destination\") in the pickle file \"save.pkl\" and then read it back for validation.\nThe function should output with:\n    tuple: The loaded tuple (data, target) from 'save.pkl'.\nYou should write self-contained code starting with:\n```\nimport pickle\nimport os\nfrom sklearn.datasets import make_classification\n# Constants\nFILE_NAME = 'save.pkl'\nDATA, TARGET = make_classification(n_samples=100, n_features=20, n_informative=2, n_redundant=10, n_classes=2, random_state=1)\ndef task_func(data, target):\n```"
-}

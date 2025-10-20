@@ -7,14 +7,20 @@ import re
 
 # Tự động phát hiện thư mục gốc của repo (SANNER_2025)
 BASE_DIR = Path(__file__).resolve().parents[2]
+print(BASE_DIR)
 DATA_DIR = BASE_DIR / "data"
 
 # Thư mục dữ liệu nguồn và đầu ra
 RAW_DIR = DATA_DIR / "raw" / "BigCodeBench"
-OUT_DIR = DATA_DIR / "processed" / "BigCodeBench"
+OUT_DIR = DATA_DIR / "processed" 
 
-# Tạo thư mục đầu ra nếu chưa tồn tại
-OUT_DIR.mkdir(parents=True, exist_ok=True)
+# Định nghĩa lại thư mục đầu ra
+queries_dir = OUT_DIR / "queries" / "BigCodeBench"
+documents_dir = OUT_DIR / "documents" / "BigCodeBench"
+
+queries_dir.mkdir(parents=True, exist_ok=True)
+documents_dir.mkdir(parents=True, exist_ok=True)
+
 parquet_files = glob.glob(str(Path(RAW_DIR) / "*.parquet"))
 
 BATCH_SIZE = 50
@@ -27,29 +33,26 @@ for file in tqdm.tqdm(parquet_files, desc="Processing raw parquet files", unit="
 
     df_new = df[["instruct_prompt", "canonical_solution"]]
 
-    # Tạo thư mục con cho mỗi file raw
-    sub_dir = Path(OUT_DIR) / filename
-    queries_dir = sub_dir / "queries"
-    documents_dir = sub_dir / "documents"
-
-    queries_dir.mkdir(parents=True, exist_ok=True)
-    documents_dir.mkdir(parents=True, exist_ok=True)
-
-    print(f"📁 Processing {filename}: saving merged queries and documents in batches of {BATCH_SIZE}")
-
-    # Lưu từng query riêng lẻ
+    # Tạo DataFrame queries_df với cột 'id' và 'queries'
+    queries_data = []
     for idx, row in df_new.iterrows():
-        query_file = queries_dir / f"BigCodeBench_{filename}_query_{idx+1}.json"
-        with query_file.open("w", encoding="utf-8") as fq:
-            json.dump({"id": f"BigCodeBench_{filename}_query_{idx+1}", "text": row["instruct_prompt"]}, fq, ensure_ascii=False, indent=2)
+        query_id = f"BigCodeBench_{filename}_query_{idx+1}"
+        queries_data.append({"id": query_id, "queries": row["instruct_prompt"]})
+    queries_df = pd.DataFrame(queries_data)
 
-    # Lưu document đã merge theo batch BATCH_SIZE
-    for batch_start in tqdm.tqdm(range(0, len(df_new), BATCH_SIZE), desc=f"Batches for {filename}", unit="batch"):
+    # Tạo DataFrame documents_df với cột 'id', 'documents', 'queries_id'
+    documents_data = []
+    for batch_start in range(0, len(df_new), BATCH_SIZE):
         batch = df_new.iloc[batch_start: batch_start + BATCH_SIZE]
         merged_docs = DOC_SEP.join(batch["canonical_solution"].astype(str).tolist())
         record_id = batch_start // BATCH_SIZE + 1
-        doc_file = documents_dir / f"BigCodeBench_{filename}_document_{record_id}.json"
-        with doc_file.open("w", encoding="utf-8") as fd:
-            json.dump({"id": f"BigCodeBench_{filename}_document_{record_id}", "text": merged_docs}, fd, ensure_ascii=False, indent=2)
+        doc_id = f"BigCodeBench_{filename}_document_{record_id}"
+        queries_id = [f"BigCodeBench_{filename}_query_{i+1}" for i in range(batch_start, min(batch_start + BATCH_SIZE, len(df_new)))]
+        documents_data.append({"id": doc_id, "documents": merged_docs, "queries_id": queries_id})
+    documents_df = pd.DataFrame(documents_data)
 
-    print(f"✅ Done saving merged batches for {filename} in {sub_dir}")
+    # Lưu queries_df và documents_df vào file CSV
+    queries_df.to_csv(queries_dir / f"{filename}.csv", index=False)
+    documents_df.to_csv(documents_dir / f"{filename}.csv", index=False)
+
+    print(f"✅ Done saving queries and documents CSV for {filename}")

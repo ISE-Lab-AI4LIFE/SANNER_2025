@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_396",
-  "text": "Extract numeric data from all text files matching a given pattern in a directory and compile it into a Pandas DataFrame.\nThe function should raise the exception for: FileNotFoundError: If the specified directory does not exist. ValueError: If no files matching the pattern are found.\nThe function should output with:\n    DataFrame: A pandas DataFrame with two columns: 'Filename' and 'Numeric Data'. Each row represents a file and its extracted numeric data.\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport glob\nimport natsort\nimport pandas as pd\ndef task_func(directory='./', file_pattern='*.txt', regex=r'([0-9]+)'):\n```"
-}

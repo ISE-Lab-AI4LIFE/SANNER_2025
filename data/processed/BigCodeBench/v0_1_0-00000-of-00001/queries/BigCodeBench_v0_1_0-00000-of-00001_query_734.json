@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_734",
-  "text": "Count the non-stop words in a sentence without the last word.\nThe function should output with:\n    count (int): The count of non-stopwords.\nYou should write self-contained code starting with:\n```\nimport re\nimport string\ndef task_func(content):\n```"
-}

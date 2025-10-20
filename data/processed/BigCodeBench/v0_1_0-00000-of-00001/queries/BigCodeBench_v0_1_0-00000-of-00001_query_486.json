@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_486",
-  "text": "Plots the hourly difference between UTC and specified global time zones across a date range. This function visualizes the time difference in hours between UTC and predefined time zones for each day within the specified date range. Predefined time zones include UTC, America/Los_Angeles, Europe/Paris, Asia/Kolkata, and Australia/Sydney. The differences are plotted on a graph, using a distinct color for each time zone's time difference curve, selecting from [\"b\", \"g\", \"r\", \"c\", \"m\", \"y\", \"k\"].\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object with the plotted time differences in hours between UTC and\n    other time zones.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime, timedelta\nimport pytz\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(start_time, end_time):\n```"
-}

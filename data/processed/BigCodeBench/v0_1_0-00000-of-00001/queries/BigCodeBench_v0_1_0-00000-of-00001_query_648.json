@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_648",
-  "text": "Convert a date string from one time zone to another and return the time difference in seconds to the current time in the destination time zone.\nThe function should output with:\n    int: The time difference in seconds.\nYou should write self-contained code starting with:\n```\nimport pytz\nfrom dateutil.parser import parse\ndef task_func(date_str, from_tz, to_tz):\n```"
-}

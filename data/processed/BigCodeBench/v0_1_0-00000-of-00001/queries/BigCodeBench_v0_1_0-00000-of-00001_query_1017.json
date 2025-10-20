@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1017",
-  "text": "Downloads an image from the specified URL, converts it to grayscale, and generates a histogram of its grayscale values.\nThe function should raise the exception for: ValueError: If the URL is invalid or if there's an error downloading the image. Error message will specify the download issue. IOError: If there's an error in opening or processing the downloaded image. Error message will specify the processing issue.\nThe function should output with:\n    matplotlib.axes._axes.Axes: The Axes object of the generated histogram.\nYou should write self-contained code starting with:\n```\nimport requests\nfrom PIL import Image\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(url: str) -> \"matplotlib.axes._axes.Axes\":\n```"
-}

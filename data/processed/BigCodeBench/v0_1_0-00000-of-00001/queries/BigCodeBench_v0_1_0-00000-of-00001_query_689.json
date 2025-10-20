@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_689",
-  "text": "Given a Pandas DataFrame with random numeric values, standardize it with the standard scaler from sklearn.\nThe function should output with:\n    df_standardized (DataFrame): The standardized DataFrame.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(df):\n```"
-}

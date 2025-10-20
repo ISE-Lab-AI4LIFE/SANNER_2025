@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_441",
-  "text": "Calculate the product of matrix \"P\" and 3D tensor \"T\" then return dataframe of normalized results. This function performs matrix-tensor multiplication between a matrix \"P\" and a 3D tensor \"T\" using numpy. It checks if the shapes of P and T are compatible for multiplication, raising a ValueError if they are not. The function then normalizes the resulting 2D array using sklearn's StandardScaler. The final output is returned as a pandas DataFrame, with columns named feature_0, feature_1, ..., feature_n, where n is the number of features in the flattened result of the matrix-tensor multiplication.\nThe function should output with:\n    pandas.DataFrame: A DataFrame with the normalized result.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(P, T):\n```"
-}

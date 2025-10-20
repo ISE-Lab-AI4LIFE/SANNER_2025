@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_381",
-  "text": "Arrange files in a directory by their extensions. Create a new directory for each extension and move the files to the corresponding directories.\nThe function should output with:\n    None\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport shutil\ndef task_func(directory):\n```"
-}

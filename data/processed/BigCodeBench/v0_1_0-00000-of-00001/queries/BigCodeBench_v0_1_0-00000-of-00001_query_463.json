@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_463",
-  "text": "Create a Pandas DataFrame with specified number of rows. Each row contains a randomly selected category from the provided categories list and a random integer between 1 and 100. The function also generates a bar chart visualizing the counts of each category in the DataFrame and returns both the DataFrame and the bar chart.\nThe function should raise the exception for: ValueError: If num_rows is less than 1.\nThe function should output with:\n    pd.DataFrame: A pandas DataFrame with randomly generated category data.\n    matplotlib.pyplot.Axes: A bar chart visualizing the category counts, with the title 'Category Counts'.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport random\ndef task_func(num_rows=100, categories=[\"a\", \"b\", \"c\", \"d\", \"e\"], random_seed=42):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_138",
-  "text": "Calculate the skewness of the last column of the dataframe.\nThe function should raise the exception for: ValueError: If the input is not a DataFrame or has no columns.\nThe function should output with:\n    float: The skewness of the last column of the dataframe.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom scipy.stats import skew\ndef task_func(df):\n```"
-}

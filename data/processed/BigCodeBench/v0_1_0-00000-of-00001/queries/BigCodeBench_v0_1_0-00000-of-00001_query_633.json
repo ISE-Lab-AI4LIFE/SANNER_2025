@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_633",
-  "text": "Write a Pandas DataFrame into a JSON Lines file and save it in a specified directory.\nThe function should output with:\n    str: The full path where the JSON Lines file was saved.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport time\nOUTPUT_DIR = './output'\ndef task_func(df: pd.DataFrame, filename: str) -> str:\n```"
-}

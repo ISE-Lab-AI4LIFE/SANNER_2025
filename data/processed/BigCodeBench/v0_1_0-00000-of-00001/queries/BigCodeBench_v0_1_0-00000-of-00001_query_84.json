@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_84",
-  "text": "Creates a Flask application configured to send emails using Flask-Mail. It sets up the necessary SMTP configuration dynamically based on provided parameters and defines a route to send a test email.\nThe function should output with:\n    Flask: A Flask application instance configured for sending emails.\nYou should write self-contained code starting with:\n```\nfrom flask import Flask\nfrom flask_mail import Mail, Message\ndef task_func(smtp_server, smtp_port, smtp_user, smtp_password, template_folder):\n```"
-}

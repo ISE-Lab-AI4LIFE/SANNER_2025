@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_458",
-  "text": "Draw a histogram of all elements in a nested list 'L' and return the Axes object of the plot. The function first uses Numpy to handle array operations, checking for correct input type while ignoring empty sublists. It then plots the histogram using pandas, assigning each unique value its own bin and plotting the histogram with rwidth 0.8.\nThe function should raise the exception for: If the input is not a list of list of integers, a TypeError is raised.\nThe function should output with:\n    ax (matplotlib.axes._axes.Axes): The Axes object of the histogram plot.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\ndef task_func(L):\n```"
-}

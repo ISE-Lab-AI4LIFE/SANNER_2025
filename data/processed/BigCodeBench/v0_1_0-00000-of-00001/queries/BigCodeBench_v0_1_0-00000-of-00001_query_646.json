@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_646",
-  "text": "Read a CSV file into a Pandas DataFrame and then delete the entire contents of the original file.\nThe function should raise the exception for: FileNotFoundError: If the CSV file does not exist.\nThe function should output with:\n    DataFrame: The contents of the CSV file as a pandas DataFrame.\nYou should write self-contained code starting with:\n```\nimport os\nimport pandas as pd\ndef task_func(filename: str) -> pd.DataFrame:\n```"
-}

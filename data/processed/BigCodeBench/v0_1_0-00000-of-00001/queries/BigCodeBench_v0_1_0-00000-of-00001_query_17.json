@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_17",
-  "text": "Backup all '.log' files in a specified directory to a tar.gz file and delete the original files after backup. The backup file is named 'logs_backup.tar.gz' and placed in the specified backup directory.\nThe function should raise the exception for: FileNotFoundError: If the specified directory does not exist.\nThe function should output with:\n    str: The path to the backup file if logs are found, otherwise returns a message 'No logs found to backup'.\nYou should write self-contained code starting with:\n```\nimport os\nimport glob\nimport subprocess\ndef task_func(directory, backup_dir='/path/to/backup'):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_782",
-  "text": "Determine the size and date of the last modification of a file.\nThe function should output with:\n    dict: A dictionary containing the size (in bytes) and last modification\n    date of the file in the format '%Y-%m-%d %H:%M:%S'.\nYou should write self-contained code starting with:\n```\nimport os\nfrom datetime import datetime\ndef task_func(filepath: str) -> dict:\n```"
-}

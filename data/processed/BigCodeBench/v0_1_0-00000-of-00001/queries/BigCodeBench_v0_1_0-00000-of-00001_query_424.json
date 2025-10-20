@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_424",
-  "text": "Read an RGB image, convert it to grayscale, binarize it using a given threshold, and return both the original and binarized images as numpy arrays. The function checks for the existence of the image file and validates the threshold value.\nThe function should raise the exception for: FileNotFoundError: If the image file does not exist at the specified path. ValueError: If the threshold is not an integer or not in the range 0-255.\nThe function should output with:\n    tuple: A tuple containing two numpy arrays. The first array represents the original grayscale image,\n    and the second array represents the binarized image.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport cv2\nimport os\ndef task_func(image_path='image.jpg', threshold=128):\n```"
-}

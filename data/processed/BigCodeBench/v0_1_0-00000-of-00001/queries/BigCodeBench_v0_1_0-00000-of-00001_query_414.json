@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_414",
-  "text": "Initialize a Flask application with Flask-Mail.\nNote that: The details of the email server are retrieved from environment variables. If the variables do not exist, use defaults.\nThe function should output with:\n    tuple: A tuple containing the Flask-Mail instance and the app's mail configurations.\nYou should write self-contained code starting with:\n```\nimport os\nfrom flask_mail import Mail\ndef task_func(app):\n```"
-}

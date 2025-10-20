@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_28",
-  "text": "Takes a Python dictionary, adds a current timestamp to it, serializes the modified dictionary to a JSON-formatted string, and then encodes this string using base64 encoding with ASCII character encoding.\nThe function should output with:\n    str: A base64 encoded string that represents the input dictionary with an added timestamp,\n    encoded in ASCII. The timestamp is added with the key 'timestamp'.\n    DATE_FORMAT: The timestamp format. Default to 'YYYY-MM-DD HH:MM:SS'.\nYou should write self-contained code starting with:\n```\nimport json\nimport base64\nfrom datetime import datetime\ndef task_func(data: dict, DATE_FORMAT = \"%Y-%m-%d %H:%M:%S\") -> str:\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_497",
-  "text": "Draw a graph of temperature trends over the past week using randomly generated data. This function generates random integer temperatures in Celcius with a low of 15 and high of 35. To show temperature trend, it plots date on the x-axis and temperature on the y-axis.\nThe function should raise the exception for: ValueError: If days_in_past is less than 1.\nThe function should output with:\n    ax (matplotlib.axes._axes.Axes): Generated plot showing 'Temperature Trend'\n    with 'Date' on the a-xis and 'Temperature (°C)' on the y-axis.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime, timedelta\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(days_in_past=7, random_seed=0):\n```"
-}

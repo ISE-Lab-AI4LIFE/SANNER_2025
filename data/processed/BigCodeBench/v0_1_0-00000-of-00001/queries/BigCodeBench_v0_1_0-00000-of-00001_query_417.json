@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_417",
-  "text": "Removes a column from a given data dictionary and creates a heatmap of the correlation matrix of the remaining data. Non-numeric columns are excluded from the heatmap. If the data is empty or has no numeric columns, the function returns None.\nThe function should output with:\n    matplotlib.axes._axes.Axes or None: The Axes object of the heatmap\n    or None if the heatmap is not generated.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport seaborn as sns\ndef task_func(data, column=\"c\"):\n```"
-}

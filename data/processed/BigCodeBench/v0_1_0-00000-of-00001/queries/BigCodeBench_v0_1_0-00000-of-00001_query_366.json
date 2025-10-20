@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_366",
-  "text": "Create a json file with a number of n randomly selected words from a constant list named WORDS.\nThe function should output with:\n    str: The name of the json file generated.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport json\nimport random\n# Constants\nWORDS = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew']\ndef task_func(n, file_name, seed=77):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_854",
-  "text": "Scan a directory and organize the files according to their endings. Files with invalid characters in the name will be moved to a new directory called \"Invalid.\" The invalid characters are defined by the constant INVALID_CHARACTERS, which includes all punctuation and whitespace characters.\nThe function should output with:\n    summary (dict): A summary dictionary containing the count of files moved to each directory.\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\nimport string\n# Constants\nINVALID_CHARACTERS = string.punctuation + string.whitespace\ndef task_func(directory_path):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_945",
-  "text": "Generate a share price series for a specific period of time, plot the share prices, and return the DataFrame and the plot on the share prices over the given date range. The share prices are randomly generated between 100 and 500 from a uniform distribution.\nThe function should output with:\n    A tuple containing a pandas DataFrame with columns ['Date', 'Price'] and a Matplotlib Axes object for the plot.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(start_date='2016-01-01', periods=13, freq='WOM-2FRI', seed=0):\n```"
-}

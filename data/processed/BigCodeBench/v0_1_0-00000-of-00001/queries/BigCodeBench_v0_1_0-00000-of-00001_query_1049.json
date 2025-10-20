@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1049",
-  "text": "Plot a sine wave whose frequency is determined by the day of the month from the given date.\nThe function should output with:\n    matplotlib.axes.Axes: An Axes object containing the plotted sine wave.\nYou should write self-contained code starting with:\n```\nfrom datetime import datetime\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(date_str):\n```"
-}

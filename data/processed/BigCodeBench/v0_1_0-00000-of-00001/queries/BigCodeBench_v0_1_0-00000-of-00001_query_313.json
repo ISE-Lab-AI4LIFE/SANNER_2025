@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_313",
-  "text": "Generate a Gaussian distribution and plot its histogram.\nThe function should output with:\n    tuple: A tuple containing the distribution list and the Axes patch object of the histogram plot.\nYou should write self-contained code starting with:\n```\nimport random\nimport matplotlib.pyplot as plt\n# Constants\nDISTRIBUTION_SIZE = 1000\ndef task_func(bins=30):\n```"
-}

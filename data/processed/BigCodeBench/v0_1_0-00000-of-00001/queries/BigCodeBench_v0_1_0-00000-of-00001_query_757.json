@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_757",
-  "text": "Move all files with certain extensions from one directory to another.\nThe function should raise the exception for: ValueError: If source_dir or target_dir does not exist.\nThe function should output with:\n    int: The number of moved files.\nYou should write self-contained code starting with:\n```\nimport shutil\nfrom pathlib import Path\nfrom typing import List\ndef task_func(source_dir: str, target_dir: str, extensions: List[str]) -> int:\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_298",
-  "text": "Generate all 2-element subsets of a tuple and count the occurrences of each sum in the subsets.\nThe function should output with:\n    dict: A dictionary with the sums and their counts.\nYou should write self-contained code starting with:\n```\nimport itertools\nimport collections\ndef task_func(elements, subset_size):\n```"
-}

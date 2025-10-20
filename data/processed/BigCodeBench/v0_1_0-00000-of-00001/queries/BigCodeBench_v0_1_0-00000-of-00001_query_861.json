@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_861",
-  "text": "Generate a random string of length 'n' and find all non-overlapping matches of the regex 'pattern'. The function generates a random string of ASCII Letters and Digits using the random module. By providing a seed the results are reproducable. Non overlapping matches of the provided pattern are then found using the re module. >>> task_func(1000, r'[1-9]{2}', seed=1) ['51', '84', '16', '79', '16', '28', '63', '82', '94', '18', '68', '42', '95', '33', '64', '38', '69', '56', '32', '16', '18', '19', '27']\nThe function should output with:\n    list: A list of all non-overlapping matches of the regex pattern in the generated string.\nYou should write self-contained code starting with:\n```\nimport re\nimport random\nimport string\ndef task_func(n, pattern, seed=None):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_587",
-  "text": "Generates RSA public and private keys and uses Fernet symmetric encryption to encrypt the contents of a specified file. The Fernet key is then encrypted with the public RSA key. The encrypted file contents and the encrypted Fernet key are saved in separate files. This method demonstrates a hybrid encryption approach where symmetric encryption is used for the file contents and asymmetric encryption for the encryption key.\nThe function should output with:\n    PublicKey: The RSA public key.\n    str: The filename of the encrypted file.\n    str: The filename of the file containing the encrypted Fernet key.\nYou should write self-contained code starting with:\n```\nimport rsa\nfrom cryptography.fernet import Fernet\nfrom base64 import b64encode\ndef task_func(file_path):\n```"
-}

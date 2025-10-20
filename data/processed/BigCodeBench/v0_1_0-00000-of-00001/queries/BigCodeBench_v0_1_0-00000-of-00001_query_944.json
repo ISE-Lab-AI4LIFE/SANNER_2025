@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_944",
-  "text": "Generate a sales time-series and decompose it into trend, seasonal, and residual components. >>> result = task_func('2020-01-01', 24, 'M', 'multiplicative') >>> len(result['seasonal']) 24\nThe function should output with:\n    A dictionary containing 'trend', 'seasonal', and 'residual' components as Pandas Series.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nfrom statsmodels.tsa.seasonal import seasonal_decompose\ndef task_func(start_date='2016-01-01', periods=24, freq='M', model='additive'):\n```"
-}

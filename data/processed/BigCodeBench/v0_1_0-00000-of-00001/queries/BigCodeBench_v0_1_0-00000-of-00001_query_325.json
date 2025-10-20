@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_325",
-  "text": "Run files from list of files as subprocesses at the same time.\nThe function should output with:\n    list: The exit codes of the subprocesses.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport time\nimport threading\ndef task_func(file_list):\n```"
-}

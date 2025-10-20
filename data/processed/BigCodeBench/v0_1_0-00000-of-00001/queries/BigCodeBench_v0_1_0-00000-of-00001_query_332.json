@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_332",
-  "text": "Insert a number into a randomly generated sorted list and return the new sorted list.\nThe function should output with:\n    tuple: A tuple containing two lists:\n    list[int]: The randomly generated list of integers with the specified length.\n    list[int]: A new sorted list containing the original elements and the inserted number.\nYou should write self-contained code starting with:\n```\nimport bisect\nimport random\ndef task_func(num, list_length = 5, min_value = 0, max_value = 0):\n```"
-}

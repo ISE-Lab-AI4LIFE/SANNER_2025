@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1099",
-  "text": "Count the N most common words in a text after removing URLs.\nNote that: Valid url is start with http or https\nThe function should output with:\n    list: A list of tuples where each tuple contains a word and its frequency.\nYou should write self-contained code starting with:\n```\nimport re\nfrom collections import Counter\ndef task_func(text, top_n):\n```"
-}

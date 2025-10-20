@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_553",
-  "text": "Combine two lists and record the frequency of predefined items in the combined list.\nThe function should output with:\n    matplotlib.axes.Axes: A bar chart showing the frequency of predefined items in the combined list.\nYou should write self-contained code starting with:\n```\nimport collections\nimport itertools\nimport matplotlib.pyplot as plt\n# Constants\nITEMS = ['apple', 'banana']\ndef task_func(a, b, items=ITEMS):\n```"
-}

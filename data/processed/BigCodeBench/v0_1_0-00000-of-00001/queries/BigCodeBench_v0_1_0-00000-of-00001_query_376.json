@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_376",
-  "text": "Perform Principal Component Analysis (PCA) on the given array and record the first two main components.\nNote that: This function use \"PCA Result\" as the title of the plot. This function use \"First Principal Component\" and \"Second Principal Component\" as the xlabel and ylabel of the plot, respectively.\nThe function should output with:\n    ax (matplotlib.axes._axes.Axes): Axes object of the generated plot\nYou should write self-contained code starting with:\n```\nfrom sklearn.decomposition import PCA\nimport matplotlib.pyplot as plt\ndef task_func(l):\n```"
-}

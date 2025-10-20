@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_903",
-  "text": "Count the occurrence of values with the keys \"x,\" \"y\" and \"z\" from a list of dictionaries \"d.\"\nThe function should output with:\n    dict: A dictionary with keys as 'x', 'y', and 'z' and values as Counter objects.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom collections import Counter\ndef task_func(d):\n```"
-}

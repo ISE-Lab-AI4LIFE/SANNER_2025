@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_248",
-  "text": "Generate a random dataset of floating point numbers, truncate each value to 3 decimal places and normalize the data using standard scaling (mean = 0, std = 1).\nNote that: The function use \"Normalized Value\" for the column name in the DataFrame that being returned.\nThe function should raise the exception for: If max_value is less than min_value, a ValueError is raised.\nThe function should output with:\n    DataFrame: A pandas DataFrame with the normalized data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport random\nfrom sklearn.preprocessing import StandardScaler\n# Constants\nN_DATA_POINTS = 5000\nMIN_VALUE = 0.0\nMAX_VALUE = 10.0\ndef task_func(n_data_points=5000, min_value=0.0, max_value=10.0):\n```"
-}

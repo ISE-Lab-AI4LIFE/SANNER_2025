@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_662",
-  "text": "Create a heatmap using the seaborn library for \"x\" as x-values and \"y\" as y-values with labels.\nThe function should output with:\n    ax (Axes): A seaborn heatmap object.\n    df (DataFrame): The dataframe used to create the heatmap.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport seaborn as sns\nimport numpy as np\n# Constants\nLABELS = ['H\\u2082O', 'O\\u2082', 'CO\\u2082', 'N\\u2082', 'Ar']\ndef task_func(x, y, labels):\n```"
-}

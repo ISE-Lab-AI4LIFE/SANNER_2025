@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_155",
-  "text": "Scans a specified directory for files matching a given pattern and with a certain suffix, then determines their file types. The function returns a dictionary with file names as keys and their corresponding MIME types as values.\nThe function should output with:\n    dict: A dictionary mapping file names to their MIME types.\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport glob\nimport mimetypes\ndef task_func(directory, file_pattern, suffix):\n```"
-}

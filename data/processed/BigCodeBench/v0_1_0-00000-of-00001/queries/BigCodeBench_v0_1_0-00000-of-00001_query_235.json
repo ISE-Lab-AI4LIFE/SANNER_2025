@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_235",
-  "text": "Perform a linear regression between \"age\" and \"score\" in the DataFrame, excluding rows with duplicate names. Plot the regression line and the scatter plot of the data.\nNote that: The function use \"Linear Regression\" for the plot title. The function use \"Age\" and \"Score\" as the xlabel and ylabel respectively.\nThe function should raise the exception for: The function will raise a ValueError is input df is not a DataFrame.\nThe function should output with:\n    tuple: A tuple containing the matplotlib.pyplot object and the axes object.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom scipy import stats\nimport matplotlib.pyplot as plt\ndef task_func(df):\n```"
-}

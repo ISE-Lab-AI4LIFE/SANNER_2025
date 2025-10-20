@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_472",
-  "text": "Count the frequency of each word in a list and return a DataFrame of words and their number.\nThe function should output with:\n    DataFrame: A pandas DataFrame with words and their counts.\nYou should write self-contained code starting with:\n```\nfrom collections import Counter\nimport pandas as pd\ndef task_func(myList):\n```"
-}

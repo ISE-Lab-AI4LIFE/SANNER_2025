@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_30",
-  "text": "Standardize a numeric array using sklearn's StandardScaler and encode the standardized data in base64 format as an ASCII string.\nThe function should output with:\n    str: The base64-encoded ASCII string representation of the standardized data.\nYou should write self-contained code starting with:\n```\nfrom sklearn.preprocessing import StandardScaler\nimport numpy as np\nimport base64\ndef task_func(data):\n```"
-}

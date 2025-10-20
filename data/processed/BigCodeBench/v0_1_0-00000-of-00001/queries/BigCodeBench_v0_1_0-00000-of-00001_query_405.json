@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_405",
-  "text": "Open an RGB image, convert it to grayscale, find contours using the cv2 library, and return the original image and contours.\nThe function should raise the exception for: FileNotFoundError: If the image file does not exist at the specified path.\nThe function should output with:\n    tuple: A tuple containing the original image as a numpy array and a list of contours.\nYou should write self-contained code starting with:\n```\nimport cv2\nimport numpy as np\nimport os\ndef task_func(img_path):\n```"
-}

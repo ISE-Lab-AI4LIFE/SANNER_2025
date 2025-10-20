@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_511",
-  "text": "Compares the contents of two gzip files and returns a string describing the differences between them. It reads the contents of each file, then uses difflib to compute and return the differences. Only differences are returned, with an empty string indicating no differences. Assuming 'file1.gz' and 'file1.gz' are identical, >>> task_func('file1.gz', 'file1.gz') ''\nThe function should output with:\n    str: A string describing the differences between the two files' contents.\nYou should write self-contained code starting with:\n```\nimport difflib\nimport gzip\ndef task_func(file_path1, file_path2):\n```"
-}

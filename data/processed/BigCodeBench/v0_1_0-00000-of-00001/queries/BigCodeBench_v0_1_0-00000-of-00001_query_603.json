@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_603",
-  "text": "Create a CSV file containing a 2D matrix populated exclusively with random lowercase letters.\nThe function should output with:\n    None: Writes a CSV file to the specified path.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\n# Constants\nLETTERS = list('abcdefghijklmnopqrstuvwxyz')\nOUTPUT_DIR = './output'\ndef task_func(file_path, output_dir=OUTPUT_DIR):\n```"
-}

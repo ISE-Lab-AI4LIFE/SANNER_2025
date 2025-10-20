@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_797",
-  "text": "Finds all files in the specified directory whose names contain any type of bracket (round, curly, or square). Uses an internal constant BRACKET_PATTERN = '[(){}\\\\[\\\\]]', which specifies the brackets that are looked for. >>> task_func('./another_directory/') ['./another_directory/file{3}.png']\nThe function should output with:\n    list[str]: A list of file paths that contain brackets in their names.\nYou should write self-contained code starting with:\n```\nimport os\nimport re\ndef task_func(directory):\n```"
-}

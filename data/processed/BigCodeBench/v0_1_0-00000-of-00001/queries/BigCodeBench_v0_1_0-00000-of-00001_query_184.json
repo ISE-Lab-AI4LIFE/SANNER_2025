@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_184",
-  "text": "Create a Django HttpResponse with JSON data, and include a UUID in the HTTP headers to track requests.\nThe function should output with:\n    HttpResponse: A Django HttpResponse with JSON data and UUID.\nYou should write self-contained code starting with:\n```\nfrom django.http import HttpResponse\nimport uuid\ndef task_func(data):\n```"
-}

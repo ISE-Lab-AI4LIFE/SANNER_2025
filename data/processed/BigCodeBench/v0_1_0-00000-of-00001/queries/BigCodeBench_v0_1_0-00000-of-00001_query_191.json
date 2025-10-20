@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_191",
-  "text": "Imports data from a specified CSV input into an SQLite database and retrieves it as a pandas DataFrame. The function reads the CSV input (file path or `StringIO`), creates a new database table or replaces an existing one, inserts data into the table, and finally queries the table to return the data as a DataFrame.\nThe function should output with:\n    DataFrame: A pandas DataFrame containing the data from the newly populated SQLite database table. The DataFrame\n    provides a convenient and familiar data structure for further data manipulation and analysis in Python.\nYou should write self-contained code starting with:\n```\nimport sqlite3\nimport pandas as pd\nimport csv\nfrom io import StringIO\n# Constants\nDATABASE_NAME = 'test.db'\nTABLE_NAME = 'test_table'\ndef task_func(csv_input):\n```"
-}

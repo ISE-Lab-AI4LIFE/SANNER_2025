@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_327",
-  "text": "Find and run all .bat files in a given directory, returning their file names and exit codes.\nThe function should output with:\n    list of tuples: A list where each tuple contains the file name and its exit code.\n    The exit code is None if the file could not be executed.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport os\nimport sys\nimport glob\ndef task_func(directory_path):\n```"
-}

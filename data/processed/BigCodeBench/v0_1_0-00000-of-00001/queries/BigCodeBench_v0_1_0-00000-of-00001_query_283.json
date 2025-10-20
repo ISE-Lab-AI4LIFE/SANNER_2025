@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_283",
-  "text": "Draw the color histogram of an image in 3D and call a function when a data point is selected.\nThe function should raise the exception for: FileNotFoundError: If the image file does not exist.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object of the 3D plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\nimport numpy as np\nimport cv2\nimport os\ndef task_func(file_path, onpick):\n```"
-}

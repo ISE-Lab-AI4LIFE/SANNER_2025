@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_479",
-  "text": "Removes a random comma-separated value (treated as a \"substring\") from each string in a list and returns a pandas DataFrame containing the original and modified strings.\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns 'Original String' and 'Modified String'.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport re\nimport random\ndef task_func(data_list, seed=None):\n```"
-}

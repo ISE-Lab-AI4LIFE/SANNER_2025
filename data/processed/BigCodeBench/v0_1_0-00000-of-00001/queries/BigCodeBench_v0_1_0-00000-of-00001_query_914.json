@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_914",
-  "text": "Calculates the mode(s), their count(s), and the fast fourier transform of the data after repeating it a specified number of times. in a list of elements that can be repeated a specified number of times.\nNote that: If the data is empty or the number of repetitions is less than or equal to 0, the function will return empty arrays.\nThe function should output with:\n    dict: A dictionary with two keys:\n    'mode': a numpy array of the mode(s), sorted in ascending order.\n    'count': a numpy array of the count(s) of the mode(s).\nYou should write self-contained code starting with:\n```\nfrom typing import List, Union\nimport numpy as np\nimport scipy.fft\ndef task_func(data: List[Union[int, str]], repetitions: int = 1):\n```"
-}

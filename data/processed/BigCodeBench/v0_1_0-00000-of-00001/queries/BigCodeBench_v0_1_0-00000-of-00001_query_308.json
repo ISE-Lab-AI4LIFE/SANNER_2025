@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_308",
-  "text": "Create a histogram from the data in a list of lists. If any sublist is empty, it will be filled with 5 random integers ranging from 0 to 100 (both inclusive) The histogram will then be constructed using the combined data from all sublists.\nThe function should output with:\n    matplotlib.axes._axes.Axes: The histogram plot object.\nYou should write self-contained code starting with:\n```\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport random\ndef task_func(list_of_lists, seed=0):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_177",
-  "text": "Given a list of IP addresses, this function returns a dictionary mapping each valid IP address to its respective hostname. If the hostname cannot be determined, the value will be None.\nThe function should output with:\n    dict: A dictionary with IP addresses as keys and their hostnames as values. If the hostname cannot be determined,\n    the value will be None.\nYou should write self-contained code starting with:\n```\nimport re\nimport socket\ndef task_func(ip_addresses: list) -> dict:\n```"
-}

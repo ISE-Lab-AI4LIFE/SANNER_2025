@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_232",
-  "text": "Draw the histogram and the custom normal distribution curve from the mean and standard deviation derived from the values of a list of ValueObjects and return the plotted Axes. For an empty list, the mean and the standard deviation is 0.\nThe function should output with:\n    Axes: The plotted Axes.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport random\nfrom matplotlib.axes import Axes\nclass ValueObject:\n    value = 0\n    def __init__(self, mu=0, std=1, seed=77):\n        random.seed(seed)\n        self.value = random.gauss(mu, std)\ndef task_func(obj_list) -> Axes:\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_315",
-  "text": "Makes an HTTPS GET request to a specified server and path, and retrieves the response.\nThe function should raise the exception for: ssl.SSLError: If there is an SSL handshake error.\nThe function should output with:\n    str: The response body from the server as a string.\nYou should write self-contained code starting with:\n```\nimport socket\nimport ssl\nimport http.client\ndef task_func(SERVER_NAME, SERVER_PORT, path):\n```"
-}

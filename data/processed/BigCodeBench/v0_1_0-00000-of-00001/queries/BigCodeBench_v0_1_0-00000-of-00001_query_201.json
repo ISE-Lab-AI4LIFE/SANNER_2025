@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_201",
-  "text": "Generates 'n' random numbers between 0 and 1, finds those greater than their average, and counts how many are greater than or equal to a specified value, then plots the sorted numbers.\nThe function should output with:\n    list: Numbers greater than the average of all generated numbers.\n    int: The count of numbers greater than or equal to the specified value.\nYou should write self-contained code starting with:\n```\nimport random\nimport bisect\nimport statistics\nimport matplotlib.pyplot as plt\ndef task_func(n, value):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1133",
-  "text": "Generates a hashed password by concatenating a given password with a prefix and a generated salt, and then hashing the combined string using SHA256. The hashed result is then encoded in base64.\nThe function should raise the exception for: ValueError if the SALT_LENGTH is negative\nThe function should output with:\n    str: The base64 encoded SHA256 hash of the password concatenated with the prefix and salt.\nYou should write self-contained code starting with:\n```\nimport os\nimport hashlib\nimport base64\ndef task_func(password, PREFIX=\"ME\", SALT_LENGTH=16):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_63",
-  "text": "Draws a histogram of the \"from_user\" values in the provided result. The color of the histogram bars is selected at random from the provided colors list.\nThe function should output with:\n    None: The function displays the histogram and does not return any value.\nYou should write self-contained code starting with:\n```\nimport random\nimport matplotlib.pyplot as plt\nimport seaborn as sns\ndef task_func(result, colors=['b', 'g', 'r', 'c', 'm', 'y', 'k']):\n```"
-}

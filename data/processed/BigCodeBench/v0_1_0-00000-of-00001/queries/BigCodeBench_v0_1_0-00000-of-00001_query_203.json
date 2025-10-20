@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_203",
-  "text": "Extract all URLs from a string-serialized JSON dict using a specific URL pattern and return a dict with the URLs as keys and the number of times they appear as values.\nThe function should output with:\n    dict: A dict with URLs as keys and the number of times they appear as values.\nYou should write self-contained code starting with:\n```\nimport re\nimport json\nfrom collections import Counter\ndef task_func(json_str, top_n=10):\n```"
-}

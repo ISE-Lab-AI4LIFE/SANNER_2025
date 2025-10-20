@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_403",
-  "text": "Make a GET request to an API, extract data that matches a RegEx pattern, and write it to a CSV file.\nNote that: The CSV file generated name is \"matched_data.csv\" The JSON response from the GET request in the API contains a key named \"data\", from which the data is extracted.\nThe function should output with:\n    str: The absolute path to the CSV file containing matched data. If no data is matched, the file will be empty.\nYou should write self-contained code starting with:\n```\nimport re\nimport requests\nimport json\nimport csv\nimport os  \n# Constants\nAPI_URL = 'https://api.example.com/data'\ndef task_func(pattern):\n```"
-}

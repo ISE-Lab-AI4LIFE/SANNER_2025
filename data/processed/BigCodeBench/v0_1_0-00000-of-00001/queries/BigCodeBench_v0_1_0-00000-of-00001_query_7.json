@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_7",
-  "text": "Find the latest log file in a specified directory that matches a given regex pattern. This function searches through all files in the specified directory, filters them based on the provided regex pattern, and returns the path to the most recent log file based on modification time. If no files match the pattern or the directory is empty, the function returns None.\nThe function should output with:\n    str or None: The path to the most recent log file that matches the pattern, or None if no matching files are found.\nYou should write self-contained code starting with:\n```\nimport os\nimport re\ndef task_func(pattern, log_dir='/var/log/'):\n```"
-}

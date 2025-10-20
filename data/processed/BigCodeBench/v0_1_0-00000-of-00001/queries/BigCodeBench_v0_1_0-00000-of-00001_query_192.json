@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_192",
-  "text": "Simulates sales in a pet shop based on a randomly determined number of customers. Each customer randomly buys one type of animal from the specified list of animals. The function displays and returns a summary of the sales, where the number of customers follows a Poisson distribution with the specified mean (mu).\nThe function should output with:\n    dict: A dictionary with animal types as keys and the number of sales as values.\nYou should write self-contained code starting with:\n```\nimport random\nfrom scipy import stats\ndef task_func(animals, mean):\n```"
-}

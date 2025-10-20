@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_622",
-  "text": "Convert a list of lists 'L' into a single list of integers, standardize the integers, and plot the standardized values.\nThe function should output with:\n    matplotlib.axes._axes.Axes: A plot displaying the standardized values.\nYou should write self-contained code starting with:\n```\nfrom itertools import chain\nimport numpy as np\nfrom sklearn.preprocessing import StandardScaler\nimport matplotlib.pyplot as plt\ndef task_func(L):\n```"
-}

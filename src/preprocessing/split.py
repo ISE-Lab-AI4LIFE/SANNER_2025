@@ -1,51 +1,37 @@
 from pathlib import Path
 import json
 import random
-from pathlib import Path
-import json
-import random
+import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 DATA_DIR = BASE_DIR / "data"
 
 PROCESSED_DIR = DATA_DIR / "processed"
-UPRANK_JSON = PROCESSED_DIR / "uprank.json"
-TEST_JSON = PROCESSED_DIR / "test.json"
 
-# Xóa file uprank.json và test.json nếu đã tồn tại
-for file_path in [UPRANK_JSON, TEST_JSON]:
+# Xóa file uprank.csv và test.csv nếu đã tồn tại
+for file_path in [PROCESSED_DIR / "uprank.csv", PROCESSED_DIR / "test.csv"]:
     if file_path.exists():
         file_path.unlink()
 
+QUERIES_DIR = PROCESSED_DIR / "queries"
+query_files = list(QUERIES_DIR.glob("*/*.csv"))
 
-# 1️⃣ Đọc tất cả đường dẫn query file
-query_files = []
+dfs = []
+for q_file in query_files:
+    df = pd.read_csv(q_file)
+    df['version'] = q_file.stem
+    dfs.append(df)
 
-for dataset_folder in PROCESSED_DIR.iterdir():
-    if not dataset_folder.is_dir():
-        continue
-    for version_folder in dataset_folder.iterdir():
-        queries_dir = version_folder / "queries"
-        if queries_dir.exists():
-            for q_file in queries_dir.glob("*.json"):
-                query_files.append(str(q_file.relative_to(BASE_DIR)))
+all_queries = pd.concat(dfs, ignore_index=True)
 
-print(f"Found {len(query_files)} query files across all datasets and versions.")
+all_queries = all_queries.sample(frac=1, random_state=42).reset_index(drop=True)
+split_idx = int(len(all_queries) * 0.8)
+uprank_df = all_queries.iloc[:split_idx]
+test_df = all_queries.iloc[split_idx:]
 
-# 2️⃣ Shuffle và chia queries 8:2
-random.seed(42)
-random.shuffle(query_files)
-split_idx = int(len(query_files) * 0.8)
+uprank_df.to_csv(PROCESSED_DIR / "uprank.csv", index=False)
+test_df.to_csv(PROCESSED_DIR / "test.csv", index=False)
 
-uprank_queries = query_files[:split_idx]
-test_queries = query_files[split_idx:]
-
-# 3️⃣ Lưu ra JSON
-with open(UPRANK_JSON, "w", encoding="utf-8") as f:
-    json.dump(uprank_queries, f, indent=2, ensure_ascii=False)
-
-with open(TEST_JSON, "w", encoding="utf-8") as f:
-    json.dump(test_queries, f, indent=2, ensure_ascii=False)
-
-print(f"Saved {len(uprank_queries)} queries to {UPRANK_JSON}")
-print(f"Saved {len(test_queries)} queries to {TEST_JSON}")
+print(f"Found {len(all_queries)} query rows across all datasets and versions.")
+print(f"Saved {len(uprank_df)} queries to {PROCESSED_DIR / 'uprank.csv'}")
+print(f"Saved {len(test_df)} queries to {PROCESSED_DIR / 'test.csv'}")

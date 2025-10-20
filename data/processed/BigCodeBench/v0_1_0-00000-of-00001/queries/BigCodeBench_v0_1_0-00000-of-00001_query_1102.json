@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1102",
-  "text": "Run all Python codes in a specific directory and return their execution times.\nThe function should output with:\n    dict: A dictionary with the script names as keys and their execution times as values.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport os\nimport glob\nimport time\ndef task_func(test_dir):\n```"
-}

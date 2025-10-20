@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_963",
-  "text": "Moves files with specific extensions from a source directory to a target directory, handling naming conflicts by renaming duplicates.\nNote that: Notes: This function scans the source directory recursively to find files. Files are filtered by the extensions: \".txt\", \".docx\", \".xlsx\", \".csv\". Renaming of files due to naming conflicts follows the pattern '<original_name>-n.<extension>'.\nThe function should raise the exception for: FileNotFoundError: If source_directory does not exist.\nThe function should output with:\n    int: The number of files successfully moved.\nYou should write self-contained code starting with:\n```\nimport os\nfrom pathlib import Path\nimport glob\nimport shutil\ndef task_func(source_directory: str, target_directory: str):\n```"
-}

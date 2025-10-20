@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_762",
-  "text": "Process a JSON string by: 1. Removing None values. 2. Counting the frequency of each unique value. 3. Replacing all email addresses with the placeholder \"None\".\nThe function should output with:\n    dict: A dictionary containing:\n    \"data\": Processed JSON data.\n    \"value_counts\": A Counter object with the frequency of each unique value.\nYou should write self-contained code starting with:\n```\nimport json\nimport re\nfrom collections import Counter\n# Constants\nREPLACE_NONE = \"None\"\ndef task_func(json_str):\n```"
-}

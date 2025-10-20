@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_570",
-  "text": "Analyzes a given function 'f' and returns a dictionary containing its name, the square root of the number of arguments, and the count of lambda functions present in its default values. This function demonstrates introspection of Python functions and the use of mathematical operations on the introspected data.\nThe function should output with:\n    dict: A dictionary containing the function's name, the square root of the number of arguments,\n    and the count of lambda functions in default values.\nYou should write self-contained code starting with:\n```\nimport inspect\nimport types\nimport math\ndef task_func(f):\n```"
-}

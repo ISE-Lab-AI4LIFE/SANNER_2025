@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_815",
-  "text": "Look for files that match the pattern of the regular expression '(? <! Distillr)\\\\\\\\ AcroTray\\\\.exe' in the directory 'C:\\\\ SomeDir\\\\'. If found, write these file paths to a configuration file.\nThe function should output with:\n    str: Path to the created configuration file.\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport shutil\ndef task_func(source_dir, target_dir, file_pattern=r'\\b[A-Za-z0-9]+\\.(txt|doc|docx)\\b'):\n```"
-}

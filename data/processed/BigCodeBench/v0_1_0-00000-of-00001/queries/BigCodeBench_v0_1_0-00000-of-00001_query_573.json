@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_573",
-  "text": "Generate two arrays of random integers and draw a line diagram with the maximum values of the respective elements of the two arrays. Set 'Maximum Values' on its y-axis.\nThe function should output with:\n    matplotlib.axes.Axes: Axes object with the plot.\nYou should write self-contained code starting with:\n```\nfrom random import randint\nimport matplotlib.pyplot as plt\nimport numpy as np\ndef task_func(array_length=100):\n```"
-}

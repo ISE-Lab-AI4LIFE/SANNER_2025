@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_623",
-  "text": "Convert a list of lists 'L' into a flattened list of integers, then fit a normal distribution to the data and plot a histogram with the fitted normal distribution overlay.\nThe function should output with:\n    matplotlib.axes._axes.Axes: Axes object with the plotted histogram and normal distribution overlay.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom scipy.stats import norm\nfrom itertools import chain\ndef task_func(L):\n```"
-}

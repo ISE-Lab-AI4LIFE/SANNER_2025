@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_958",
-  "text": "Counts the number of words, characters, and unique characters in a given text.\nNote that: This function considers whitespace-separated substrings as words. When counting characters, this function excludes whitespace and special characters (i.e. string.punctuation).\nThe function should output with:\n    tuple: A tuple containing three integers: the number of words,\n    the number of characters,\n    the number of unique characters.\nYou should write self-contained code starting with:\n```\nimport string\nimport re\ndef task_func(text: str) -> tuple:\n```"
-}

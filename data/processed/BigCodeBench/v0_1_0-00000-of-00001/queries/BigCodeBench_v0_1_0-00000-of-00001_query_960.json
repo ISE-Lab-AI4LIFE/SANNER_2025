@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_960",
-  "text": "Transforms the input text by replacing each alphabetic character with a random letter, while preserving the case and non-alphabetic characters of the original text.\nNote that: Notes: Alphabet replacements are chosen from ascii characters of the same case as the original.\nThe function should output with:\n    str: A transformed string with random letters replacing the alphabetic characters of the input text,\n    preserving non-alphabetic characters and the original case.\nYou should write self-contained code starting with:\n```\nimport string\nimport random\ndef task_func(text, seed=None):\n```"
-}

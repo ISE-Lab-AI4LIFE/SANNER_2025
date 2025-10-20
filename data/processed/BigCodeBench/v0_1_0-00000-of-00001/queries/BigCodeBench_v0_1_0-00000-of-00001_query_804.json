@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_804",
-  "text": "Normalize data in a csv file using MinMaxScaler from sklearn. Only numeric columns are normalized. Columns with other dtypes are left as they are.\nThe function should raise the exception for: ValueError: If input does not have numeric columns.\nThe function should output with:\n    DataFrame: A pandas DataFrame with normalized data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import MinMaxScaler\ndef task_func(file_name: str) -> pd.DataFrame:\n```"
-}

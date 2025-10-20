@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_566",
-  "text": "Loads a DLL file from a given filepath, calculates its MD5 and SHA256 hashes, and prints these hashes in hexadecimal format. This function is a demonstration of file handling, usage of the hashlib library for hash calculations, and binascii for hexadecimal conversion. Note that the actual operations performed on the loaded DLL are limited to hash calculation.\nThe function should output with:\n    str: The actual name of the loaded DLL file.\nYou should write self-contained code starting with:\n```\nimport ctypes\nimport hashlib\nimport binascii\ndef task_func(filepath):\n```"
-}

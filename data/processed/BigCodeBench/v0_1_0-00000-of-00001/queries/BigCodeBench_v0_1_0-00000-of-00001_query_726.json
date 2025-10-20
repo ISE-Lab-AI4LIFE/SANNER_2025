@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_726",
-  "text": "Convert the encoding of all text files in a specified directory from one encoding to another. The function modifies the files in-place.\nThe function should output with:\n    None\nYou should write self-contained code starting with:\n```\nimport codecs\nimport os\nimport glob\n# Constants\nDIRECTORY_PATH = './files/'\ndef task_func(directory=DIRECTORY_PATH, from_encoding='cp1251', to_encoding='utf8'):\n```"
-}

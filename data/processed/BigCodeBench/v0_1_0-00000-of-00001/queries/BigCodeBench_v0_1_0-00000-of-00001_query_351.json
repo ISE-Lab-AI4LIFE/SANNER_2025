@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_351",
-  "text": "Compress all files in the specified source folder and move the compressed files to a destination folder. This operation is executed as a background process using the 'gzip' command.\nThe function should output with:\n    dict: A dictionary containing:\n    'success': A boolean indicating if all files were compressed and moved successfully.\n    'message': A descriptive message about the operation's result.\n    'failed_files': A list of filenames that failed to compress or move.\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport os\nimport shutil\nfrom glob import glob\ndef task_func(src_folder, dst_folder):\n```"
-}

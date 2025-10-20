@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_166",
-  "text": "Create a DataFrame containing random integer values within a specified range for categories 'A' through 'E', and visualize this data with a stacked bar chart.\nThe function should output with:\n    matplotlib.figure.Figure: The matplotlib Figure object containing the plotted data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom random import randint\ndef task_func(num_rows=5, rand_range=(0, 100)):\n```"
-}

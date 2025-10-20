@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_809",
-  "text": "Remove duplicate and stopwords from a string \"text.\" Then, analyze the sentiment of the text using TextBlob.\nThe function should output with:\n    Sentiment: The sentiment of the text.\nYou should write self-contained code starting with:\n```\nimport re\nimport nltk\nnltk.download('stopwords')\nfrom nltk.corpus import stopwords\nfrom textblob import TextBlob\n# Constants\nSTOPWORDS = set(stopwords.words('english'))\ndef task_func(text):\n```"
-}

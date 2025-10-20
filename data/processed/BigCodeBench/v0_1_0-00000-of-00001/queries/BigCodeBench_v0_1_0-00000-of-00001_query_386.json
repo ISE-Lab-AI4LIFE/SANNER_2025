@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_386",
-  "text": "Given a constant list of fruits in FRUITS, and a dictionary 'fruit_dict' with keys as people's names and values as their favorite fruit names, record the frequency of each fruits' occurence. Return a bar chart of the number of fruits for each fruit type and return the dictionary with fruit names as keys and their counts as values.\nThe function should output with:\n    dict: A dictionary with fruit names as keys and their counts as values.\n    matplotlib.axes.Axes: The axes object of the plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nfrom collections import Counter\nFRUITS = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew', 'Indian Prune', 'Jackfruit']\ndef task_func(fruit_dict):\n```"
-}

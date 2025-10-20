@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_776",
-  "text": "If a string occurs, divide it the last time \"-\" occurs and count the frequency of each lowercase letter in the prefix of the string.\nThe function should output with:\n    dict: A dictionary with the frequency of each lowercase letter.\nYou should write self-contained code starting with:\n```\nfrom string import ascii_lowercase\nimport re\nfrom collections import Counter\n# Constants\nLETTERS_PATTERN = re.compile(r'^(.*?)-[a-z]$')\nLETTERS = ascii_lowercase\ndef task_func(string):\n```"
-}

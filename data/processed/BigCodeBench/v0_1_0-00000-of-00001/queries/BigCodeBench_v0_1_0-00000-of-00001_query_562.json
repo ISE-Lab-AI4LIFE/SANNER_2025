@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_562",
-  "text": "Converts a date time from one timezone to another.\nThe function should output with:\n    str: The converted datetime string in \"yyyy-mm-dd hh:mm:ss\" format.\nYou should write self-contained code starting with:\n```\nimport pytz\nfrom dateutil import parser\ndef task_func(date_str, from_tz, to_tz):\n```"
-}

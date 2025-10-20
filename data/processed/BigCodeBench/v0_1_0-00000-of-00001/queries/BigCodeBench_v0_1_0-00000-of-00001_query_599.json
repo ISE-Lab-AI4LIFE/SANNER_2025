@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_599",
-  "text": "The function filters rows in a dict of list in which the values of the 'Word' column begin with a specified letter. It first convert the dict to Datafrome, then calculates the length of the words in the filtered column and returns a dictionary of word lengths and their respective counts.\nThe function should output with:\n    dict: A dictionary of word lengths and their counts.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport time\ndef task_func(df, letter):\n```"
-}

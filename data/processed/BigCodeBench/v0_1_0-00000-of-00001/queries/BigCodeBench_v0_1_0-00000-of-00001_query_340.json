@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_340",
-  "text": "Signs the specified request data with a secret key using HMAC SHA256, then URL encodes the signature and replace spaces with '+'.\nThe function should raise the exception for: TypeError: If `req_data` is not a dictionary.\nThe function should output with:\n    str: The URL encoded HMAC signature of the request data.\nYou should write self-contained code starting with:\n```\nimport json\nimport urllib.parse\nimport hmac\nimport hashlib\ndef task_func(req_data, secret_key):\n```"
-}

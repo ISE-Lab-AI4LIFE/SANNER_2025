@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_390",
-  "text": "Find the files with filenames that contain \"like\" or \"what\" in a directory, create a new subdirectory called \"Interesting Files\" and move those files to the new subdirectory.\nThe function should output with:\n    List of files moved\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport shutil\ndef task_func(directory):\n```"
-}

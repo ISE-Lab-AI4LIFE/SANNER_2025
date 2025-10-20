@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_89",
-  "text": "Generate random sales data for each day between a start and end date, inclusive. Returns the data and a plot of sales over time. sales ranges 0 to 500 and it is an integer\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns 'Date' and 'Sales'.\n    Axes: A matplotlib Axes object of the plot showing the sales overtime.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\nfrom datetime import datetime, timedelta\ndef task_func(start_date, end_date, seed=42):\n```"
-}

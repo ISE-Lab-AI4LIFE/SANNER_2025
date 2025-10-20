@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_723",
-  "text": "Download a text file from the specified url and search for occurrences of the word \"ERROR.\"\nThe function should output with:\n    occurrences (int): The number of occurrences of the word 'ERROR'.\nYou should write self-contained code starting with:\n```\nimport urllib.request\nimport os\nimport re\n# Constants\nTARGET_FILE = 'downloaded_file.txt'\nSEARCH_PATTERN = r'\\bERROR\\b'\ndef task_func(url):\n```"
-}

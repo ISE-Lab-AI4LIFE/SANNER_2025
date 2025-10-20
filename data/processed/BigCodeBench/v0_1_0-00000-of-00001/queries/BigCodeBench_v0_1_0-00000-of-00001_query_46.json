@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_46",
-  "text": "Perform PCA on a DataFrame (excluding non-numeric columns) and draw a scatter plot of the first two main components. The principal columns should be name 'Component 1' and 'Component 2'. Missing values are replaced by column's average.\nThe function should output with:\n    DataFrame: A pandas DataFrame with the first two principal components. The columns should be 'principal component 1' and 'principal component 2'.\n    Axes: A matplotlib Axes object representing the scatter plot. The xlabel should be 'principal component' and the ylabel 'principal component 2'.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport numpy as np\nfrom sklearn.decomposition import PCA\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ndef task_func(df: pd.DataFrame):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_60",
-  "text": "Create a word cloud from the text of a Wikipedia page.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object of the plotted data. Is None if there is no wikipedia page with the title given as input.\nYou should write self-contained code starting with:\n```\nimport wikipedia\nfrom wordcloud import WordCloud\nimport matplotlib.pyplot as plt\ndef task_func(page_title):\n```"
-}

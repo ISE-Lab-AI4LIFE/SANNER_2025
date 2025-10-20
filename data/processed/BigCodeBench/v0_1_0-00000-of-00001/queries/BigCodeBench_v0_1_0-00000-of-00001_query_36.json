@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_36",
-  "text": "Replace all elements in DataFrame columns that do not exist in the target_values array with zeros, and then output the distribution of each column after replacing. - label each plot as the name of the column it corresponds to.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object of the plotted data.\nYou should write self-contained code starting with:\n```\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ndef task_func(df, target_values=[1, 3, 4]):\n```"
-}

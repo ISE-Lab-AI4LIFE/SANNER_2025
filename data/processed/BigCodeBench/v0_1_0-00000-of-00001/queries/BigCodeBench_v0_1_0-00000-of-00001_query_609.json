@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_609",
-  "text": "Remove rows from a dataframe based on values of multiple columns, and then create n random pairs of two columns against each other to generate pairplots.\nThe function should output with:\n    tuple: A tuple containing:\n    DataFrame: The modified DataFrame after removing specified rows.\n    list of Axes: A list containing the generated pairplots.\nYou should write self-contained code starting with:\n```\nimport seaborn as sns\nfrom random import sample\n# Constants\nCOLUMNS = ['A', 'B', 'C', 'D', 'E']\ndef task_func(df, tuples, n_plots):\n```"
-}

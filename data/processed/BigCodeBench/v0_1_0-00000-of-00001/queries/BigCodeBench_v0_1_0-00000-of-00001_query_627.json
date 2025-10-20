@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_627",
-  "text": "Converts a datetime string from a given timezone to a datetime string in a randomly chosen timezone.\nThe function should output with:\n    tuple: A tuple containing the converted datetime string and the randomly chosen timezone.\nYou should write self-contained code starting with:\n```\nfrom random import choice\nimport pytz\nfrom dateutil.parser import parse\n# Constants\nTIMEZONES = ['America/New_York', 'Europe/London', 'Asia/Shanghai', 'Asia/Tokyo', 'Australia/Sydney']\ndef task_func(date_str, from_tz):\n```"
-}

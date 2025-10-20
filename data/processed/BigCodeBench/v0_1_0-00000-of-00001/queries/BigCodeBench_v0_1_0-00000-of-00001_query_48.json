@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_48",
-  "text": "Standardize numeric columns in a DataFrame and return the heatmap of the correlation matrix. Missing values are replaced by the column's average.\nThe function should output with:\n    DataFrame: The pandas DataFrame after standardization.\n    Axes: A heatmap of the correlation matrix.\nYou should write self-contained code starting with:\n```\nfrom sklearn.preprocessing import StandardScaler\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ndef task_func(df):\n```"
-}

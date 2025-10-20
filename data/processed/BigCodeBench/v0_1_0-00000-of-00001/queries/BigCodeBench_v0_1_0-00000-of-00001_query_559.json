@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_559",
-  "text": "Standardize two lists of numbers using the StandardScaler from sklearn and visualize the standardized values using a bar plot.\nThe function should output with:\n    pd.DataFrame: A DataFrame containing the standardized values.\n    matplotlib.axes.Axes: Axes object of the displayed bar plot.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(a, b, columns=['A', 'B']):\n```"
-}

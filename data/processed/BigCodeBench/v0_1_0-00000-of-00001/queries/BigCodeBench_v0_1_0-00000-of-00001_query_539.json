@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_539",
-  "text": "Plot the relationship between the first and second numerical columns of an SQLite3 table, after excluding 'id' column.\nThe function should raise the exception for: ValueError: If the table has less than two numerical columns.\nThe function should output with:\n    matplotlib.axes._axes.Axes: Scatterplot with column name labeled on their respective axes.\nYou should write self-contained code starting with:\n```\nimport sqlite3\nimport pandas as pd\ndef task_func(db_name, table_name):\n```"
-}

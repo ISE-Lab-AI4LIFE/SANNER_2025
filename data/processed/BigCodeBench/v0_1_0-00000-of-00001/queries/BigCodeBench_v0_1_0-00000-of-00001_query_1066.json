@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1066",
-  "text": "Performs a Fast Fourier Transform (FFT) on the sum of each row in a 2D array and plots the absolute values of the FFT coefficients.\nThe function should output with:\n    matplotlib.axes.Axes: An Axes object displaying the plot of the absolute values of the FFT coefficients.\nYou should write self-contained code starting with:\n```\nfrom scipy import fftpack\nfrom matplotlib import pyplot as plt\ndef task_func(arr):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_712",
-  "text": "Convert a JSON file to CSV.\nThe function should output with:\n    csv_file: The function returns the path to the CSV file that was written.\nYou should write self-contained code starting with:\n```\nimport json\nimport csv\ndef task_func(json_file, csv_file):\n```"
-}

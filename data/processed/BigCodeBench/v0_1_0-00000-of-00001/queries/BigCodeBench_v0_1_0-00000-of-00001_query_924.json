@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_924",
-  "text": "Generate a DataFrame with a specified number of records containing personal names and emails. The emails are cleaned by replacing all occurrences of \"@\" with \"[at]\".\nThe function should raise the exception for: ValueError: If the number of names provided is less than the number of records requested or if no email domains are provided.\nThe function should output with:\n    DataFrame: A pandas DataFrame with columns 'Name' and 'Email' containing the person names and cleaned emails.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport random\nimport re\ndef task_func(person_names, email_domains, num_records=5):\n```"
-}

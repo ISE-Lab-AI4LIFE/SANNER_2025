@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_700",
-  "text": "Perform K-Means clustering on the given data by first turning it into a DataFrame with two columns \"x\" and \"y\" and then return the labels and centroids.\nThe function should output with:\n    tuple: The labels and centroids as numpy arrays.\n    kmeans.labels_: A NumPy array where each element is the cluster label assigned to each data point.\n    kmeans.cluster_centers_: A NumPy array containing the coordinates of the cluster centers.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.cluster import KMeans\ndef task_func(x_list, y_list, n_clusters=2, random_state=0):\n```"
-}

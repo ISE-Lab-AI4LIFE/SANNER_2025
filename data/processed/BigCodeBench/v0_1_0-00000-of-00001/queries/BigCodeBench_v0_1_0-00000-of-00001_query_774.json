@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_774",
-  "text": "Move all json files in a source directory to a target directory and rename them by splitting the filename the last time \"-\" occurs and keeping the prefix part of the filename.\nThe function should output with:\n    None\nYou should write self-contained code starting with:\n```\nimport os\nimport re\nimport shutil\n# Constants\nSOURCE_DIR = '/source/dir'\nTARGET_DIR = '/target/dir'\nFILE_PATTERN = re.compile(r'^(.*?)-\\d+\\.json$')\ndef task_func():\n```"
-}

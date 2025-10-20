@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_981",
-  "text": "Plots the correlation matrix from numeric columns in a DataFrame and returns a DataFrame where the numeric columns are standardized to have mean 0 and variance 1.\nNote that: Notes: Only numeric columns are considered for the heatmap. Non-numeric columns are ignored.\nThe function should raise the exception for: ValueError: If the DataFrame is empty or if no numeric columns are present.\nThe function should output with:\n    pandas.DataFrame: Standardized DataFrame.\n    matplotlib.figure.Figure: Figure object containing the heatmap of the correlation matrix.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(df):\n```"
-}

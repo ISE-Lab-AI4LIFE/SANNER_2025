@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_556",
-  "text": "Calculate the Pearson correlation coefficient of two lists, generate a Pandas DataFrame from these lists, and then draw a scatter plot with a regression line.\nThe function should output with:\n    tuple: Contains two elements:\n    float: The Pearson correlation coefficient.\n    matplotlib.axes.Axes: The Axes object of the plotted scatter plot with a regression line.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom scipy import stats\ndef task_func(a, b):\n```"
-}

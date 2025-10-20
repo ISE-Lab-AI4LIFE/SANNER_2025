@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_55",
-  "text": "Analyze a text by creating a document term matrix with CountVectorizer. The text contains several sentences, each separated by a period. Ignore empty sentences.\nThe function should output with:\n    DataFrame: A pandas DataFrame with the document-term matrix. Its column names should be adapted from the vectorizer feature names.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport regex as re\nfrom sklearn.feature_extraction.text import CountVectorizer\ndef task_func(text):\n```"
-}

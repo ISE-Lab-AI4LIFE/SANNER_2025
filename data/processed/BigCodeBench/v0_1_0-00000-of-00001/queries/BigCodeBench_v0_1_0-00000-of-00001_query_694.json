@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_694",
-  "text": "Convert a list of tuples into a Pandas DataFrame, perform a default scaling in each column, and return the transformed DataFrame.\nThe function should output with:\n    df_scaled (DataFrame): A pandas DataFrame containing the scaled versions of the original data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import StandardScaler\ndef task_func(tuples_list, columns):\n```"
-}

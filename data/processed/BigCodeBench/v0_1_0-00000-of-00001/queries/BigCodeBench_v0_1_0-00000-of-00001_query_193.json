@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_193",
-  "text": "Extract all names from a string that is not enclosed by square brackets and send the names in an email.\nNote that: The message in the email is formatted in \"Subject: Extracted Names\\n\\n\" with the extracted name \"\\nJosie Smith\\nMugsy Dog Smith\".\nThe function should output with:\n    list: A list of extracted names.\nYou should write self-contained code starting with:\n```\nimport re\nimport smtplib\n# Constants\nTEXT = \"Josie Smith [3996 COLLEGE AVENUE, SOMETOWN, MD 21003]Mugsy Dog Smith [2560 OAK ST, GLENMEADE, WI 14098]\"\nRECEPIENT_ADDRESS = \"names@gmail.com\"\nSMTP_SERVER = \"smtp.gmail.com\"\nSMTP_PORT = 587\nEMAIL_ADDRESS = \"your.email@gmail.com\"\nEMAIL_PASSWORD = \"your.password\"\ndef task_func(text=TEXT, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, recepient_address=RECEPIENT_ADDRESS, smtp=None):\n```"
-}

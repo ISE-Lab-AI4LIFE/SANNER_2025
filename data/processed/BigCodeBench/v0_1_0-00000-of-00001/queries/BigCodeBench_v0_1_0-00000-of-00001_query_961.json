@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_961",
-  "text": "Generates a password that mirrors the structure of the given text by replacing alphabetic characters with random ascii lowercase letters, digits with random single-digit numbers, spaces wth either a random digit or random lowercase letter at equal probabilities, and leaving other characters unchanged.\nNote that: This function does not handle high Unicode characters and focuses only on ASCII values.\nThe function should raise the exception for: ValueError: If the input text is empty.\nThe function should output with:\n    str: The generated password.\nYou should write self-contained code starting with:\n```\nimport string\nimport random\ndef task_func(text, seed=None):\n```"
-}

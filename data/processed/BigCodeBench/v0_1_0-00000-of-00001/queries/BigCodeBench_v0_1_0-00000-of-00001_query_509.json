@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_509",
-  "text": "Compares two files to determine if they are identical by computing and comparing their MD5 hash values. This method is effective for checking if two files have exactly the same content. Assuming 'file1.gz' and 'file3.txt' contain different content, >>> task_func('file1.gz', 'file3.txt') False\nThe function should raise the exception for: FileNotFoundError: if either file_path1 or file_path2 does not exist.\nThe function should output with:\n    bool: Returns True if the MD5 hashes of the files match (indicating identical content), False otherwise.\nYou should write self-contained code starting with:\n```\nimport hashlib\nimport io\nimport os\ndef task_func(file_path1, file_path2):\n```"
-}

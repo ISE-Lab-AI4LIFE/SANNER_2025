@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_973",
-  "text": "Validates that a given file path does not contain invalid characters for file paths then splits it into path components using a specified delimiter.\nNote that: Notes: Backslashes ('\\\\') are internally converted to forward slashes ('/') before processing. This function treats '<', '>', ':', '\"', '|', '?', '*' as invalid characters in paths.\nThe function should raise the exception for: ValueError: If the path contains invalid characters.\nThe function should output with:\n    list: A list of the path components if the path is valid;\n    otherwise, an empty list if the path contains invalid characters.\nYou should write self-contained code starting with:\n```\nimport pathlib\nimport os\ndef task_func(path: str, delimiter: str = os.path.sep) -> list:\n```"
-}

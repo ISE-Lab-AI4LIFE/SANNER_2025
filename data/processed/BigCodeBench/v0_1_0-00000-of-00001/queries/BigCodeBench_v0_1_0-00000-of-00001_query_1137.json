@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1137",
-  "text": "Scrapes a web page to extract all email addresses using a specified regular expression pattern and writes them to a CSV file. The csv file is always created eventhough no email is found in the url. The header of the csv should be \"Emails\".\nThe function should output with:\n    str: The path to the CSV file where the extracted email addresses have been saved.\nYou should write self-contained code starting with:\n```\nimport bs4\nimport requests\nimport re\nimport csv\ndef task_func(url=\"http://example.com\", csv_path=\"emails.csv\", \n          regex=r\"\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,7}\\b\", \n          headers={'User-Agent': 'Mozilla/5.0'}):\n```"
-}

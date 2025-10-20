@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_182",
-  "text": "After a random delay, generate a Django HttpResponse with JSON data to simulate the latency of the network.\nThe function should output with:\n    HttpResponse: A Django HttpResponse with JSON data.\nYou should write self-contained code starting with:\n```\nfrom django.http import HttpResponse\nfrom django.conf import settings\nimport random\nimport time\ndef task_func(data, min_delay, max_delay):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_335",
-  "text": "Calculate the TF-IDF score of the words in a list of documents.\nThe function should output with:\n    pandas.DataFrame: A DataFrame with words as columns and documents as rows, containing the TF-IDF scores.\nYou should write self-contained code starting with:\n```\nfrom nltk.tokenize import word_tokenize\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nimport pandas as pd\ndef task_func(documents):\n```"
-}

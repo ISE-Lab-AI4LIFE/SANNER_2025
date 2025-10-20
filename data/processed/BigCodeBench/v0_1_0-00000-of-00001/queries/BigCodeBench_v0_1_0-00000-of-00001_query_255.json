@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_255",
-  "text": "Calculate the square root of the given decimal value to a certain precision and then encode the result as a JSON string.\nThe function should output with:\n    str: The square root of the decimal value encoded as a JSON string.\nYou should write self-contained code starting with:\n```\nimport json\nimport math\ndef task_func(decimal_value, precision=2):\n```"
-}

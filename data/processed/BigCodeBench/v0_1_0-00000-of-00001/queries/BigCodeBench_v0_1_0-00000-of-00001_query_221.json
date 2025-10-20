@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_221",
-  "text": "Draws five squares of random colors using Turtle Graphics. Each square is drawn sequentially with a 1-second pause between squares. The function requires a list of colors as input and sets up a Turtle Graphics window, creates a Turtle object, and uses it to draw the squares with colors from the provided list. The window remains open after drawing.\nThe function should output with:\n    None.\nYou should write self-contained code starting with:\n```\nfrom random import choice\nimport turtle\nimport time\ndef task_func(colors):\n```"
-}

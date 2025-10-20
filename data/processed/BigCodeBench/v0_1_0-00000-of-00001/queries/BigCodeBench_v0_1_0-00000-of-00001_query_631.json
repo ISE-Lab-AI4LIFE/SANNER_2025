@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_631",
-  "text": "Save a Pandas DataFrame to a JSON file in a specified directory.\nNote that: The function manipulates a Pandas DataFrame and saves it as a JSON file.\nThe function should output with:\n    str: The full file path where the DataFrame is saved.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport os\nOUTPUT_DIR = './output'\ndef task_func(df, filename, output_dir=OUTPUT_DIR):\n```"
-}

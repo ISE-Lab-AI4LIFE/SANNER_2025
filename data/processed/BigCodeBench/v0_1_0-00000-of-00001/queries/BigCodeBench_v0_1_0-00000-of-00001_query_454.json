@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_454",
-  "text": "Generates a random string of a specified length that conforms to a given regular expression pattern. The function repeatedly generates random strings, using both uppercase and lowercase ASCII letters, of the specified length until one matches the pattern. >>> bool(re.match('^[A-Z]+$', task_func(3, '^[A-Z]+$'))) True\nThe function should output with:\n    str: A randomly generated string that matches the specified pattern.\nYou should write self-contained code starting with:\n```\nimport re\nimport string\nfrom random import choice\ndef task_func(n, pattern):\n```"
-}

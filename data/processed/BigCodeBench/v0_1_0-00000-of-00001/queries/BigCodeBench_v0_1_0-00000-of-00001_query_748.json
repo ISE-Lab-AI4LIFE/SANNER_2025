@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_748",
-  "text": "Count the number of integers and floating-point numbers in a comma-separated string and calculate the sum of their square roots.\nThe function should output with:\n    count (int): The number of integers and floats in the string.\n    sqrt_sum (float): The sum of the square roots of the integers and floats.\nYou should write self-contained code starting with:\n```\nimport re\nimport math\ndef task_func(s):\n```"
-}

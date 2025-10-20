@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_912",
-  "text": "Calculate the product of the corresponding numbers for a list of uppercase letters, where \\\"A\\\" corresponds to 1, \\\"B\\\" to 2, etc. >>> task_func([\\\"A\\\", \\\"E\\\", \\\"I\\\"]) 45\nNote that: The function uses a predefined dictionary to map each uppercase letter to its corresponding number.\nThe function should output with:\n    int: The product of the numbers corresponding to the input letters.\nYou should write self-contained code starting with:\n```\nfrom functools import reduce\nimport operator\nimport string\ndef task_func(letters):\n```"
-}

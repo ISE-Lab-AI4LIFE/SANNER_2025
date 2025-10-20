@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_682",
-  "text": "Load a JSON file into a Pandas DataFrame, remove a specific key from each object and write the processed DataFrame back into a JSON file oriented by records.\nThe function should output with:\n    df (DataFrame): A pandas DataFrame representation of the processed JSON data.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport json\ndef task_func(file_path, key):\n```"
-}

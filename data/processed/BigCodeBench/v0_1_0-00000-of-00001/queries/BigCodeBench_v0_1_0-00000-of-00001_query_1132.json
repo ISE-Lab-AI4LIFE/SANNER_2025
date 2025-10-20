@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1132",
-  "text": "Updates the passwords in a user table of an SQLite database by hashing them with SHA256, using a provided salt. The function directly modifies the database via the given cursor.\nThe function should raise the exception for: TypeError if the salt is not a string\nThe function should output with:\n    int: The number of users whose passwords were successfully updated.\nYou should write self-contained code starting with:\n```\nimport hashlib\nimport binascii\ndef task_func(salt, cursor):\n```"
-}

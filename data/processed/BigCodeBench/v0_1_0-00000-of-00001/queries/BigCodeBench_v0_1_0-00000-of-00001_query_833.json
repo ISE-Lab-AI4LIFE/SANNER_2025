@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_833",
-  "text": "Serialize an object using pickle and overwrite the specified file with this serialized data. Before writing, checks if the directory exists, creating it if necessary.\nThe function should output with:\n    bool: True if the operation is successful, False otherwise.\nYou should write self-contained code starting with:\n```\nimport pickle\nimport os\ndef task_func(filename, data):\n```"
-}

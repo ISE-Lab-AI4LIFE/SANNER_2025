@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_267",
-  "text": "Create a report on the file size in a directory and write it to a CSV file.\nThe function should output with:\n    str: The path of the CSV file.\nYou should write self-contained code starting with:\n```\nimport os\nimport os.path\nimport csv\nimport collections\n# Constants\nFILE_NAME = 'file_sizes.csv'\ndef task_func(my_path):\n```"
-}

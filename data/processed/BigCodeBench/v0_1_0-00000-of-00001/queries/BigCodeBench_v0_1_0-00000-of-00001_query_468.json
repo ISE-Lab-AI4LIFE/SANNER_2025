@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_468",
-  "text": "Generates a simple scatter plot with 'n' points.\nThe function should output with:\n    plot (matplotlib.figure.Figure): The generated plot titled \"Scatter plot of random points\", with x-axis labeled \"X\" and y-axis labeled \"Y\".\n    points (list of tuples): List containing the (x, y) coordinates of the plotted points.\nYou should write self-contained code starting with:\n```\nimport matplotlib.pyplot as plt\nimport numpy as np\ndef task_func(n, seed=0):\n```"
-}

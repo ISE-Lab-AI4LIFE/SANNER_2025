@@ -9,6 +9,7 @@ sys.path.append(str(PROJECT_ROOT))
 
 import json
 import numpy as np
+import pandas as pd
 
 # Suppress transformers logging and warnings
 import transformers
@@ -51,46 +52,36 @@ def chunk_embedding(text, embedder):
         return np.array([])
 
 def process_subfolder(subfolder_path: Path, embedder, test_mode: bool = False):
-    for sub_subfolder in subfolder_path.iterdir():
-        if sub_subfolder.is_dir():
-            embedding_path = EMBEDDING_DIR / subfolder_path.name / sub_subfolder.name
+    DOCUMENTS_DIR = PROCESSED_DIR / "documents"
+    QUERIES_DIR = PROCESSED_DIR / "queries"
 
-            if embedding_path.exists():
-                print(f"Skipping {embedding_path}, already exists.")
-                continue
+    for category_dir, column_name in [(DOCUMENTS_DIR, "documents"), (QUERIES_DIR, "queries")]:
+        target_folder = EMBEDDING_DIR / category_dir.name
+        target_folder.mkdir(parents=True, exist_ok=True)
 
-            for category in ["queries", "documents"]:
-                source_folder = sub_subfolder / category
-                if not source_folder.exists():
-                    print(f"{source_folder} does not exist, skipping.")
-                    continue
-
-                target_folder = EMBEDDING_DIR / subfolder_path.name / sub_subfolder.name / category
-                target_folder.mkdir(parents=True, exist_ok=True)
-
-                json_files = list(source_folder.glob("*.json"))
+        for subfolder in category_dir.iterdir():
+            if subfolder.is_dir():
+                csv_files = list(subfolder.glob("*.csv"))
                 if test_mode:
-                    json_files = json_files[:2]
+                    csv_files = csv_files[:2]
 
-                for json_file in tqdm(json_files, desc=f"Processing {category} in {sub_subfolder.name}"):
-                    with open(json_file, "r", encoding="utf-8") as f:
-                        data = json.load(f)
-
-                    text = data.get("text", "")
-                    embedding = chunk_embedding(text, embedder)
-
-                    file_id = data.get("id")
-                    npy_filename = f"{subfolder_path.name}_{file_id}.npy"
-                    npy_path = target_folder / npy_filename
-
-                    np.save(npy_path, embedding)
-                    print(f"Saved embedding to {npy_path}")
+                for csv_file in tqdm(csv_files, desc=f"Processing {category_dir.name} in {subfolder.name}"):
+                    df = pd.read_csv(csv_file)
+                    for _, row in df.iterrows():
+                        file_id = row["id"]
+                        npy_path = target_folder / f"{file_id}.npy"
+                        if npy_path.exists():
+                            print(f"Skipping existing embedding: {npy_path}")
+                            continue
+                        text = row.get(column_name, "")
+                        embedding = chunk_embedding(text, embedder)
+                        npy_path = target_folder / f"{file_id}.npy"
+                        np.save(npy_path, embedding)
+                        print(f"Saved embedding to {npy_path}")
 
 def main():
     embedder = AverageEmbedder()
-    for subfolder in PROCESSED_DIR.iterdir():
-        if subfolder.is_dir():
-            process_subfolder(subfolder, embedder, test_mode=False)
+    process_subfolder(PROCESSED_DIR, embedder, test_mode=False)
             
 if __name__ == "__main__":
     main()

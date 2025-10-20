@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_210",
-  "text": "Plot a scatter graph of tuples and highlight the tuple with the maximum value at index 1.\nThe function should output with:\n    matplotlib.axes.Axes: The Axes object of the plot for further manipulation and testing, with the title 'Max Tuple Highlighted', x-axis labeled 'x', y-axis labeled 'y', and a legend.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom operator import itemgetter\nimport matplotlib.pyplot as plt\ndef task_func(data):\n```"
-}

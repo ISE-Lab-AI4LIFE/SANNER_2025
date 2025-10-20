@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_852",
-  "text": "Divide a multi-line string into separate strings and wrap each line to a certain width.\nThe function should output with:\n    str: The wrapped string where each line is wrapped to the specified width.\nYou should write self-contained code starting with:\n```\nimport textwrap\nimport re\ndef task_func(input_string, width):\n```"
-}

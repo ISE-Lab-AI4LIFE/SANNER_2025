@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_635",
-  "text": "Calculate the mode of a list of elements with multiple repetitions of the original list. Functionality: - Takes a list and a repetition count as input. - Flattens the list with multiple repetitions. - Calculates the mode of the flattened list. >>> task_func([1, 2, 3], 5) ModeResult(mode=array([1]), count=array([5]))\nThe function should output with:\n    scipy.stats.ModeResult: An object containing the mode(s) and count(s) of the most frequently occurring element(s) in the flattened list.\nYou should write self-contained code starting with:\n```\nimport itertools\nfrom typing import Any\nfrom scipy import stats\ndef task_func(input_list: list, repetitions: int) -> Any:\n```"
-}

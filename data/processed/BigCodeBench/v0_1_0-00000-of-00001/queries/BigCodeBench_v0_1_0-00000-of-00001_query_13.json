@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_13",
-  "text": "Runs the provided backup shell script and logs the start time, end time, and exit status in a specified JSON log file.\nThe function should raise the exception for: FileNotFoundError: If the script file does not exist. RuntimeError: If there is an error executing the script.\nThe function should output with:\n    dict: A dictionary containing:\n    'start_time': The start time of the script execution in the format '%Y-%m-%d %H:%M:%S'.\n    'end_time': The end time of the script execution in the format '%Y-%m-%d %H:%M:%S'.\n    'exit_status': The exit status of the script execution (0 for success, other values indicate an error).\nYou should write self-contained code starting with:\n```\nimport subprocess\nimport os\nimport json\nfrom datetime import datetime\ndef task_func(script_name='backup.sh', log_file='/home/user/backup_log.json'):\n```"
-}

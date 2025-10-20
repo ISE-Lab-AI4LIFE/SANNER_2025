@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_156",
-  "text": "Computes the average of each row in a provided 2D array and appends these averages as a new column. Additionally, it plots the averages against their respective row indices.\nThe function should output with:\n    tuple: A tuple containing:\n    DataFrame: A pandas DataFrame which includes the original data and an additional 'Average' column.\n    Axes: A matplotlib Axes object with the plot of row averages.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nimport matplotlib.pyplot as plt\n# Constants\nCOLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']\ndef task_func(data):\n```"
-}

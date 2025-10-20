@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_312",
-  "text": "Calculate the mean, median, and mode of values in a list of lists. If a list is empty, fill it with SIZE (default: 5) random integers between 0 and 100, and then calculate the statistics.\nThe function should output with:\n    dict: A dictionary with the mean, median, and mode of the values.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport random\nfrom scipy import stats\ndef task_func(list_of_lists, size=5, seed=0):\n```"
-}

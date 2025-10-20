@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_277",
-  "text": "Calculate the distribution of the maximum values of each row in the matrix, record the histogram and the estimate of the core density of the distribution, and return the skew, kurtosis, and the histogram plot of the distribution.\nThe function should output with:\n    tuple: The skewness, the kurtosis of the distribution, and the histogram plot (matplotlib Axes object).\nYou should write self-contained code starting with:\n```\nimport numpy as np\nfrom scipy import stats\nimport matplotlib.pyplot as plt\ndef task_func(matrix):\n```"
-}

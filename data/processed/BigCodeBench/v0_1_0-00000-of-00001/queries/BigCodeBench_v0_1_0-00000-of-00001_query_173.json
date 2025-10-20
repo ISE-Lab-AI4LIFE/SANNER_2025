@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_173",
-  "text": "Determine if the given datetime is a weekend.\nNote that: The datetime to be extracted is located in the 'utc_datetime' key in the JSON data.\nThe function should output with:\n    bool: True if the date is a weekend (Saturday or Sunday), False otherwise.\nYou should write self-contained code starting with:\n```\nimport json\nfrom datetime import datetime\ndef task_func(json_data):\n```"
-}

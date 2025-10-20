@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_848",
-  "text": "Split a multi-line string into separate strings, remove special characters, and save each string as a separate text file.\nThe function should output with:\n    file_paths (list): A list of file paths where the text is saved.\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport string\nimport random\ndef task_func(input_string, directory='./text_files'):\n```"
-}

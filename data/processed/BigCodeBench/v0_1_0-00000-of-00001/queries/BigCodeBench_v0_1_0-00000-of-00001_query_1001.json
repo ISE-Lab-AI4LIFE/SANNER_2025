@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1001",
-  "text": "This function retrieves a JSON file from the given URL using urllib.request.urlretrieve, temporarily saving it as 'downloaded_file.json'. It then opens and reads this file, converts the JSON content into a pandas DataFrame, and finally deletes the temporary JSON file.\nThe function should output with:\n    pandas.DataFrame: A DataFrame constructed from the JSON data in the downloaded file.\nYou should write self-contained code starting with:\n```\nimport urllib.request\nimport os\nimport json\nimport pandas as pd\n# Constants\nTARGET_JSON_FILE = \"downloaded_file.json\"\ndef task_func(url):\n```"
-}

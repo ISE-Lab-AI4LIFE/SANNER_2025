@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_2",
-  "text": "Generate a random string of the specified length composed of uppercase and lowercase letters, and then count the occurrence of each character in this string.\nThe function should raise the exception for: ValueError if the length is a negative number\nThe function should output with:\n    dict: A dictionary where each key is a character from the generated string and the value\n    is the count of how many times that character appears in the string.\nYou should write self-contained code starting with:\n```\nimport collections\nimport random\nimport string\ndef task_func(length=100):\n```"
-}

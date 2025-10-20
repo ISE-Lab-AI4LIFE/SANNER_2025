@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_940",
-  "text": "Rename all files in the specified directory by removing all special characters, punctuation marks, and spaces, using regular expressions. The function keeps alphanumeric characters and removes the rest.\nThe function should output with:\n    list[str]: A list containing the new names of all files after renaming.\nYou should write self-contained code starting with:\n```\nimport re\nimport os\nimport glob\ndef task_func(dir_path: str) -> list:\n```"
-}

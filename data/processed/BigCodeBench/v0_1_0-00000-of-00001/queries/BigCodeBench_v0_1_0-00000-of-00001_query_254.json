@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_254",
-  "text": "Generate a random sine wave function and draw it on a provided matplotlib polar subplot 'ax'. The function randomly selects a color from a predefined list and sets a random position for radial labels.\nThe function should output with:\n    str: The color code (as a string) of the plotted function.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport random\n# Constants\nCOLORS = ['b', 'g', 'r', 'c', 'm', 'y', 'k']\ndef task_func(ax):\n```"
-}

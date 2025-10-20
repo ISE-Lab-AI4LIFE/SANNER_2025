@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_1117",
-  "text": "Calculate the mean, the median, and the mode(s) of the age of the employees in the department \"EMP$$.\" Generate random ages for each employee within the range [22, 60].\nThe function should output with:\n    tuple: A tuple of mean, median, and a list of mode(s) of employee ages.\nYou should write self-contained code starting with:\n```\nimport random\nimport statistics\n# Constants\nAGE_RANGE = (22, 60)\ndef task_func(dict1):\n```"
-}

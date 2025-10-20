@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_79",
-  "text": "This function generates a CSV file response from a Django HttpRequest. It constructs a CSV file using the provided header and CSV data, and sends it back as a Django FileResponse. This function is particularly useful in scenarios where you need to provide a downloadable CSV file in response to a user request on a Django web application.\nThe function should output with:\n    FileResponse: A Django FileResponse object containing the CSV data as an attachment.\nYou should write self-contained code starting with:\n```\nimport csv\nimport io\nfrom django.http import HttpRequest, FileResponse\ndef task_func(request, header, csv_data):\n```"
-}

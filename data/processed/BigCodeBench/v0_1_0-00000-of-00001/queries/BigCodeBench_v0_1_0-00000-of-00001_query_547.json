@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_547",
-  "text": "Sorts a given dictionary by its keys in ascending order and returns a PrettyTable object displaying the sorted items with the names 'Key' and 'Value'. Display an empty dictionary. >>> str(task_func({})).startswith('+') True\nThe function should output with:\n    PrettyTable: A PrettyTable object representing the sorted dictionary.\nYou should write self-contained code starting with:\n```\nfrom collections import OrderedDict\nfrom prettytable import PrettyTable\ndef task_func(my_dict):\n```"
-}

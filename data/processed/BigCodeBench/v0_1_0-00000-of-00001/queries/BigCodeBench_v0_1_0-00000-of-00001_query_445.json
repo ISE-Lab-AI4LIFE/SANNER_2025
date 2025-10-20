@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_445",
-  "text": "Generate an array of random 3D dots in the range [0, 1) for each dimension and draw them in a 3D scatter plot.\nThe function should output with:\n    tuple: A tuple containing:\n    points (ndarray): A numpy ndarray of shape (n_points, 3) with the coordinates of the points.\n    plot (Axes3D): A 3D scatter plot of the generated points.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport matplotlib.pyplot as plt\ndef task_func(n_points=100, random_seed=None):\n```"
-}

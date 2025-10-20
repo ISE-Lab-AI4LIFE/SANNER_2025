@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_629",
-  "text": "Create and draw a sine wave with random frequency, amplitude and phase shift. The return ax object has 'Random Sine Wave' title, 'Time' on the x axis and 'Amplitude' on the y axis.\nThe function should output with:\n    ax (matplotlib.axes._axes.Axes): The axis object of the generated sine wave plot.\nYou should write self-contained code starting with:\n```\nimport math\nfrom random import randint\nimport matplotlib.pyplot as plt\ndef task_func():\n```"
-}

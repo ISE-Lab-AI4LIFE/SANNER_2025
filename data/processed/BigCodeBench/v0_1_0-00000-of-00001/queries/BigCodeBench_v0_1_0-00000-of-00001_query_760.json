@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_760",
-  "text": "Moves all files that match a particular pattern from one directory to another. Functionality: - Moves files from 'source_directory' to 'destination_directory' based on a filename pattern 'file_pattern'.\nThe function should output with:\n    Returns a list of filenames that were moved.\nYou should write self-contained code starting with:\n```\nimport os\nimport shutil\nimport fnmatch\ndef task_func(source_directory, destination_directory, file_pattern):\n```"
-}

@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_711",
-  "text": "Normalizes a dataset from a .csv file.\nThe function should output with:\n    df (DataFrame): The normalized dataset.\nYou should write self-contained code starting with:\n```\nimport pandas as pd\nfrom sklearn.preprocessing import MinMaxScaler\ndef task_func(data_path):\n```"
-}

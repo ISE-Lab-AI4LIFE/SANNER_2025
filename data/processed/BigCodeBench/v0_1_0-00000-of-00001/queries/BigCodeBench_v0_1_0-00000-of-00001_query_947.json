@@ -1,4 +1,0 @@
-{
-  "id": "BigCodeBench_v0_1_0-00000-of-00001_query_947",
-  "text": "Creates a matrix of specified dimensions with random integers within a given range, and then converts it into a pandas DataFrame.\nThe function should output with:\n    DataFrame: A pandas DataFrame containing random integers within the specified range.\nYou should write self-contained code starting with:\n```\nimport numpy as np\nimport pandas as pd\nimport random\ndef task_func(rows=3, cols=2, min_val=0, max_val=100, seed=0):\n```"
-}
