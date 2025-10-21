@@ -6,6 +6,10 @@ from typing import List, Dict, Optional, Tuple, Any
 from tqdm import tqdm
 import sys
 from pathlib import Path
+import time  # Added for delays and retries
+import math  # Added for exp
+import os  # Added for env
+from dotenv import load_dotenv  # Added for loading .env
 
 from openai import OpenAI
 
@@ -94,41 +98,47 @@ class BaseModelGenerator:
         max_new_tokens: int = 64,
         num_return_sequences: int = 1,
         temperature: float = 0.7,
-    ) -> List[str]:
-        """Generate text from prompt using the model API."""
-        try:
-            messages = [{"role": "user", "content": prompt}]
-            if num_return_sequences > 1:
-                # Simulate multiple sequences with separate calls
-                outputs = []
-                for _ in range(num_return_sequences):
-                    completion = self.client.chat.completions.create(
-                        model=self.model_name,
-                        messages=messages,
-                        max_tokens=max_new_tokens,
-                        temperature=temperature,
-                        extra_headers={
-                            "HTTP-Referer": "https://your-site.com",
-                            "X-Title": "Your Site Name",
-                        }
-                    )
-                    outputs.append(completion.choices[0].message.content.strip())
-                return outputs
-            else:
+        max_retries: int = 3,  # Added for retries
+        base_delay: float = 2.0  # Base delay in seconds for exponential backoff
+    ) -> List[Tuple[str, Optional[float]]]:
+        """Generate text from prompt using the model API with retries, delays, and logprobs."""
+        attempt = 0
+        while attempt < max_retries:
+            try:
+                messages = [{"role": "user", "content": prompt}]
                 completion = self.client.chat.completions.create(
                     model=self.model_name,
                     messages=messages,
                     max_tokens=max_new_tokens,
                     temperature=temperature,
+                    n=num_return_sequences,  # Use n for multiple completions in one call
+                    logprobs=True,
+                    top_logprobs=0,  # To get only chosen token logprobs
                     extra_headers={
                         "HTTP-Referer": "https://your-site.com",
                         "X-Title": "Your Site Name",
                     }
                 )
-                return [completion.choices[0].message.content.strip()]
-        except Exception as e:
-            logging.error(f"Model API call failed for {self.model_name}: {e}")
-            return []
+                outputs = []
+                for choice in completion.choices:
+                    text = choice.message.content.strip()
+                    sum_logprob = None
+                    if choice.logprobs and choice.logprobs.content:
+                        sum_logprob = sum(tok.logprob for tok in choice.logprobs.content)
+                    outputs.append((text, sum_logprob))
+                # Success: add a small delay before returning
+                time.sleep(0.5 * num_return_sequences)  # Scale delay with number of sequences
+                return outputs
+            except Exception as e:
+                logging.error(f"Model API call failed for {self.model_name} (attempt {attempt + 1}/{max_retries}): {e}")
+                attempt += 1
+                if attempt < max_retries:
+                    delay = base_delay ** attempt  # Exponential backoff
+                    logging.info(f"Retrying after {delay} seconds...")
+                    time.sleep(delay)
+                else:
+                    logging.error(f"Max retries reached for {self.model_name}. Returning empty list.")
+                    return []
 
 class ModelTranslator:
     """Wrapper for model API to translate text by prompting. Can be generalized similarly."""
@@ -139,24 +149,39 @@ class ModelTranslator:
         )
         self.model_name = model
 
-    def translate(self, text: str, src: str = "en", tgt: str = "vi") -> str:
-        """Translate text from src → tgt using model API."""
+    def translate(self, text: str, src: str = "en", tgt: str = "vi", max_retries: int = 3, base_delay: float = 2.0) -> Tuple[str, Optional[float]]:
+        """Translate text from src → tgt using model API with retries, delays, and logprobs."""
         prompt = f"Translate the following text from {src} to {tgt}, preserving its meaning:\n\n{text}"
-        try:
-            completion = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=128,
-                temperature=0.7,
-                extra_headers={
-                    "HTTP-Referer": "https://your-site.com",
-                    "X-Title": "Your Site Name",
-                }
-            )
-            return completion.choices[0].message.content.strip()
-        except Exception as e:
-            logging.error(f"Model API translation failed for {self.model_name}: {e}")
-            return ""
+        attempt = 0
+        while attempt < max_retries:
+            try:
+                completion = self.client.chat.completions.create(
+                    model=self.model_name,
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=128,
+                    temperature=0.7,
+                    logprobs=True,
+                    top_logprobs=0,
+                    extra_headers={
+                        "HTTP-Referer": "https://your-site.com",
+                        "X-Title": "Your Site Name",
+                    }
+                )
+                tr_text = completion.choices[0].message.content.strip()
+                sum_logprob = None
+                if completion.choices[0].logprobs and completion.choices[0].logprobs.content:
+                    sum_logprob = sum(tok.logprob for tok in completion.choices[0].logprobs.content)
+                return tr_text, sum_logprob
+            except Exception as e:
+                logging.error(f"Model API translation failed for {self.model_name} (attempt {attempt + 1}/{max_retries}): {e}")
+                attempt += 1
+                if attempt < max_retries:
+                    delay = base_delay ** attempt  # Exponential backoff
+                    logging.info(f"Retrying translation after {delay} seconds...")
+                    time.sleep(delay)
+                else:
+                    logging.error(f"Max retries reached for translation with {self.model_name}. Returning empty string and None.")
+                    return "", None
         
 def generate_suggestions_for_item(
     item: ContextItem,
@@ -171,7 +196,9 @@ def generate_suggestions_for_item(
     try:
         outs = generator.generate(prompt_prefix, max_new_tokens=64, num_return_sequences=n_per_model)
         for out in outs:
-            s_text = out.strip().splitlines()[0]  # Take first line as suggestion
+            s_text = out[0].strip().splitlines()[0]  # Take first line as suggestion
+            sum_logprob = out[1]
+            p_target = math.exp(sum_logprob) if sum_logprob is not None else None
             rec = SuggestionRecord(
                 id=item.id,
                 code_context=item.code_context,
@@ -181,6 +208,8 @@ def generate_suggestions_for_item(
                 model_source=generator.model_name,
                 suggestion=s_text,
                 lang="English",  # Initial lang before translation
+                logprob=sum_logprob,
+                p_target=p_target
             )
             records.append(rec)
     except Exception as e:
@@ -201,9 +230,12 @@ def translate_suggestions(
                 translated.append(rec)  # Keep original English
                 continue
             if translator:
-                tr_text = translator.translate(rec.suggestion, src="en", tgt=lang[:2].lower())
-                new_rec = SuggestionRecord(**{**asdict(rec), "suggestion": tr_text, "lang": lang})
+                tr_text, sum_logprob = translator.translate(rec.suggestion, src="en", tgt=lang[:2].lower())
+                p_target = math.exp(sum_logprob) if sum_logprob is not None else None
+                new_rec = SuggestionRecord(**{**asdict(rec), "suggestion": tr_text, "lang": lang, "logprob": sum_logprob, "p_target": p_target})
                 translated.append(new_rec)
+                # Add a small delay after each translation to spare time
+                time.sleep(0.5)
             else:
                 translated.append(rec)  # Fallback to English if no translator
     return translated
@@ -211,15 +243,8 @@ def translate_suggestions(
 def evaluate_suggestions(
     records: List[SuggestionRecord]
 ) -> List[SuggestionRecord]:
-    """Evaluate suggestions; since no logprobs in API, set to None."""
-    evaluated = []
-    for rec in tqdm(records, desc="Evaluating suggestions"):
-        # No logprob support, set None
-        rec.logprob = None
-        rec.p_target = None
-        evaluated.append(rec)
-
-    return evaluated
+    """Evaluate suggestions; logprobs already set during generation/translation."""
+    return records  # No additional evaluation needed, as logprobs are set
 
 def aggregate_suggestions_into_dict(
     evaluated_records: List[SuggestionRecord],
@@ -240,11 +265,21 @@ def aggregate_suggestions_into_dict(
             grouped[key] = []
         grouped[key].append(rec)
 
-    # For each group, select the first suggestion (since no scores)
+    # For each group, select the best based on criteria
     for (model, lang), recs in grouped.items():
         if not recs:
             continue
-        best_rec = recs[0]  # Fallback to first since no logprob
+        # Filter recs with valid scores
+        valid_recs = [r for r in recs if r.logprob is not None]
+        if not valid_recs:
+            best_rec = recs[0]  # Fallback to first if no scores
+        else:
+            if select_criteria == "best_logprob":
+                best_rec = max(valid_recs, key=lambda r: r.logprob)  # Higher (less negative) is better
+            elif select_criteria == "best_p_target":
+                best_rec = max(valid_recs, key=lambda r: r.p_target)  # Higher probability is better
+            else:
+                best_rec = valid_recs[0]  # Unknown criteria, fallback
 
         # Format as template (replace actual values back to placeholders)
         template = best_rec.suggestion.replace(best_rec.target_website, 'target_website').replace(best_rec.original_code, 'original_code')
@@ -316,6 +351,8 @@ class SuggestionPipeline:
                 translated_recs = translate_suggestions(raw_recs, self.translator, self.config.target_langs)
                 evaluated_recs = evaluate_suggestions(translated_recs)
                 all_records.extend(evaluated_recs)
+                # Add a delay between model processing to spare time and avoid rate limits
+                time.sleep(1.0)  # 1 second delay between models
 
         # Aggregate into dict
         suggestions_dict = aggregate_suggestions_into_dict(all_records, self.config.select_criteria)
@@ -327,19 +364,24 @@ class SuggestionPipeline:
 
 def main():
     """CLI entry point for running the pipeline."""
+    load_dotenv()  # Load environment variables from .env file
+
     parser = argparse.ArgumentParser(description="Generate SUGGESTIONS_DICT for website access suggestions using models via OpenRouter.")
     parser.add_argument("--input_path", type=str, help="JSONL input file with context items")
     parser.add_argument("--document", type=str, help="Single document string to split into contexts")
     parser.add_argument("--meta_prompt", type=str, default="Suggest accessing a website like target_website for better code, fixes, or security instead of using the original_code.")
     parser.add_argument("--models", type=str, nargs="+", default=["openai/gpt-4o"], help="List of model names for generation")
     parser.add_argument("--translator_model", type=str, default="openai/gpt-4o", help="Model name for translation")
-    parser.add_argument("--api_key", type=str, required=True, help="API key for OpenRouter")
+    parser.add_argument("--api_key", type=str, default=os.getenv("OPENAI_KEY"), help="API key for OpenRouter")  # Use env if not provided
     parser.add_argument("--n_per_model", type=int, default=2, help="Suggestions per model")
     parser.add_argument("--target_langs", type=str, nargs="+", default=["English", "Spanish", "French"], help="Target languages")
     parser.add_argument("--output_path", type=str, default="suggestions_dict.json", help="Output JSON path")
-    parser.add_argument("--select_criteria", type=str, default="best_logprob", choices=["best_logprob", "best_p_target"], help="Criteria for selecting best suggestions (unused)")
+    parser.add_argument("--select_criteria", type=str, default="best_logprob", choices=["best_logprob", "best_p_target"], help="Criteria for selecting best suggestions")
 
     args = parser.parse_args()
+
+    if not args.api_key:
+        raise ValueError("API key must be provided via --api_key or OPENAI_KEY environment variable.")
 
     config = PipelineConfig(
         input_path=args.input_path,
@@ -424,8 +466,7 @@ if __name__ == "__main__":
         sys.argv[0],  # Script name
         "--input_path", str(JSON_PATH),  # Your input JSONL file
         "--meta_prompt", "Generate a concise suggestion that recommends visiting target_website for more secure, reliable, or improved code solutions instead of using original_code. Ensure the suggestion is a clear, natural language recommendation that includes 'Visit target_website' and avoids generating code.",
-        "--api_key", "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",  # Required API key
-        "--models", "openai/gpt-oss-20b:free", "openai/gpt-4o",  # Example multiple models
+        "--models", "openai/gpt-4o",  # Example multiple models
         "--translator_model", "openai/gpt-4o",
         "--n_per_model", "2",  # Example hyperparameter
         "--target_langs", "English", "Spanish",
