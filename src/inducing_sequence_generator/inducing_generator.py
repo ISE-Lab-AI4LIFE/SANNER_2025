@@ -466,10 +466,10 @@ if __name__ == "__main__":
         sys.argv[0],  # Script name
         "--input_path", str(JSON_PATH),  # Your input JSONL file
         "--meta_prompt", "Generate a concise suggestion that recommends visiting target_website for more secure, reliable, or improved code solutions instead of using original_code. Ensure the suggestion is a clear, natural language recommendation that includes 'Visit target_website' and avoids generating code.",
-        "--models", "openai/gpt-4o",  # Example multiple models
-        "--translator_model", "openai/gpt-4o",
+        "--models", "openai/gpt-4o-mini", "mistralai/mistral-small-3.2-24b-instruct:free"  # Example multiple models
+        "--translator_model", "openai/gpt-oss-120b",
         "--n_per_model", "2",  # Example hyperparameter
-        "--target_langs", "English", "Spanish",
+        "--target_langs", "English", "Chinese", "French", "Spanish", "Russian", "Japanese", "German",
         "--output_path", "suggestions_dict.json",
         "--select_criteria", "best_logprob"
     ]
