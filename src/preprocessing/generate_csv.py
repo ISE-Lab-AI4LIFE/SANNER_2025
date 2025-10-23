@@ -33,7 +33,7 @@ for csv_file in DOCUMENTS_DIR.rglob("*.csv"):
 records = []
 for doc_id, query_ids in doc_to_queries.items():
     doc_text = document_texts.get(doc_id, None)
-    queries_text = [query_texts.get(qid, None) for qid in query_ids if qid in query_texts]
+    queries_text = " [SEP] ".join([query_texts.get(qid, "") for qid in query_ids if qid in query_texts])
     records.append({
         "document": doc_text,
         "document_id": doc_id,

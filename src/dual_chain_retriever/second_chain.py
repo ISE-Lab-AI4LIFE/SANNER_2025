@@ -18,28 +18,31 @@ def invert_top_documents(top_json_path, output_path, top_k=5):
         top_list = json.load(f)
 
     doc_to_queries = defaultdict(list)
+    doc_to_scores = defaultdict(list)  # ✅ thêm dict phụ để lưu điểm
 
     for entry in top_list:
         query_id = entry["query_id"]
-        for doc_id in entry["top_documents"]:
-            doc_to_queries[doc_id].append(query_id)
+        for doc_id, score in zip(entry["top_documents"], entry["scores"]):
+            doc_to_queries[doc_id].append((query_id, score))
 
-    # Giữ lại top_k queries đầu tiên cho mỗi document
+    # Giữ top-k query có score cao nhất
     for doc_id in doc_to_queries:
-        doc_to_queries[doc_id] = doc_to_queries[doc_id][:top_k]
+        doc_to_queries[doc_id].sort(key=lambda x: x[1], reverse=True)
+        top_items = doc_to_queries[doc_id][:top_k]
+        doc_to_queries[doc_id] = [q for q, _ in top_items]
+        doc_to_scores[doc_id] = [s for _, s in top_items]
 
-    # Chuyển defaultdict sang dict thường để lưu JSON
-    doc_to_queries = dict(doc_to_queries)
+    # Chuyển defaultdict sang dict thường
+    output_data = dict(doc_to_queries)
+    output_data["_scores"] = dict(doc_to_scores)  # ✅ thêm trường phụ
 
     print(f"Number of documents: {len(doc_to_queries)}")
-
-    # Tính số lượng queries trỏ tới mỗi document và in trung bình queries trên 1 document
     total_queries = sum(len(queries) for queries in doc_to_queries.values())
-    average_queries = total_queries / len(doc_to_queries) if doc_to_queries else 0
-    print(f"Average number of queries per document: {average_queries:.2f}")
+    avg_queries = total_queries / len(doc_to_queries) if doc_to_queries else 0
+    print(f"Average number of queries per document: {avg_queries:.2f}")
 
     with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(doc_to_queries, f, indent=2, ensure_ascii=False)
+        json.dump(output_data, f, indent=2, ensure_ascii=False)
 
     print(f"Saved document-to-queries mapping to {output_path}")
 

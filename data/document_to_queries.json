@@ -1,163 +1,326 @@
 {
   "BigCodeBench_v0_1_0-00000-of-00001_document_14": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_90",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_661",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_421",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_968",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_138"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_866",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_185",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_793",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_450",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_452"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_5": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_90",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_661",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_968",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_40",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_1080"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1062",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_95",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_240",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1025",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_158"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_9": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_90",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_661",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_968",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_71",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_138"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_303",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_452",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_46",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_158",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_431"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_2": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_90",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_158",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_755",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_303",
     "BigCodeBench_v0_1_0-00000-of-00001_query_76",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_71",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_40",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_1080"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_216"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_22": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_90",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_421",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_40",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_1080",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_320"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1062",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1054",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1061",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_533",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1080"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_3": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_661",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_421",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_76",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_138",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_256"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_303",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_140",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_158",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_106",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_299"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_19": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_661",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_478",
     "BigCodeBench_v0_1_0-00000-of-00001_query_1080",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_437",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_599",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_897"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1034",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_602",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1033"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_18": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_421",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_138",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_40",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_612",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_4"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_142",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_118",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_194",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_882",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_838"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_4": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_421",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_76",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_391",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_200",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_372"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_785",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_161",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_216",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_194",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_142"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_23": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_80",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_545",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_462",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_782",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_307"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_765",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1129",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_585",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1130",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_257"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_21": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_80",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_71",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_391",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_462",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_200"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1015",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_216",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1009",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_464",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1084"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_6": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_80",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_71",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_545",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_320",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_960"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_265",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_988",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_209",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_101",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_528"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_7": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_80",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_1080",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_854",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_320",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_462"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1054",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_209",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1053",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_322",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_339"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_20": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_80",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_138",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_545",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_391",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_854"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_765",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_464",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_890",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_265",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_396"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_10": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_76",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_612",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_200",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_107",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_617"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_101",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_478",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_209",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_492",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_299"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_11": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_76",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_71",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_40",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_256",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_501"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1025",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_512",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_514",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_531",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_533"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_13": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_968",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_612",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_789",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_107",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_47"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_617",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_618",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_619",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_478",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_303"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_12": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_968",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_545",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_612",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_462",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_200"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_765",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1025",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_158",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1062",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1053"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_15": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_545",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_854",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_320",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_960",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_4"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1054",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_185",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1053",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_527",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_580"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_16": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_391",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_854",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_789",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_501",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_782"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_765",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_882",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_785",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_891",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_890"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_17": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_854",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_960",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_4",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_307",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_763"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1054",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_765",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_882",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_482",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_185"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_8": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_320",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_501",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_437",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_500",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_766"
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1054",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_361",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1053",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_240",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_580"
   ],
   "BigCodeBench_v0_1_0-00000-of-00001_document_1": [
-    "BigCodeBench_v0_1_0-00000-of-00001_query_462",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_548",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_1102",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_657",
-    "BigCodeBench_v0_1_0-00000-of-00001_query_1068"
-  ]
+    "BigCodeBench_v0_1_0-00000-of-00001_query_1085",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_46",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_461",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_94",
+    "BigCodeBench_v0_1_0-00000-of-00001_query_653"
+  ],
+  "_scores": {
+    "BigCodeBench_v0_1_0-00000-of-00001_document_14": [
+      0.8304060697555542,
+      0.8234686851501465,
+      0.8204410076141357,
+      0.8191843032836914,
+      0.8177081346511841
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_5": [
+      0.843945324420929,
+      0.8385558724403381,
+      0.8310220241546631,
+      0.8294901251792908,
+      0.8291056156158447
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_9": [
+      0.8337007164955139,
+      0.8334423303604126,
+      0.8327429294586182,
+      0.8304194211959839,
+      0.8259665966033936
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_2": [
+      0.8309080600738525,
+      0.8279997706413269,
+      0.8262263536453247,
+      0.8225146532058716,
+      0.8212316632270813
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_22": [
+      0.8433396816253662,
+      0.8422878980636597,
+      0.8389860987663269,
+      0.8333559632301331,
+      0.8317660689353943
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_3": [
+      0.8418058156967163,
+      0.8362736701965332,
+      0.8309651017189026,
+      0.8306221961975098,
+      0.8304826617240906
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_19": [
+      0.8206400275230408,
+      0.8146362900733948,
+      0.8139537572860718,
+      0.8119632005691528,
+      0.8118807077407837
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_18": [
+      0.8465442657470703,
+      0.8366589546203613,
+      0.8362406492233276,
+      0.8338199853897095,
+      0.8333271741867065
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_4": [
+      0.827828049659729,
+      0.8218973278999329,
+      0.8207821249961853,
+      0.8203291893005371,
+      0.8161695003509521
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_23": [
+      0.8285675644874573,
+      0.8135560154914856,
+      0.8126718401908875,
+      0.8114060163497925,
+      0.8096887469291687
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_21": [
+      0.8384271264076233,
+      0.8384026288986206,
+      0.8280879259109497,
+      0.8204286098480225,
+      0.8193037509918213
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_6": [
+      0.8378192186355591,
+      0.8221171498298645,
+      0.8201676607131958,
+      0.8170506358146667,
+      0.8157577514648438
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_7": [
+      0.8411111831665039,
+      0.8252904415130615,
+      0.8248683214187622,
+      0.8235216736793518,
+      0.820206880569458
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_20": [
+      0.8296771049499512,
+      0.8224201202392578,
+      0.8210607767105103,
+      0.820694088935852,
+      0.8205304145812988
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_10": [
+      0.836041271686554,
+      0.8274549245834351,
+      0.8251633048057556,
+      0.8223168849945068,
+      0.8196409344673157
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_11": [
+      0.8351303339004517,
+      0.8322291374206543,
+      0.8294280171394348,
+      0.8272253274917603,
+      0.8253523111343384
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_13": [
+      0.8440060615539551,
+      0.8393442630767822,
+      0.8371533155441284,
+      0.8300164341926575,
+      0.8281280994415283
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_12": [
+      0.8348124027252197,
+      0.8312333226203918,
+      0.8293181657791138,
+      0.8274380564689636,
+      0.8251900672912598
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_15": [
+      0.8400378227233887,
+      0.8266362547874451,
+      0.8211258053779602,
+      0.8098101019859314,
+      0.8070458769798279
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_16": [
+      0.8424407243728638,
+      0.8380304574966431,
+      0.8301078677177429,
+      0.8239107131958008,
+      0.8190860152244568
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_17": [
+      0.8358403444290161,
+      0.8346408605575562,
+      0.827124297618866,
+      0.8211044669151306,
+      0.8171014189720154
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_8": [
+      0.8455913662910461,
+      0.8315331339836121,
+      0.8254509568214417,
+      0.8240810036659241,
+      0.8212918639183044
+    ],
+    "BigCodeBench_v0_1_0-00000-of-00001_document_1": [
+      0.8115204572677612,
+      0.8077067732810974,
+      0.8019373416900635,
+      0.8000823259353638,
+      0.7972351908683777
+    ]
+  }
 }
