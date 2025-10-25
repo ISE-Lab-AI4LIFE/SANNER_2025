@@ -25,12 +25,26 @@ def invert_top_documents(top_json_path, output_path, top_k=5):
         for doc_id, score in zip(entry["top_documents"], entry["scores"]):
             doc_to_queries[doc_id].append((query_id, score))
 
-    # Giữ top-k query có score cao nhất
-    for doc_id in doc_to_queries:
-        doc_to_queries[doc_id].sort(key=lambda x: x[1], reverse=True)
-        top_items = doc_to_queries[doc_id][:top_k]
+    outrank_entries = []
+
+    # Sắp xếp và tách top-k + phần bị loại
+    for doc_id, query_scores in doc_to_queries.items():
+        # Sắp xếp toàn bộ theo score giảm dần
+        query_scores.sort(key=lambda x: x[1], reverse=True)
+
+        # Chia thành hai phần: top-k và phần bị loại
+        top_items = query_scores[:top_k]
+        outranked_items = query_scores[top_k:]
+
+        # Lưu kết quả top-k
         doc_to_queries[doc_id] = [q for q, _ in top_items]
         doc_to_scores[doc_id] = [s for _, s in top_items]
+
+        # Lưu phần bị loại
+        outrank_entries.append({
+            "doc_id": doc_id,
+            "outranked_queries": [{"query_id": q, "score": s} for q, s in outranked_items]
+        })
 
     # Chuyển defaultdict sang dict thường
     output_data = dict(doc_to_queries)
@@ -45,6 +59,12 @@ def invert_top_documents(top_json_path, output_path, top_k=5):
         json.dump(output_data, f, indent=2, ensure_ascii=False)
 
     print(f"Saved document-to-queries mapping to {output_path}")
+
+    outrank_path = DATA_DIR / "outrank.json"
+    with open(outrank_path, "w", encoding="utf-8") as f:
+        json.dump(outrank_entries, f, indent=2, ensure_ascii=False)
+
+    print(f"Saved outranked queries to {outrank_path}")
 
 if __name__ == "__main__":
     # Kiểm tra và xóa file document_to_queries.json nếu đã tồn tại
