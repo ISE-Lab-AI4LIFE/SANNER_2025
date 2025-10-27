@@ -71,7 +71,7 @@ def load_uprank_queries(uprank_path: Path):
         return set(df['id'].astype(str).tolist())
     return set()
 
-def find_top_k(queries_dict, documents_dict, top_k=5):
+def find_top_k(queries_dict, documents_dict, top_k=10):
     results = []
 
     doc_ids = list(documents_dict.keys())
@@ -101,7 +101,7 @@ def main():
         queries_dict = {k: v for k, v in queries_dict.items() if k in uprank_queries}
         print(f"Filtered queries to {len(queries_dict)} based on uprank.csv")
 
-    results = find_top_k(queries_dict, documents_dict, top_k=5)
+    results = find_top_k(queries_dict, documents_dict, top_k=10)
 
     if os.path.exists(OUTPUT_FILE):
         os.remove(OUTPUT_FILE)

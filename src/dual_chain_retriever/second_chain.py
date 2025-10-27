@@ -70,4 +70,4 @@ if __name__ == "__main__":
     # Kiểm tra và xóa file document_to_queries.json nếu đã tồn tại
     if DOC2QUERIES_JSON.exists():
         os.remove(DOC2QUERIES_JSON)
-    invert_top_documents(TOP5_JSON, DOC2QUERIES_JSON, top_k=5)
+    invert_top_documents(TOP5_JSON, DOC2QUERIES_JSON, top_k=15)

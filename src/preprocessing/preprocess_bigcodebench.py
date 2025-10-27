@@ -23,7 +23,7 @@ documents_dir.mkdir(parents=True, exist_ok=True)
 
 parquet_files = glob.glob(str(Path(RAW_DIR) / "*.parquet"))
 
-BATCH_SIZE = 50
+BATCH_SIZE = 1
 DOC_SEP = " [DOC_SEP] "
 
 for file in tqdm.tqdm(parquet_files, desc="Processing raw parquet files", unit="file"):
