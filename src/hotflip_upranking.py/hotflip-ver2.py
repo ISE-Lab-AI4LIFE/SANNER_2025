@@ -702,17 +702,22 @@ if __name__ == "__main__":
     jailbreaker = JailBreaker(hf_model=hf_model, encoder_tokenizer=tokenizer, encoder=encoder, device=device)  # Or your jailbreaker model
 
     def run_hotflip(test_mode=False):
-        df = pd.read_csv('data/document_query_pairs.csv')
+        df = pd.read_csv('/content/document_query_pairs.csv')
+
         if test_mode:
-            df = df.head(1)
+            df_sampled = df.head(1)
+        else:
+            # 🔹 Lấy ngẫu nhiên 1% số dòng
+            df_sampled = df.sample(frac=0.01, random_state=42).reset_index(drop=True)
 
         results = []
-        for idx, row in df.iterrows():
+        for idx, row in df_sampled.iterrows():
             initial_poisoned_doc = row['document']
-            # ✅ Sửa phần đọc query: split theo [SEP]
+
+            # ✅ Đọc query, tách theo [SEP]
             queries_str = str(row['queries'])
             query_list = [q.strip() for q in queries_str.split('[SEP]') if q.strip()]
-            print(len(query_list))
+            print(f"[{idx+1}/{len(df_sampled)}] Query count:", len(query_list))
 
             clean_doc = query_list[0] if query_list else ''
 
@@ -724,7 +729,9 @@ if __name__ == "__main__":
                 cfg=cfg
             )
 
-            final_poisoned_doc, r_str, jb_str, rr_str, final_score, initial_score, r_score, jb_score, rr_score, early_stop, max_model, max_language, last_time, r_pos = hotflip.attack(
+            final_poisoned_doc, r_str, jb_str, rr_str, final_score, initial_score, \
+            r_score, jb_score, rr_score, early_stop, max_model, max_language, \
+            last_time, r_pos = hotflip.attack(
                 query_list=query_list,
                 start_tokens=None,
                 initial_poisoned_doc=initial_poisoned_doc,
@@ -737,8 +744,13 @@ if __name__ == "__main__":
                 'final_score': final_score,
             })
 
+        # 🔹 Lưu kết quả ra file CSV (chỉ các dòng đã xử lý)
+        results_df = pd.DataFrame(results)
+        results_df.to_csv('/content/hotflip_results.csv', index=False)
+        print(f"✅ Saved {len(results_df)} results to /content/hotflip_results.csv")
+
         return results
 
-    # Test mode
+    # Example usage
     test_results = run_hotflip(test_mode=True)
     print("Test Results:", test_results)
