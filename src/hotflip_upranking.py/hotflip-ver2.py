@@ -599,6 +599,14 @@ class HotFlip:
 
         return best_seq, best_loc, best_str, best_score, early_stop, best_str_loc
 
+# Modified insert_into_doc to ensure jb_str is always inserted, even without [DOC_SEP]
+# If jb_str is a list, append all suffixes to the end if no [DOC_SEP], separated by spaces or newlines for readability.
+# If single string, always append if no replacement occurs.
+
+# Modified insert_into_doc: Always append jb_str to the end if no replacement, skip [DOC_SEP] check since no docs have it
+# If jb_str is list, append all suffixes separated by space for readability.
+# This ensures immediate insertion without any search/regex.
+
     def insert_into_doc(self, initial_poisoned_doc, rag_str='', jb_str=None, replace_flag=False, str_loc=None):
         suggestion = SUGGESTIONS_DICT['baseline']['English']  # Do not replace here
 
@@ -608,29 +616,22 @@ class HotFlip:
             inserted_doc = initial_poisoned_doc
 
         if self.use_jb == 1 and jb_str is not None:
-            if isinstance(jb_str, list):  # Nếu là list suffixes (từ top N)
-                # Tìm các vị trí [DOC_SEP] để chèn phân tán
-                sep_positions = [m.start() for m in re.finditer(r'\[DOC_SEP\]', inserted_doc)]
-                num_seps = len(sep_positions)
-                num_suffixes = len(jb_str)
-
-                for i, suffix in enumerate(jb_str):
-                    if i < num_seps:
-                        # Chèn cạnh [DOC_SEP] (sau separator)
-                        insert_pos = sep_positions[i] + len('[DOC_SEP]')
-                        inserted_doc = inserted_doc[:insert_pos] + f' {suffix}' + inserted_doc[insert_pos:]
-                    else:
-                        # Nếu không đủ sep, append cuối
-                        inserted_doc += f' {suffix}'
-
-            else:  # Fallback cho single string (nếu không dùng top N)
+            if isinstance(jb_str, list):  # If list of suffixes
+                # Append all directly to the end, separated by space (or '\n' if preferred for new lines)
+                suffixes_str = ' '.join(jb_str)  # Join with space for concatenation
+                inserted_doc += f' {suffixes_str}'
+            else:  # Single string
                 old_doc = inserted_doc
                 inserted_doc = inserted_doc.replace(suggestion, jb_str, 1)
                 if old_doc == inserted_doc:
+                    # Always append if no replacement
                     inserted_doc += f' {jb_str}'
 
         print("Document altered in insert_into_doc:", inserted_doc)
         return inserted_doc
+
+# Modified insert_into_doc_final: Same as above, always append jb_str, skip [DOC_SEP] and remove use_rr condition
+# Ensures insertion in final doc regardless of config.
 
     def insert_into_doc_final(self, initial_poisoned_doc, rag_str='', jb_str=None, str_loc=None):
         suggestion = SUGGESTIONS_DICT['baseline']['English']  # Do not replace here
@@ -640,28 +641,18 @@ class HotFlip:
         else:
             inserted_doc = initial_poisoned_doc
 
-        if not self.use_rr == 1:
-            if jb_str is not None:
-                if isinstance(jb_str, list):  # Nếu là list suffixes (từ top N)
-                    # Tìm các vị trí [DOC_SEP] để chèn phân tán
-                    sep_positions = [m.start() for m in re.finditer(r'\[DOC_SEP\]', inserted_doc)]
-                    num_seps = len(sep_positions)
-                    num_suffixes = len(jb_str)
-
-                    for i, suffix in enumerate(jb_str):
-                        if i < num_seps:
-                            # Chèn cạnh [DOC_SEP] (sau separator)
-                            insert_pos = sep_positions[i] + len('[DOC_SEP]')
-                            inserted_doc = inserted_doc[:insert_pos] + f' {suffix}' + inserted_doc[insert_pos:]
-                        else:
-                            # Nếu không đủ sep, append cuối
-                            inserted_doc += f' {suffix}'
-
-                else:  # Fallback cho single string
-                    old_doc = inserted_doc
-                    inserted_doc = inserted_doc.replace(suggestion, jb_str, 1)
-                    if old_doc == inserted_doc:
-                        inserted_doc += f' {jb_str}'
+        # Always insert jb_str if available (removed use_rr condition)
+        if jb_str is not None:
+            if isinstance(jb_str, list):  # If list of suffixes
+                # Append all directly to the end, separated by space
+                suffixes_str = ' '.join(jb_str)
+                inserted_doc += f' {suffixes_str}'
+            else:  # Single string
+                old_doc = inserted_doc
+                inserted_doc = inserted_doc.replace(suggestion, jb_str, 1)
+                if old_doc == inserted_doc:
+                    # Always append if no replacement
+                    inserted_doc += f' {jb_str}'
 
         print("Document altered in insert_into_doc_final:", inserted_doc)
         return inserted_doc
@@ -678,12 +669,12 @@ if __name__ == "__main__":
     cfg = types.SimpleNamespace()
     cfg.rag = types.SimpleNamespace()
     cfg.rag.num_tokens = 8
-    cfg.rag.beam_width = 20
-    cfg.rag.epoch_num = 50
-    cfg.rag.rr_epoch_num = 20
+    cfg.rag.beam_width = 10
+    cfg.rag.epoch_num = 5
+    cfg.rag.rr_epoch_num = 5
     cfg.rag.top_k_tokens = 100
-    cfg.rag.max_total_length = 150000
-    cfg.rag.max_tokens_per_sub_batch = 2500
+    cfg.rag.max_total_length = 100000
+    cfg.rag.max_tokens_per_sub_batch = 2000
     cfg.rag.use_jb = 1  # Set to 0 if no jailbreaker
     cfg.rag.use_rr = 1
     cfg.rag.use_r = 1
@@ -702,7 +693,7 @@ if __name__ == "__main__":
     jailbreaker = JailBreaker(hf_model=hf_model, encoder_tokenizer=tokenizer, encoder=encoder, device=device)  # Or your jailbreaker model
 
     def run_hotflip(test_mode=False):
-        df = pd.read_csv('/content/document_query_pairs.csv')
+        df = pd.read_csv('data/document_query_pairs.csv')
 
         if test_mode:
             df_sampled = df.head(1)
@@ -746,8 +737,8 @@ if __name__ == "__main__":
 
         # 🔹 Lưu kết quả ra file CSV (chỉ các dòng đã xử lý)
         results_df = pd.DataFrame(results)
-        results_df.to_csv('/content/hotflip_results.csv', index=False)
-        print(f"✅ Saved {len(results_df)} results to /content/hotflip_results.csv")
+        results_df.to_csv('data/hotflip_results.csv', index=False)
+        print(f"✅ Saved {len(results_df)} results to data/hotflip_results.csv")
 
         return results
 
