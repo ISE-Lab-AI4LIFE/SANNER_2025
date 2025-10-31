@@ -699,7 +699,7 @@ if __name__ == "__main__":
             df_sampled = df.head(1)
         else:
             # 🔹 Lấy ngẫu nhiên 1% số dòng
-            df_sampled = df.sample(frac=0.01, random_state=42).reset_index(drop=True)
+            df_sampled = df.sample(frac=0.05, random_state=42).reset_index(drop=True)
 
         results = []
         for idx, row in df_sampled.iterrows():
