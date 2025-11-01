@@ -1,1 +1,7 @@
 FlagEmbedding
+torch
+tqdm
+scipy
+pandas
+transformers
+sentence-transformers
