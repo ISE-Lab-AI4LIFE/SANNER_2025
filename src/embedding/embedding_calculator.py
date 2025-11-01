@@ -66,6 +66,8 @@ def process_subfolder(subfolder_path: Path, embedder, test_mode: bool = False):
                             print(f"Skipping existing embedding: {npy_path}")
                             continue
                         text = row.get(column_name, "")
+                        if pd.isna(text):
+                            text = ""
                         texts_to_embed.append(text)
                         ids_to_embed.append(file_id)
 
