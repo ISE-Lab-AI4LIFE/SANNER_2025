@@ -33,29 +33,28 @@ with open(RAW_FILE, "r", encoding="utf-8") as f:
 
 print(f"✅ Loaded {len(records)} records from {RAW_FILE.name}")
 
-# --- Trích xuất trường cần thiết ---
 data = []
-for item in tqdm.tqdm(records, desc="Extracting question & solutions"):
+for idx, item in enumerate(tqdm.tqdm(records, desc="Extracting question & solutions"), start=1):
     q = item.get("question")
     sols = item.get("solutions")
     if not q or not sols:
         continue
-    # Nếu solutions là list → nối lại
     if isinstance(sols, list):
         sols_text = DOC_SEP.join([str(s) for s in sols])
     else:
         sols_text = str(sols)
-    data.append({"id": item.get("id", ""), "queries": q, "documents": sols_text})
+    query_id = f"APPS_train_query_{idx}"
+    doc_id = f"APPS_train_document_{idx}"
+    data.append({"query_id": query_id, "doc_id": doc_id, "queries": q, "documents": sols_text})
 
 print(f"✅ Extracted {len(data)} valid samples")
-
 df = pd.DataFrame(data)
 
 # --- Tạo queries_df ---
-queries_df = df[["id", "queries"]].copy()
+queries_df = df[["query_id", "queries"]].rename(columns={"query_id": "id"})
 
 # --- Tạo documents_df ---
-documents_df = df[["id", "documents"]].copy()
+documents_df = df[["doc_id", "documents"]].rename(columns={"doc_id": "id"})
 
 # --- Lưu CSV ---
 queries_csv = queries_dir / "train.csv"
