@@ -1,3 +1,4 @@
+# embedding_calculator.py
 from pathlib import Path
 import sys
 import warnings
@@ -40,17 +41,6 @@ def chunk_by_chars(text, max_length=2000, stride=1000):
         start += stride
     return chunks
 
-def chunk_embedding(text, embedder):
-    chunks = chunk_by_chars(text)
-    embeddings = []
-    for chunk in chunks:
-        emb = embedder.embed(chunk)  # <-- dùng .embed()
-        embeddings.append(emb)
-    if embeddings:
-        return np.mean(embeddings, axis=0)
-    else:
-        return np.array([])
-
 def process_subfolder(subfolder_path: Path, embedder, test_mode: bool = False):
     DOCUMENTS_DIR = PROCESSED_DIR / "documents"
     QUERIES_DIR = PROCESSED_DIR / "queries"
@@ -67,6 +57,8 @@ def process_subfolder(subfolder_path: Path, embedder, test_mode: bool = False):
 
                 for csv_file in tqdm(csv_files, desc=f"Processing {category_dir.name} in {subfolder.name}"):
                     df = pd.read_csv(csv_file)
+                    texts_to_embed = []
+                    ids_to_embed = []
                     for _, row in df.iterrows():
                         file_id = row["id"]
                         npy_path = target_folder / f"{file_id}.npy"
@@ -74,10 +66,33 @@ def process_subfolder(subfolder_path: Path, embedder, test_mode: bool = False):
                             print(f"Skipping existing embedding: {npy_path}")
                             continue
                         text = row.get(column_name, "")
-                        embedding = chunk_embedding(text, embedder)
-                        npy_path = target_folder / f"{file_id}.npy"
-                        np.save(npy_path, embedding)
-                        print(f"Saved embedding to {npy_path}")
+                        texts_to_embed.append(text)
+                        ids_to_embed.append(file_id)
+
+                    if texts_to_embed:
+                        all_chunks = []
+                        chunk_counts = []
+                        for text in texts_to_embed:
+                            chunks = chunk_by_chars(text)
+                            all_chunks.extend(chunks)
+                            chunk_counts.append(len(chunks))
+
+                        if all_chunks:
+                            all_embs = embedder.embed(all_chunks)
+                        else:
+                            all_embs = np.array([])
+
+                        start = 0
+                        for i, count in enumerate(chunk_counts):
+                            if count > 0:
+                                mean_emb = np.mean(all_embs[start:start + count], axis=0)
+                                start += count
+                            else:
+                                mean_emb = np.array([])
+
+                            npy_path = target_folder / f"{ids_to_embed[i]}.npy"
+                            np.save(npy_path, mean_emb)
+                            print(f"Saved embedding to {npy_path}")
 
 def main():
     embedder = AverageEmbedder()
