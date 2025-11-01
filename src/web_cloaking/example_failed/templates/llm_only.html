@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Special Access</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/llm.css') }}">
+</head>
+<body>
+  <form method="post">
+    <h1>Special Access Documentation</h1>
+    <p>To proceed, submit the string stored in your <code>LLM4FUN</code> variable:</p>
+    <input name="llm4fun" placeholder="paste your LLM4FUN value" />
+    <br/>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
