@@ -37,21 +37,21 @@ if not {"instruction", "output"}.issubset(df.columns):
 
 df_new = df[["instruction", "output"]]
 
-# --- Tạo queries_df ---
+# --- Tạo queries_df và documents_df ---
 queries_data = []
-for idx, row in tqdm.tqdm(df_new.iterrows(), total=len(df_new), desc="Processing queries"):
-    query_id = f"EvolInstructCode80k_query_{idx+1}"
-    queries_data.append({"id": query_id, "queries": row["instruction"]})
-queries_df = pd.DataFrame(queries_data)
-
-# --- Tạo documents_df ---
 documents_data = []
-for batch_start in tqdm.tqdm(range(0, len(df_new), BATCH_SIZE), desc="Processing documents"):
-    batch = df_new.iloc[batch_start: batch_start + BATCH_SIZE]
-    merged_docs = DOC_SEP.join(batch["output"].astype(str).tolist())
-    record_id = batch_start // BATCH_SIZE + 1
-    doc_id = f"EvolInstructCode80k_document_{record_id}"
-    documents_data.append({"id": doc_id, "documents": merged_docs})
+for idx, row in tqdm.tqdm(df_new.iterrows(), total=len(df_new), desc="Processing pairs"):
+    instruction = str(row["instruction"]).strip()
+    output = str(row["output"]).strip()
+    if not instruction or not output:
+        continue  # Bỏ qua nếu một trong hai trường rỗng
+
+    query_id = f"EvolInstructCode80k_query_{idx+1}"
+    doc_id = f"EvolInstructCode80k_document_{idx+1}"
+    queries_data.append({"id": query_id, "queries": instruction})
+    documents_data.append({"id": doc_id, "documents": output})
+
+queries_df = pd.DataFrame(queries_data)
 documents_df = pd.DataFrame(documents_data)
 
 # --- Lưu file CSV ---
