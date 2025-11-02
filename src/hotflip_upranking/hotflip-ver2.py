@@ -695,7 +695,7 @@ if __name__ == "__main__":
     jailbreaker = JailBreaker(hf_model=hf_model, encoder_tokenizer=tokenizer, encoder=encoder, device=device)  # Or your jailbreaker model
 
     def run_hotflip(test_mode=False):
-        df = pd.read_csv('data/document_query_pairs.csv')
+        df = pd.read_csv('data/document_query_pairs_lite.csv')
 
         if test_mode:
             df_sampled = df.head(1)
