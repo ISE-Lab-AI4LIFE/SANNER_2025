@@ -685,7 +685,14 @@ if __name__ == "__main__":
 
     # Setup models (adjust models as needed)
     MODEL_NAME = 'sentence-transformers/all-mpnet-base-v2'
-    TARGET_PATH = "" # Điền link file chunk vào đây
+    from pathlib import Path
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Read targetted_doc CSV and extract document IDs")
+    parser.add_argument("--target_path", type=str, required=True, help="Path to targetted_doc CSV file")
+    args = parser.parse_args()
+
+    TARGET_PATH = Path(args.target_path) # Điền link file chunk vào đây
     
     # Load tokenizer và encoder (Hugging Face)
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
