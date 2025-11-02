@@ -665,7 +665,6 @@ class HotFlip:
 
         return final_score
 if __name__ == "__main__":
-    TARGET_PATH = ""
 # Setup config (adjust values as needed)
     cfg = types.SimpleNamespace()
     cfg.rag = types.SimpleNamespace()
@@ -686,6 +685,8 @@ if __name__ == "__main__":
 
     # Setup models (adjust models as needed)
     MODEL_NAME = 'sentence-transformers/all-mpnet-base-v2'
+    TARGET_PATH = ""
+    
     # Load tokenizer và encoder (Hugging Face)
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     encoder = AutoModel.from_pretrained(MODEL_NAME)
