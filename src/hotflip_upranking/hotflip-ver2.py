@@ -665,6 +665,7 @@ class HotFlip:
 
         return final_score
 if __name__ == "__main__":
+    TARGET_PATH = ""
 # Setup config (adjust values as needed)
     cfg = types.SimpleNamespace()
     cfg.rag = types.SimpleNamespace()
@@ -698,8 +699,22 @@ if __name__ == "__main__":
         if test_mode:
             df_sampled = df.head(1)
         else:
-            # 🔹 Lấy ngẫu nhiên 1% số dòng
-            df_sampled = df.sample(frac=0.05, random_state=42).reset_index(drop=True)
+            # 🔹 Đọc danh sách ID cần xử lý
+            from pathlib import Path
+            target_file = Path(TARGET_PATH)
+
+            if target_file.exists():
+                target_df = pd.read_csv(target_file)
+                if "document_id" in target_df.columns:
+                    target_ids = set(target_df["document_id"].astype(str).tolist())
+                    df_sampled = df[df["document_id"].astype(str).isin(target_ids)].reset_index(drop=True)
+                    print(f"✅ Lấy {len(df_sampled)} dòng trùng với targetted.csv ({len(target_ids)} ID).")
+                else:
+                    print("⚠️ File targetted.csv không có cột document_id, bỏ qua lọc.")
+                    df_sampled = df.sample(frac=0.05, random_state=42).reset_index(drop=True)
+            else:
+                print("⚠️ Không tìm thấy file targetted.csv, lấy ngẫu nhiên 5% dữ liệu.")
+                df_sampled = df.sample(frac=0.05, random_state=42).reset_index(drop=True)
 
         results = []
         for idx, row in df_sampled.iterrows():
