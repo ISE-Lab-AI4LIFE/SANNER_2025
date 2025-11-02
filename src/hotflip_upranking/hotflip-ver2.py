@@ -692,7 +692,7 @@ if __name__ == "__main__":
     parser.add_argument("--target_path", type=str, required=True, help="Path to targetted_doc CSV file")
     args = parser.parse_args()
 
-    TARGET_PATH = Path(args.target_path) # Điền link file chunk vào đây
+    TARGET_PATH = args.target_path # Điền link file chunk vào đây
     
     # Load tokenizer và encoder (Hugging Face)
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
