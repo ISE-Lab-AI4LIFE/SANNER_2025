@@ -685,7 +685,7 @@ if __name__ == "__main__":
 
     # Setup models (adjust models as needed)
     MODEL_NAME = 'sentence-transformers/all-mpnet-base-v2'
-    TARGET_PATH = ""
+    TARGET_PATH = "" # Điền link file chunk vào đây
     
     # Load tokenizer và encoder (Hugging Face)
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
