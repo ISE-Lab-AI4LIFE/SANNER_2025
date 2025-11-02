@@ -668,13 +668,13 @@ if __name__ == "__main__":
 # Setup config (adjust values as needed)
     cfg = types.SimpleNamespace()
     cfg.rag = types.SimpleNamespace()
-    cfg.rag.num_tokens = 8
-    cfg.rag.beam_width = 10
-    cfg.rag.epoch_num = 5
-    cfg.rag.rr_epoch_num = 5
-    cfg.rag.top_k_tokens = 100
-    cfg.rag.max_total_length = 100000
-    cfg.rag.max_tokens_per_sub_batch = 2000
+    cfg.rag.num_tokens = 6
+    cfg.rag.beam_width = 5
+    cfg.rag.epoch_num = 3
+    cfg.rag.rr_epoch_num = 3
+    cfg.rag.top_k_tokens = 50
+    cfg.rag.max_total_length = 80000
+    cfg.rag.max_tokens_per_sub_batch = 1500
     cfg.rag.use_jb = 1  # Set to 0 if no jailbreaker
     cfg.rag.use_rr = 1
     cfg.rag.use_r = 1
