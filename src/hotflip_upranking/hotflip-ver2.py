@@ -755,7 +755,7 @@ if __name__ == "__main__":
         results_df = pd.DataFrame(results)
         index = Path(TARGET_PATH).stem
         results_df.to_csv(f'data/hotflip_result/hotflip_results_{index}.csv', index=False)
-        print(f"✅ Saved {len(results_df)} results to data/hotflip_results.csv")
+        print(f"✅ Saved {len(results_df)} results to data/hotflip_results")
 
         return results
 
