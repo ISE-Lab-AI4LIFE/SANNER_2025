@@ -753,7 +753,8 @@ if __name__ == "__main__":
 
         # 🔹 Lưu kết quả ra file CSV (chỉ các dòng đã xử lý)
         results_df = pd.DataFrame(results)
-        results_df.to_csv(f'data/hotflip_results_{TARGET_PATH}.csv', index=False)
+        index = Path(TARGET_PATH).stem
+        results_df.to_csv(f'data/hotflip_result/hotflip_results_{index}.csv', index=False)
         print(f"✅ Saved {len(results_df)} results to data/hotflip_results.csv")
 
         return results
