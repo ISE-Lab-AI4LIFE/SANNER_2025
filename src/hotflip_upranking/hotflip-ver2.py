@@ -29,6 +29,7 @@ import torch
 import os
 import time
 import re
+import argparse
 from torch.nn.functional import normalize
 from tqdm import tqdm
 from scipy.spatial.distance import cosine
@@ -685,8 +686,6 @@ if __name__ == "__main__":
 
     # Setup models (adjust models as needed)
     MODEL_NAME = 'sentence-transformers/all-mpnet-base-v2'
-    from pathlib import Path
-    import argparse
 
     parser = argparse.ArgumentParser(description="Read targetted_doc CSV and extract document IDs")
     parser.add_argument("--target_path", type=str, required=True, help="Path to targetted_doc CSV file")
@@ -760,7 +759,7 @@ if __name__ == "__main__":
 
         # 🔹 Lưu kết quả ra file CSV (chỉ các dòng đã xử lý)
         results_df = pd.DataFrame(results)
-        index = Path(TARGET_PATH).stem
+        index = os.path.splitext(os.path.basename(TARGET_PATH))[0]
         results_df.to_csv(f'data/hotflip_result/hotflip_results_{index}.csv', index=False)
         print(f"✅ Saved {len(results_df)} results to data/hotflip_results")
 
