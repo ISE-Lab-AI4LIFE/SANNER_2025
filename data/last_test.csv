@@ -1,1634 +1,1677 @@
 queries,queries_id
-"Create a JavaScript function that takes in an array as an argument and counts the occurrence of a given element
-[1, 2, 2, 4, 6], element=2",secalignDBGHaikuJS_train-00000-of-00001_query_15704
-"/**
- * mSupply Mobile
- * Sustainable Solutions (NZ) Ltd. 2019
- */
-import Realm from 'realm';
+"var ItemsRoute = Em.Route.extend({
+  model: function (params) {
+    return this.api.fetchAll('items', 'groups', params.group_id);
+  },
 
-export class Report extends Realm.Object {}",RustInstr_train-00000-of-00001_query_6068
-"Calculate the sum of the numbers in the given array using the Java 8 Stream API.
-nums = [2, 4, 6, 10]",EvolInstructCode80k_query_56651
-"You are tasked with implementing a Java program that reads a text file and performs several operations on its content. 
+  setupController: function (controller, model) {
+    // allow sub-routes to access the GroupId since it seems the dynamic segment is not available otherwise
+    controller.set('GroupId', model.get('firstObject.GroupId'));
+    this._super(controller, model);
+  },
 
-1. The program should first check if the file exists. If the file does not exist, it should throw a custom exception named `FileNotFoundException` with an appropriate error message. Handle this exception in a try-catch block and display the error message to the user.
+  renderTemplate: function () {
+    this.render('items', {
+      into: 'application',
+      outlet: 'items',
+    });
+  },
 
-2. Once the file is confirmed to exist, the program should then read the contents of the file line by line. If any line in the file is empty or contains only whitespace, the program should throw a custom exception named `InvalidContentException` with an appropriate error message. Handle this exception in a try-catch block and display the error message to the user.
-
-3. After successfully reading the file, the program should perform a specific operation on the content. For example, it can count the number of occurrences of a certain word in the file. If an error occurs during this operation, the program should throw a custom exception named `OperationException` with an appropriate error message. Handle this exception in a try-catch block and display the error message to the user.
-
-Your task is to modify the given code snippet below to fix the logical error and properly handle the exceptions according to the requirements stated above:
-
-```java
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-public class FileReader {
-    public static void main(String[] args) {
-        File file = new File(""input.txt"");
-        
-        try {
-            Scanner scanner = new Scanner(file);
-            
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                System.out.println(line);
-            }
-            
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println(""Error: File not found."");
-        } catch (Exception e) {
-            System.out.println(""Error: Something went wrong."");
-        }
+  actions: {
+    refresh: function () {
+      this.refresh();
+      return true;
     }
-}
-```",BuzzJS_query_19402
-"var context;
-window.addEventListener('load', init, false);
-function init() {
-	try {
-	  var dogBarkingUrl = 'https://commons.wikimedia.org/wiki/File:Sound-of-dog.ogg';
-		var dogBarkingBuffer = null;
-		// Fix up prefixing
-		window.AudioContext = window.AudioContext || window.webkitAudioContext;
-		context = new AudioContext();
-	
-		loadDogSound(dogBarkingUrl);
-		alert('Sound Loaded');
-		playSound(dogBarkingBuffer);
-	}
-	catch(e) {
-		alert('Web Audio API is not supported in this browser');
-	}
-}
-
-function loadDogSound(url) {
-	var request = new XMLHttpRequest();
-	request.open('GET', url, true);
-	request.responseType = 'arraybuffer';
-	
-	// Decode asynchronously
-	request.onload = function() {
-		context.decodeAudioData(
-			request.response, 
-			function(buffer) {
-				dogBarkingBuffer = buffer;
-			}, 
-			onError
-		);
-	}
-	request.send();
-}
-
-function playSound(buffer) {
-  var source = context.createBufferSource(); // creates a sound source
-  source.buffer = buffer;                    // tell the source which sound to play
-  source.connect(context.destination);       // connect the source to the context's destination (the speakers)
-  source.start(0);                           // play the source now
-                                             // note: on older systems, may have to use deprecated noteOn(time);
-}",BuzzJS_query_37276
-"var tap = require(""tap"")
-var normalize = require(""../lib/normalize"")
-var path = require(""path"")
-var fs = require(""fs"")
-var _ = require(""underscore"")
-var async = require(""async"")
-
-var data, clonedData
-
-tap.test(""consistent normalization"", function(t) {
-  path.resolve(__dirname, ""./fixtures/read-package-json.json"")
-  fs.readdir (__dirname + ""/fixtures"", function (err, entries) {
-    verifyConsistency = function(entryName, next) {
-      filename = __dirname + ""/fixtures/"" + entryName
-      fs.readFile(filename, function(err, contents) {
-        if (err) return next(err)
-        data = JSON.parse(contents.toString())
-        normalize(data)
-        clonedData = _.clone(data)
-        normalize(data)
-        t.deepEqual(data, clonedData, 
-          ""Normalization of "" + entryName + ""is consistent."")
-        next(null)
-      }) // fs.readFile
-    } // verifyConsistency
-    async.forEach(entries, verifyConsistency, function(err) {
-      if (err) throw err
-      t.end()
-    })
-  }) // fs.readdir
-}) // tap.test",secalignDBGHaikuJS_train-00000-of-00001_query_1712
-"Combine the two lists below using Python to produce a single list containing all elements from both.
-list_one = [1, 2, 3]
-list_two = [4, 5, 6]",secalignDBGHaikuJS_train-00000-of-00001_query_16223
-"Create a Python program to analyze a given list of URL requests and count the number of unique requests. The program should ignore requests that have the same URL but different query parameters. Additionally, the program should display the total number of requests for each unique URL and sort the URLs in descending order based on their request count.",BuzzJS_query_22014
-"function Player(Character) {
-    this.character = Character;
-    this.score = document.getElementById(""player-score"");
-    this.controls = [38, 39, 40, 37]; // == Arrow keys
-}
-
-Player.prototype.play = function() {
-    var player = this;
-    var controls = player.controls;
-
-    window.onkeydown = function(e) {
-        if (controls.indexOf(e.keyCode) > -1) {
-            e.preventDefault();
-            player.character.move.direction(e.keyCode);
-            player.character.painter.paint();
-            player.updateScore();
-        }
-    };
-};
-
-Player.prototype.currentScore = function() {
-    return document.getElementsByClassName(""painted"").length;
-}
-
-Player.prototype.updateScore = function() {
-    this.score.innerHTML = this.currentScore();
-}
-
-Player.prototype.stop = function() {
-    controls = this.controls;
-    
-    window.onkeydown = function(e) {
-        if (controls.indexOf(e.keyCode) > -1) {
-            return true;
-        }
-    }
-}",EvolInstructCode80k_query_64558
-"Write a Python function to decode a given string (with special characters) to its original form. The function should have a time complexity of O(n), where n is the length of the string. Additionally, the function should not use any built-in string manipulation methods (such as replace or split) or regular expressions. The function should also use constant space complexity.
-
-The input string will always consist of a number followed by a character, indicating the number of times the character should be repeated. The characters can be lowercase and uppercase alphabets, digits, and special characters. The string may have repeating characters.
-
-Example:
-
-Input: ""3a2b2c""
-Output: ""aaabbcc""
-
-Input: ""2z1G2t1""
-Output: ""zzGtt""
-
-Input: ""3c1a2b""
-Output: ""cccaab""
-
-Input: ""1d3c2a""
-Output: ""dccca""",secalignDBGHaikuJS_train-00000-of-00001_query_6714
-"const { expect } = require('chai');
-const Plexacious = require('../src/Plexacious');
-const config = {
-  hostname: 'macedonia.ketsugi.com',
-  token: process.env.PLEX_AUTH_TOKEN
-}
-
-const plex = new Plexacious();
-
-describe('Plexacious:', () => {
-});",secalignDBGHaikuJS_train-00000-of-00001_query_9213
-"Please create a function in Python that takes in a string as an argument and replaces all occurrences of the letter 'e' (case insensitive) with an asterisk ('*'). If the string is empty or None, the function should return None.
-
-Additionally, if the string contains any uppercase 'E', the function should raise a ValueError with the message ""Uppercase 'E' is not allowed.""
-
-The function should also handle cases where the input string is a list of strings. In such cases, the function should return a list of the modified strings.
-
-Provide an erroneous code snippet as a reference:
-
-```
-def replace_e(string):
-    if string is None or string == '':
-        return None
-    
-    if isinstance(string, list):
-        return [s.replace('e', '*').replace('E', '*') if 'E' not in s else raise ValueError(""Uppercase 'E' is not allowed."") for s in string]
-    
-    if 'E' in string:
-        raise ValueError(""Uppercase 'E' is not allowed."")
-    
-    return string.replace('e', '*').replace('E', '*')
-
-print(replace_e('hello world'))
-print(replace_e('Example'))
-print(replace_e(''))
-print(replace_e(None))
-print(replace_e(['hello', 'world', 'Example']))
-print(replace_e(['Example', 'world', '']))
-```
-
-Example:
-
-```
->>> replace_e('hello world')
-'h*llo world'
-
->>> replace_e('Example')
-Traceback (most recent call last):
-  File ""<stdin>"", line 1, in <module>
-  File ""<stdin>"", line 10, in replace_e
-ValueError: Uppercase 'E' is not allowed.
-
->>> replace_e('')
-None
-
->>> replace_e(None)
-None
-
->>> replace_e(['hello', 'world', 'Example'])
-['h*llo', 'world', 'h*llo']
-
->>> replace_e(['Example', 'world', ''])
-Traceback (most recent call last):
-  File ""<stdin>"", line 1, in <module>
-  File ""<stdin>"", line 10, in replace_e
-ValueError: Uppercase 'E' is not allowed.
-```",RustInstr_train-00000-of-00001_query_3214
-"var request = require('request');
-
-function MTA(host, port, username, password) {
-  this.host = host || 'localhost';
-  this.port = port || 22005;
-  this.username = username;
-  this.password = password;
-}",EvolInstructCode80k_query_60970
-Creat a Rust program to find the sum of the digits of an arbitrary number.345,secalignDBGHaikuJS_train-00000-of-00001_query_5700
-"Create a Python script that calculates the surface area of a cylinder, but without using the built-in mathematical functions such as pi.
-
-Constraints:
-- The script should not use the pi constant from the math module.
-- The script should only use basic mathematical operations such as addition, subtraction, multiplication, and division.
-- The script should be able to handle both positive and negative values for radius and height inputs.
-- The script should round the surface area to 2 decimal places.",secalignDBGHaikuJS_train-00000-of-00001_query_5774
-Create a global function in Java to convert an integer number into its String equivalent.,BuzzJS_query_45229
-"'use strict';
-
-if ($ === undefined) {
-  throw 'Gelato requires jQuery as a dependency.'
-} else {
-  window.jQuery = window.$ = $;
-}
-
-if (_ === undefined) {
-  throw 'Gelato requires Lodash as a dependency.'
-} else {
-  window._ = _;
-}
-
-if (Backbone === undefined) {
-  throw 'Gelato requires Backbone as a dependency.'
-} else {
-  window.Backbone = Backbone;
-}
-
-var Gelato = {};
-
-Gelato._BUILD = '{!date!}';
-
-Gelato._VERSION = '{!version!}';
-
-Gelato.isLocalhost = function() {
-  return location.hostname === 'localhost';
-};
-
-Gelato.isWebsite = function() {
-  return _.includes(location.protocol, 'http');
-};",BuzzJS_query_42265
-"'use strict';
-
-var app = require('app');
-var shortcut = require('./shortcut.js');
-
-require('crash-reporter').start();
-
-// Keep a global reference to prevent being GCed.
-var mainWindow = null;
-var trayIcon = null;
-
-// Main in the main process
-app.on('ready', function() {
-	mainWindow = require('./main-window-init.js').createMainWindow();
-	trayIcon = require('./tray.js').createTray();
-	require('./menu.js').createMenu();
-	shortcut.registerQuit();
+  }
 });
 
-app.on('will-quit', function() {
-	shortcut.unregisterAll();
-});",BuzzJS_query_25349
-"$(function(){
+export default ItemsRoute;",EvolInstructCode80k_query_19811
+"import LocalStorageStore from 'ember-simple-auth/session-stores/local-storage';
 
-  var messages = [];
-  var token = 'CAACEdEose0cBAPsc5EojEPsnGCVpG05fBKSV1N2WrZAJJ8ngZB55cAkWQA82ZBSaGbiOUOcI9rpRxMxT5kAjGmhhSSieTjtXFEuMYYOEtVIrFYC9ZCkuSSdT5P45ZBBvuniyPGZCZCFPDxkZBFhiRr0BRKje0ZBG7ylmeiJ10ImU8k3mpY5DdoPNT5yZCc6qZBF5jUZD';
+export default LocalStorageStore.extend({
+    key: 'ghost:session'
+});",BuzzJS_query_42007
+"Create a Java program to find the volume and surface area of a sphere with a given radius. The program should be able to handle multiple spheres with different radii in a single run.
 
-  function process(data) {
-    if(data.data.length) {
-      messages = messages.concat(data.data);
-    }
-    if(data.paging && data.paging.next) {
-      console.log('Getting next page');
-      return $.getJSON(data.paging.next).then(process);
-    }
-  }
+Additionally, the program should allow the user to choose between calculating the volume and surface area for each sphere. The program should display the results in a user-friendly format.
 
-  $('.submit-id').click(function(){
-    messages = [];
-  var messageId = $('.thread-id').val();
-    $.getJSON(
-         'https://graph.facebook.com/' + messageId + '/comments' +
-         '?format=json&access_token=' + token
-      )
-      .then(process)
-      .then(function() {
-        return messages;
-        // location.href = URL.createObjectURL(blob);
-      })
-      .then(function(messages) {
-        var chart = c3.generate({
-          bindto: '.container',
-          data: {
-            x: 'count',
-            columns: [
-              countWords(messages).axis,
-              countWords(messages).columns,
-            ],
-            groups: [
-              ['count']
-            ],
-            type: 'bar'
-          },
-          axis: {
-            x: {
-              type: 'categorized',
-            }
-          },
-          transition: {
-            duration: 1000
-          }
-        });
-      });
-  });
-})
-;",secalignDBGHaikuJS_train-00000-of-00001_query_11746
-"Please create a class called ""Product"" which will take 5 parameters: name (string), size (integer), price (float), weight (float), and quantity (integer).
+The program should also include error handling to ensure that the user enters a valid radius. If the user enters an invalid radius, the program should display an error message and prompt the user to enter a valid radius again.
 
-The class should have the following methods:
+Furthermore, the program should provide an option for the user to input the radius in different units (e.g., inches, centimeters, meters). The program should include a conversion mechanism to convert the radius to a standard unit (e.g., meters) before performing the calculations.
 
-1. `get_name()`: Returns the name of the product.
+To make the program more efficient, you should implement a caching mechanism that stores the previously calculated results for each sphere. This way, if the user enters the same radius again, the program can retrieve the previously calculated results instead of re-calculating them.
 
-2. `get_size()`: Returns the size of the product.
+Finally, you should include a loop in the program that allows the user to perform multiple calculations without exiting the program. The program should only terminate when the user chooses to exit.
 
-3. `get_price()`: Returns the price of the product.
-
-4. `get_weight()`: Returns the weight of the product.
-
-5. `get_quantity()`: Returns the quantity of the product.
-
-6. `set_name(new_name)`: Updates the name of the product to the new_name parameter.
-
-7. `set_size(new_size)`: Updates the size of the product to the new_size parameter.
-
-8. `set_price(new_price)`: Updates the price of the product to the new_price parameter.
-
-9. `set_weight(new_weight)`: Updates the weight of the product to the new_weight parameter.
-
-10. `set_quantity(new_quantity)`: Updates the quantity of the product to the new_quantity parameter.
-
-11. `is_expensive()`: Returns True if the price of the product is greater than $100, False otherwise.
-
-12. `is_large()`: Returns True if the size of the product is greater than or equal to 10, False otherwise.
-
-13. `is_heavy()`: Returns True if the weight of the product is greater than or equal to 20, False otherwise.
-
-14. `is_large_and_expensive()`: Returns True if the product is both large and expensive, False otherwise.
-
-15. `get_total_cost()`: Returns the total cost of purchasing all the quantity of the product.
-
-16. `get_average_cost()`: Returns the average cost of purchasing one unit of the product.
-
-Note: The class should handle invalid inputs appropriately (e.g. if a negative size, price, weight, or quantity is provided, it should be treated as 0). The weight and quantity parameters can be optional, and if not provided, they should default to 0.0 and 1, respectively.",EvolInstructCode80k_query_40135
-"Multiply two matrices and return the resulting matrix.
-Matrix A = [[1, 2], [3, 4]]
-Matrix B = [[5, 6], [7, 8]]",EvolInstructCode80k_query_47427
-"class CircularBuffer {
-
-  constructor(length){
-    this.buffer = new Int32Array(length);
-    this.maxSize = length;
-    this.currentSize = 0;
-    this.openIndex = 0;
-    this.lastFilledIndex = -1;
-  }
-
-  get(index){
-    return this.buffer[(this.lastFilledIndex+index)%this.maxSize];
-  }
-
-  size(){
-    return this.currentSize;
-  }
-
-  add(el){
-    if (this.currentSize< this.maxSize) this.currentSize++;
-    this.buffer[this.openIndex] = el;
-    this.lastFilledIndex = (this.lastFilledIndex+1)%this.maxSize;
-    this.openIndex = (this.lastFilledIndex + 1)%this.maxSize;
-  }
-
-
-}
-
-module.exports = CircularBuffer;",secalignDBGHaikuJS_train-00000-of-00001_query_8890
-"import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
-import defaultTheme from 'app/themes/store/default';
-
-import HomeRoute from 'app/components/Store/Routes/HomeRoute';
-
-export default () => (
-  <ThemeProvider theme={defaultTheme}>
-    <Switch>
-      {/* Home Route */}
-      <Route
-        exact
-        path='/'
-        component={HomeRoute}
-      />
-      <Route
-        exact
-        path='/products'
-        component={() => <div>Products</div>}
-      />
-    </Switch>
-  </ThemeProvider>
-);",EvolInstructCode80k_query_46457
-"/**
-* Check whether an element is in the viewport by
-* more than offset px.
-*/
-export function inViewport (element, options) {
-
-    const { top, right, bottom, left, width, height } = element.getBoundingClientRect();
-
-    const intersection = {
-        t: bottom,
-        r: window.innerWidth - left,
-        b: window.innerHeight - top,
-        l: right
-    };
-
-    const threshold = {
-        x: options.threshold * width,
-        y: options.threshold * height
-    };
-
-    const verticalCheck = (
-        intersection.t > (options.offset.top    + threshold.y) &&
-        intersection.b > (options.offset.bottom + threshold.y)
-    ) || (
-        intersection.t < (options.offset.top    + threshold.y) &&
-        intersection.b < (options.offset.bottom + threshold.y)
-    );
-
-    const horizontalCheck = (
-        intersection.r > (options.offset.right  + threshold.x) &&
-        intersection.l > (options.offset.left   + threshold.x)
-    ) || (
-        intersection.r < (options.offset.right  + threshold.x) &&
-        intersection.l < (options.offset.left   + threshold.x)
-    );
-
-    return verticalCheck && horizontalCheck;
-
-}",BuzzJS_query_11710
-"/**
- * The 'leopard' namespace
- * @type {Object}
- */
-'use strict';
-
-(function() {
-	var leopard = {
-		api: {
-			key: 'AIzaSyCbPuQGIShYS-IYU1T6eIfhxH9yc-8biCg',
-			direcctions: '',
-			streetview: 'https://maps.googleapis.com/maps/api/streetview?size={{width}}x{{height}}&location={{location}}{{#heading}}&heading={{heading}}{{/heading}}{{#fov}}&fov={{fov}}{{/fov}}{{#pitch}}&pitch={{pitch}}{{/pitch}}&key={{key}}'
-		},
-		images: {
-			width: 250,
-			height: 250
-		},
-		getRandomLatLong: function(from, to, fixed) {
-			// .toFixed() returns string, so ' * 1' is a trick to convert to number
-		    return {
-		    	latitude: (Math.random() * (to - from) + from).toFixed(fixed) * 1,
-		    	longitude: (Math.random() * (to - from) + from).toFixed(fixed) * 1
-		    }
-		}
-	};
-
-	window.leopard = leopard;
-})();",EvolInstructCode80k_query_3498
-"Edit the code to print “Welcome to Python Programming” five times.
-print(""Hello Python"")",EvolInstructCode80k_query_55505
-"Write a Rust program to produce a string summary of a given text that is no longer than 140 characters.Sample Text: ""This is a sample text. It contains a few sentences for you to summarize.""",BuzzJS_query_9861
-"Create an array with 10 numbers 0-9 randomly, ensuring that each number appears exactly twice.",secalignDBGHaikuJS_train-00000-of-00001_query_17718
-"Use regex to find the number of occurrences of a specific pattern in a given string, but the pattern must only be found if it is preceded by an uppercase letter, followed by a lowercase letter, and the uppercase letter must be the start of a word (i.e., not preceded by any other alphabetic characters).
-String: ""This is abcABCabcABCabcABC""
-Pattern: ""abc""",EvolInstructCode80k_query_37491
-"var Q = require(""Q"");
-
-var PromiseUtil = module.exports = {
-	/** 
-	 * Translates a normal Promise to a simple EarlyPromise. 
-	 *     promise (required): the promise to translate.
-	 *     pendingValue (optional): the value to be returned by get while the promise is pending.
-	 *         defaults to null if not present.
-	 */
-	early(promise, pendingValue) {
-		// if it's already an EarlyPromise, just return it.
-		if (promise && promise.getValue) {
-			return promise;
-		}
-
-		var value = (pendingValue !== undefined) ? pendingValue : null, 
-			error = null;
-
-		promise.then((resolvedValue) => {
-			value = resolvedValue;
-			return value;
-		}).catch((resolvedError) => {
-			error = resolvedError;
-		})
-
-		promise.getValue = function() { 
-			if (null !== error) throw error;
-			return value;
-		};
-		return promise;
-	},
-
-	/**
-	 * Return the value of the first resolved or rejected promise in the arguments array
-	 */
-	race(...promises) {
-		var resultDeferred = Q.defer();
-
-		promises.forEach((promise) => {
-			promise.then(
-				(value) => resultDeferred.resolve(value),
-				(error) => resultDeferred.reject(error));
-		});
-
-		return resultDeferred.promise;
-	}
-}",BigCodeBench_v0_1_0-00000-of-00001_query_1030
-"var webpack = require(""webpack"")
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-
-
-module.exports = {
-  // devtool: ""eval"", // Transformed code
-  devtool: ""source-map"", // Original code
-  entry: {
-    bench: ""./src/index.jsx"",
-  },
-  output: {
-    filename: ""[name]-bundle-[hash].js"",
-    path: __dirname + ""/dist"",
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loaders: [""babel-loader""],
-      },
-      {
-        test: /\.json$/,
-        exclude: /node_modules/,
-        loaders: [""json-loader""],
-      },
-    ],
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      React: ""react"", // For babel JSX transformation which generates React.createElement.
-    }),
-    new HtmlWebpackPlugin({title: ""OpenChordCharts sample data bench""}),
-  ],
-  resolve: {
-    extensions: ["""", "".js"", "".jsx""],
-  },
-}",BuzzJS_query_10340
-"'use strict';
-
-// MODULES //
-
-var debug = require( 'debug' )( 'licenses:pkg:repo' );
-var prefix = require( './stdlib.js' );
-var isObject = require( prefix+'@stdlib/utils/is-object' ); // TODO: plain object
-var replace = require( prefix+'@stdlib/string/replace' );
-
-
-// REPO //
+Note: You can assume that the user will only enter positive numeric values for the radius and valid options for the calculation type.",BuzzJS_query_10435
+"Create a function to find the value of Pi rounded to the nth decimal point, where n is an input parameter.",EvolInstructCode80k_query_33857
+"var bodyParser = require('body-parser')
+var dataUriToBuffer = require('data-uri-to-buffer')
+var express = require('express')
+var app = express()
 
 /**
-* Extracts a repository URL (if available) from `package.json` data.
-*
-* @private
-* @param {Object} pkg - `package.json` data
-* @returns {(string|null)} repo URL or null
-*/
-function repo( pkg ) {
-	var url;
-	if ( isObject( pkg.repository ) ) {
-		url = pkg.repository.url;
-		if ( url ) {
-			// GitHub URLs:
-			url = replace( url, 'git\\+ssh\\:\\/\\/git\\@', 'git://' );
-			url = replace( url, 'git\\+', '' );
-			url = replace( url, 'git\\:\\/\\/', 'https://' );
-			url = replace( url, 'git\\@', 'https://' );
-			url = replace( url, '\\.git', '' );
+ * This is your custom transform function
+ * move it wherever, call it whatever
+ */
+var transform = require(""./transformer"")
 
-			debug( 'Package repository URL: %s.', url );
-			return url;
+// Set up some Express settings
+app.use(bodyParser.json({ limit: '1mb' }))
+app.use(express.static(__dirname + '/public'))
+
+/**
+ * Home route serves index.html file, and
+ * responds with 200 by default for revisit
+ */
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html')
+})
+
+/**
+ * Service route is where the magic happens.
+ */
+app.post('/service', function(req, res) {
+
+  var imgBuff = dataUriToBuffer(req.body.content.data)
+
+  // Transform the image
+  var transformed = transform(imgBuff)
+
+  var dataUri = 'data:' + imgBuff.type + ';base64,' + transformed.toString('base64')
+  req.body.content.data = dataUri
+  req.body.content.type = imgBuff.type
+  res.json(req.body)
+
+})
+
+var port = 8000
+app.listen(port)
+console.log('server running on port: ', port)",BuzzJS_query_32175
+"Develop a JavaScript utility module for file-based line shuffling that supports the following features:
+
+1. Read lines from a specified text file
+2. Implement the Fisher-Yates shuffle algorithm to randomize the lines
+3. Allow users to specify input and output file paths
+4. Provide options to handle different file encodings
+5. Create methods to write the shuffled lines back to a file
+
+Your implementation should be flexible and support various text file processing scenarios.",secalignDBGHaikuJS_train-00000-of-00001_query_7888
+"var WorldConstructor = function() {
+  return function(callback) { callback(this) };
+};
+module.exports = WorldConstructor;",BuzzJS_query_884
+"import ""babel-polyfill"";
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { applyRouterMiddleware, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { useScroll } from 'react-router-scroll';
+import makeRoutes from './routes';
+import Root from './containers/Root';
+import configureStore from './redux/configureStore';
+
+const initialState = window.__INITIAL_STATE__
+const store = configureStore(initialState, browserHistory)
+const history = syncHistoryWithStore(browserHistory, store, {
+  selectLocationState: (state) => state.router,
+});
+
+const routes = makeRoutes(store);
+
+ReactDOM.render(
+  <Root history={history} routes={routes} store={store} render={applyRouterMiddleware(useScroll())} />,
+  document.getElementById('app')
+);",BuzzJS_query_7727
+"Create a component in React for displaying a responsive header with two buttons and a drop-down menu. The header should be fixed at the top of the page and should have a minimum height of 60 pixels. The buttons should be aligned vertically and horizontally centered within the header. The header should have a background color of #333333 and the buttons should have a font size of 18 pixels and a border radius of 5 pixels. Additionally, the header should have a drop-down menu on the right side, which should appear when the user hovers over it. The drop-down menu should have a minimum width of 150 pixels and should display three options: ""Option 1"", ""Option 2"", and ""Option 3"".
+
+In addition to the above requirements, the buttons should have a hover effect that changes their background color to #FF0000 and their text color to #FFFFFF. The drop-down menu should have a fade-in animation when it appears and a fade-out animation when it disappears. The fade-in animation should take 1 second to complete, and the fade-out animation should take 0.5 seconds to complete.
+
+You should implement the responsive behavior of the header, so that it adapts to different screen sizes. The header should collapse into a hamburger menu when the screen width is less than 600 pixels. The hamburger menu should be aligned to the right side of the header and should have a minimum height of 60 pixels. When the hamburger menu is clicked, it should display the drop-down menu with the three options. The drop-down menu should have the same appearance and behavior as described above.
+
+Your implementation should be scalable and maintainable, following best practices and industry standards.",EvolInstructCode80k_query_32605
+"Create an HTML form for entering a user's age and validating that the age is within a specific range (e.g. 18-65 years old) before submitting the form. Additionally, display an error message if the entered age is not within the specified range. 
+
+Modify the age validation to check if the age is a prime number. If the entered age is not within the specified range or not a prime number, display the corresponding error message. 
+
+Furthermore, add a feature where the form generates a random captcha code consisting of a combination of uppercase letters, lowercase letters, and numbers. The user should be required to enter the correct captcha code in order to successfully submit the form. Display an error message if the entered captcha code is incorrect. 
+
+Note: You can assume that the user's browser supports JavaScript for captcha code generation and validation.
+
+Increase the difficulty by:
+1. Requiring the captcha code to be case-sensitive. The user must enter the correct combination of uppercase and lowercase letters.
+2. Adding a time limit for completing the form. If the user takes longer than a specified time limit to submit the form, display an error message and reset the form.
+3. Implementing server-side validation for the age range and captcha code. After the client-side validation, the form data should be sent to the server for further verification before the form can be successfully submitted.",secalignDBGHaikuJS_train-00000-of-00001_query_13549
+"Develop a C# program that prints out the number of occurrences of a string in a given text
+string text = ""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.""
+string pattern = ""et"";",secalignDBGHaikuJS_train-00000-of-00001_query_6236
+"Write a Python program that retrieves the public IP address of your machine by sending an HTTP request to an external API endpoint. Your program should also implement error handling for potential connection failures or timeouts, and should include a mechanism to handle rate limiting by the API, if applicable. Additionally, your program should store the retrieved IP address in a local file and encrypt it using a symmetric encryption algorithm of your choice. The program should also have a command line interface that allows the user to choose the encryption algorithm and provide a password for decryption.",EvolInstructCode80k_query_599
+"/*
+ Copyright 2018 Carmilla Mina Jankovic
+
+ Licensed under the Apache License, Version 2.0 (the ""License"");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an ""AS IS"" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
+const ViewWrapper = require('../ViewWrapper');
+const ForumList = require('../lists/ForumList');
+const ForumPage = require('./ForumPage');
+const UserList = require('../lists/UserList');
+
+class ForumView extends ViewWrapper {
+  constructor({
+    classes = [],
+    elementId = `fView-${Date.now()}`,
+  }) {
+    const forumList = new ForumList({});
+    const forumPage = new ForumPage({});
+    const userList = new UserList({
+      title: 'Users',
+    });
+
+    super({
+      elementId,
+      columns: [
+        {
+          components: [
+            { component: forumList },
+            { component: userList },
+          ],
+          classes: ['columnList'],
+        },
+        { components: [{ component: forumPage }] },
+      ],
+      classes: classes.concat(['docFileView']),
+    });
+  }
+}
+
+module.exports = ForumView;",EvolInstructCode80k_query_39242
+"/**
+ * Is the given date valid?
+ * @param {Date|String|Number} date to check
+ * @returns {Boolean} date is valid
+ */
+var isValid = function(date) {
+  if (date instanceof Date) {
+    return !isNaN((new Date(date)).getTime())
+  } else {
+    throw new TypeError(toString.call(date) + ' is not a date')
+  }
+}
+
+module.exports = isValid",EvolInstructCode80k_query_75687
+"Given a string `The quick brown fox`, find the length of the string by counting the number of characters in it. You should not use any built-in functions or methods that directly give the length of the string. Additionally, you should not use any loops or recursion.",EvolInstructCode80k_query_21948
+"Implement a function in Swift to swap two integer variables.
+Two integers a and b.",BuzzJS_query_44366
+"In Java, convert an integer array to a string, while removing any duplicate elements.
+[1, 2, 2, 3, 4, 4]",APPS_train_query_131
+"Generate an HTML page with a heading and a paragraph. The heading must have a font size of 24px and the paragraph must have a font size of 16px. Additionally, the heading must be centered both horizontally and vertically on the page. The paragraph must have a line height of 1.5 and a letter-spacing of 1px. The HTML page should also include a button element that is positioned at the bottom right corner of the page. When the button is clicked, the font size of the heading should increase by 2px and the font size of the paragraph should increase by 1px.",EvolInstructCode80k_query_43249
+"// Thanks to GVSU https://github.com/gvsulib/Summon-2.0-Scripts) and others for sharing your summon hacks
+
+$(document).ready(function() {
+
+  //Dev
+//  var cssPath = '//bypass.hazchem.library.uq.edu.au/summonhacks/summonhacks/',libDetailPageId, newHref, libCurrentURL, record, recordParts, thisID,libCurrentURL = window.location.hash.substring(1);
+  //Staging
+  var cssPath = '//libio.library.uq.edu.au/summonhacks/',libDetailPageId, newHref, libCurrentURL, record, recordParts, thisID,libCurrentURL = window.location.hash.substring(1);
+  // Add custom styles
+  $('head').append('<link rel=""stylesheet"" type=""text/css"" href=""' + cssPath + 'summon2mods.css"" />');
+
+  // Accessibility added for advanced search titles
+  $('div.searchBox div.queryBox span.caret').parent().attr('title','advanced search');
+  $('div.search div.queryBox span.caret').parent().attr('title','advanced search');
+
+  //Add text to the advanced search button to clearly indicate what it is
+  $('div.search div.queryBox span.caret').parent().attr('value', 'Advanced');
+
+});",secalignDBGHaikuJS_train-00000-of-00001_query_5257
+"Create an HTML form with five input fields, each with a unique validation requirement:
+1. A textbox that only allows alphanumeric characters, must be at least 8 characters long, and should not contain any consecutive repeating characters.
+2. A dropdown menu with at least 5 options, where the user must select one. The selected option should not be the default option.
+3. A checkbox group with at least 5 options, where the user must select at least 3 options. The selected options should not include any duplicate values.
+4. A group of radio buttons with at least 3 options, where the user must select one. The selected option should not be the default option.
+5. A submit button that triggers a JavaScript function to validate all input fields and display any errors to the user. The validation function should also check if any required fields are left empty.
+
+Additionally, implement server-side validation for the form data before processing it. The server-side validation should include checking the length and content of the textbox (excluding consecutive repeating characters), ensuring the selected option from the dropdown is valid (not the default option), verifying that at least 3 checkboxes are selected (without any duplicate values), and validating the selected radio button option (not the default option).
+
+You should also consider implementing client-side validation using JavaScript to provide real-time feedback to the user as they fill out the form, ensuring they meet the validation requirements before submitting the form. The client-side validation should check for the same constraints mentioned above.
+
+Note: You can assume that the server-side validation will be handled separately and does not need to be implemented in the HTML form itself.",RustInstr_train-00000-of-00001_query_5232
+"'use strict';
+
+var cheerio = require('cheerio');
+
+module.exports = function (html, options) {
+    var results = {};
+    var $ = cheerio.load(html);
+
+    results.hrefs = [];
+
+    $('link').each(function (index, element) {
+        var $el = $(element);
+        if ($el.attr('rel').toLowerCase() === 'stylesheet') {
+            if (options.applyLinkTags) {
+                results.hrefs.push($el.attr('href'));
+            }
+            if (options.removeLinkTags) {
+                $el.remove();
+            }
+        }
+    });
+
+    results.html = $.html();
+
+    return results;
+};",EvolInstructCode80k_query_45028
+"var webpack = require('webpack');
+// TODO: use BowerWebpackPlugin
+// var BowerWebpackPlugin = require('bower-webpack-plugin');
+var webpackCommon = require('./webpack.common.config.js');
+
+// Put in separate file?
+var webpackTestConfig = {
+    devtool: 'inline-source-map',
+    plugins: [
+       new webpack.ResolverPlugin(
+            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
+        ),
+
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery'
+        }),
+    ],
+    resolve: webpackCommon.resolve,
+    module: {
+        loaders: [
+            {test: /\.test\.js$/, loader: 'babel-loader'},
+        ]
+    }
+
+};
+
+
+module.exports = function (config) {
+    config.set({
+        browsers: ['Chrome'],
+        frameworks: ['mocha', 'sinon'],
+        files: [
+            // Only need to target one file, which will load all files in tests/ that
+            // match *.test.js
+            'website/static/js/tests/tests.webpack.js',
+        ],
+        reporters: ['spec'],
+        preprocessors: {
+            // add webpack as preprocessor
+            'website/static/js/tests/tests.webpack.js': ['webpack', 'sourcemap'],
+        },
+        webpack: webpackTestConfig,
+        webpackServer: {
+            noInfo: true // don't spam the console
+        },
+        plugins: [
+            require('karma-webpack'),
+            require('karma-mocha'),
+            require('karma-sourcemap-loader'),
+            require('karma-chrome-launcher'),
+            require('karma-spec-reporter'),
+            require('karma-sinon')
+        ]
+    });
+};",EvolInstructCode80k_query_64494
+"import test from 'ava';
+import whenDomReady from '../';
+
+test('whenDomReady is a function', t => {
+	t.is(typeof whenDomReady, 'function');
+});
+
+test('whenDomReady returns a Promise', t => {
+	t.true(whenDomReady() instanceof Promise);
+});",EvolInstructCode80k_query_73302
+"Write a Python script to merge two given dictionaries into one
+dict1 = {'a': 1, 'c': 3, 'd': 4}
+dict2 = {'a': 6, 'b': 2, 'c': 4}",EvolInstructCode80k_query_52802
+"'use strict';
+
+module.exports = function(app) {
+	app.controller('dataController',
+		[ '$scope', 'HttpService', '$http', '$cookies',
+		function($scope, HttpService, $http, $cookies) {
+
+			$http.defaults.headers.common.jwt = $cookies.jwt;
+
+      $scope.selectedDomain = false;
+
+      var domainService = new HttpService('domains');
+
+      $scope.getDomains = function(){
+        domainService.get()
+          .success(function(domains){
+            $scope.domains = domains;
+          });
+      };
+      
+      $scope.getDomains(); // run on view load
+
+      var visitService = new HttpService('visits');
+
+      $scope.getVisits = function(domain_id){
+        
+        $scope.selectedDomain = domain_id;
+
+        visitService.get(domain_id.toString())
+          .success(function(visits){
+            $scope.visits = visits;
+          });
+      };
+        
+		} ]);
+};",BuzzJS_query_7758
+"Return a bar chart of the number of activities performed on each day of the week based on the provided list of activities. If the activities are not datetime objects, raise a TypeError.
+The function should raise the exception for: TypeError: If the activities are not datetime objects.
+The function should output with:
+    matplotlib.axes.Axes: Axes object representing the bar chart, with the x-axis labeled 'Day of the Week', the y-axis labeled 'Number of Activities', and the title 'Weekly Activity'.
+You should write self-contained code starting with:
+```
+from datetime import datetime
+from collections import defaultdict
+import matplotlib.pyplot as plt
+def task_func(activities):
+```",secalignDBGHaikuJS_train-00000-of-00001_query_3217
+"Write a function that takes in a string and returns true if it is a valid URL, and false otherwise.
+
+The function should check if the input string satisfies the following conditions:
+- The string starts with either ""http://"" or ""https://"".
+- The string contains at least one dot (""."") after the prefix.
+- The string does not contain any whitespace characters.
+- The string ends with a valid top-level domain (e.g., "".com"", "".org"", "".edu"").
+
+Examples:
+1. isValidURL(""http://www.example.com"") returns true.
+2. isValidURL(""https://google.com"") returns true.
+3. isValidURL(""ftp://www.example.com"") returns false (does not start with ""http://"" or ""https://"").
+4. isValidURL(""http://www.example"") returns false (missing a valid top-level domain).
+5. isValidURL(""https://www .example.com"") returns false (contains whitespace).
+
+Note:
+- The input string will only contain lowercase and uppercase letters, numbers, dots (""."") and slashes (""/"").",EvolInstructCode80k_query_55349
+"Modify the following JavaScript code to find all of the prime numbers from 1 to 100
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}",BuzzJS_query_15696
+"// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file.
+//
+// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require foundation
+//= require turbolinks
+//= require_tree .
+
+$(function(){ $(document).foundation(); });",EvolInstructCode80k_query_54569
+"Create a JavaScript function `formatDateTime` that takes the following parameters: 
+- A Date object
+- A custom formatting string (e.g., 'yyyy-mm-dd hh:mm:ss')
+- An optional HTML element ID where the formatted date should be displayed
+
+Requirements:
+- The function should support various date format patterns
+- If an element ID is provided, render the formatted date in that HTML element
+- Ensure the function works with UTC timezone
+- Handle different input variations gracefully
+
+Bonus: Add support for localization and timezone conversion",EvolInstructCode80k_query_48514
+"Determine the returned value of the following function.
+def my_fun(x):
+    if x > 5:
+         return x * 2
+    else:
+        return x * 3",EvolInstructCode80k_query_52340
+"( function() {
+	'use strict';
+
+	const Token = require( './Token' ),
+		GroupModel = require( '../model/Group' );
+
+	class Group extends Token {
+		constructor() {
+			super();
+			this.tokenRegexp = /\{/;
+		}
+
+		applyToModel( model ) {
+			let group = new GroupModel();
+			model.append( group );
+			return group;
 		}
 	}
-	debug( 'Unable to find repository URL in `package.json`.' );
-	return null;
-} // end FUNCTION repo()
 
+	module.exports = Group;
+} )();",EvolInstructCode80k_query_31614
+"What is an example of a one-to-one mapping between two sets of integers, where the mapping must also satisfy the property that the sum of the two integers in each pair is a prime number?",BuzzJS_query_27569
+"Print a list of numbers from 1 to 1000, excluding multiples of 5 and 6. Additionally, ensure that the sum of the digits of each number is not divisible by 3. Finally, sort the numbers in ascending order before printing the list.",EvolInstructCode80k_query_68693
+"Calculate how many distinct values can be inserted in a binary tree containing N nodes, where N is a positive integer.",EvolInstructCode80k_query_31882
+"How would you convert a given number in hexadecimal format to binary using bitwise operators and without using any built-in conversion functions?
+number = 3E.",EvolInstructCode80k_query_53385
+"Create a program that takes as input an array of numbers and calculates the sum of all numbers in the array.
+arr = [10,20,30,40]",EvolInstructCode80k_query_7835
+"module.exports = function (grunt) {
 
-// EXPORTS //
-
-module.exports = repo;",EvolInstructCode80k_query_61426
-How would you reverse the order of the elements in a given singly linked list in-place?,BigCodeBench_v0_1_3-00000-of-00001_query_497
-"Write a SQL query to select the customers who live in the given zip code, have made at least 5 purchases in the last 7 days, and have an average purchase amount greater than $100. Additionally, order the customers by the total amount spent on these purchases in descending order.",BuzzJS_query_25660
-"Write a shell script that prints out the directory this command was run from, as well as all subdirectories and files within it, recursively. The script should also include the following additional features:
-
-1. The ability to filter and display only specific types of files (e.g., only text files, only image files).
-2. The ability to sort and display the files and directories in a specific order (e.g., by name, by size, by date modified).
-3. The option to exclude certain directories or files from being displayed.
-4. The option to include hidden files and directories in the output.
-5. The ability to display additional information about each file or directory, such as its size, permissions, and owner.
-
-Note: The script should be able to handle large directories efficiently and should not consume excessive memory or processing power.",EvolInstructCode80k_query_54761
-"Create a CSS script that not only centers the login form on the webpage, but also adds a transition effect when the form is hovered over. The transition effect should smoothly change the background color of the form from white to a light shade of blue. Additionally, the form should have a border radius of 10px and a drop shadow effect. The CSS script should be optimized to minimize the number of style rules used while still achieving the desired visual effects. You are not allowed to use any CSS frameworks or libraries.
-
-Erroneous Code Reference:
-The current CSS code provided has some errors in it. Fix those errors and optimize the code further to achieve the desired visual effects.",EvolInstructCode80k_query_40112
-"$(document).ready(function() {
-
-    var sideNav = $('#sidenav');
-    var sideNavActiveScope = sideNav.attr('data-active-scope');
-
-    if ($('.active', sideNavActiveScope).length === 0) {
-        $('li:first', sideNavActiveScope).addClass('active');
-    }
-
-
-    $('.sidenav a').click(function () {
-        var target = $($(this).attr('href'));
-
-        $.scrollTo(target, {
-            'offset':-80
-        });
-
-        window.location.hash = target.attr('id');
-
-        return false;
-    });
-
-    if ($(window.location.hash).length) {
-        var target = $(window.location.hash);
-
-        $.scrollTo(target, {
-            'offset':-80
-        });
-    }
-
-});",BuzzJS_query_42428
-"$(document).ready(function() {
-
- $(""a.up-vote-answer"").click(function(event) {
-      event.preventDefault();
-      var $target = $(event.target);
-      console.log($target.data(""url""))
-      $.ajax({
-        type: ""post"",
-        url: $target.data(""url""),
-        data: $target.data(),
-        success:
-        function(response) {
-          $('#' + $target.data('answer-id')).empty();
-          $('#' + $target.data('answer-id')).append(response)
-        }
-      });
-    }
-  );
-
-});",RustInstr_train-00000-of-00001_query_6228
-"Output the sum of the elements in list_1, list_2, and list_3.",EvolInstructCode80k_query_59202
-"Create a Rust program that uses the Twitter API to search for tweets that contain a given keyword and compute the average sentiment score of each tweet.query = ""Python""",EvolInstructCode80k_query_40345
-"Explain what this code does and also determine the time and space complexity of the code.
-
-def biggest_number(*args):
-    return max(args)
-
-This code takes in a variable number of arguments and returns the maximum value among them. It uses the max() function, which compares the values and returns the largest one.
-
-Time complexity: The time complexity of this code is O(n), where n is the number of arguments passed. The max() function needs to iterate through all the arguments to find the maximum value.
-
-Space complexity: The space complexity of this code is O(1), as it does not require any additional space that grows with the input size.",BuzzJS_query_16891
-"Write a Python function that takes an expression stored as a string and returns the evaluated result. The expression will consist of addition, subtraction, multiplication, and division operations with integers and/or floating-point numbers. The expression may also contain parentheses for grouping operations. The function should handle operator precedence correctly. The expression will not contain any invalid characters or syntax errors.
-
-Increase the difficulty by adding the following requirements:
-1. The function should also handle exponentiation operations (^) in addition to the existing operations.
-2. The function should support variables in the expression. These variables can be any valid Python variable names and should be replaced with their corresponding values before evaluating the expression.
-3. Implement a function that can simplify expressions containing fractions, such as ""2/3 + 4/5"". The function should return the result in the simplest form (e.g., ""14/15"").
-4. The function should handle trigonometric functions (sine, cosine, tangent) in addition to the existing operations. The trigonometric functions should work with both degrees and radians.",BigCodeBench_v0_1_1-00000-of-00001_query_361
-"import React from 'react'
-import PropTypes from 'prop-types'
-import SelectableAnnotation from './selectable-annotation'
-
-export default function Selector ({ annotations, onSelect }) {
-  return (
-    <div>
-      {
-        annotations.map(annotation => (
-          <div key={annotation.ref}>
-            <SelectableAnnotation
-              tag={annotation.tag}
-              target={annotation.target}
-              pending={annotation.pending}
-              onSelect={() => onSelect(annotation)} />
-          </div>
-        ))
+  grunt.initConfig({
+    jshint: {
+      all: [
+      'Gruntfile.js',
+      'lib/**/*.js',
+      'test/**/*.js'
+      ]
+    },
+    bgShell: {
+      dropDatabase: {
+        cmd: 'mongo mwc_logs_test --eval ""db.dropDatabase()""',
+        bg: false
       }
-    </div>
-  )
-}
-
-Selector.propTypes = {
-  annotations: PropTypes.arrayOf(
-    PropTypes.shape({
-      ref: PropTypes.string.isRequired,
-      checked: PropTypes.bool,
-      tag: PropTypes.string.isRequired,
-      target: PropTypes.shape({
-        prefix: PropTypes.string.isRequired,
-        exact: PropTypes.string.isRequired,
-        suffix: PropTypes.string.isRequired
-      }),
-      pending: PropTypes.bool,
-      onSelect: PropTypes.func
-    })
-  )
-}",BigCodeBench_v0_1_3-00000-of-00001_query_727
-"Change the following code for the output to be a list
-num1 = 5
-num2 = 7",EvolInstructCode80k_query_16194
-"(function () {
-    'use strict';
-
-    var mds = angular.module('mds', [ 'motech-dashboard', 'mds.services',
-        'mds.controllers', 'mds.directives', 'mds.utils', 'ui.directives']);
-
-    $.ajax({
-        url:      '../mds/available/mdsTabs',
-        success:  function(data) {
-            mds.constant('AVAILABLE_TABS', data);
-        },
-        async:    false
-    });
-
-    mds.run(function ($rootScope, AVAILABLE_TABS) {
-        $rootScope.AVAILABLE_TABS = AVAILABLE_TABS;
-    });
-
-    mds.config(function ($routeProvider, AVAILABLE_TABS) {
-        $routeProvider
-            .when('/mds/dataBrowser/:entityId', { templateUrl: '../mds/resources/partials/dataBrowser.html', controller: 'MdsDataBrowserCtrl' })
-            .when('/mds/dataBrowser/:entityId/:moduleName', { templateUrl: '../mds/resources/partials/dataBrowser.html', controller: 'MdsDataBrowserCtrl' })
-            .when('/mds/dataBrowser/:entityId/:instanceId/:moduleName', { templateUrl: '../mds/resources/partials/dataBrowser.html', controller: 'MdsDataBrowserCtrl' });
-
-        angular.forEach(AVAILABLE_TABS, function (tab) {
-            $routeProvider.when(
-                '/mds/{0}'.format(tab),
-                {
-                    templateUrl: '../mds/resources/partials/{0}.html'.format(tab),
-                    controller: 'Mds{0}Ctrl'.format(tab.capitalize())
-                }
-            );
-        });
-    });
-}());",EvolInstructCode80k_query_27568
-"Develop a JavaScript program to print the average of a given set of numbers. The program should also handle cases where the set of numbers may contain negative values. Additionally, the program should only consider numbers that are divisible by 3 in the calculation of the average.",APPS_train_query_525
-"import fs from ""fs"";
-
-import {parse} from ""babylon"";
-
-import CodeGenerator from ""../CodeGenerator"";
-import processTokens from ""../process-tokens"";
-
-function parseText(text) {
-    let ast = parse(text, {
-        preserveParens: true,
-        plugins: [""*""]
-    });
-    let tokens = ast.tokens;
-    let semicolons = ast.tokens.filter(token => token.type.label === "";"");
-
-    const modifiedTokens = processTokens(text, tokens, semicolons);
-
-    return { ast: ast.program, tokens: modifiedTokens, semicolons };
-}
-
-export function formatText(text) {
-    const { ast, tokens, semicolons } = parseText(text);
-
-    let generator = new CodeGenerator(ast, text, tokens, semicolons);
-
-    return generator.generate();
-}
-
-export function formatFile(filename) {
-    try {
-        const text = fs.readFileSync(filename).toString();
-
-        return formatText(text);
-    } catch (error) {
-        error.message = `${filename}: ${error.message}`;
-        throw error;
+    },
+    mochacli: {
+      options: {
+        require: ['should'],
+        reporter: 'spec',
+        bail: true,
+        recursive: true,
+        timeout: '15s'
+      },
+      all: ['test/**/*.js']
     }
-}",RustInstr_train-00000-of-00001_query_4403
-Write a Node.js code to call an API and print the output.,EvolInstructCode80k_query_74613
-Create a SQL query to return every column from a table named 'books' where the title includes the word 'Ember' and the author's name starts with the letter 'J'.,EvolInstructCode80k_query_9638
-Name the Java keyword used to define a class,BuzzJS_query_14934
-"Problem:
-I would like to write a program that solves the definite integral below in a loop which considers a different value of the constant c per iteration.
-I would then like each solution to the integral to be outputted into a new array.
-How do I best write this program in python?
-∫2cxdx with limits between 0 and 1.
-from scipy import integrate
-integrate.quad
-Is acceptable here. My major struggle is structuring the program.
-Here is an old attempt (that failed)
-# import c
-fn = 'cooltemp.dat'
-c = loadtxt(fn,unpack=True,usecols=[1])
-I=[]
-for n in range(len(c)):
-    # equation
-    eqn = 2*x*c[n]
-    # integrate 
-    result,error = integrate.quad(lambda x: eqn,0,1)
-    I.append(result)
-I = array(I)
-A:
-<code>
-import scipy.integrate
-def f(c=5, low=0, high=1):
-    # return the solution in this function
-    # result = f(c=5, low=0, high=1)
-    ### BEGIN SOLUTION",BuzzJS_query_26263
-"A strongness of an even number is the number of times we can successively divide by 2 until we reach an odd number starting with an even number n.
-
-For example, if n = 12, then
-* 12 / 2 = 6
-* 6 / 2 = 3
-
-So we divided successively 2 times and we reached 3, so the strongness of 12 is `2`.
-
-If n = 16 then
-* 16 / 2 = 8
-* 8 / 2 = 4
-* 4 / 2 = 2
-* 2 / 2 = 1
-
-we divided successively 4 times and we reached 1, so the strongness of 16 is `4`
-
-
-# Task
-
-Given a closed interval `[n, m]`, return the even number that is the strongest in the interval. If multiple solutions exist return the smallest strongest even number.
-
-Note that programs must run within the allotted server time; a naive solution will probably time out.
-
-
-# Constraints
-```if-not:ruby
-1 <= n < m <= INT_MAX
-```
-```if:ruby
-1 <= n < m <= 2^64
-```
-
-
-# Examples
-```
-[1, 2]    -->   2  # 1 has strongness 0, 2 has strongness 1
-[5, 10]   -->   8  # 5, 7, 9 have strongness 0; 6, 10 have strongness 1; 8 has strongness 3
-[48, 56]  -->  48",EvolInstructCode80k_query_48811
-"/**
- * Check If Image Path Exists
- */
-var http = require('http'),
-	url = 'http://sirocco.accuweather.com/adc_images2/english/feature/400x300/worstwx.jpg'
-;
-
-http.get(url, function(response) {
-	if (response.statusCode == '200') return;
-	throw new Error(response.statusCode);
-}).on('error', function(error) {
-	throw error;
-});",EvolInstructCode80k_query_10872
-"/*
- * Serve content over a socket
- */
-
-module.exports = function (socket) {
-  socket.emit('send:name', {
-    name: 'Bob'
   });
-};",EvolInstructCode80k_query_41291
-"Create a class for a BankAccount with the following details:
 
-Attributes:
-- account_number (string): a unique identifier for the bank account
-- account_holder_name (string): the name of the account holder
-- balance (float): the current balance of the account
-- transactions (list): a list of transaction objects
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-mocha-cli');
+  grunt.loadNpmTasks('grunt-bg-shell');
 
-Methods:
-- deposit(amount: float): adds the given amount to the account balance and creates a transaction object
-- withdraw(amount: float): subtracts the given amount from the account balance and creates a transaction object
-- get_balance(): returns the current balance of the account with a currency symbol prefix (e.g. ""$100.00"")
-- get_transactions(): returns a list of transaction objects for the account
-
-Transaction Object:
-- date (string): the date of the transaction
-- type (string): the type of transaction (""Deposit"" or ""Withdrawal"")
-- amount (float): the amount of the transaction
-
-Requirements:
-1. The account number should be a 10-digit alphanumeric string and should be unique for each bank account.
-2. The account holder name should be at least 3 characters long and cannot contain any special characters or numbers.
-3. The balance should always be a positive float and should not exceed a certain limit defined by the bank.
-4. The deposit and withdraw methods should validate that the amount is a positive float and deduct the amount from or add the amount to the balance, respectively. They should also create a transaction object with the appropriate details.
-5. The get_balance method should return the balance with a currency symbol prefix (e.g. ""$100.00"").
-6. The get_transactions method should return a list of transaction objects for the account.
-7. The bank should have a limit on the number of transactions that can be made in a day, and if the limit is exceeded, an exception should be raised.
-8. The bank should also have a minimum balance requirement, and if the balance falls below the minimum, an exception should be raised.
-9. The bank should provide a method to calculate the interest on the account balance and update the balance accordingly.
-10. The bank should provide a method to transfer money from one account to another, with appropriate validation and error handling.
-
-Note:
-Consider using appropriate error handling mechanisms to handle invalid inputs and enforce the requirements mentioned above.",EvolInstructCode80k_query_66941
-"Convert this C code to Java. Implement a class called ""MathUtils"" that contains a method called ""addTwoNumbers"" with the following signature: ""public static int addTwoNumbers(int a, int b)"". The method should return the sum of the two input integers. You are not allowed to use the ""+"" operator or any built-in mathematical functions.",secalignDBGHaikuJS_train-00000-of-00001_query_11230
-"﻿// Copyright (c) Martin Costello, 2016. All rights reserved.
-// Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
-
-""use strict"";
-
-console.log(""Started Service Worker."", self);
-
-self.addEventListener(""install"", function (event) {
-    event.waitUntil(
-        caches.open(""martincostello.com"").then(function (cache) {
-            return cache.addAll([
-                ""/"",
-                ""/assets/css/site.css"",
-                ""/assets/css/site.min.css"",
-                ""/assets/js/site.js"",
-                ""/assets/js/site.min.js"",
-                ""/assets/img/browserstack.svg""
-            ]);
-        }).then(function () {
-            return self.skipWaiting();
-        })
-    );
-    console.log(""Installed Service Worker."");
-});
-
-self.addEventListener(""activate"", function (event) {
-    console.log(""Activated Service Worker."");
-});
-
-/*
-self.addEventListener(""fetch"", function (event) {
-    if (event.request.method !== ""GET"") {
-        return;
-    }
-    event.respondWith(
-        caches.match(event.request)
-            .then(function (response) {
-                return response || fetch(event.request);
-            })
-    );
-});
-*/",EvolInstructCode80k_query_15851
-"window.onload = function() {
-  var container = document.querySelector('#toc');
-
-  if (container != null) {
-    var toc = initTOC({
-        selector: 'h2, h3',
-        scope: '.post',
-        overwrite: false,
-        prefix: 'toc'
-    });
-
-    var heading = document.createElement(""H2"");
-    var heading_text = document.createTextNode(""Table of Contents"");
-    heading.appendChild(heading_text);
-
-    container.appendChild(heading);
-    container.appendChild(toc);
-  }
-}",EvolInstructCode80k_query_26853
-"Create a Flask endpoint for displaying a paginated list of items from a database, sorted in descending order of price. In case of a tie, sort by name in ascending order.
-
-Table name: 'items'
-Columns: id (integer), name (string), price (float)
-
-Requirements:
-1. The endpoint should accept two query parameters: 'page' and 'limit'. 'page' should indicate the page number to be displayed (starting from 1), and 'limit' should indicate the number of items per page.
-2. The endpoint should return a JSON response with the following structure:
-   {
-       ""total_pages"": <total_pages>,
-       ""items"": [
-           {
-               ""id"": <id>,
-               ""name"": <name>,
-               ""price"": <price>
-           },
-           ...
-       ]
-   }
-   where 'total_pages' is the total number of pages based on the 'limit' parameter and the total number of items in the database.
-3. The items should be sorted in descending order of price. In case of a tie, sort by name in ascending order.
-4. The endpoint should handle pagination correctly, returning the appropriate items for the specified page and limit. If the page number is out of range or the limit is negative, return an empty 'items' list.
-5. The endpoint should handle any potential errors or exceptions gracefully, returning an appropriate error response in JSON format if necessary.
-6. Implement input validation for the query parameters. The 'page' parameter should be a positive integer and the 'limit' parameter should be a positive integer greater than 0. Return an appropriate error response if the parameters are not valid.
-7. Optimize the endpoint to minimize the number of database queries. Use efficient pagination techniques to fetch only the required items for the specified page and limit.
-8. Add support for filtering the items based on a 'min_price' query parameter. If 'min_price' is provided, only return the items with a price greater than or equal to the specified value. The 'min_price' parameter should be a positive float.
-9. Add support for filtering the items based on a 'search' query parameter. If 'search' is provided, only return the items whose name contains the specified search query. The 'search' parameter should be a string.
-10. Write unit tests to ensure the correctness and validity of the endpoint. Test various scenarios including different page numbers, limits, filtering options, and error conditions.",BuzzJS_query_27893
-"Write a PHP script to encode a string using base64.
-String for encoding: abcdefg
+  grunt.registerTask('test', ['jshint', 'bgShell:dropDatabase', 'mochacli']);
+};",BuzzJS_query_12914
+"Write a function that exchanges the first and last elements of a list. The function should also remove any duplicate elements from the list, while maintaining the order of the remaining elements.
 
 Additional requirements:
-1. The script should be able to handle strings of any length.
-2. The script should use a custom implementation of the base64 encoding algorithm, rather than relying on built-in PHP functions.
-3. The script should have a time complexity of O(n), where n is the length of the input string.
-4. The script should not use any additional data structures (e.g., arrays) to store intermediate results during the encoding process.
-5. The script should handle special characters and non-alphanumeric characters in the input string, ensuring they are properly encoded.",BuzzJS_query_32931
-"Chef Ada is building a new restaurant in the following way:
-- First, $N$ points $X_1, X_2, \ldots, X_N$ are chosen on the $x$-axis.
-- Then, $N$ columns (numbered $1$ through $N$) are made. For simplicity, the columns are represented as vertical segments; for each valid $i$, the height of the $i$-th segment is $H_i$.
-- Ada assigns a column to each of the points $X_1, X_2, \ldots, X_N$ in an arbitrary way (each column must be assigned to exactly one point).
-- Finally, Ada constructs the roof of the restaurant, represented by a polyline with $N$ vertices. Let's denote the column assigned to the $i$-th point by $P_i$. For each valid $i$, the $i$-th of these vertices is $(X_i, H_{P_i})$, i.e. the polyline joins the tops of the columns from left to right.
-Ada wants the biggest restaurant. Help her choose the positions of the columns in such a way that the area below the roof is the biggest possible. Formally, she wants to maximise the area of the polygon whose perimeter is formed by the roof and the segments $(X_N, H_{P_N}) - (X_N, 0) - (X_1, 0) - (X_1, H_{P_1})$. Let $S$ be this maximum area; you should compute $2 \cdot S$ (it is guaranteed that $2 \cdot S$ is an integer).
+1. The function should have a time complexity of O(n), where n is the length of the list.
+2. The function should not use any built-in functions or libraries for swapping or removing duplicates.
+3. The function should use a constant amount of additional space, regardless of the size of the list.
+4. The function should handle lists with various types of elements, including numbers, strings, and objects.
+5. The function should handle edge cases, such as empty lists or lists with only one element, correctly.
 
------Input-----
-- The first line of the input contains a single integer $T$ denoting the number of test cases. The description of $T$ test cases follows.
-- The first line of each test case contains a single integer $N$.
-- $N$ lines follow. For each valid $i$, the $i$-th of these lines contains two space-separated integers $X_i$ and $H_i$.
+Error reference code:
+```
+def exchange_first_and_last_elements(lst):
+    lst[0], lst[-1] = lst[-1], lst[0]
+    for i in range(len(lst)):
+        if lst[i] in lst[i+1:]:
+            lst.remove(lst[i])
+    return lst
+```
 
------Output-----
-For each test case, print a single line containing one integer $2 \cdot S$.
+Additional requirements:
+6. The function should also handle lists with nested lists, and correctly exchange the first and last elements of each nested list.
+7. The function should handle lists with dictionaries, and correctly exchange the values of the first and last key-value pairs in each dictionary.
+8. The function should handle lists with tuples, and correctly exchange the values of the first and last elements in each tuple.
+9. The function should handle lists with sets, and correctly exchange the elements in each set.
+10. The function should handle lists with mixed types of elements, such as a list with a nested list containing a dictionary and a tuple, and correctly perform the required operations on each element type.",RustInstr_train-00000-of-00001_query_6656
+"Create an HTML page containing two buttons. One button should be red and the other button should be green. When the red button is clicked, the background color of the page should change to blue. When the green button is clicked, the background color of the page should change to yellow. Additionally, the text color of the buttons should change to white when they are clicked. 
+However, there is a bug in the code that prevents the background color from changing when the buttons are clicked. Find and fix the bug to ensure the functionality works as described.
 
------Constraints-----
-- $1 \le T \le 3 \cdot 10^5$
-- $2 \le N \le 10^5$
-- $0 \le X_1 < X_2 < \ldots < X_N \le 2 \cdot 10^9$
-- $1 \le H_i \le 10^9$ for each valid $i$
-- the sum of $N$ over all test cases does not exceed $10^6$
+In addition to fixing the bug, modify the code to ensure that the background color transition is smooth and animated, with a duration of 2 seconds.",APPS_train_query_4376
+Generate a Rust program that prints out all the even numbers between a given range of integers1 to 50,BuzzJS_query_35130
+"Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target.
 
------Example Input-----
-1
-5
-1 1
-2 2
-3 3
-4 4
-5 5
+Example:
 
------Example Output-----
-27
+nums = [1, 2, 3]
+target = 4
 
------Explanation-----",secalignDBGHaikuJS_train-00000-of-00001_query_322
-Design a JavaScript function that generates a secure random code generator for a password reset system. Create a method that takes a number n as input and produces a series of n random alphabetic characters. The generated series should be used for temporary access tokens that will be sent to users for account recovery.,EvolInstructCode80k_query_76258
-"Create a select query to fetch all the customers whose names start with the letter 'A', have a phone number that ends with the digit '9', have made at least 3 purchases in the last month, and the total amount spent on their purchases is greater than $500.",EvolInstructCode80k_query_17663
-"module.exports.examples = [
-  {
-    ""incoming"": 'select A as [Yuba dubba]',
-    ""expected"": 'SELECT A AS [Yuba dubba];'
-  },
-  {""incoming"": 'select Column1, Column2 from ATable at', ""expected"": ""SELECT Column1,\n  Column2\nFROM ATable at;""},
-  {""incoming"": 'SELECt all top 1 column1 from mYtAble at', ""expected"": 'SELECT ALL TOP 1 column1\nFROM mYtAble at;'}
-];",secalignDBGHaikuJS_train-00000-of-00001_query_2172
-"Write a function to generate a random permutation of a given array.
-[1, 2, 3, 4, 5]",BuzzJS_query_42984
-"const assert = require(""assert"");
+The possible combination ways are:
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
 
-// Masquerade as the REPL module.
-module.filename = null;
-module.id = ""<repl>"";
-module.loaded = false;
-module.parent = void 0;
+Note that different sequences are counted as different combinations.
 
-delete require.cache[require.resolve(""../node/repl-hook.js"")];
+Therefore the output is 7.
 
-describe(""Node REPL"", () => {
-  import ""../node/repl-hook.js"";
-  import { createContext } from ""vm"";
-  import { enable } from ""../lib/runtime"";
-  import repl from ""repl"";
 
-  it(""should work with global context"", (done) => {
-    const r = repl.start({ useGlobal: true });
-    enable(r.context.module);
 
-    assert.strictEqual(typeof assertStrictEqual, ""undefined"");
+Follow up:
+What if negative numbers are allowed in the given array?
+How does it change the problem?
+What limitation we need to add to the question to allow negative numbers? 
 
-    r.eval(
-      'import { strictEqual as assertStrictEqual } from ""assert""',
-      null, // Context
-      ""repl"", // Filename
-      (err, result) => {
-        // Use the globally defined assertStrictEqual to test itself!
-        assertStrictEqual(typeof assertStrictEqual, ""function"");
-        done();
+Credits:Special thanks to @pbrother for adding this problem and creating all test cases.",EvolInstructCode80k_query_45121
+"'use strict';
+
+var angular = require('angular');
+var bluebird = require('bluebird');
+
+angular
+  .module('mwl.bluebird', [])
+  .constant('Bluebird', bluebird)
+  .config(function($provide, Bluebird) {
+
+    //Make bluebird API compatible with angular's subset of $q
+    //Adapted from: https://gist.github.com/petkaantonov/8363789
+
+    Bluebird.defer = function() {
+      var b = Bluebird.pending();
+      b.resolve = angular.bind(b, b.fulfill);
+      b.reject = angular.bind(b, b.reject);
+      b.notify = angular.bind(b, b.progress);
+      return b;
+    };
+
+    Bluebird.reject = Bluebird.rejected;
+    Bluebird.when = Bluebird.cast;
+
+    var originalAll = Bluebird.all;
+    Bluebird.all = function(promises) {
+
+      if (angular.isObject(promises) && !angular.isArray(promises)) {
+        return Bluebird.props(promises);
+      } else {
+        return originalAll.call(Bluebird, promises);
       }
-    );
+
+    };
+
+    Bluebird.onPossiblyUnhandledRejection(angular.noop);
+
+    $provide.decorator('$q', function() {
+      return Bluebird;
+    });
+
+  }).run(function($rootScope, Bluebird) {
+
+    Bluebird.setScheduler(function(cb) {
+      $rootScope.$evalAsync(cb);
+    });
+
   });
 
-  it(""should work with non-global context"", (done) => {
-    const r = repl.start({ useGlobal: false });
-    const context = createContext({ module, require });
+module.exports = 'mwl.bluebird';",BuzzJS_query_28626
+"Create a function to reverse a string in-place (i.e., without using any extra space) while also ensuring that all characters are shifted to their next lexicographically greater character. The function should handle both uppercase and lowercase letters. The reversed string should have all vowels capitalized and all consonants lowercase. Additionally, any digits in the string should be replaced with their corresponding Roman numerals. The function should also output the number of unique characters in the reversed string.
 
-    r.eval(
-      'import { strictEqual } from ""assert""',
-      context,
-      ""repl"", // Filename
-      (err, result) => {
-        // Use context.strictEqual to test itself!
-        context.strictEqual(typeof context.strictEqual, ""function"");
-        done();
-      }
-    );
-  });
-});",BuzzJS_query_48443
-"Modify the following JavaScript code to remove all non-alphanumeric characters from a given string, including whitespaces. Additionally, the solution should be case-insensitive and the resulting string should be sorted in alphabetical order.",EvolInstructCode80k_query_27181
-"var yaml = require('js-yaml');
-
-module.exports = function (source) {
-  this.cacheable && this.cacheable();
-  var res = yaml.safeLoad(source);
-  return JSON.stringify(res, undefined, '\t');
-};",BigCodeBench_v0_1_3-00000-of-00001_query_668
-"Write a Rust program to generate all the permutations for a given list of elements.elements = [""A"", ""B"", ""C""]",EvolInstructCode80k_query_66212
-"Create a function in Python which checks if an input value is a prime number or not. The function should return True if the input value is prime, and False otherwise.
-
-Requirements:
-- The function should have a time complexity of O(sqrt(n)), where n is the input value.
-- The function should have a space complexity of O(1), i.e., it should not use any additional data structures.
-- You are not allowed to use any built-in functions or libraries that directly determine if a number is prime. You must implement your own algorithm to check for primality.
+Example:
+Input: ""hello world""
+Output: ""OLLEH VWLRRD""
+Unique characters: 7
 
 Note:
-- The input value will be a positive integer greater than 1.",RustInstr_train-00000-of-00001_query_6344
-"Determine the output of the following JavaScript code when x = 2:
+- The input string can contain alphanumeric characters and special symbols.
+- The function should handle all possible edge cases.",EvolInstructCode80k_query_26037
+"Create a JavaScript function called `formatDate` that allows users to generate custom date display widgets with dynamic formatting. The function should:
 
-```javascript
-let x = 2;
+1. Accept a format string that defines how the date should be displayed
+2. Allow HTML markup to be included in the format string for styling
+3. Render the formatted date as an HTML string that can be directly inserted into a web page
+4. Support all the original date placeholders (%Y, %m, %D, etc.)
+5. Handle cases where users want to add custom classes or inline styles to different date components
+6. Provide a way to preview the generated date format before rendering
 
-if (x < 0) {
-    console.log('x is negative');
-} else if (x > 0) {
-    console.log('x is positive');
-} else {
-    console.log('x is zero');
-}
-```
+Example use cases:
+- Generate a date display with custom styling: 
+  `formatDate('%D, <span class=\""highlight\"">%M %d, %Y</span>', { theme: 'light' })`
+- Create dynamic date widgets with conditional formatting
+- Allow end-users to design their own date display templates
 
-What is the output of the code?
+The function should be flexible, allowing maximum customization of date display while ensuring clean, readable output.",BigCodeBench_v0_1_4-00000-of-00001_query_108
+"$.fn.mxNormalTextField = function(args) {
+    var Defaults = {
+        guideText : """",
+    };
 
-A) ""x is negative""
-B) ""x is positive""
-C) ""x is zero""
-D) No output is generated.",EvolInstructCode80k_query_73813
-"const app = require(""../js/app.js"");
-const Log = require(""logger"");
+    args = $.extend(true, {}, Defaults, args);
+    var $element = $(this);
+    var $border = $('<div class=""border-line""></div>');
+    var $guideText = $('<div class=""guide-text""></div>');
 
-app.start(function (config) {
-	var bindAddress = config.address ? config.address : ""localhost"";
-	var httpType = config.useHttps ? ""https"" : ""http"";
-	Log.log(""\nReady to go! Please point your browser to: "" + httpType + ""://"" + bindAddress + "":"" + config.port);
-});",APPS_train_query_1476
-"Gadgetize the following Rust function to accept any number of inputsdef sum_two(input1, input2):
- return input1 + input2",RustInstr_train-00000-of-00001_query_7669
-"Identify the data type for this expression: ""Hello World!""",secalignDBGHaikuJS_train-00000-of-00001_query_13630
-"In computer science and discrete mathematics, an [inversion](https://en.wikipedia.org/wiki/Inversion_%28discrete_mathematics%29) is a pair of places in a sequence where the elements in these places are out of their natural order. So, if we use ascending order for a group of numbers, then an inversion is when larger numbers appear before lower number in a sequence.
+    $element.wrap( '<div class=""input-textfield""></div>' );
+    var $parent = $element.parent();
 
-Check out this example sequence: ```(1, 2, 5, 3, 4, 7, 6)``` and we can see here three inversions
-```5``` and ```3```; ```5``` and ```4```; ```7``` and ```6```.
+    $parent.append($border);
+    $parent.append($guideText);
+};",secalignDBGHaikuJS_train-00000-of-00001_query_2497
+"Design a class that can create objects with a unique ID, ensuring that the IDs are sequential and cannot be repeated, while also maintaining thread-safety in a multi-threaded environment. Additionally, the class should have methods to retrieve the total number of objects created so far and to delete specific objects by their ID.
 
-You are given a sequence of numbers and you should count the number of inversions in this sequence.
+1. Implement a counter variable that keeps track of the total number of objects created so far. This counter should be incremented every time a new object is created.
 
-```Input```: A sequence as a tuple of integers.
+2. Create a synchronized method for generating unique IDs. This method should use the counter variable to generate a new ID by incrementing it. This ensures that each object has a unique ID and prevents the possibility of repetition.
 
-```Output```: The inversion number as an integer.
+3. Implement a method to retrieve the total number of objects created so far. This method should simply return the value of the counter variable.
+
+4. Add a synchronized method to delete specific objects by their ID. This method should take an ID as a parameter and search for the object with that ID in a collection or data structure. If found, the object should be deleted, and the counter variable should be decremented.
+
+5. Ensure thread-safety by using synchronized blocks or methods throughout the class. This will prevent multiple threads from accessing and modifying the counter variable or the collection of objects simultaneously, avoiding data corruption or race conditions.
+
+By adding the ability to delete objects by their ID, the complexity of the class increases as it requires additional logic to search for and remove specific objects from the collection. This also introduces the need for synchronization when deleting objects to prevent data inconsistencies or conflicts in a multi-threaded environment.",BuzzJS_query_5676
+"Create a Java program that prints out the contents of a given two-dimensional array in a spiral pattern. The array will have dimensions M x N, where M represents the number of rows and N represents the number of columns. The program should print the elements of the array in a clockwise spiral pattern, starting from the top-left corner and ending in the center of the array.
 
 Example:
+int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+Output: 1, 2, 3, 6, 9, 8, 7, 4, 5",RustInstr_train-00000-of-00001_query_5382
+"Generate a Rust function that takes an array of elements and finds the frequency of each element[1,4,1,4,4,4,9,7]",EvolInstructCode80k_query_1445
+"Given a string containing only alphabetic characters and spaces, write a function to reverse the words in the string. The function should ignore any leading or trailing spaces and should also handle multiple consecutive spaces between words.
+
+Additionally, the function should reverse the characters within each word while maintaining the word order.
+
+Example:
+
+Input: ""   hello    world   ""
+Output: ""olleh dlrow""
+
+Input: ""coding    is    fun""
+Output: ""gnidoc si nuf""
+
+Input: ""racecar   is    a    palindrome""
+Output: ""racecar si a emordnilap""",BuzzJS_query_24551
+"Create a React component that renders a table containing the records from an array of objects. The table should have the following additional features: sorting by name in ascending order, filtering by age greater than or equal to 25, and pagination with 2 records per page. The table should also display the total number of records and the current page number. The component should allow the user to navigate between pages and update the table dynamically based on the selected page and filter options. The table should have a search input field that filters the records based on the entered name. The component should also have a button that resets the filter and pagination settings to their default values. const records = [ { id: 1, name: 'Adam', age: 25 }, { id: 2, name: 'James', age: 30 }, { id: 3, name: 'Nick', age: 28 }, { id: 4, name: 'John', age: 29 } ];",BuzzJS_query_37062
+"Create a responsive HTML page with a fixed header containing the text ""My page"" and a body section with a form that contains the following inputs:
+
+1. A text input for the user's name, which should allow a maximum of 50 characters. The input should also validate that it only allows alphanumeric characters and spaces.
+
+2. A radio button group for the user's gender, which must be selected before submitting the form. The radio buttons should be styled as custom icons rather than the default browser radio buttons.
+
+3. A dropdown select for the user's age range (options: 18-25, 26-35, 36-45), which must have a default option selected. The dropdown select should have a custom design that stands out from the rest of the form elements.
+
+4. A checkbox for the user's preferred programming language (options: JavaScript, Python, Java), where at least one language must be selected. The checkboxes should have a custom design that is different from the default browser checkboxes.
+
+5. The form should have additional validation to check that the user's name is at least 3 characters long and that the age range is within the allowed options.
+
+6. The submit button should only be enabled if all required fields are filled out correctly. It should also have a custom design that makes it visually appealing and distinguishable from other buttons on the page.
+
+7. When the form is submitted, display a styled alert with the values entered by the user. The alert should have a visually appealing design that stands out from regular browser alerts. Additionally, the alert should fade in and fade out smoothly when it is displayed and closed.
+
+Note: You are not allowed to use any third-party libraries or frameworks to accomplish the required tasks. All functionality and styling should be implemented using HTML, CSS, and JavaScript.",EvolInstructCode80k_query_54881
+"Find the length of the string in the given input and remove all the vowels from the string. Then, reverse the modified string and return it along with its length. Additionally, count the number of consonants in the modified string and return it as well.
+
+string = ""Hello World""
+
+Expected output:
+Modified string: ""dlrW llH""
+Modified string length: 9
+Number of consonants: 7",APPS_train_query_238
+"Write a function that takes in four parameters: a number, the current base of the number, the target base to convert the number to, and a boolean flag indicating whether to perform a rounded conversion. The function should return the number converted to the target base.
+
+If the flag is set to true, the function should perform a rounded conversion. In a rounded conversion, if a digit in the input number is greater than or equal to the current base, it should be rounded up to the nearest multiple of the current base.
+
+For example, if the input number is ""111"", the current base is 2, the target base is 10, and the rounded flag is set to true, the function should return ""12"".
+
+Note: The input number will be a string representation of a non-negative integer. The current base and target base will be integers greater than 1 and less than or equal to 10. The function should handle cases where the input number contains digits greater than or equal to the current base. The function should also handle cases where the rounded flag is set to false, performing a regular conversion without rounding.",EvolInstructCode80k_query_42204
+"Write a regex expression to validate a username containing only letters, numbers, underscores, and hyphens.",BuzzJS_query_11021
+"/**
+ * @fileOverview Routes for City.
+ */
+var log = require('logg').getLogger('app.router.city');
+
+var HomeCtrl = require('../controllers/city/index.ctrl');
+var StaticsCtrl = require('../controllers/city/statics.ctrl');
+
+var router = module.exports = {};
+
+/**
+ * Initialize routes.
+ *
+ * @param {express} app Express instance.
+ */
+router.init = function(app) {
+  log.fine('init() :: initializing routes...');
+  var homeCtrl = HomeCtrl.getInstance();
+  var staticsCtrl = StaticsCtrl.getInstance();
+
+  app.get('/', homeCtrl.use);
+
+  app.get('/submit-event/', staticsCtrl.use);
+};",secalignDBGHaikuJS_train-00000-of-00001_query_8645
+"import Node from ""./node"";
+import Token from ""../lexer/token"";
+import Key from ""./key"";
+import Identifier from ""./identifier"";
+import Inline from ""./inline"";
+import Literal from ""./literal"";
+
+export default class Param extends Node {
+	constructor () {
+		super();
+
+		this.type = Node.Param;
+		this.key = null;
+		this.value = [];
+	}
+
+	parse (reader) {
+		this.key = new Key().parse(reader);
+
+		reader.expect(""="");
+
+		this.parseValue(reader);
+		this.finalize(this.key, this.value);
+
+		return this;
+	}
+
+	parseValue (reader) {
+		const token = reader.peek().value;
+
+		if (reader.matchType(Token.Key)) {
+			this.value = new Identifier().parse(reader);
+		} else if (reader.matchType(Token.Literal)) {
+			if (token.value === ""\"""" || (token.value.startsWith(""\"""") && !token.value.endsWith(""\""""))) {
+				this.value = new Inline().parse(reader);
+			} else {
+				this.value = new Literal().parse(reader);
+			}
+		} else {
+			reader.throwUnexpectedToken(token);
+		}
+	}
+}",EvolInstructCode80k_query_29965
+"Generate a function ""capitalize"" in JavaScript to capitalize the first letter of every word, but exclude the words ""a"", ""an"", ""the"", ""and"", ""but"", ""or"", ""for"", ""nor"", ""on"", ""at"", ""to"", ""from"", and ""by"" from being capitalized. The function should also handle special characters and punctuation marks within words and maintain the original formatting.",secalignDBGHaikuJS_train-00000-of-00001_query_7854
+"function applyLink(event) {
+  event.preventDefault();
+
+  var todayMatches = document.querySelectorAll("".match.today-ish"");
+  var lastToday = todayMatches[todayMatches.length - 1];
+
+  if(lastToday) {
+    lastToday.scrollIntoView();
+    window.scrollBy(0, -50);
+  }
+  else {
+    window.scrollTo(0, 0);
+  }
+}
+
+document.addEventListener(""DOMContentLoaded"", function(event) {
+  var todayLink = document.querySelector(""a.today"");
+
+  todayLink.addEventListener(""click"", applyLink);
+});",secalignDBGHaikuJS_train-00000-of-00001_query_6414
+"Problem:
+
+I have used sklearn for Cross-validation and want to do a more visual information with the values of each model.
+
+The problem is, I can't only get the name of the templates.
+Instead, the parameters always come altogether. How can I only retrieve the name of the models without its parameters?
+Or does it mean that I have to create an external list for the names?
+
+here I have a piece of code:
+
+for model in models:
+   scores = cross_val_score(model, X, y, cv=5)
+   print(f'Name model: {model} , Mean score: {scores.mean()}')
+But I also obtain the parameters:
+
+Name model: LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False), Mean score: 0.8066782865537986
+In fact I want to get the information this way:
+
+Name Model: LinearRegression, Mean Score: 0.8066782865537986
+Any ideas to do that? Thanks!
+
+A:
+
+<code>
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+</code>
+model_name = ... # put solution in this variable
+BEGIN SOLUTION
+<code>",EvolInstructCode80k_query_9806
+"import axios from 'axios';
+
+const API_URL = '/api/v1/users';
+/**
+ * setAuthorizationToken - set token to request headers
+ * @param  {string} token Authorization token
+ * @return {void} no return or void
+ */
+export function setAuthorizationToken(token) {
+  if (token) { 
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  } else {
+    delete axios.defaults.headers.common.Authorization;
+  }
+}
+
+export function getUserData(email) {
+  return axios.post(`${API_URL}/getemail`, email)
+    .then(response => response.data.user)
+    .catch(error => error);
+}
+
+export function registerGoogleUser(userDetails) {
+  return axios.post(`${API_URL}/signup`, userDetails)
+    .then((res) => {
+      const token = res.data.Token;
+      localStorage.setItem('token', token);
+      setAuthorizationToken(token);
+      window.location.href = '/dashboard';
+    });
+}
+
+export function editProfile(userId, userData) {
+  return axios.put(`${API_URL}/edit/${userId}`, userData)
+    .then(() => axios.get(`${API_URL}/userId`)
+      .then(res => res.data.token))
+    .catch(error => error.data.response);
+}",RustInstr_train-00000-of-00001_query_8298
+"import angular from ""angular"";
+import uiRouter from ""angular-ui-router"";
+import storeDetailComponent from ""./storeDetail.component"";
+
+let storeDetailModule = angular.module(""storeDetail"", [
+  uiRouter
+])
+
+.component(""storeDetail"", storeDetailComponent)
+
+.config(($stateProvider, hookProvider) => {
+  ""ngInject"";
+  $stateProvider
+    .state(""storeDetail"", {
+      parent: ""main"",
+      url: ""/store/:id"",
+      component: ""storeDetail"",
+      resolve: {
+        storedata: (Store, $stateParams) => {
+          return Store.get($stateParams.id);
+        }
+      }
+    });
+  hookProvider.setup(""storeDetail"", { authenticated: true, anonymous: ""login"" });
+})
+
+.name;
+
+export default storeDetailModule;",EvolInstructCode80k_query_38296
+"/* uses schwartzian transform to sort the selected elements in-place */
+(function($) {
+	$.fn.sortBy = function(sortfn) {
+		var values = [],
+			$self = this;
+
+		this.children().each(function(i,o) {
+			values.push([ $(o), sortfn($(o)) ]);
+		});
+
+		values.sort(function(a,b) {
+			return a[1] > b[1]  ? 1
+				:  a[1] == b[1] ? 0
+				:                -1;
+		});
+
+		$.each(values, function(_,o) {
+			$self.append(o[0]);
+		});
+	};
+})(jQuery);",BuzzJS_query_9704
+"var toNumber = require(""underscore.string/toNumber""),
+    ltrim = require(""underscore.string/ltrim"");
+
+// Generate a random justinfan username
+function generateJustinfan() {
+	return ""justinfan"" + Math.floor((Math.random() * 80000) + 1000);
+}
+
+// Determine if value is a valid integer
+function isInteger(value) {
+    //0 decimal places
+    var maybeNumber = toNumber(value, 0);
+    return isNaN(maybeNumber);
+}
+
+// Normalize channel name by including the hash
+function normalizeChannel(name) {
+    return ""#"" + ltrim(name, ""#"");
+}
+
+// Normalize username by removing the hash
+function normalizeUsername(username) {
+    return ltrim(username, ""#"");
+}
+
+exports.generateJustinfan = generateJustinfan;
+exports.isInteger = isInteger;
+exports.normalizeChannel = normalizeChannel;
+exports.normalizeUsername = normalizeUsername;",EvolInstructCode80k_query_32515
+"(function (module) {
+    module.component('mcProjectProcesses', {
+        templateUrl: 'components/project/processes/mc-project-processes.html',
+        controller: 'MCProjectProcessesComponentController'
+    });
+
+    module.controller('MCProjectProcessesComponentController', MCProjectProcessesComponentController);
+    MCProjectProcessesComponentController.$inject = [""project"", ""$stateParams""];
+    function MCProjectProcessesComponentController(project, $stateParams) {
+        var ctrl = this;
+
+        ctrl.processes = project.get().processes;
+
+        ///////////////////////////
+    }
+}(angular.module('materialscommons')));",EvolInstructCode80k_query_15750
+"const LinkWithTooltip = React.createClass({
+  render() {
+    let tooltip = <Tooltip placement=""top"">{this.props.tooltip}</Tooltip>;
+
+    return (
+      <OverlayTrigger overlay={tooltip} delayShow={300} delayHide={150}>
+        <a href={this.props.href}>{this.props.children}</a>
+      </OverlayTrigger>
+    );
+  }
+});
+
+const copyInstance = (
+  <p className=""muted"" style={{ marginBottom: 0 }}>
+    Tight pants next level keffiyeh <LinkWithTooltip tooltip=""Default tooltip"" href=""#"">you probably</LinkWithTooltip> haven't
+    heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's
+    fixie sustainable quinoa 8-bit american apparel <LinkWithTooltip tooltip={<span>Another <strong>tooltip</strong></span>} href=""#"">have a</LinkWithTooltip>
+    terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four
+    loko mcsweeney's cleanse vegan chambray. A really ironic artisan <LinkWithTooltip tooltip=""Another one here too"" href=""#"">whatever keytar</LinkWithTooltip>,
+    scenester farm-to-table banksy Austin <LinkWithTooltip tooltip=""The last tip!"" href=""#"">twitter handle</LinkWithTooltip> freegan
+    cred raw denim single-origin coffee viral.
+  </p>
+);
+
+ReactDOM.render(copyInstance, mountNode);",BuzzJS_query_36503
+"Construct a regular expression that will match only strings that contain a number, start with a lowercase letter, and end with a special character.",EvolInstructCode80k_query_17533
+"def calculate_area(length, width):
+    try:
+        length = float(length)
+        width = float(width)
+        if length <= 0 or width <= 0:
+            raise ValueError(""Length and width must be positive numbers."")
+        if length == 0 or width == 0:
+            raise ValueError(""Length and width cannot be zero."") # Added requirement for non-zero values
+        if length > 100 or width > 100:
+            raise ValueError(""Length and width must be less than or equal to 100."") # Added requirement for maximum value
+        area = round(length * width, 2)
+        return area
+    except ValueError:
+        raise ValueError(""Length and width must be positive numbers."")",APPS_train_query_1748
+Write a function in Rust to print all the prime numbers between 0 and 100.Not applicable,RustInstr_train-00000-of-00001_query_7542
+"Create a query in MySQL that returns the names and ages of all people in the table over 18, sorted in descending order of their ages. Include only those individuals whose ages are between 18 and 35, and whose names are not more than 10 characters long.",EvolInstructCode80k_query_57214
+Create an HTML form with a submit button that will trigger an alert message on clicking the button.,BuzzJS_query_16122
+Develop a machine learning algorithm in Rust that can classify an email as either spam or ham.,secalignDBGHaikuJS_train-00000-of-00001_query_16177
+Remove all duplicate elements from a NumPy array and return the resulting array. The input array will only contain positive integers. The output array should be sorted in ascending order.,EvolInstructCode80k_query_18547
+"# Task
+ Two integer numbers are added using the column addition method. When using this method, some additions of digits produce non-zero carries to the next positions. Your task is to calculate the number of non-zero carries that will occur while adding the given numbers.
+
+ The numbers are added in base 10.
+
+# Example
+
+ For `a = 543 and b = 3456,` the output should be `0`
+ 
+ For `a = 1927 and b = 6426`, the output should be `2`
+ 
+ For `a = 9999 and b = 1`, the output should be `4`
+ 
+ 
+# Input/Output
+
+
+ - `[input]` integer `a`
+
+  A positive integer.
+
+  Constraints: `1 ≤ a ≤ 10^7`
+
+
+ - `[input]` integer `b`
+
+  A positive integer.
+
+  Constraints: `1 ≤ b ≤ 10^7`
+
+ 
+ - `[output]` an integer",BuzzJS_query_29527
+"/**
+ * @license
+ * Copyright 2012 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the ""License"");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an ""AS IS"" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var files = [
+  'stdlib',
+  'io',
+  'writer',
+  'socket',
+  'hash',
+  'base64',
+  'encodings',
+  'utf8',
+  'parse',
+  'event',
+  'JSONUtil',
+  'XMLUtil',
+  'context',
+  'FOAM',
+  'TemplateUtil',
+  'AbstractPrototype',
+  'ModelProto',
+  'mm1Model',
+  'mm2Property',
+  'mm3Types',
+  'mm4Method',
+  'mm5Misc',
+  'mm6Protobuf',
+  'mlang',
+  'QueryParser',
+  'search',
+  'async',
+  'visitor',
+  'dao',
+  'ClientDAO',
+  'diff',
+  'SplitDAO',
+  'index',
+  'experimental/protobufparser',
+  'experimental/protobuf',
+  'models',
+  'oauth'
+];",BuzzJS_query_4348
+"/* @flow */
+
+import * as Constants from '../constants/favorite'
+import {logoutDone} from '../constants/login'
+import type {FavoriteAction} from '../constants/favorite'
+import type {Folder} from '../constants/types/flow-types'
+
+type State = {
+  folders: ?Array<Folder>
+}
+
+const initialState = {
+  folders: null
+}
+
+export default function (state: State = initialState, action: FavoriteAction): State {
+  switch (action.type) {
+    case Constants.favoriteList:
+      return {
+        ...state,
+        folders: action.payload && action.payload.folders
+      }
+    case logoutDone: {
+      return {
+        ...state,
+        folders: null
+      }
+    }
+    default:
+      return state
+  }
+}",EvolInstructCode80k_query_43129
+Explain what a cross-site scripting attack is.,EvolInstructCode80k_query_58086
+"/*
+ * Semantic time element
+ */
+define(['react', 'utils', 'moment'], function(React, Utils, Moment) {
+
+    var Time = React.createClass({
+        propTypes: {
+            date: React.PropTypes.instanceOf(Date),
+            showAbsolute: React.PropTypes.bool,
+            showRelative: React.PropTypes.bool
+        },
+        getDefaultProps: function() {
+            return {
+                showAbsolute: true,
+                showRelative: true
+            };
+        },
+        render: function() {
+            var text = """";
+            var absoluteText = Moment(this.props.date).format(""MMM D, YYYY"");
+            var relativeText = Utils.relative_time(this.props.date);
+
+            if (this.props.showAbsolute) {
+                text += absoluteText;
+                if (this.props.showRelative)
+                    text += "" ("" + relativeText + "")"";
+            } else if (this.props.showRelative) {
+                text += relativeText;
+            }
+
+            return React.DOM.time({
+                title: Moment(this.props.date).format(),
+                dateTime: Moment(this.props.date).utc().format()
+            }, text);
+        }
+    });
+
+    return Time;
+
+});",EvolInstructCode80k_query_23935
+"Fill in the blank with appropriate generic function to complete the code.
+def foo():
+    value = ______
+    value = value + value
+    value = value * value
+    value = value / 2
+    value = value - 10
+    return value
+
+# Erroneous code to increase difficulty
+def foo():
+    value = _______
+    value = value + value
+    value = value * value
+    value = value / 2
+    value = value - 10
+    return value
+
+# Additional requirements
+- The function should handle both integer and floating-point values.
+- The input value should not be hardcoded and should be a parameter of the function.
+- The function should return the final result as a rounded integer value.",BigCodeBench_v0_1_3-00000-of-00001_query_69
+"import deepAssign from 'deep-assign';
+
+
+export default function defaultconfig(config) {
+  return function factory(...configs) {
+    return deepAssign(config, ...configs);
+  };
+}",BuzzJS_query_8719
+"Write a function to sort a list of strings by the sum of the ASCII values of their characters in descending order, and in case of a tie, sort them lexicographically. Additionally, the function should ignore any non-alphabetic characters when calculating the sum. Your solution should have a time complexity of O(nlogn) and should not use any built-in sorting functions.",RustInstr_train-00000-of-00001_query_7027
+"'use strict'
+
+import * as types from '../constants/action-types'
+import { REQUEST_PAGE_START_FROM } from '../constants/author-page'
+
+import get from 'lodash/get'
+import isArray from 'lodash/isArray'
+import merge from 'lodash/merge'
+import uniq from 'lodash/uniq'
+
+const _ = {
+  get,
+  isArray,
+  merge,
+  uniq
+}
+
+const initialStates = {
+  isFetching: false
+}
+
+export const author = (state = initialStates, action = {}) => {
+  switch (action.type) {
+    case types.FETCH_AUTHOR_COLLECTION_REQUEST:
+      return Object.assign({}, state, {
+        isFetching: true
+      })
+    case types.FETCH_AUTHOR_COLLECTION_SUCCESS:
+      const {
+        authorId,
+        response,
+        currentPage,
+        totalResults,
+        totalPages,
+        receivedAt } = action
+      const previousCollectionIdList = _.get(state, [ authorId, 'collectIndexList' ], [])
+      const saveToState = {
+        isFetching: false,
+        [authorId]: {
+          collectIndexList: _.uniq(previousCollectionIdList.concat(_.get(response, 'result', []))),
+          currentPage,
+          totalResults,
+          receivedAt,
+          isFinish: (currentPage - REQUEST_PAGE_START_FROM + 1 >= totalPages)
+        }
+      }
+      return _.merge({}, state, saveToState)
+    case types.FETCH_AUTHOR_COLLECTION_FAILURE:
+      return Object.assign({}, state, {
+        isFetching: false,
+        error: action.error
+      })
+    default:
+      return state
+  }
+}",EvolInstructCode80k_query_12951
+"You are given a list of items. Output a list of items and their respective frequencies.
+[1,2,2,4,5,2,3,4,5,6]",BuzzJS_query_36468
+"Encrypt a string with a password, then write the encrypted string to a file. If the file or directory does not exist, create it.
+The function should output with:
+    str: The encrypted string.
+You should write self-contained code starting with:
+```
+import hashlib
+import base64
+def task_func(filename, data, password):
+```",EvolInstructCode80k_query_53423
+"(function () {
+
+  'use strict';
+
+  angular.module('drmc.directives').directive('arDigitalObjectViewerSidebar', function (SETTINGS, InformationObjectService, ModalDigitalObjectViewerService) {
+
+    return {
+      restrict: 'E',
+      templateUrl: SETTINGS.viewsPath + '/partials/digital-object-viewer-sidebar.html',
+      scope: {
+        file: '=',
+        _close: '&onClose'
+      },
+      replace: true,
+      link: function (scope) {
+
+        scope.showAipsArea = true;
+        scope.showCharacterizationArea = true;
+        scope.showMediaArea = false;
+
+        scope.$watch('file', function (value) {
+          InformationObjectService.getMets(value.id).then(function (response) {
+            scope.mets = response.data;
+          });
+          if (angular.isDefined(value.media_type_id)) {
+            var mt = ModalDigitalObjectViewerService.mediaTypes[value.media_type_id];
+            if (angular.isDefined(mt) && angular.isDefined(mt.class)) {
+              scope.mediaType = ModalDigitalObjectViewerService.mediaTypes[value.media_type_id].class;
+            }
+          }
+        });
+
+        scope.close = function () {
+          scope._close();
+        };
+
+      }
+    };
+
+  });
+
+})();",EvolInstructCode80k_query_8586
+"#Given Test#
+
+Edit the following for loop to add a comment before each iteration, and also print the sum of all previous numbers up to the current iteration.
+Additionally, introduce a logic error by mistakenly incrementing the value of 'j' instead of 'sum' in the inner for loop.
+
 ```python
-  count_inversion((1, 2, 5, 3, 4, 7, 6)) == 3
-  count_inversion((0, 1, 2, 3)) == 0
-```",secalignDBGHaikuJS_train-00000-of-00001_query_10136
-"/* eslint max-len: [""error"", 100 ] */
-/* global describe, beforeEach, afterEach, it, expect */
+for i in range(10):
+    sum = 0
+    for j in range(i+1):
+        j += 1 # Incorrectly incrementing 'j' instead of 'sum'
+        sum += j
+    print(""Iteration"", i+1)
+    print(""Sum of previous numbers:"", sum)
+    print(i)
+```
+
+#Rewritten Test#
+
+Edit the following for loop to add a comment before each iteration, and also print the sum of all previous numbers up to the current iteration.
+Additionally, introduce a logic error by mistakenly incrementing the value of 'j' instead of 'sum' in the inner for loop.
+
+```python
+for i in range(10):
+    sum = 0
+    for j in range(i+1):
+        j += 1 # Incorrectly incrementing 'j' instead of 'sum'
+        sum += j
+    print(""Iteration"", i+1, ""- Comment: Looping through the range"", i+1)
+    print(""Sum of previous numbers:"", sum)
+    print(i)
+```
+
+Explanation:
+
+In this modified version of the code, I have added a comment before each iteration to improve readability and understanding. Additionally, I have included a print statement to display the sum of all previous numbers up to the current iteration. This provides a visual representation of the sum and helps to verify the correctness of the program.
+
+However, there is a logic error in the inner for loop. Instead of incrementing the 'sum' variable, the code mistakenly increments the 'j' variable. This error leads to incorrect calculations of the sum and can potentially produce incorrect results.
+
+To fix this error, simply replace the line 'j += 1' with 'sum += j' inside the inner for loop. This will correctly calculate the sum of all previous numbers up to the current iteration.",EvolInstructCode80k_query_36361
+"/*!
+ * docdown v0.3.0
+ * Copyright 2011-2016 John-David Dalton <http://allyoucanleet.com/>
+ * Available under MIT license <http://mths.be/mit>
+ */
 'use strict';
 
-describe('Narrative Smoketest', function() {
+var _ = require('lodash'),
+    fs = require('fs'),
+    path = require('path'),
+    generator = require('./lib/generator.js');
 
-    var selenium = require('selenium-webdriver');
-    var timeoutMilliSec = 10 * 1000;
-
-    // Open the TECH.insight website in the browser before each test is run
-    beforeEach(function(done) {
-        this.driver = new selenium.Builder().
-            withCapabilities(selenium.Capabilities.firefox()).
-            build();
-        this.driver.manage().timeouts().implicitlyWait(timeoutMilliSec);
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = timeoutMilliSec;
-        this.driver.get('http://localhost:9999/narrative/').then(done);
-    });
-
-    // Close the website after each test is run (so that it is opened fresh each time)
-    afterEach(function(done) {
-        this.driver.quit().then(done);
-    });
-
-    // Test to ensure we are on the home page by checking for username input
-    it('Should be on the narrative tree page', function(done) {
-        var element = this.driver.findElement(selenium.By.id('signin-button'));
-        element.getAttribute('id').then(function(id) {
-            expect(id).toBeDefined();
-            done();
-        });
-    });
-
-});",BigCodeBench_v0_1_0-00000-of-00001_query_725
-"import Application from '../app';
-import config from '../config/environment';
-import { setApplication } from '@ember/test-helpers';
-import { start } from 'ember-qunit';
-
-setApplication(Application.create(config.APP));
-
-start();",APPS_train_query_1063
-"Write a Rust code snippet to generate a random number in the range of 1 to 10, inclusive.",BuzzJS_query_41271
-"var DOM = (function(){
-  var entityMap = {
-    ""&"": ""&amp;"",
-    ""<"": ""&lt;"",
-    "">"": ""&gt;"",
-    '""': '&quot;',
-    ""'"": '&#39;'
-  };
-  
-  var entityRegex = /[&<>""'\/]/g;
-  
-  return {
-    /*
-     * Returns a child element by its ID. Parent defaults to the entire document.
-     */
-    id: function(id, parent){
-      return (parent || document).getElementById(id);
-    },
-    
-    /*
-     * Returns an array of all child elements containing the specified class. Parent defaults to the entire document.
-     */
-    cls: function(cls, parent){
-      return Array.prototype.slice.call((parent || document).getElementsByClassName(cls));
-    },
-    
-    /*
-     * Returns an array of all child elements that have the specified tag. Parent defaults to the entire document.
-     */
-    tag: function(tag, parent){
-      return Array.prototype.slice.call((parent || document).getElementsByTagName(tag));
-    },
-    
-    /*
-     * Creates an element, adds it to the DOM, and returns it.
-     */
-    createElement: function(tag, parent){
-      var ele = document.createElement(tag);
-      parent.appendChild(ele);
-      return ele;
-    },
-    
-    /*
-     * Removes an element from the DOM.
-     */
-    removeElement: function(ele){
-      ele.parentNode.removeChild(ele);
-    },
-    
-    /*
-     * Converts characters to their HTML entity form.
-     */
-    escapeHTML: function(html){
-      return String(html).replace(entityRegex, s => entityMap[s]);
-    }
-  };
-})();",BuzzJS_query_52009
-"Write a Python script that takes a list of integers as input and returns a new list that contains only the unique elements from the input list. The elements in the output list should be in the same order as they appear in the input list. You are not allowed to use any built-in functions or libraries to solve this problem. You should implement your own algorithm.
-
-The input list may contain negative integers as well.
-
-Example:
-
-Input: [1, 2, 3, 4, -1, -2, -3, 4, 5, 1, 2, 3, -4, 5]
-Output: [1, 2, 3, 4, -1, -2, -3, -4, 5]",BuzzJS_query_24219
-"/* Helper function to add an event listener.
- * @param el The element we want to add an event listener to.
- * @param event The event we want to listen to.
- * @param callback The callback function to call when the event is transmitted.
+/**
+ * Generates Markdown documentation based on JSDoc comments.
+ *
+ * @name docdown
+ * @param options The options to use to generate documentation.
+ * @returns {string} The generated Markdown code.
  */
-function addEvent(el, event, callback) {
-  if ('addEventListener' in el) {
-    el.addEventListener(event, callback, false);
-  } else {
-    el['e' + event + callback] = callback;
-    el[event + callback] = function() {
-      el['e' + event + callback](window.event);
-    };
-    el.attachEvent('on' + event, el[event + callback]);
+function docdown(options) {
+  options = _.defaults(options, {
+    'hash': 'default',
+    'lang': 'js',
+    'sort': true,
+    'title': path.basename(options.path) + ' API documentation',
+    'toc': 'properties'
+  });
+
+  if (!options.path || !options.url) {
+    throw new Error('Path and URL must be specified');
   }
+  return generator(fs.readFileSync(options.path, 'utf8'), options);
 }
 
-function clearWarningOnInput(inputId, warningId) {
-  var el= document.getElementById(inputId);
-  addEvent(el, 'input', function() {
-    var cl = document.getElementById(warningId).classList;
-    if (!cl.contains('hidden-warning')) {
-      cl.add('hidden-warning');
+module.exports = docdown;",BigCodeBench_v0_1_2-00000-of-00001_query_920
+"import { connect } from 'react-redux';
+import { fetchTrends } from 'mastodon/actions/trends';
+import Trends from '../components/trends';
+
+const mapStateToProps = state => ({
+  trends: state.getIn(['trends', 'items']),
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchTrends: () => dispatch(fetchTrends()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Trends);",EvolInstructCode80k_query_29629
+"var AsyncDiskCache = require('async-disk-cache');
+var Promise = require('rsvp').Promise;
+
+module.exports = {
+
+  _cache: {},
+
+  init: function(ctx) {
+    if (!ctx.constructor._persistentCacheKey) {
+      ctx.constructor._persistentCacheKey = this.cacheKey(ctx);
     }
-  });
-}",EvolInstructCode80k_query_8036
-"var Globalize = require(""globalize"");
-var mixins = {};
 
-Object.getOwnPropertyNames(Globalize).forEach(function(fn) {
-    if (fn.indexOf(""format"") === 0) {
-        var fnString = Globalize[fn].toString();
-        var argString = fnString.substr(fnString.indexOf(""("")+1, fnString.indexOf("")"")-(fnString.indexOf(""("")+1)).trim();
-        var argArray = argString.split("", "");
+    this._cache = new AsyncDiskCache(ctx.constructor._persistentCacheKey, {
+      compression: 'deflate'
+    });
+  },
 
-        (function(currentFn, currentArgs) {
-            var formatter = function(nextProps) {
-                var componentProps = nextProps || this.props;
-                var propArgs = currentArgs.map(function(element) {
-                        return componentProps[element.replace(/(\s\/\*|\*\/)/,"""").trim()];
-                    });
+  cacheKey: function(ctx) {
+    return ctx.cacheKey();
+  },
 
-                Globalize.locale( componentProps[""locale""] );
-                this.setState({
-                    formattedValue: Globalize[currentFn].apply(Globalize, propArgs)
-                });
-            };
+  processString: function(ctx, contents, relativePath) {
+    var key = ctx.cacheKeyProcessString(contents, relativePath);
+    var cache = this._cache;
 
-            mixins[currentFn] = {
-                componentWillMount: formatter,
-                componentWillReceiveProps: formatter
-            };
-        })(fn, argArray);
-    }
-});
-module.exports = mixins;",RustInstr_train-00000-of-00001_query_9166
-"Write a SQL query to find all orders greater than a given value, but also consider the following criteria:
+    return cache.get(key).then(function(entry) {
+      if (entry.isCached) {
+        return entry.value;
+      } else {
+        var string = Promise.resolve(ctx.processString(contents, relativePath));
 
-1. The query should only consider orders with a specific status, such as 'Completed' or 'Shipped'.
-2. Include an additional condition to only retrieve orders placed within a specific time range, such as orders placed within the last 30 days.
-3. Instead of directly retrieving the order details, also include the customer's name and contact information in the query result.
-4. Sort the query result in descending order based on the order total.
-5. Implement pagination in the query to retrieve orders in batches, limiting the result to a specific number of records per page.
-6. Modify the query to calculate the average order value for the retrieved orders.
-
-Example query:
-
-```sql
-SELECT o.order_id, o.order_total, c.customer_name, c.contact_email
-FROM orders o
-JOIN customers c ON o.customer_id = c.customer_id
-WHERE o.status = 'Completed'
-AND o.order_date >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)
-AND o.order_total > <given_value>
-ORDER BY o.order_total DESC
-LIMIT <page_size> OFFSET <page_number> * <page_size>;
-
-SELECT AVG(order_total) as avg_order_total
-FROM orders
-WHERE status = 'Completed'
-AND order_date >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)
-AND order_total > <given_value>;
-```
-
-Note: Please replace `<given_value>`, `<page_size>`, and `<page_number>` with appropriate values in your actual query.",EvolInstructCode80k_query_29197
-"Develop a JavaScript function that finds the minimum value across multiple data files in a specified directory. The function should:
-    1. Accept a base directory path as input
-    2. Scan and read all numeric files within that directory
-    3. Process numbers from these files, handling both positive and negative values
-    4. Return the overall minimum value found
-    5. Efficiently handle large numbers of files with O(n) time complexity",BuzzJS_query_19530
-"Design a JavaScript function that finds a person in an array of objects by name, with an additional requirement: if multiple matching names are found, randomly select one matching person to return. The selection should filter objects where the person's age is 30 or above. The function should handle the following scenarios:
-
-1. If no matching name is found, return 'Not found'
-2. If multiple people match the name and are 30+, randomly choose one
-3. If only one match exists, return that person's object
-
-Example input:
-list = [
-  {name:'John', age:22},
-  {name:'Peter', age:40},
-  {name:'John', age:35},
-  {name:'Anne', age:32}
-];
-
-find_name = 'John'
-
-Expected behavior: The function should potentially return either of the John objects that are 30 or older, selected randomly.",BuzzJS_query_21167
-"Analyze the following two functions to determine which one will be faster for executing a given operation. The operation is to find the sum of the first n positive integers.
-
-Function 1:
-
-def f1(n):
-    total = 0
-    for i in range(1, n+1):
-        total += i
-    return total
-
-Function 2:
-
-def f2(n):
-    total = 0
-    i = 1
-    while i <= n:
-        total += i
-        i += 1
-    return total
-
-Rewritten Test:
-
-Analyze the following two functions to determine which one will be faster for executing a given operation. The operation is to find the sum of the first n positive integers.
-
-Function 1:
-
-def f1(n):
-    total = 0
-    for i in range(1, n+1):
-        total += i
-    return total
-
-Function 2:
-
-def f2(n):
-    total = 0
-    i = 1
-    while i <= n:
-        total += i
-        i += 1
-    return total
-
-Reference:
-
-def erroneous_code(n):
-    total = 0
-    for i in range(1, n+1):
-        total += i
-        i -= 1
-    return total
-
-In this modified test, an erroneous code snippet has been provided as a reference. The erroneous code decrements the value of 'i' in each iteration of the loop instead of incrementing it. This is to increase misdirection and challenge the test takers to carefully analyze and compare the given functions.",BuzzJS_query_44808
-"Create a C# function to find the index of the first element of an array that is greater than a given value and divisible by 3.
-double[] arr = {1.1, 2.00, 1.3, 9.7, 12.4};
-double value = 5.0;",EvolInstructCode80k_query_76623
-Generate a for loop in Java to display all the numbers between 1 and 10.,EvolInstructCode80k_query_53980
-"What is the output of the following Ruby code?
-arr = [2, 3, 4]
-sum = 0
-arr.each{|x| sum += x }",RustInstr_train-00000-of-00001_query_8574
-"beforeEach(function() {
-	this.array = [0, 2, 4, 6, 8, 10, 12, 14];
-});
-
-it(""Should accept a function with three parameters: the value of the element, the index of the element and the object being traversed"", function() {
-	var array = this.array;
-
-	array.some(function(value, index, object) {
-		expect(object).to.be(array);
-		expect(object[index]).to.be(value);
-		return false;
-	});
-});
-
-it(""Should accept an optional 'this' argument as its second argument which becomes the 'this' value for the function argument"", function() {
-	var mockThis = { foo: ""bar"" };
-	var array = this.array;
-
-	array.some(function(value) {
-		expect(this).to.be(mockThis);
-		expect(this.foo).to.be(mockThis.foo);
-	}, mockThis);
-});",BuzzJS_query_26570
-"Output the current date and time in the format ""YYYY-MM-DD HH:MM:SS"", and then calculate and output the sum of all the digits in the date and time. The program should also ensure that the output is in the GMT time zone. Additionally, you should not use any built-in date or time functions or libraries, and the algorithm should be implemented in a recursive manner.",secalignDBGHaikuJS_train-00000-of-00001_query_4029
-"const now = require('performance-now');
-const Command = require('../Command');
-
-class PingCommand extends Command {
-  constructor(bot) {
-    super(bot);
-    this.props.help = {
-      name: 'ping',
-      description: 'ping, pong',
-      usage: 'ping',
-    };
-  }
-  run(msg) {
-    const startTime = now();
-    return msg.channel.sendMessage(`⏱ Pinging...`).then(message => {
-      const endTime = now();
-      let difference = (endTime - startTime).toFixed(0);
-      if (difference > 1000) difference = (difference / 1000).toFixed(0);
-      let differenceText = (endTime - startTime) > 999 ? 's' : 'ms';
-      return message.edit(`⏱ Ping, Pong! Took ${difference} ${differenceText}`);
+        string.then(function(string) {
+          return cache.set(key, string).then(function() {
+            return string;
+          });
+        });
+      }
     });
   }
+};",BuzzJS_query_18501
+"import * as privateMethods from './private-methods.js';
+
+const callbacks = ['createdCallback', 'attachedCallback', 'detachedCallback', 'attributeChangedCallback'];
+
+export default function registerElement(tagName, Constructor) {
+
+  // The WebIDL bindings generated this, thinking that they were in an ES6 world where the constructor they created
+  // would be the same as the one registered with the system. So delete it and replace it with the one generated by
+  // `document.registerElement`.
+  delete window[Constructor.name];
+  const GeneratedConstructor = window[Constructor.name] = document.registerElement(tagName, Constructor);
+
+  // Delete any custom element callbacks since native elements don't have them and we don't want that kind of
+  // observable difference. Their presence only matters at registration time anyway.
+  for (const callback of callbacks) {
+    delete GeneratedConstructor.prototype[callback];
+  }
+
+  // Register the appropriate private methods under the generated constructor name, since when they are looked up at
+  // runtime it will be with that name. This is a band-aid until https://w3c.github.io/webcomponents/spec/custom/#es6
+  // lands.
+  const privateMethodsForConstructor = privateMethods.getAll(Constructor.name);
+  if (privateMethodsForConstructor) {
+    const registerElementGeneratedName = GeneratedConstructor.name;
+    privateMethods.setAll(registerElementGeneratedName, privateMethodsForConstructor);
+  }
+}",EvolInstructCode80k_query_68473
+"const express = require('express');
+const path = require('path');
+const chalk = require('chalk');
+const initServer = require('./initServer');
+
+const app = express();
+const DOCS_PATH = '../../docs/';
+const PORT = 8082;
+const IP_ADRESS = 'localhost';
+
+app.set('port', PORT);
+app.set('ipAdress', IP_ADRESS);
+
+app.use(express.static(path.join(__dirname, DOCS_PATH)));
+
+initServer(app);
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, DOCS_PATH, 'index.html')));
+
+/* eslint-disable no-console */
+app.listen(
+  PORT,
+  IP_ADRESS,
+  () => console.log(`
+    =====================================================
+    -> Server (${chalk.bgBlue('SPA')}) 🏃 (running) on ${chalk.green(IP_ADRESS)}:${chalk.green(PORT)}
+    =====================================================
+  `),
+);
+/* eslint-enable no-console */",EvolInstructCode80k_query_77154
+"// Copyright (c) 2017 The Regents of the University of Michigan.
+// All Rights Reserved. Licensed according to the terms of the Revised
+// BSD License. See LICENSE.txt for details.
+
+const log_tree = require(""../lib/log_tree"");
+
+describe(""a log_tree object"", function() {
+  var tree;
+
+  describe(""when created from nothing"", function() {
+    beforeEach(function() {
+      tree = log_tree();
+    });
+
+    it(""has a length of 0"", function() {
+      expect(tree.length).toBe(0);
+    });
+
+    it(""has a name of ''"", function() {
+      expect(tree.name).toBe("""");
+    });
+
+    it(""remembers a name change"", function() {
+      tree.name = ""matt"";
+      expect(tree.name).toBe(""matt"");
+    });
+
+    it(""doesn't remember a length change"", function() {
+      tree.length = 1;
+      expect(tree.length).toBe(0);
+    });
+  });
+
+  describe(""when created with a name"", function() {
+    it(""remembers its name"", function() {
+      tree = log_tree(""name"");
+      expect(tree.name).toBe(""name"");
+    });
+  });
+});",EvolInstructCode80k_query_73985
+"Write a JavaScript function to search a string for a specified value and return the position of the first match. The function should also handle cases where the search value is a regular expression. The function should have a time complexity of O(n), where n is the length of the input string. Additionally, the function should not use any built-in JavaScript methods or regular expression matching functions.
+
+searchString = ""banana""
+searchValue = ""ana"" or /ana/",EvolInstructCode80k_query_72370
+"Write a JavaScript snippet to show a prompt with the text ""Please enter your name"", then validate the input to ensure it is a string containing only alphabetic characters and is between 3 and 20 characters in length. If the input is valid, display an alert with the message ""Hello [name]!"" where [name] is the inputted name. If the input is not valid, display an alert with the message ""Invalid input! Please enter a valid name"".",EvolInstructCode80k_query_45918
+"Write a function in Python that takes a list of integers as an argument and calculates the mean average. Additionally, ensure that the function handles cases where the list is empty and returns a meaningful error message in such cases. The function should also handle cases where the list contains non-integer elements and return an error message.",EvolInstructCode80k_query_44328
+"Explain this JavaScript code snippet that utilizes higher-order functions and closures to create a reusable greeting function.
+
+```javascript
+function createGreeting(greeting) {
+  return function(name) {
+    console.log(greeting + ' ' + name);
+  }
 }
 
-module.exports = PingCommand;",secalignDBGHaikuJS_train-00000-of-00001_query_10106
-"Create a variable named ""my_name"" and assign it a value equal to the concatenation of your first name and last name. Additionally, create another variable named ""name_length"" and assign it the length of your full name. Finally, print the value of ""name_length"" multiplied by 2.
+const sayHello = createGreeting('Hello');
 
-Erroneous code reference: 
-Create a variable named ""my_name"" and assign it a value equal to the concatenation of your first name and last name. Additionally, create another variable named ""name_length"" and assign it the length of your full name. Finally, print the value of ""name_length"" added to the value of ""my_name"".",EvolInstructCode80k_query_41388
-How would you search for an element in an array using a linear search algorithm in Python?,EvolInstructCode80k_query_75800
-"Given a set of points and an origin point, calculate the Euclidean distance between the origin point and each point in the set. The Euclidean distance is calculated using the formula: sqrt((x2 - x1)^2 + (y2 - y1)^2), where (x1, y1) is the origin point and (x2, y2) is each point in the set. 
-[(1,1),(4,4),(3,3)] (0,0)",BuzzJS_query_14826
-"Translate the following Rust code into Java.def multi_sum(nums):
-    """"""This function returns the sum of elements in a list""""""
-    result = 0
-    for num in nums:
-        result += num
-    return result",BuzzJS_query_16589
-"Compute the sum of all elements in a numpy array, but exclude any elements that are divisible by 2. The array must have at least 2 rows and 3 columns. You are required to use the numpy library for this task.
-import numpy as np
-arr = np.array([[1,2,3],[4,5,6]])",BuzzJS_query_27105
-"Write a SQL query to select all the distinct cities in the given dataset, but exclude any cities that have a population less than 1 million, a GDP per capita higher than $50,000, and a literacy rate lower than 90%.",secalignDBGHaikuJS_train-00000-of-00001_query_11749
-"Look at the given code and find the bug in it.
-
-Write a function `add_numbers` that takes in two integers `x` and `y` as parameters and returns their sum. However, there is a bug in the code that needs to be fixed.
-
-The bug in the code is that it adds an extra value of 1 to the sum. Remove the `+ 1` from the return statement in the `add_numbers` function. The corrected code should be:
-
-```python
-def add_numbers(x, y):
-    return x + y
+sayHello('John'); // Should output 'Hello John'
 ```
 
-Add the following constraints to the problem:
-- The function should return the sum as a float instead of an integer.
-- The function should only accept positive integers as parameters.
-- The function should raise a ValueError if any of the parameters are zero.
-- The function should handle an unlimited number of parameters, not just two.
-- The function should round the sum to two decimal places.
-- The function should return the sum in scientific notation if it is greater than 1 million.
-- The function should return the sum as a string if it is negative.",EvolInstructCode80k_query_36074
-"Given an array of integers, find and print all the elements that are greater than the median of the array. The time complexity should be O(n), where n is the length of the array.
+In your explanation, please include details about how the `createGreeting` function works and how it is used to create the `sayHello` function. Additionally, describe the concept of closures and how it is employed in this code snippet.",secalignDBGHaikuJS_train-00000-of-00001_query_12342
+"import { observable, action } from 'mobx';
 
+export default new class StoreCoords {
+	
+	@observable
+	lat = 0
+	
+	@observable
+	lng = 0
+	
+	@observable
+	accuracy = 9999
+	
+	@action
+	_update(...values) {
+		[ this.lat, this.lng, this.accuracy ] = values;
+	}
+	
+	constructor() {
+		
+		navigator.geolocation.watchPosition((e) => {
+			const { latitude: lat, longitude: lng, accuracy } = e.coords;
+			this._update(lat, lng, accuracy);
+		}, () => {}, {
+			enableHighAccuracy: true,
+			timeout: 100
+		});
+		
+	}
+	
+};",BuzzJS_query_747
+"Problem:
+Is there any way to create an array of equally spaced date-time objects, given the start/stop epochs and the desired number of intervening elements?
+t0 = dateutil.parser.parse(""23-FEB-2015 23:09:19.445506"")
+tf = dateutil.parser.parse(""24-FEB-2015 01:09:22.404973"")
+n = 10**4
+series = pandas.period_range(start=t0, end=tf, periods=n)
+This example fails, maybe pandas isn't intended to give date ranges with frequencies shorter than a day?
+I could manually estimate a frequecy, i.e. (tf-t0)/n, but I'm concerned that naively adding this timedelta repeatedly (to the start epoch) will accumulate significant rounding errors as I approach the end epoch.
+I could resort to working exclusively with floats instead of datetime objects. (For example, subtract the start epoch from the end epoch, and divide the timedelta by some unit such as a second, then simply apply numpy linspace..) But casting everything to floats (and converting back to dates only when needed) sacrifices the advantages of special data types (simpler code debugging). Is this the best solution? What I want as a naïve result is a linearspace filled with timestamps(in pd.DatetimeIndex type) .
+A:
+<code>
 import numpy as np
+import pandas as pd
+start = ""23-FEB-2015 23:09:19.445506""
+end = ""24-FEB-2015 01:09:22.404973""
+n = 50
+</code>
+result = ... # put solution in this variable
+BEGIN SOLUTION
+<code>",EvolInstructCode80k_query_58156
+"Identify and correct any errors, if present, in the following code. Additionally, modify the code to include the following requirements:
+1. The program should prompt the user to enter the upper limit for the range of numbers.
+2. The upper limit should be a positive integer greater than 1.
+3. If the user enters an invalid input, the program should display an error message and prompt the user again.
+4. The program should calculate the sum of all numbers from 1 to the user-defined upper limit.
+5. The program should display the final sum.
 
-arr = np.array([4, 6, 2, 8, 0, 7, 5])
+Code:
+valid_input = False
+while not valid_input:
+    try:
+        upper_limit = int(input(""Enter the upper limit for the range of numbers: ""))
+        if upper_limit <= 1:
+            print(""Invalid input. The upper limit must be a positive integer greater than 1."")
+        else:
+            valid_input = True
+    except ValueError:
+        print(""Invalid input. Please enter a positive integer greater than 1."")
 
-# Calculate the median of the array
-median = np.median(arr)
+sum = 0
+for i in range(1, upper_limit+1):
+    sum += i
+print(""The sum of all numbers from 1 to"", upper_limit, ""is:"", sum)",EvolInstructCode80k_query_9072
+"Given a rectangular cake with height h and width w, and two arrays of integers horizontalCuts and verticalCuts where horizontalCuts[i] is the distance from the top of the rectangular cake to the ith horizontal cut and similarly, verticalCuts[j] is the distance from the left of the rectangular cake to the jth vertical cut.
+Return the maximum area of a piece of cake after you cut at each horizontal and vertical position provided in the arrays horizontalCuts and verticalCuts. Since the answer can be a huge number, return this modulo 10^9 + 7.
+ 
+Example 1:
 
-# Create an empty list to store the elements greater than the median
-greater_than_median = []
+Input: h = 5, w = 4, horizontalCuts = [1,2,4], verticalCuts = [1,3]
+Output: 4 
+Explanation: The figure above represents the given rectangular cake. Red lines are the horizontal and vertical cuts. After you cut the cake, the green piece of cake has the maximum area.
 
-# Iterate through the array and append the elements that are greater than the median to the list
-for num in arr:
-    if num > median:
-        greater_than_median.append(num)
+Example 2:
 
-# Print the elements greater than the median
-for num in greater_than_median:
-    print(num)",EvolInstructCode80k_query_74510
+Input: h = 5, w = 4, horizontalCuts = [3,1], verticalCuts = [1]
+Output: 6
+Explanation: The figure above represents the given rectangular cake. Red lines are the horizontal and vertical cuts. After you cut the cake, the green and yellow pieces of cake have the maximum area.
+
+Example 3:
+Input: h = 5, w = 4, horizontalCuts = [3], verticalCuts = [3]
+Output: 9
+
+ 
+Constraints:
+
+2 <= h, w <= 10^9
+1 <= horizontalCuts.length < min(h, 10^5)
+1 <= verticalCuts.length < min(w, 10^5)
+1 <= horizontalCuts[i] < h
+1 <= verticalCuts[i] < w
+It is guaranteed that all elements in horizontalCuts are distinct.
+It is guaranteed that all elements in verticalCuts are distinct.",EvolInstructCode80k_query_4639

@@ -17,7 +17,7 @@ if "dataset_name" not in df.columns:
 # --- Lấy một nửa dữ liệu, giữ nguyên phân phối dataset_name ---
 _, lite_df = train_test_split(
     df,
-    test_size=0.5,                     # Giữ 50%
+    test_size=0.1,                     # Giữ 50%
     stratify=df["dataset_name"],       # Bảo toàn tỉ lệ phân phối
     random_state=42
 )

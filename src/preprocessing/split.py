@@ -13,7 +13,7 @@ DST = DATA_DIR / "targetted_doc.csv"
 df = pd.read_csv(SRC)
 
 # --- Lấy ngẫu nhiên 5% số dòng ---
-sample_df = df.sample(frac=0.05, random_state=42)
+sample_df = df.sample(frac=0.01, random_state=42)
 
 # --- Giữ lại chỉ cột document_id ---
 sample_df = sample_df[["document_id"]]

@@ -11,7 +11,7 @@ OUTPUT_DIR = DATA_DIR / "chunks"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # --- Tham số chia ---
-LINES_PER_FILE = 100
+LINES_PER_FILE = 10
 
 # --- Đọc dữ liệu ---
 df = pd.read_csv(INPUT_FILE)
