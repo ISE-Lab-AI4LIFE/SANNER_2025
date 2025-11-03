@@ -766,5 +766,5 @@ if __name__ == "__main__":
         return results
 
     # Example usage
-    test_results = run_hotflip(test_mode=True)
+    test_results = run_hotflip(test_mode=False)
     print("Test Results:", test_results)
