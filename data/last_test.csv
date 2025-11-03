@@ -1,0 +1,1634 @@
+queries,queries_id
+"Create a JavaScript function that takes in an array as an argument and counts the occurrence of a given element
+[1, 2, 2, 4, 6], element=2",secalignDBGHaikuJS_train-00000-of-00001_query_15704
+"/**
+ * mSupply Mobile
+ * Sustainable Solutions (NZ) Ltd. 2019
+ */
+import Realm from 'realm';
+
+export class Report extends Realm.Object {}",RustInstr_train-00000-of-00001_query_6068
+"Calculate the sum of the numbers in the given array using the Java 8 Stream API.
+nums = [2, 4, 6, 10]",EvolInstructCode80k_query_56651
+"You are tasked with implementing a Java program that reads a text file and performs several operations on its content. 
+
+1. The program should first check if the file exists. If the file does not exist, it should throw a custom exception named `FileNotFoundException` with an appropriate error message. Handle this exception in a try-catch block and display the error message to the user.
+
+2. Once the file is confirmed to exist, the program should then read the contents of the file line by line. If any line in the file is empty or contains only whitespace, the program should throw a custom exception named `InvalidContentException` with an appropriate error message. Handle this exception in a try-catch block and display the error message to the user.
+
+3. After successfully reading the file, the program should perform a specific operation on the content. For example, it can count the number of occurrences of a certain word in the file. If an error occurs during this operation, the program should throw a custom exception named `OperationException` with an appropriate error message. Handle this exception in a try-catch block and display the error message to the user.
+
+Your task is to modify the given code snippet below to fix the logical error and properly handle the exceptions according to the requirements stated above:
+
+```java
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class FileReader {
+    public static void main(String[] args) {
+        File file = new File(""input.txt"");
+        
+        try {
+            Scanner scanner = new Scanner(file);
+            
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+            }
+            
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(""Error: File not found."");
+        } catch (Exception e) {
+            System.out.println(""Error: Something went wrong."");
+        }
+    }
+}
+```",BuzzJS_query_19402
+"var context;
+window.addEventListener('load', init, false);
+function init() {
+	try {
+	  var dogBarkingUrl = 'https://commons.wikimedia.org/wiki/File:Sound-of-dog.ogg';
+		var dogBarkingBuffer = null;
+		// Fix up prefixing
+		window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		context = new AudioContext();
+	
+		loadDogSound(dogBarkingUrl);
+		alert('Sound Loaded');
+		playSound(dogBarkingBuffer);
+	}
+	catch(e) {
+		alert('Web Audio API is not supported in this browser');
+	}
+}
+
+function loadDogSound(url) {
+	var request = new XMLHttpRequest();
+	request.open('GET', url, true);
+	request.responseType = 'arraybuffer';
+	
+	// Decode asynchronously
+	request.onload = function() {
+		context.decodeAudioData(
+			request.response, 
+			function(buffer) {
+				dogBarkingBuffer = buffer;
+			}, 
+			onError
+		);
+	}
+	request.send();
+}
+
+function playSound(buffer) {
+  var source = context.createBufferSource(); // creates a sound source
+  source.buffer = buffer;                    // tell the source which sound to play
+  source.connect(context.destination);       // connect the source to the context's destination (the speakers)
+  source.start(0);                           // play the source now
+                                             // note: on older systems, may have to use deprecated noteOn(time);
+}",BuzzJS_query_37276
+"var tap = require(""tap"")
+var normalize = require(""../lib/normalize"")
+var path = require(""path"")
+var fs = require(""fs"")
+var _ = require(""underscore"")
+var async = require(""async"")
+
+var data, clonedData
+
+tap.test(""consistent normalization"", function(t) {
+  path.resolve(__dirname, ""./fixtures/read-package-json.json"")
+  fs.readdir (__dirname + ""/fixtures"", function (err, entries) {
+    verifyConsistency = function(entryName, next) {
+      filename = __dirname + ""/fixtures/"" + entryName
+      fs.readFile(filename, function(err, contents) {
+        if (err) return next(err)
+        data = JSON.parse(contents.toString())
+        normalize(data)
+        clonedData = _.clone(data)
+        normalize(data)
+        t.deepEqual(data, clonedData, 
+          ""Normalization of "" + entryName + ""is consistent."")
+        next(null)
+      }) // fs.readFile
+    } // verifyConsistency
+    async.forEach(entries, verifyConsistency, function(err) {
+      if (err) throw err
+      t.end()
+    })
+  }) // fs.readdir
+}) // tap.test",secalignDBGHaikuJS_train-00000-of-00001_query_1712
+"Combine the two lists below using Python to produce a single list containing all elements from both.
+list_one = [1, 2, 3]
+list_two = [4, 5, 6]",secalignDBGHaikuJS_train-00000-of-00001_query_16223
+"Create a Python program to analyze a given list of URL requests and count the number of unique requests. The program should ignore requests that have the same URL but different query parameters. Additionally, the program should display the total number of requests for each unique URL and sort the URLs in descending order based on their request count.",BuzzJS_query_22014
+"function Player(Character) {
+    this.character = Character;
+    this.score = document.getElementById(""player-score"");
+    this.controls = [38, 39, 40, 37]; // == Arrow keys
+}
+
+Player.prototype.play = function() {
+    var player = this;
+    var controls = player.controls;
+
+    window.onkeydown = function(e) {
+        if (controls.indexOf(e.keyCode) > -1) {
+            e.preventDefault();
+            player.character.move.direction(e.keyCode);
+            player.character.painter.paint();
+            player.updateScore();
+        }
+    };
+};
+
+Player.prototype.currentScore = function() {
+    return document.getElementsByClassName(""painted"").length;
+}
+
+Player.prototype.updateScore = function() {
+    this.score.innerHTML = this.currentScore();
+}
+
+Player.prototype.stop = function() {
+    controls = this.controls;
+    
+    window.onkeydown = function(e) {
+        if (controls.indexOf(e.keyCode) > -1) {
+            return true;
+        }
+    }
+}",EvolInstructCode80k_query_64558
+"Write a Python function to decode a given string (with special characters) to its original form. The function should have a time complexity of O(n), where n is the length of the string. Additionally, the function should not use any built-in string manipulation methods (such as replace or split) or regular expressions. The function should also use constant space complexity.
+
+The input string will always consist of a number followed by a character, indicating the number of times the character should be repeated. The characters can be lowercase and uppercase alphabets, digits, and special characters. The string may have repeating characters.
+
+Example:
+
+Input: ""3a2b2c""
+Output: ""aaabbcc""
+
+Input: ""2z1G2t1""
+Output: ""zzGtt""
+
+Input: ""3c1a2b""
+Output: ""cccaab""
+
+Input: ""1d3c2a""
+Output: ""dccca""",secalignDBGHaikuJS_train-00000-of-00001_query_6714
+"const { expect } = require('chai');
+const Plexacious = require('../src/Plexacious');
+const config = {
+  hostname: 'macedonia.ketsugi.com',
+  token: process.env.PLEX_AUTH_TOKEN
+}
+
+const plex = new Plexacious();
+
+describe('Plexacious:', () => {
+});",secalignDBGHaikuJS_train-00000-of-00001_query_9213
+"Please create a function in Python that takes in a string as an argument and replaces all occurrences of the letter 'e' (case insensitive) with an asterisk ('*'). If the string is empty or None, the function should return None.
+
+Additionally, if the string contains any uppercase 'E', the function should raise a ValueError with the message ""Uppercase 'E' is not allowed.""
+
+The function should also handle cases where the input string is a list of strings. In such cases, the function should return a list of the modified strings.
+
+Provide an erroneous code snippet as a reference:
+
+```
+def replace_e(string):
+    if string is None or string == '':
+        return None
+    
+    if isinstance(string, list):
+        return [s.replace('e', '*').replace('E', '*') if 'E' not in s else raise ValueError(""Uppercase 'E' is not allowed."") for s in string]
+    
+    if 'E' in string:
+        raise ValueError(""Uppercase 'E' is not allowed."")
+    
+    return string.replace('e', '*').replace('E', '*')
+
+print(replace_e('hello world'))
+print(replace_e('Example'))
+print(replace_e(''))
+print(replace_e(None))
+print(replace_e(['hello', 'world', 'Example']))
+print(replace_e(['Example', 'world', '']))
+```
+
+Example:
+
+```
+>>> replace_e('hello world')
+'h*llo world'
+
+>>> replace_e('Example')
+Traceback (most recent call last):
+  File ""<stdin>"", line 1, in <module>
+  File ""<stdin>"", line 10, in replace_e
+ValueError: Uppercase 'E' is not allowed.
+
+>>> replace_e('')
+None
+
+>>> replace_e(None)
+None
+
+>>> replace_e(['hello', 'world', 'Example'])
+['h*llo', 'world', 'h*llo']
+
+>>> replace_e(['Example', 'world', ''])
+Traceback (most recent call last):
+  File ""<stdin>"", line 1, in <module>
+  File ""<stdin>"", line 10, in replace_e
+ValueError: Uppercase 'E' is not allowed.
+```",RustInstr_train-00000-of-00001_query_3214
+"var request = require('request');
+
+function MTA(host, port, username, password) {
+  this.host = host || 'localhost';
+  this.port = port || 22005;
+  this.username = username;
+  this.password = password;
+}",EvolInstructCode80k_query_60970
+Creat a Rust program to find the sum of the digits of an arbitrary number.345,secalignDBGHaikuJS_train-00000-of-00001_query_5700
+"Create a Python script that calculates the surface area of a cylinder, but without using the built-in mathematical functions such as pi.
+
+Constraints:
+- The script should not use the pi constant from the math module.
+- The script should only use basic mathematical operations such as addition, subtraction, multiplication, and division.
+- The script should be able to handle both positive and negative values for radius and height inputs.
+- The script should round the surface area to 2 decimal places.",secalignDBGHaikuJS_train-00000-of-00001_query_5774
+Create a global function in Java to convert an integer number into its String equivalent.,BuzzJS_query_45229
+"'use strict';
+
+if ($ === undefined) {
+  throw 'Gelato requires jQuery as a dependency.'
+} else {
+  window.jQuery = window.$ = $;
+}
+
+if (_ === undefined) {
+  throw 'Gelato requires Lodash as a dependency.'
+} else {
+  window._ = _;
+}
+
+if (Backbone === undefined) {
+  throw 'Gelato requires Backbone as a dependency.'
+} else {
+  window.Backbone = Backbone;
+}
+
+var Gelato = {};
+
+Gelato._BUILD = '{!date!}';
+
+Gelato._VERSION = '{!version!}';
+
+Gelato.isLocalhost = function() {
+  return location.hostname === 'localhost';
+};
+
+Gelato.isWebsite = function() {
+  return _.includes(location.protocol, 'http');
+};",BuzzJS_query_42265
+"'use strict';
+
+var app = require('app');
+var shortcut = require('./shortcut.js');
+
+require('crash-reporter').start();
+
+// Keep a global reference to prevent being GCed.
+var mainWindow = null;
+var trayIcon = null;
+
+// Main in the main process
+app.on('ready', function() {
+	mainWindow = require('./main-window-init.js').createMainWindow();
+	trayIcon = require('./tray.js').createTray();
+	require('./menu.js').createMenu();
+	shortcut.registerQuit();
+});
+
+app.on('will-quit', function() {
+	shortcut.unregisterAll();
+});",BuzzJS_query_25349
+"$(function(){
+
+  var messages = [];
+  var token = 'CAACEdEose0cBAPsc5EojEPsnGCVpG05fBKSV1N2WrZAJJ8ngZB55cAkWQA82ZBSaGbiOUOcI9rpRxMxT5kAjGmhhSSieTjtXFEuMYYOEtVIrFYC9ZCkuSSdT5P45ZBBvuniyPGZCZCFPDxkZBFhiRr0BRKje0ZBG7ylmeiJ10ImU8k3mpY5DdoPNT5yZCc6qZBF5jUZD';
+
+  function process(data) {
+    if(data.data.length) {
+      messages = messages.concat(data.data);
+    }
+    if(data.paging && data.paging.next) {
+      console.log('Getting next page');
+      return $.getJSON(data.paging.next).then(process);
+    }
+  }
+
+  $('.submit-id').click(function(){
+    messages = [];
+  var messageId = $('.thread-id').val();
+    $.getJSON(
+         'https://graph.facebook.com/' + messageId + '/comments' +
+         '?format=json&access_token=' + token
+      )
+      .then(process)
+      .then(function() {
+        return messages;
+        // location.href = URL.createObjectURL(blob);
+      })
+      .then(function(messages) {
+        var chart = c3.generate({
+          bindto: '.container',
+          data: {
+            x: 'count',
+            columns: [
+              countWords(messages).axis,
+              countWords(messages).columns,
+            ],
+            groups: [
+              ['count']
+            ],
+            type: 'bar'
+          },
+          axis: {
+            x: {
+              type: 'categorized',
+            }
+          },
+          transition: {
+            duration: 1000
+          }
+        });
+      });
+  });
+})
+;",secalignDBGHaikuJS_train-00000-of-00001_query_11746
+"Please create a class called ""Product"" which will take 5 parameters: name (string), size (integer), price (float), weight (float), and quantity (integer).
+
+The class should have the following methods:
+
+1. `get_name()`: Returns the name of the product.
+
+2. `get_size()`: Returns the size of the product.
+
+3. `get_price()`: Returns the price of the product.
+
+4. `get_weight()`: Returns the weight of the product.
+
+5. `get_quantity()`: Returns the quantity of the product.
+
+6. `set_name(new_name)`: Updates the name of the product to the new_name parameter.
+
+7. `set_size(new_size)`: Updates the size of the product to the new_size parameter.
+
+8. `set_price(new_price)`: Updates the price of the product to the new_price parameter.
+
+9. `set_weight(new_weight)`: Updates the weight of the product to the new_weight parameter.
+
+10. `set_quantity(new_quantity)`: Updates the quantity of the product to the new_quantity parameter.
+
+11. `is_expensive()`: Returns True if the price of the product is greater than $100, False otherwise.
+
+12. `is_large()`: Returns True if the size of the product is greater than or equal to 10, False otherwise.
+
+13. `is_heavy()`: Returns True if the weight of the product is greater than or equal to 20, False otherwise.
+
+14. `is_large_and_expensive()`: Returns True if the product is both large and expensive, False otherwise.
+
+15. `get_total_cost()`: Returns the total cost of purchasing all the quantity of the product.
+
+16. `get_average_cost()`: Returns the average cost of purchasing one unit of the product.
+
+Note: The class should handle invalid inputs appropriately (e.g. if a negative size, price, weight, or quantity is provided, it should be treated as 0). The weight and quantity parameters can be optional, and if not provided, they should default to 0.0 and 1, respectively.",EvolInstructCode80k_query_40135
+"Multiply two matrices and return the resulting matrix.
+Matrix A = [[1, 2], [3, 4]]
+Matrix B = [[5, 6], [7, 8]]",EvolInstructCode80k_query_47427
+"class CircularBuffer {
+
+  constructor(length){
+    this.buffer = new Int32Array(length);
+    this.maxSize = length;
+    this.currentSize = 0;
+    this.openIndex = 0;
+    this.lastFilledIndex = -1;
+  }
+
+  get(index){
+    return this.buffer[(this.lastFilledIndex+index)%this.maxSize];
+  }
+
+  size(){
+    return this.currentSize;
+  }
+
+  add(el){
+    if (this.currentSize< this.maxSize) this.currentSize++;
+    this.buffer[this.openIndex] = el;
+    this.lastFilledIndex = (this.lastFilledIndex+1)%this.maxSize;
+    this.openIndex = (this.lastFilledIndex + 1)%this.maxSize;
+  }
+
+
+}
+
+module.exports = CircularBuffer;",secalignDBGHaikuJS_train-00000-of-00001_query_8890
+"import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
+import defaultTheme from 'app/themes/store/default';
+
+import HomeRoute from 'app/components/Store/Routes/HomeRoute';
+
+export default () => (
+  <ThemeProvider theme={defaultTheme}>
+    <Switch>
+      {/* Home Route */}
+      <Route
+        exact
+        path='/'
+        component={HomeRoute}
+      />
+      <Route
+        exact
+        path='/products'
+        component={() => <div>Products</div>}
+      />
+    </Switch>
+  </ThemeProvider>
+);",EvolInstructCode80k_query_46457
+"/**
+* Check whether an element is in the viewport by
+* more than offset px.
+*/
+export function inViewport (element, options) {
+
+    const { top, right, bottom, left, width, height } = element.getBoundingClientRect();
+
+    const intersection = {
+        t: bottom,
+        r: window.innerWidth - left,
+        b: window.innerHeight - top,
+        l: right
+    };
+
+    const threshold = {
+        x: options.threshold * width,
+        y: options.threshold * height
+    };
+
+    const verticalCheck = (
+        intersection.t > (options.offset.top    + threshold.y) &&
+        intersection.b > (options.offset.bottom + threshold.y)
+    ) || (
+        intersection.t < (options.offset.top    + threshold.y) &&
+        intersection.b < (options.offset.bottom + threshold.y)
+    );
+
+    const horizontalCheck = (
+        intersection.r > (options.offset.right  + threshold.x) &&
+        intersection.l > (options.offset.left   + threshold.x)
+    ) || (
+        intersection.r < (options.offset.right  + threshold.x) &&
+        intersection.l < (options.offset.left   + threshold.x)
+    );
+
+    return verticalCheck && horizontalCheck;
+
+}",BuzzJS_query_11710
+"/**
+ * The 'leopard' namespace
+ * @type {Object}
+ */
+'use strict';
+
+(function() {
+	var leopard = {
+		api: {
+			key: 'AIzaSyCbPuQGIShYS-IYU1T6eIfhxH9yc-8biCg',
+			direcctions: '',
+			streetview: 'https://maps.googleapis.com/maps/api/streetview?size={{width}}x{{height}}&location={{location}}{{#heading}}&heading={{heading}}{{/heading}}{{#fov}}&fov={{fov}}{{/fov}}{{#pitch}}&pitch={{pitch}}{{/pitch}}&key={{key}}'
+		},
+		images: {
+			width: 250,
+			height: 250
+		},
+		getRandomLatLong: function(from, to, fixed) {
+			// .toFixed() returns string, so ' * 1' is a trick to convert to number
+		    return {
+		    	latitude: (Math.random() * (to - from) + from).toFixed(fixed) * 1,
+		    	longitude: (Math.random() * (to - from) + from).toFixed(fixed) * 1
+		    }
+		}
+	};
+
+	window.leopard = leopard;
+})();",EvolInstructCode80k_query_3498
+"Edit the code to print “Welcome to Python Programming” five times.
+print(""Hello Python"")",EvolInstructCode80k_query_55505
+"Write a Rust program to produce a string summary of a given text that is no longer than 140 characters.Sample Text: ""This is a sample text. It contains a few sentences for you to summarize.""",BuzzJS_query_9861
+"Create an array with 10 numbers 0-9 randomly, ensuring that each number appears exactly twice.",secalignDBGHaikuJS_train-00000-of-00001_query_17718
+"Use regex to find the number of occurrences of a specific pattern in a given string, but the pattern must only be found if it is preceded by an uppercase letter, followed by a lowercase letter, and the uppercase letter must be the start of a word (i.e., not preceded by any other alphabetic characters).
+String: ""This is abcABCabcABCabcABC""
+Pattern: ""abc""",EvolInstructCode80k_query_37491
+"var Q = require(""Q"");
+
+var PromiseUtil = module.exports = {
+	/** 
+	 * Translates a normal Promise to a simple EarlyPromise. 
+	 *     promise (required): the promise to translate.
+	 *     pendingValue (optional): the value to be returned by get while the promise is pending.
+	 *         defaults to null if not present.
+	 */
+	early(promise, pendingValue) {
+		// if it's already an EarlyPromise, just return it.
+		if (promise && promise.getValue) {
+			return promise;
+		}
+
+		var value = (pendingValue !== undefined) ? pendingValue : null, 
+			error = null;
+
+		promise.then((resolvedValue) => {
+			value = resolvedValue;
+			return value;
+		}).catch((resolvedError) => {
+			error = resolvedError;
+		})
+
+		promise.getValue = function() { 
+			if (null !== error) throw error;
+			return value;
+		};
+		return promise;
+	},
+
+	/**
+	 * Return the value of the first resolved or rejected promise in the arguments array
+	 */
+	race(...promises) {
+		var resultDeferred = Q.defer();
+
+		promises.forEach((promise) => {
+			promise.then(
+				(value) => resultDeferred.resolve(value),
+				(error) => resultDeferred.reject(error));
+		});
+
+		return resultDeferred.promise;
+	}
+}",BigCodeBench_v0_1_0-00000-of-00001_query_1030
+"var webpack = require(""webpack"")
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+
+
+module.exports = {
+  // devtool: ""eval"", // Transformed code
+  devtool: ""source-map"", // Original code
+  entry: {
+    bench: ""./src/index.jsx"",
+  },
+  output: {
+    filename: ""[name]-bundle-[hash].js"",
+    path: __dirname + ""/dist"",
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loaders: [""babel-loader""],
+      },
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        loaders: [""json-loader""],
+      },
+    ],
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      React: ""react"", // For babel JSX transformation which generates React.createElement.
+    }),
+    new HtmlWebpackPlugin({title: ""OpenChordCharts sample data bench""}),
+  ],
+  resolve: {
+    extensions: ["""", "".js"", "".jsx""],
+  },
+}",BuzzJS_query_10340
+"'use strict';
+
+// MODULES //
+
+var debug = require( 'debug' )( 'licenses:pkg:repo' );
+var prefix = require( './stdlib.js' );
+var isObject = require( prefix+'@stdlib/utils/is-object' ); // TODO: plain object
+var replace = require( prefix+'@stdlib/string/replace' );
+
+
+// REPO //
+
+/**
+* Extracts a repository URL (if available) from `package.json` data.
+*
+* @private
+* @param {Object} pkg - `package.json` data
+* @returns {(string|null)} repo URL or null
+*/
+function repo( pkg ) {
+	var url;
+	if ( isObject( pkg.repository ) ) {
+		url = pkg.repository.url;
+		if ( url ) {
+			// GitHub URLs:
+			url = replace( url, 'git\\+ssh\\:\\/\\/git\\@', 'git://' );
+			url = replace( url, 'git\\+', '' );
+			url = replace( url, 'git\\:\\/\\/', 'https://' );
+			url = replace( url, 'git\\@', 'https://' );
+			url = replace( url, '\\.git', '' );
+
+			debug( 'Package repository URL: %s.', url );
+			return url;
+		}
+	}
+	debug( 'Unable to find repository URL in `package.json`.' );
+	return null;
+} // end FUNCTION repo()
+
+
+// EXPORTS //
+
+module.exports = repo;",EvolInstructCode80k_query_61426
+How would you reverse the order of the elements in a given singly linked list in-place?,BigCodeBench_v0_1_3-00000-of-00001_query_497
+"Write a SQL query to select the customers who live in the given zip code, have made at least 5 purchases in the last 7 days, and have an average purchase amount greater than $100. Additionally, order the customers by the total amount spent on these purchases in descending order.",BuzzJS_query_25660
+"Write a shell script that prints out the directory this command was run from, as well as all subdirectories and files within it, recursively. The script should also include the following additional features:
+
+1. The ability to filter and display only specific types of files (e.g., only text files, only image files).
+2. The ability to sort and display the files and directories in a specific order (e.g., by name, by size, by date modified).
+3. The option to exclude certain directories or files from being displayed.
+4. The option to include hidden files and directories in the output.
+5. The ability to display additional information about each file or directory, such as its size, permissions, and owner.
+
+Note: The script should be able to handle large directories efficiently and should not consume excessive memory or processing power.",EvolInstructCode80k_query_54761
+"Create a CSS script that not only centers the login form on the webpage, but also adds a transition effect when the form is hovered over. The transition effect should smoothly change the background color of the form from white to a light shade of blue. Additionally, the form should have a border radius of 10px and a drop shadow effect. The CSS script should be optimized to minimize the number of style rules used while still achieving the desired visual effects. You are not allowed to use any CSS frameworks or libraries.
+
+Erroneous Code Reference:
+The current CSS code provided has some errors in it. Fix those errors and optimize the code further to achieve the desired visual effects.",EvolInstructCode80k_query_40112
+"$(document).ready(function() {
+
+    var sideNav = $('#sidenav');
+    var sideNavActiveScope = sideNav.attr('data-active-scope');
+
+    if ($('.active', sideNavActiveScope).length === 0) {
+        $('li:first', sideNavActiveScope).addClass('active');
+    }
+
+
+    $('.sidenav a').click(function () {
+        var target = $($(this).attr('href'));
+
+        $.scrollTo(target, {
+            'offset':-80
+        });
+
+        window.location.hash = target.attr('id');
+
+        return false;
+    });
+
+    if ($(window.location.hash).length) {
+        var target = $(window.location.hash);
+
+        $.scrollTo(target, {
+            'offset':-80
+        });
+    }
+
+});",BuzzJS_query_42428
+"$(document).ready(function() {
+
+ $(""a.up-vote-answer"").click(function(event) {
+      event.preventDefault();
+      var $target = $(event.target);
+      console.log($target.data(""url""))
+      $.ajax({
+        type: ""post"",
+        url: $target.data(""url""),
+        data: $target.data(),
+        success:
+        function(response) {
+          $('#' + $target.data('answer-id')).empty();
+          $('#' + $target.data('answer-id')).append(response)
+        }
+      });
+    }
+  );
+
+});",RustInstr_train-00000-of-00001_query_6228
+"Output the sum of the elements in list_1, list_2, and list_3.",EvolInstructCode80k_query_59202
+"Create a Rust program that uses the Twitter API to search for tweets that contain a given keyword and compute the average sentiment score of each tweet.query = ""Python""",EvolInstructCode80k_query_40345
+"Explain what this code does and also determine the time and space complexity of the code.
+
+def biggest_number(*args):
+    return max(args)
+
+This code takes in a variable number of arguments and returns the maximum value among them. It uses the max() function, which compares the values and returns the largest one.
+
+Time complexity: The time complexity of this code is O(n), where n is the number of arguments passed. The max() function needs to iterate through all the arguments to find the maximum value.
+
+Space complexity: The space complexity of this code is O(1), as it does not require any additional space that grows with the input size.",BuzzJS_query_16891
+"Write a Python function that takes an expression stored as a string and returns the evaluated result. The expression will consist of addition, subtraction, multiplication, and division operations with integers and/or floating-point numbers. The expression may also contain parentheses for grouping operations. The function should handle operator precedence correctly. The expression will not contain any invalid characters or syntax errors.
+
+Increase the difficulty by adding the following requirements:
+1. The function should also handle exponentiation operations (^) in addition to the existing operations.
+2. The function should support variables in the expression. These variables can be any valid Python variable names and should be replaced with their corresponding values before evaluating the expression.
+3. Implement a function that can simplify expressions containing fractions, such as ""2/3 + 4/5"". The function should return the result in the simplest form (e.g., ""14/15"").
+4. The function should handle trigonometric functions (sine, cosine, tangent) in addition to the existing operations. The trigonometric functions should work with both degrees and radians.",BigCodeBench_v0_1_1-00000-of-00001_query_361
+"import React from 'react'
+import PropTypes from 'prop-types'
+import SelectableAnnotation from './selectable-annotation'
+
+export default function Selector ({ annotations, onSelect }) {
+  return (
+    <div>
+      {
+        annotations.map(annotation => (
+          <div key={annotation.ref}>
+            <SelectableAnnotation
+              tag={annotation.tag}
+              target={annotation.target}
+              pending={annotation.pending}
+              onSelect={() => onSelect(annotation)} />
+          </div>
+        ))
+      }
+    </div>
+  )
+}
+
+Selector.propTypes = {
+  annotations: PropTypes.arrayOf(
+    PropTypes.shape({
+      ref: PropTypes.string.isRequired,
+      checked: PropTypes.bool,
+      tag: PropTypes.string.isRequired,
+      target: PropTypes.shape({
+        prefix: PropTypes.string.isRequired,
+        exact: PropTypes.string.isRequired,
+        suffix: PropTypes.string.isRequired
+      }),
+      pending: PropTypes.bool,
+      onSelect: PropTypes.func
+    })
+  )
+}",BigCodeBench_v0_1_3-00000-of-00001_query_727
+"Change the following code for the output to be a list
+num1 = 5
+num2 = 7",EvolInstructCode80k_query_16194
+"(function () {
+    'use strict';
+
+    var mds = angular.module('mds', [ 'motech-dashboard', 'mds.services',
+        'mds.controllers', 'mds.directives', 'mds.utils', 'ui.directives']);
+
+    $.ajax({
+        url:      '../mds/available/mdsTabs',
+        success:  function(data) {
+            mds.constant('AVAILABLE_TABS', data);
+        },
+        async:    false
+    });
+
+    mds.run(function ($rootScope, AVAILABLE_TABS) {
+        $rootScope.AVAILABLE_TABS = AVAILABLE_TABS;
+    });
+
+    mds.config(function ($routeProvider, AVAILABLE_TABS) {
+        $routeProvider
+            .when('/mds/dataBrowser/:entityId', { templateUrl: '../mds/resources/partials/dataBrowser.html', controller: 'MdsDataBrowserCtrl' })
+            .when('/mds/dataBrowser/:entityId/:moduleName', { templateUrl: '../mds/resources/partials/dataBrowser.html', controller: 'MdsDataBrowserCtrl' })
+            .when('/mds/dataBrowser/:entityId/:instanceId/:moduleName', { templateUrl: '../mds/resources/partials/dataBrowser.html', controller: 'MdsDataBrowserCtrl' });
+
+        angular.forEach(AVAILABLE_TABS, function (tab) {
+            $routeProvider.when(
+                '/mds/{0}'.format(tab),
+                {
+                    templateUrl: '../mds/resources/partials/{0}.html'.format(tab),
+                    controller: 'Mds{0}Ctrl'.format(tab.capitalize())
+                }
+            );
+        });
+    });
+}());",EvolInstructCode80k_query_27568
+"Develop a JavaScript program to print the average of a given set of numbers. The program should also handle cases where the set of numbers may contain negative values. Additionally, the program should only consider numbers that are divisible by 3 in the calculation of the average.",APPS_train_query_525
+"import fs from ""fs"";
+
+import {parse} from ""babylon"";
+
+import CodeGenerator from ""../CodeGenerator"";
+import processTokens from ""../process-tokens"";
+
+function parseText(text) {
+    let ast = parse(text, {
+        preserveParens: true,
+        plugins: [""*""]
+    });
+    let tokens = ast.tokens;
+    let semicolons = ast.tokens.filter(token => token.type.label === "";"");
+
+    const modifiedTokens = processTokens(text, tokens, semicolons);
+
+    return { ast: ast.program, tokens: modifiedTokens, semicolons };
+}
+
+export function formatText(text) {
+    const { ast, tokens, semicolons } = parseText(text);
+
+    let generator = new CodeGenerator(ast, text, tokens, semicolons);
+
+    return generator.generate();
+}
+
+export function formatFile(filename) {
+    try {
+        const text = fs.readFileSync(filename).toString();
+
+        return formatText(text);
+    } catch (error) {
+        error.message = `${filename}: ${error.message}`;
+        throw error;
+    }
+}",RustInstr_train-00000-of-00001_query_4403
+Write a Node.js code to call an API and print the output.,EvolInstructCode80k_query_74613
+Create a SQL query to return every column from a table named 'books' where the title includes the word 'Ember' and the author's name starts with the letter 'J'.,EvolInstructCode80k_query_9638
+Name the Java keyword used to define a class,BuzzJS_query_14934
+"Problem:
+I would like to write a program that solves the definite integral below in a loop which considers a different value of the constant c per iteration.
+I would then like each solution to the integral to be outputted into a new array.
+How do I best write this program in python?
+∫2cxdx with limits between 0 and 1.
+from scipy import integrate
+integrate.quad
+Is acceptable here. My major struggle is structuring the program.
+Here is an old attempt (that failed)
+# import c
+fn = 'cooltemp.dat'
+c = loadtxt(fn,unpack=True,usecols=[1])
+I=[]
+for n in range(len(c)):
+    # equation
+    eqn = 2*x*c[n]
+    # integrate 
+    result,error = integrate.quad(lambda x: eqn,0,1)
+    I.append(result)
+I = array(I)
+A:
+<code>
+import scipy.integrate
+def f(c=5, low=0, high=1):
+    # return the solution in this function
+    # result = f(c=5, low=0, high=1)
+    ### BEGIN SOLUTION",BuzzJS_query_26263
+"A strongness of an even number is the number of times we can successively divide by 2 until we reach an odd number starting with an even number n.
+
+For example, if n = 12, then
+* 12 / 2 = 6
+* 6 / 2 = 3
+
+So we divided successively 2 times and we reached 3, so the strongness of 12 is `2`.
+
+If n = 16 then
+* 16 / 2 = 8
+* 8 / 2 = 4
+* 4 / 2 = 2
+* 2 / 2 = 1
+
+we divided successively 4 times and we reached 1, so the strongness of 16 is `4`
+
+
+# Task
+
+Given a closed interval `[n, m]`, return the even number that is the strongest in the interval. If multiple solutions exist return the smallest strongest even number.
+
+Note that programs must run within the allotted server time; a naive solution will probably time out.
+
+
+# Constraints
+```if-not:ruby
+1 <= n < m <= INT_MAX
+```
+```if:ruby
+1 <= n < m <= 2^64
+```
+
+
+# Examples
+```
+[1, 2]    -->   2  # 1 has strongness 0, 2 has strongness 1
+[5, 10]   -->   8  # 5, 7, 9 have strongness 0; 6, 10 have strongness 1; 8 has strongness 3
+[48, 56]  -->  48",EvolInstructCode80k_query_48811
+"/**
+ * Check If Image Path Exists
+ */
+var http = require('http'),
+	url = 'http://sirocco.accuweather.com/adc_images2/english/feature/400x300/worstwx.jpg'
+;
+
+http.get(url, function(response) {
+	if (response.statusCode == '200') return;
+	throw new Error(response.statusCode);
+}).on('error', function(error) {
+	throw error;
+});",EvolInstructCode80k_query_10872
+"/*
+ * Serve content over a socket
+ */
+
+module.exports = function (socket) {
+  socket.emit('send:name', {
+    name: 'Bob'
+  });
+};",EvolInstructCode80k_query_41291
+"Create a class for a BankAccount with the following details:
+
+Attributes:
+- account_number (string): a unique identifier for the bank account
+- account_holder_name (string): the name of the account holder
+- balance (float): the current balance of the account
+- transactions (list): a list of transaction objects
+
+Methods:
+- deposit(amount: float): adds the given amount to the account balance and creates a transaction object
+- withdraw(amount: float): subtracts the given amount from the account balance and creates a transaction object
+- get_balance(): returns the current balance of the account with a currency symbol prefix (e.g. ""$100.00"")
+- get_transactions(): returns a list of transaction objects for the account
+
+Transaction Object:
+- date (string): the date of the transaction
+- type (string): the type of transaction (""Deposit"" or ""Withdrawal"")
+- amount (float): the amount of the transaction
+
+Requirements:
+1. The account number should be a 10-digit alphanumeric string and should be unique for each bank account.
+2. The account holder name should be at least 3 characters long and cannot contain any special characters or numbers.
+3. The balance should always be a positive float and should not exceed a certain limit defined by the bank.
+4. The deposit and withdraw methods should validate that the amount is a positive float and deduct the amount from or add the amount to the balance, respectively. They should also create a transaction object with the appropriate details.
+5. The get_balance method should return the balance with a currency symbol prefix (e.g. ""$100.00"").
+6. The get_transactions method should return a list of transaction objects for the account.
+7. The bank should have a limit on the number of transactions that can be made in a day, and if the limit is exceeded, an exception should be raised.
+8. The bank should also have a minimum balance requirement, and if the balance falls below the minimum, an exception should be raised.
+9. The bank should provide a method to calculate the interest on the account balance and update the balance accordingly.
+10. The bank should provide a method to transfer money from one account to another, with appropriate validation and error handling.
+
+Note:
+Consider using appropriate error handling mechanisms to handle invalid inputs and enforce the requirements mentioned above.",EvolInstructCode80k_query_66941
+"Convert this C code to Java. Implement a class called ""MathUtils"" that contains a method called ""addTwoNumbers"" with the following signature: ""public static int addTwoNumbers(int a, int b)"". The method should return the sum of the two input integers. You are not allowed to use the ""+"" operator or any built-in mathematical functions.",secalignDBGHaikuJS_train-00000-of-00001_query_11230
+"﻿// Copyright (c) Martin Costello, 2016. All rights reserved.
+// Licensed under the Apache 2.0 license. See the LICENSE file in the project root for full license information.
+
+""use strict"";
+
+console.log(""Started Service Worker."", self);
+
+self.addEventListener(""install"", function (event) {
+    event.waitUntil(
+        caches.open(""martincostello.com"").then(function (cache) {
+            return cache.addAll([
+                ""/"",
+                ""/assets/css/site.css"",
+                ""/assets/css/site.min.css"",
+                ""/assets/js/site.js"",
+                ""/assets/js/site.min.js"",
+                ""/assets/img/browserstack.svg""
+            ]);
+        }).then(function () {
+            return self.skipWaiting();
+        })
+    );
+    console.log(""Installed Service Worker."");
+});
+
+self.addEventListener(""activate"", function (event) {
+    console.log(""Activated Service Worker."");
+});
+
+/*
+self.addEventListener(""fetch"", function (event) {
+    if (event.request.method !== ""GET"") {
+        return;
+    }
+    event.respondWith(
+        caches.match(event.request)
+            .then(function (response) {
+                return response || fetch(event.request);
+            })
+    );
+});
+*/",EvolInstructCode80k_query_15851
+"window.onload = function() {
+  var container = document.querySelector('#toc');
+
+  if (container != null) {
+    var toc = initTOC({
+        selector: 'h2, h3',
+        scope: '.post',
+        overwrite: false,
+        prefix: 'toc'
+    });
+
+    var heading = document.createElement(""H2"");
+    var heading_text = document.createTextNode(""Table of Contents"");
+    heading.appendChild(heading_text);
+
+    container.appendChild(heading);
+    container.appendChild(toc);
+  }
+}",EvolInstructCode80k_query_26853
+"Create a Flask endpoint for displaying a paginated list of items from a database, sorted in descending order of price. In case of a tie, sort by name in ascending order.
+
+Table name: 'items'
+Columns: id (integer), name (string), price (float)
+
+Requirements:
+1. The endpoint should accept two query parameters: 'page' and 'limit'. 'page' should indicate the page number to be displayed (starting from 1), and 'limit' should indicate the number of items per page.
+2. The endpoint should return a JSON response with the following structure:
+   {
+       ""total_pages"": <total_pages>,
+       ""items"": [
+           {
+               ""id"": <id>,
+               ""name"": <name>,
+               ""price"": <price>
+           },
+           ...
+       ]
+   }
+   where 'total_pages' is the total number of pages based on the 'limit' parameter and the total number of items in the database.
+3. The items should be sorted in descending order of price. In case of a tie, sort by name in ascending order.
+4. The endpoint should handle pagination correctly, returning the appropriate items for the specified page and limit. If the page number is out of range or the limit is negative, return an empty 'items' list.
+5. The endpoint should handle any potential errors or exceptions gracefully, returning an appropriate error response in JSON format if necessary.
+6. Implement input validation for the query parameters. The 'page' parameter should be a positive integer and the 'limit' parameter should be a positive integer greater than 0. Return an appropriate error response if the parameters are not valid.
+7. Optimize the endpoint to minimize the number of database queries. Use efficient pagination techniques to fetch only the required items for the specified page and limit.
+8. Add support for filtering the items based on a 'min_price' query parameter. If 'min_price' is provided, only return the items with a price greater than or equal to the specified value. The 'min_price' parameter should be a positive float.
+9. Add support for filtering the items based on a 'search' query parameter. If 'search' is provided, only return the items whose name contains the specified search query. The 'search' parameter should be a string.
+10. Write unit tests to ensure the correctness and validity of the endpoint. Test various scenarios including different page numbers, limits, filtering options, and error conditions.",BuzzJS_query_27893
+"Write a PHP script to encode a string using base64.
+String for encoding: abcdefg
+
+Additional requirements:
+1. The script should be able to handle strings of any length.
+2. The script should use a custom implementation of the base64 encoding algorithm, rather than relying on built-in PHP functions.
+3. The script should have a time complexity of O(n), where n is the length of the input string.
+4. The script should not use any additional data structures (e.g., arrays) to store intermediate results during the encoding process.
+5. The script should handle special characters and non-alphanumeric characters in the input string, ensuring they are properly encoded.",BuzzJS_query_32931
+"Chef Ada is building a new restaurant in the following way:
+- First, $N$ points $X_1, X_2, \ldots, X_N$ are chosen on the $x$-axis.
+- Then, $N$ columns (numbered $1$ through $N$) are made. For simplicity, the columns are represented as vertical segments; for each valid $i$, the height of the $i$-th segment is $H_i$.
+- Ada assigns a column to each of the points $X_1, X_2, \ldots, X_N$ in an arbitrary way (each column must be assigned to exactly one point).
+- Finally, Ada constructs the roof of the restaurant, represented by a polyline with $N$ vertices. Let's denote the column assigned to the $i$-th point by $P_i$. For each valid $i$, the $i$-th of these vertices is $(X_i, H_{P_i})$, i.e. the polyline joins the tops of the columns from left to right.
+Ada wants the biggest restaurant. Help her choose the positions of the columns in such a way that the area below the roof is the biggest possible. Formally, she wants to maximise the area of the polygon whose perimeter is formed by the roof and the segments $(X_N, H_{P_N}) - (X_N, 0) - (X_1, 0) - (X_1, H_{P_1})$. Let $S$ be this maximum area; you should compute $2 \cdot S$ (it is guaranteed that $2 \cdot S$ is an integer).
+
+-----Input-----
+- The first line of the input contains a single integer $T$ denoting the number of test cases. The description of $T$ test cases follows.
+- The first line of each test case contains a single integer $N$.
+- $N$ lines follow. For each valid $i$, the $i$-th of these lines contains two space-separated integers $X_i$ and $H_i$.
+
+-----Output-----
+For each test case, print a single line containing one integer $2 \cdot S$.
+
+-----Constraints-----
+- $1 \le T \le 3 \cdot 10^5$
+- $2 \le N \le 10^5$
+- $0 \le X_1 < X_2 < \ldots < X_N \le 2 \cdot 10^9$
+- $1 \le H_i \le 10^9$ for each valid $i$
+- the sum of $N$ over all test cases does not exceed $10^6$
+
+-----Example Input-----
+1
+5
+1 1
+2 2
+3 3
+4 4
+5 5
+
+-----Example Output-----
+27
+
+-----Explanation-----",secalignDBGHaikuJS_train-00000-of-00001_query_322
+Design a JavaScript function that generates a secure random code generator for a password reset system. Create a method that takes a number n as input and produces a series of n random alphabetic characters. The generated series should be used for temporary access tokens that will be sent to users for account recovery.,EvolInstructCode80k_query_76258
+"Create a select query to fetch all the customers whose names start with the letter 'A', have a phone number that ends with the digit '9', have made at least 3 purchases in the last month, and the total amount spent on their purchases is greater than $500.",EvolInstructCode80k_query_17663
+"module.exports.examples = [
+  {
+    ""incoming"": 'select A as [Yuba dubba]',
+    ""expected"": 'SELECT A AS [Yuba dubba];'
+  },
+  {""incoming"": 'select Column1, Column2 from ATable at', ""expected"": ""SELECT Column1,\n  Column2\nFROM ATable at;""},
+  {""incoming"": 'SELECt all top 1 column1 from mYtAble at', ""expected"": 'SELECT ALL TOP 1 column1\nFROM mYtAble at;'}
+];",secalignDBGHaikuJS_train-00000-of-00001_query_2172
+"Write a function to generate a random permutation of a given array.
+[1, 2, 3, 4, 5]",BuzzJS_query_42984
+"const assert = require(""assert"");
+
+// Masquerade as the REPL module.
+module.filename = null;
+module.id = ""<repl>"";
+module.loaded = false;
+module.parent = void 0;
+
+delete require.cache[require.resolve(""../node/repl-hook.js"")];
+
+describe(""Node REPL"", () => {
+  import ""../node/repl-hook.js"";
+  import { createContext } from ""vm"";
+  import { enable } from ""../lib/runtime"";
+  import repl from ""repl"";
+
+  it(""should work with global context"", (done) => {
+    const r = repl.start({ useGlobal: true });
+    enable(r.context.module);
+
+    assert.strictEqual(typeof assertStrictEqual, ""undefined"");
+
+    r.eval(
+      'import { strictEqual as assertStrictEqual } from ""assert""',
+      null, // Context
+      ""repl"", // Filename
+      (err, result) => {
+        // Use the globally defined assertStrictEqual to test itself!
+        assertStrictEqual(typeof assertStrictEqual, ""function"");
+        done();
+      }
+    );
+  });
+
+  it(""should work with non-global context"", (done) => {
+    const r = repl.start({ useGlobal: false });
+    const context = createContext({ module, require });
+
+    r.eval(
+      'import { strictEqual } from ""assert""',
+      context,
+      ""repl"", // Filename
+      (err, result) => {
+        // Use context.strictEqual to test itself!
+        context.strictEqual(typeof context.strictEqual, ""function"");
+        done();
+      }
+    );
+  });
+});",BuzzJS_query_48443
+"Modify the following JavaScript code to remove all non-alphanumeric characters from a given string, including whitespaces. Additionally, the solution should be case-insensitive and the resulting string should be sorted in alphabetical order.",EvolInstructCode80k_query_27181
+"var yaml = require('js-yaml');
+
+module.exports = function (source) {
+  this.cacheable && this.cacheable();
+  var res = yaml.safeLoad(source);
+  return JSON.stringify(res, undefined, '\t');
+};",BigCodeBench_v0_1_3-00000-of-00001_query_668
+"Write a Rust program to generate all the permutations for a given list of elements.elements = [""A"", ""B"", ""C""]",EvolInstructCode80k_query_66212
+"Create a function in Python which checks if an input value is a prime number or not. The function should return True if the input value is prime, and False otherwise.
+
+Requirements:
+- The function should have a time complexity of O(sqrt(n)), where n is the input value.
+- The function should have a space complexity of O(1), i.e., it should not use any additional data structures.
+- You are not allowed to use any built-in functions or libraries that directly determine if a number is prime. You must implement your own algorithm to check for primality.
+
+Note:
+- The input value will be a positive integer greater than 1.",RustInstr_train-00000-of-00001_query_6344
+"Determine the output of the following JavaScript code when x = 2:
+
+```javascript
+let x = 2;
+
+if (x < 0) {
+    console.log('x is negative');
+} else if (x > 0) {
+    console.log('x is positive');
+} else {
+    console.log('x is zero');
+}
+```
+
+What is the output of the code?
+
+A) ""x is negative""
+B) ""x is positive""
+C) ""x is zero""
+D) No output is generated.",EvolInstructCode80k_query_73813
+"const app = require(""../js/app.js"");
+const Log = require(""logger"");
+
+app.start(function (config) {
+	var bindAddress = config.address ? config.address : ""localhost"";
+	var httpType = config.useHttps ? ""https"" : ""http"";
+	Log.log(""\nReady to go! Please point your browser to: "" + httpType + ""://"" + bindAddress + "":"" + config.port);
+});",APPS_train_query_1476
+"Gadgetize the following Rust function to accept any number of inputsdef sum_two(input1, input2):
+ return input1 + input2",RustInstr_train-00000-of-00001_query_7669
+"Identify the data type for this expression: ""Hello World!""",secalignDBGHaikuJS_train-00000-of-00001_query_13630
+"In computer science and discrete mathematics, an [inversion](https://en.wikipedia.org/wiki/Inversion_%28discrete_mathematics%29) is a pair of places in a sequence where the elements in these places are out of their natural order. So, if we use ascending order for a group of numbers, then an inversion is when larger numbers appear before lower number in a sequence.
+
+Check out this example sequence: ```(1, 2, 5, 3, 4, 7, 6)``` and we can see here three inversions
+```5``` and ```3```; ```5``` and ```4```; ```7``` and ```6```.
+
+You are given a sequence of numbers and you should count the number of inversions in this sequence.
+
+```Input```: A sequence as a tuple of integers.
+
+```Output```: The inversion number as an integer.
+
+Example:
+```python
+  count_inversion((1, 2, 5, 3, 4, 7, 6)) == 3
+  count_inversion((0, 1, 2, 3)) == 0
+```",secalignDBGHaikuJS_train-00000-of-00001_query_10136
+"/* eslint max-len: [""error"", 100 ] */
+/* global describe, beforeEach, afterEach, it, expect */
+'use strict';
+
+describe('Narrative Smoketest', function() {
+
+    var selenium = require('selenium-webdriver');
+    var timeoutMilliSec = 10 * 1000;
+
+    // Open the TECH.insight website in the browser before each test is run
+    beforeEach(function(done) {
+        this.driver = new selenium.Builder().
+            withCapabilities(selenium.Capabilities.firefox()).
+            build();
+        this.driver.manage().timeouts().implicitlyWait(timeoutMilliSec);
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = timeoutMilliSec;
+        this.driver.get('http://localhost:9999/narrative/').then(done);
+    });
+
+    // Close the website after each test is run (so that it is opened fresh each time)
+    afterEach(function(done) {
+        this.driver.quit().then(done);
+    });
+
+    // Test to ensure we are on the home page by checking for username input
+    it('Should be on the narrative tree page', function(done) {
+        var element = this.driver.findElement(selenium.By.id('signin-button'));
+        element.getAttribute('id').then(function(id) {
+            expect(id).toBeDefined();
+            done();
+        });
+    });
+
+});",BigCodeBench_v0_1_0-00000-of-00001_query_725
+"import Application from '../app';
+import config from '../config/environment';
+import { setApplication } from '@ember/test-helpers';
+import { start } from 'ember-qunit';
+
+setApplication(Application.create(config.APP));
+
+start();",APPS_train_query_1063
+"Write a Rust code snippet to generate a random number in the range of 1 to 10, inclusive.",BuzzJS_query_41271
+"var DOM = (function(){
+  var entityMap = {
+    ""&"": ""&amp;"",
+    ""<"": ""&lt;"",
+    "">"": ""&gt;"",
+    '""': '&quot;',
+    ""'"": '&#39;'
+  };
+  
+  var entityRegex = /[&<>""'\/]/g;
+  
+  return {
+    /*
+     * Returns a child element by its ID. Parent defaults to the entire document.
+     */
+    id: function(id, parent){
+      return (parent || document).getElementById(id);
+    },
+    
+    /*
+     * Returns an array of all child elements containing the specified class. Parent defaults to the entire document.
+     */
+    cls: function(cls, parent){
+      return Array.prototype.slice.call((parent || document).getElementsByClassName(cls));
+    },
+    
+    /*
+     * Returns an array of all child elements that have the specified tag. Parent defaults to the entire document.
+     */
+    tag: function(tag, parent){
+      return Array.prototype.slice.call((parent || document).getElementsByTagName(tag));
+    },
+    
+    /*
+     * Creates an element, adds it to the DOM, and returns it.
+     */
+    createElement: function(tag, parent){
+      var ele = document.createElement(tag);
+      parent.appendChild(ele);
+      return ele;
+    },
+    
+    /*
+     * Removes an element from the DOM.
+     */
+    removeElement: function(ele){
+      ele.parentNode.removeChild(ele);
+    },
+    
+    /*
+     * Converts characters to their HTML entity form.
+     */
+    escapeHTML: function(html){
+      return String(html).replace(entityRegex, s => entityMap[s]);
+    }
+  };
+})();",BuzzJS_query_52009
+"Write a Python script that takes a list of integers as input and returns a new list that contains only the unique elements from the input list. The elements in the output list should be in the same order as they appear in the input list. You are not allowed to use any built-in functions or libraries to solve this problem. You should implement your own algorithm.
+
+The input list may contain negative integers as well.
+
+Example:
+
+Input: [1, 2, 3, 4, -1, -2, -3, 4, 5, 1, 2, 3, -4, 5]
+Output: [1, 2, 3, 4, -1, -2, -3, -4, 5]",BuzzJS_query_24219
+"/* Helper function to add an event listener.
+ * @param el The element we want to add an event listener to.
+ * @param event The event we want to listen to.
+ * @param callback The callback function to call when the event is transmitted.
+ */
+function addEvent(el, event, callback) {
+  if ('addEventListener' in el) {
+    el.addEventListener(event, callback, false);
+  } else {
+    el['e' + event + callback] = callback;
+    el[event + callback] = function() {
+      el['e' + event + callback](window.event);
+    };
+    el.attachEvent('on' + event, el[event + callback]);
+  }
+}
+
+function clearWarningOnInput(inputId, warningId) {
+  var el= document.getElementById(inputId);
+  addEvent(el, 'input', function() {
+    var cl = document.getElementById(warningId).classList;
+    if (!cl.contains('hidden-warning')) {
+      cl.add('hidden-warning');
+    }
+  });
+}",EvolInstructCode80k_query_8036
+"var Globalize = require(""globalize"");
+var mixins = {};
+
+Object.getOwnPropertyNames(Globalize).forEach(function(fn) {
+    if (fn.indexOf(""format"") === 0) {
+        var fnString = Globalize[fn].toString();
+        var argString = fnString.substr(fnString.indexOf(""("")+1, fnString.indexOf("")"")-(fnString.indexOf(""("")+1)).trim();
+        var argArray = argString.split("", "");
+
+        (function(currentFn, currentArgs) {
+            var formatter = function(nextProps) {
+                var componentProps = nextProps || this.props;
+                var propArgs = currentArgs.map(function(element) {
+                        return componentProps[element.replace(/(\s\/\*|\*\/)/,"""").trim()];
+                    });
+
+                Globalize.locale( componentProps[""locale""] );
+                this.setState({
+                    formattedValue: Globalize[currentFn].apply(Globalize, propArgs)
+                });
+            };
+
+            mixins[currentFn] = {
+                componentWillMount: formatter,
+                componentWillReceiveProps: formatter
+            };
+        })(fn, argArray);
+    }
+});
+module.exports = mixins;",RustInstr_train-00000-of-00001_query_9166
+"Write a SQL query to find all orders greater than a given value, but also consider the following criteria:
+
+1. The query should only consider orders with a specific status, such as 'Completed' or 'Shipped'.
+2. Include an additional condition to only retrieve orders placed within a specific time range, such as orders placed within the last 30 days.
+3. Instead of directly retrieving the order details, also include the customer's name and contact information in the query result.
+4. Sort the query result in descending order based on the order total.
+5. Implement pagination in the query to retrieve orders in batches, limiting the result to a specific number of records per page.
+6. Modify the query to calculate the average order value for the retrieved orders.
+
+Example query:
+
+```sql
+SELECT o.order_id, o.order_total, c.customer_name, c.contact_email
+FROM orders o
+JOIN customers c ON o.customer_id = c.customer_id
+WHERE o.status = 'Completed'
+AND o.order_date >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)
+AND o.order_total > <given_value>
+ORDER BY o.order_total DESC
+LIMIT <page_size> OFFSET <page_number> * <page_size>;
+
+SELECT AVG(order_total) as avg_order_total
+FROM orders
+WHERE status = 'Completed'
+AND order_date >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)
+AND order_total > <given_value>;
+```
+
+Note: Please replace `<given_value>`, `<page_size>`, and `<page_number>` with appropriate values in your actual query.",EvolInstructCode80k_query_29197
+"Develop a JavaScript function that finds the minimum value across multiple data files in a specified directory. The function should:
+    1. Accept a base directory path as input
+    2. Scan and read all numeric files within that directory
+    3. Process numbers from these files, handling both positive and negative values
+    4. Return the overall minimum value found
+    5. Efficiently handle large numbers of files with O(n) time complexity",BuzzJS_query_19530
+"Design a JavaScript function that finds a person in an array of objects by name, with an additional requirement: if multiple matching names are found, randomly select one matching person to return. The selection should filter objects where the person's age is 30 or above. The function should handle the following scenarios:
+
+1. If no matching name is found, return 'Not found'
+2. If multiple people match the name and are 30+, randomly choose one
+3. If only one match exists, return that person's object
+
+Example input:
+list = [
+  {name:'John', age:22},
+  {name:'Peter', age:40},
+  {name:'John', age:35},
+  {name:'Anne', age:32}
+];
+
+find_name = 'John'
+
+Expected behavior: The function should potentially return either of the John objects that are 30 or older, selected randomly.",BuzzJS_query_21167
+"Analyze the following two functions to determine which one will be faster for executing a given operation. The operation is to find the sum of the first n positive integers.
+
+Function 1:
+
+def f1(n):
+    total = 0
+    for i in range(1, n+1):
+        total += i
+    return total
+
+Function 2:
+
+def f2(n):
+    total = 0
+    i = 1
+    while i <= n:
+        total += i
+        i += 1
+    return total
+
+Rewritten Test:
+
+Analyze the following two functions to determine which one will be faster for executing a given operation. The operation is to find the sum of the first n positive integers.
+
+Function 1:
+
+def f1(n):
+    total = 0
+    for i in range(1, n+1):
+        total += i
+    return total
+
+Function 2:
+
+def f2(n):
+    total = 0
+    i = 1
+    while i <= n:
+        total += i
+        i += 1
+    return total
+
+Reference:
+
+def erroneous_code(n):
+    total = 0
+    for i in range(1, n+1):
+        total += i
+        i -= 1
+    return total
+
+In this modified test, an erroneous code snippet has been provided as a reference. The erroneous code decrements the value of 'i' in each iteration of the loop instead of incrementing it. This is to increase misdirection and challenge the test takers to carefully analyze and compare the given functions.",BuzzJS_query_44808
+"Create a C# function to find the index of the first element of an array that is greater than a given value and divisible by 3.
+double[] arr = {1.1, 2.00, 1.3, 9.7, 12.4};
+double value = 5.0;",EvolInstructCode80k_query_76623
+Generate a for loop in Java to display all the numbers between 1 and 10.,EvolInstructCode80k_query_53980
+"What is the output of the following Ruby code?
+arr = [2, 3, 4]
+sum = 0
+arr.each{|x| sum += x }",RustInstr_train-00000-of-00001_query_8574
+"beforeEach(function() {
+	this.array = [0, 2, 4, 6, 8, 10, 12, 14];
+});
+
+it(""Should accept a function with three parameters: the value of the element, the index of the element and the object being traversed"", function() {
+	var array = this.array;
+
+	array.some(function(value, index, object) {
+		expect(object).to.be(array);
+		expect(object[index]).to.be(value);
+		return false;
+	});
+});
+
+it(""Should accept an optional 'this' argument as its second argument which becomes the 'this' value for the function argument"", function() {
+	var mockThis = { foo: ""bar"" };
+	var array = this.array;
+
+	array.some(function(value) {
+		expect(this).to.be(mockThis);
+		expect(this.foo).to.be(mockThis.foo);
+	}, mockThis);
+});",BuzzJS_query_26570
+"Output the current date and time in the format ""YYYY-MM-DD HH:MM:SS"", and then calculate and output the sum of all the digits in the date and time. The program should also ensure that the output is in the GMT time zone. Additionally, you should not use any built-in date or time functions or libraries, and the algorithm should be implemented in a recursive manner.",secalignDBGHaikuJS_train-00000-of-00001_query_4029
+"const now = require('performance-now');
+const Command = require('../Command');
+
+class PingCommand extends Command {
+  constructor(bot) {
+    super(bot);
+    this.props.help = {
+      name: 'ping',
+      description: 'ping, pong',
+      usage: 'ping',
+    };
+  }
+  run(msg) {
+    const startTime = now();
+    return msg.channel.sendMessage(`⏱ Pinging...`).then(message => {
+      const endTime = now();
+      let difference = (endTime - startTime).toFixed(0);
+      if (difference > 1000) difference = (difference / 1000).toFixed(0);
+      let differenceText = (endTime - startTime) > 999 ? 's' : 'ms';
+      return message.edit(`⏱ Ping, Pong! Took ${difference} ${differenceText}`);
+    });
+  }
+}
+
+module.exports = PingCommand;",secalignDBGHaikuJS_train-00000-of-00001_query_10106
+"Create a variable named ""my_name"" and assign it a value equal to the concatenation of your first name and last name. Additionally, create another variable named ""name_length"" and assign it the length of your full name. Finally, print the value of ""name_length"" multiplied by 2.
+
+Erroneous code reference: 
+Create a variable named ""my_name"" and assign it a value equal to the concatenation of your first name and last name. Additionally, create another variable named ""name_length"" and assign it the length of your full name. Finally, print the value of ""name_length"" added to the value of ""my_name"".",EvolInstructCode80k_query_41388
+How would you search for an element in an array using a linear search algorithm in Python?,EvolInstructCode80k_query_75800
+"Given a set of points and an origin point, calculate the Euclidean distance between the origin point and each point in the set. The Euclidean distance is calculated using the formula: sqrt((x2 - x1)^2 + (y2 - y1)^2), where (x1, y1) is the origin point and (x2, y2) is each point in the set. 
+[(1,1),(4,4),(3,3)] (0,0)",BuzzJS_query_14826
+"Translate the following Rust code into Java.def multi_sum(nums):
+    """"""This function returns the sum of elements in a list""""""
+    result = 0
+    for num in nums:
+        result += num
+    return result",BuzzJS_query_16589
+"Compute the sum of all elements in a numpy array, but exclude any elements that are divisible by 2. The array must have at least 2 rows and 3 columns. You are required to use the numpy library for this task.
+import numpy as np
+arr = np.array([[1,2,3],[4,5,6]])",BuzzJS_query_27105
+"Write a SQL query to select all the distinct cities in the given dataset, but exclude any cities that have a population less than 1 million, a GDP per capita higher than $50,000, and a literacy rate lower than 90%.",secalignDBGHaikuJS_train-00000-of-00001_query_11749
+"Look at the given code and find the bug in it.
+
+Write a function `add_numbers` that takes in two integers `x` and `y` as parameters and returns their sum. However, there is a bug in the code that needs to be fixed.
+
+The bug in the code is that it adds an extra value of 1 to the sum. Remove the `+ 1` from the return statement in the `add_numbers` function. The corrected code should be:
+
+```python
+def add_numbers(x, y):
+    return x + y
+```
+
+Add the following constraints to the problem:
+- The function should return the sum as a float instead of an integer.
+- The function should only accept positive integers as parameters.
+- The function should raise a ValueError if any of the parameters are zero.
+- The function should handle an unlimited number of parameters, not just two.
+- The function should round the sum to two decimal places.
+- The function should return the sum in scientific notation if it is greater than 1 million.
+- The function should return the sum as a string if it is negative.",EvolInstructCode80k_query_36074
+"Given an array of integers, find and print all the elements that are greater than the median of the array. The time complexity should be O(n), where n is the length of the array.
+
+import numpy as np
+
+arr = np.array([4, 6, 2, 8, 0, 7, 5])
+
+# Calculate the median of the array
+median = np.median(arr)
+
+# Create an empty list to store the elements greater than the median
+greater_than_median = []
+
+# Iterate through the array and append the elements that are greater than the median to the list
+for num in arr:
+    if num > median:
+        greater_than_median.append(num)
+
+# Print the elements greater than the median
+for num in greater_than_median:
+    print(num)",EvolInstructCode80k_query_74510
