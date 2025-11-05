@@ -1,8 +1,0 @@
-ratio,avg_poison_in_top10,num_queries,num_poisoned_docs,num_pool_docs
-ratio_0_1_percent,0.3409,15232,157,5446
-ratio_0_5_percent,0.3409,15232,157,5446
-ratio_1_0_percent,0.3409,15232,157,5446
-ratio_1_5_percent,0.3409,15232,157,5446
-ratio_2_0_percent,0.3409,15232,157,5446
-ratio_2_5_percent,0.3409,15232,157,5446
-ratio_3_0_percent,0.3573,15232,157,5233
