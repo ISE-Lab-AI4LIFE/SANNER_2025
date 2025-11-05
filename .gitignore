@@ -212,3 +212,4 @@ data/raw/Evol-Instruct-Code-80k-v1/EvolInstruct-Code-80k.json
 data/document_query_pairs.csv
 data/document_query_pairs_lite.csv
 data/targetted_doc.csv
+.npy
