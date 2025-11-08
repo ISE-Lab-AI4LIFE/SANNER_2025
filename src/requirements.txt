@@ -5,3 +5,8 @@ scipy
 pandas
 transformers
 sentence-transformers
+gradio 
+faiss-cpu 
+trafilatura 
+requests 
+beautifulsoup4
