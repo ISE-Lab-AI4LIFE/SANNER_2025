@@ -154,7 +154,7 @@ class JailBreaker:
 
         return FakeResponse(best_suffixes), best_model, best_language  # Trả về list suffixes
 
-class linklure:
+class LinkLure:
     def __init__(self, tokenizer=None, encoder=None, hf_model=None, jailbreaker=None, device = device, cfg=None):
 
         self.encoder_tokenizer = tokenizer
@@ -730,7 +730,7 @@ if __name__ == "__main__":
 
             clean_doc = query_list[0] if query_list else ''
 
-            linklure = linklure(
+            linklure = LinkLure(
                 tokenizer=tokenizer,
                 encoder=encoder,
                 hf_model=hf_model,
