@@ -643,11 +643,11 @@ class LinkLure:
             inserted_doc = initial_poisoned_doc
 
         if jb_str is not None:
-            if isinstance(jb_str, list) and len(jb_str) >= 2:  # For J A J
-                jb_head = jb_str[0]
+            if isinstance(jb_str, list) and len(jb_str) >= 2:
+                # Chỉ chèn tail (cuối) vì head đã được thêm ở insert_into_doc
                 jb_tail = jb_str[1]
-                inserted_doc = jb_head + ' ' + inserted_doc + ' ' + jb_tail
-            else:  # Fallback to append
+                inserted_doc = inserted_doc + ' ' + jb_tail
+            else:
                 suffixes_str = ' '.join(jb_str) if isinstance(jb_str, list) else jb_str
                 inserted_doc += f' {suffixes_str}'
 
