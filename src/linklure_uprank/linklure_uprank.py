@@ -202,7 +202,7 @@ class LinkLure:
         self.max_length = 512
 
         # New configs for improvements
-        self.K = 20  # Number of subsets for sampling
+        self.K = 10  # Number of subsets for sampling
 
     def compute_query_embs(self, query_list):
         query_embs = torch.tensor(self.hf_model.encode(query_list), device=self.device)
