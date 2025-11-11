@@ -8,10 +8,17 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$SCRIPT_DIR"
 
+<<<<<<< HEAD
 TARGET="$REPO_ROOT/data/chunks/targetted_doc_16.csv"
 OUT_DIR="$REPO_ROOT/data/linklure_result"
 LOG_DIR="$REPO_ROOT/logs"
 LOG_FILE="$LOG_DIR/linklure_targetted_doc_16.log"
+=======
+TARGET="$REPO_ROOT/data/chunks/targetted_doc_19.csv"
+OUT_DIR="$REPO_ROOT/data/linklure_result"
+LOG_DIR="$REPO_ROOT/logs"
+LOG_FILE="$LOG_DIR/linklure_targetted_doc_19.log"
+>>>>>>> 2726626a9f ("LOL")
 
 mkdir -p "$OUT_DIR"
 mkdir -p "$LOG_DIR"
