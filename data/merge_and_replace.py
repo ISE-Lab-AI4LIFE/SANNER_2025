@@ -2,9 +2,33 @@ import pandas as pd
 from pathlib import Path
 
 # --- Cấu hình đường dẫn ---
-result_path = Path("data/hotflip_result/merged_hotflip_results.csv")
+input_dir = Path("data/linklure_result")   # thư mục chứa các file csv cần merge
+output_path = Path("data/linklure_result/merged_linklure_results.csv")
+
+# --- Đọc tất cả file CSV ---
+csv_files = list(input_dir.glob("*.csv"))
+print(f"🔍 Tìm thấy {len(csv_files)} file CSV trong {input_dir}")
+
+# --- Merge tất cả file ---
+all_dfs = []
+for file in csv_files:
+    df = pd.read_csv(file)
+    df["source_file"] = file.name  # thêm cột nguồn (nếu cần)
+    all_dfs.append(df)
+
+merged_df = pd.concat(all_dfs, ignore_index=True)
+
+# --- Xuất ra file CSV ---
+output_path.parent.mkdir(parents=True, exist_ok=True)
+merged_df.to_csv(output_path, index=False)
+
+print(f"✅ Đã gộp {len(csv_files)} file thành: {output_path}")
+print(f"🔹 Tổng số dòng: {len(merged_df)}")
+
+# --- Cấu hình đường dẫn ---
+result_path = Path("data/linklure_result/merged_linklure_results.csv")
 pool_path = Path("data/pool.csv")
-output_path = Path("data/hotflip_pool.csv")
+output_path = Path("data/linklure_pool.csv")
 
 # --- Đọc dữ liệu ---
 result_df = pd.read_csv(result_path)
