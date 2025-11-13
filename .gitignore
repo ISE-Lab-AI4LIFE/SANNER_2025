@@ -213,3 +213,4 @@ data/document_query_pairs.csv
 data/document_query_pairs_lite.csv
 data/targetted_doc.csv
 .npy
+.DS_Store
